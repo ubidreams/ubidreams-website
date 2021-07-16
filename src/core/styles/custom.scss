@@ -1,0 +1,147 @@
+/* UBIDREAMS COLORS */
+$light-grey: #F1F4F8;
+$dark-grey: #6B7C93;
+$grey: #E6ECF8;
+$grey-blue: #9FC5D7;
+$blue: #2D90CA;
+$green: #59BDB1;
+$dark-green: #3A9185;
+$orange: #DEB68C;
+
+$theme-colors: (
+  "light-grey": $light-grey,
+  "dark-grey": $dark-grey,
+  "grey": $grey,
+  "grey-blue": $grey-blue,
+  "blue": $blue,
+  "green": $green,
+  "dark-green": $dark-green,
+  "orange": $orange
+);
+
+
+// Generate color utilities
+@each $color, $value in $theme-colors {
+    //`.bg-*`  
+    .bg-#{$color} {
+      background-color: $value;
+    }
+
+    //`.text-*`
+    .text-#{$color} {
+      color: $value;
+    }
+
+    /* BUTTON */
+    .btn-#{$color} {
+      color: #fff;
+      background-color: $value;
+      border-color: $value;
+    }
+
+    .btn-#{$color}:hover,
+    .btn-#{$color}:active,
+    .btn-#{$color}:focus,
+    .btn-#{$color}.active {
+      background: mix(#000, $value, 10%);
+      border-color:  mix(#000, $value, 10%);
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+
+    /* SOFT BUTTON */
+    .soft-#{$color} {
+      color: $value;
+      background-color: $light-grey;
+      border-color: $value;
+    }
+    
+    .soft-#{$color}:hover,
+    .soft-#{$color}:active,
+    .soft-#{$color}:focus,
+    .soft-#{$color}.active {
+      background-color: mix(#000, $light-grey, 5%); 
+      color: $value !important;
+      text-decoration: none !important;
+    }
+
+}
+
+
+//Custom link
+a {
+  color: $blue;
+
+  &:hover {
+    color: $blue !important;
+    text-decoration: underline !important;
+  }
+
+}
+
+.custom-card-link:hover {
+  text-decoration: none !important;
+}
+
+//Custom next/prev buttun for slider
+.slick-prev-custom, .slick-next-custom {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  padding: 0;
+  width: 3rem; 
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  z-index: 10;
+}
+
+.slick-prev-custom {
+  left: -25px;
+}
+
+.slick-next-custom {
+  right: -25px;
+}
+
+//custom background between
+@media (max-width: 1500px) {
+  .bg-between {
+      background-image: none !important;
+  }
+
+  .adaptive-padding {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+  }
+
+.adaptive-padding {
+  padding-left: 7.25rem;
+  padding-right: 7.25rem;
+}
+
+/* Card Reference */
+.card-zoom div {
+  height: 100%;
+}
+
+.card:hover > .card-zoom  > div > [class*="card-img"] {
+  transform: scale(1.1);
+}
+.card-zoom > div > [class*="card-img"] {
+  transition: all .3s ease;
+  transform-origin: center center;
+}
+
+.minHeight {
+  min-height: 20em;
+}
