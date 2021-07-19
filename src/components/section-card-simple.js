@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import TextContainer from './textContainer'
-import TextTechno from './textTechno'
+import TextContainer from './text-container'
+import TextTechno from './text-techno'
 
 const SectionCardSimple = ({ data = {}, type = '', index }) => {
   return (
@@ -14,13 +14,11 @@ const SectionCardSimple = ({ data = {}, type = '', index }) => {
         <Image src={data.img} alt={data.img.alt} />
       </div>
       <div className='w-100 w-md-75 d-flex flex-column p-4'>
-        {type === 'techno'
-          ? (
-            <TextTechno config={data} alignText='left' />
-            )
-          : (
-            <TextContainer config={data} alignText='left' />
-            )}
+        {type === 'techno' ? (
+          <TextTechno config={data} alignText='left' />
+        ) : (
+          <TextContainer config={data} alignText='left' />
+        )}
       </div>
     </div>
   )

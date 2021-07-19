@@ -21,7 +21,9 @@ const TextContainer = ({ config, alignText, className = '' }) => {
 
       {footer && (
         <footer className='blockquote-footer mt-3'>
-          <span className='h6 text-uppercase' style={{ whiteSpace: 'pre-line' }}>{footer}</span>
+          <span className='h6 text-uppercase' style={{ whiteSpace: 'pre-line' }}>
+            {footer}
+          </span>
         </footer>
       )}
     </div>

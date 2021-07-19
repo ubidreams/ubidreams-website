@@ -1,13 +1,13 @@
-import FeatureContainer from '../core/components/FeatureContainer'
-import Layout from '../core/components/layout'
-import PageTitle from '../core/components/pageTitle'
-import Section from '../core/components/section'
-import SectionCardSimple from '../core/components/sectionCardSimple'
-import TextContainer from '../core/components/textContainer'
-import ContactSection from '../core/components/contactSection'
-import SliderComponent from '../core/components/slider'
-import CardReference from '../core/components/cardReference'
-import { Recherche, IdeesRightCropped } from '../core/config/StaticImagesExport'
+import FeatureContainer from '../components/feature-container'
+import Layout from '../components/layout'
+import PageTitle from '../components/page-title'
+import Section from '../components/section'
+import SectionCardSimple from '../components/section-card-simple'
+import TextContainer from '../components/text-container'
+import ContactSection from '../components/contact-section'
+import SliderComponent from '../components/slider'
+import CardReference from '../components/card-reference'
+import { Recherche, IdeesRightCropped } from '../config/StaticImagesExport'
 import {
   configFeatureContainer,
   configPageTitle,
@@ -15,7 +15,7 @@ import {
   configDataTechnos,
   configTestimony,
   configReference
-} from '../pages/config/indexConfig'
+} from '../config/indexConfig'
 
 export const Home = () => {
   return (

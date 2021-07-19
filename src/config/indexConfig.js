@@ -12,7 +12,7 @@ import {
   KnaufIndustrie,
   Gendarmerie,
   Elonglife
-} from '../../core/config/StaticImagesExport.js'
+} from './StaticImagesExport.js'
 
 const configFeatureContainer = [
   {

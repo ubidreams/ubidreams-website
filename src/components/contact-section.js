@@ -4,7 +4,7 @@ import { Contact } from '../config/StaticImagesExport'
 const config = {
   img: {
     ...Contact,
-    alt: 'Photo d\'un groupe de discussion'
+    alt: "Photo d'un groupe de discussion"
   },
   content: 'Une question, un projet ? \n Nous vous aidons définir votre projet.'
 }

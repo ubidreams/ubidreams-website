@@ -34,7 +34,11 @@ const FeatureContainer = ({ config = [], displayDirection }) => {
             {item.description}
           </p>
         </div>
-        {item.buttonDetails && <Link href={item.showButton.path}><a className='btn btn-primary-soft'>{item.showButton.name}</a></Link>}
+        {item.buttonDetails && (
+          <Link href={item.showButton.path}>
+            <a className='btn btn-primary-soft'>{item.showButton.name}</a>
+          </Link>
+        )}
       </div>
     )
   })
