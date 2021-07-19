@@ -37,11 +37,7 @@ export const Home = () => {
           backgroundImage: `url(${Recherche.src}), url(${IdeesRightCropped.src})`
         }}
       >
-        <TextContainer
-          config={configIntroduction}
-          alignText='center'
-          className="adaptive-padding"
-        />
+        <TextContainer config={configIntroduction} alignText='center' className='adaptive-padding' />
       </Section>
 
       {/* Triple blocs de technologies */}
