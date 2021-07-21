@@ -12,8 +12,6 @@ const Header = () => {
     setLang(value)
   }
 
-  // il est stocké dans le state, amuse toi avec ça
-  console.log(lang)
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-white'>

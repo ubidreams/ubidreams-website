@@ -1,3 +1,5 @@
+import { getAllTestimonialsForHome, getLastReferences } from '../lib/api'
+
 import FeatureContainer from '../components/feature-container'
 import Layout from '../components/layout'
 import PageTitle from '../components/page-title'
@@ -17,7 +19,7 @@ import {
   configReference
 } from '../config/indexConfig'
 
-export const Home = () => {
+export const Home = ({ allTestimonials, lastReferences }) => {
   return (
     <Layout>
       {/* Entête > titre + illustration à droite */}
@@ -62,8 +64,8 @@ export const Home = () => {
       <Section bgColor='bg-gray-200'>
         <TextContainer config={configTestimony.introduction} alignText='center' />
         <SliderComponent className='shadow-light-lg'>
-          {configTestimony.testimonials.map((item, index) => (
-            <SectionCardSimple key={index} data={item} index={index} />
+          {allTestimonials.temoignages.map((item, index) => (
+            <SectionCardSimple key={index} data={item} index={index} type='temoignage' />
           ))}
         </SliderComponent>
       </Section>
@@ -72,7 +74,7 @@ export const Home = () => {
       <Section>
         <TextContainer config={configReference.introduction} alignText='center' />
         <div className='d-md-flex'>
-          <CardReference config={configReference.references} />
+          <CardReference config={lastReferences} />
         </div>
       </Section>
     </Layout>
@@ -80,3 +82,11 @@ export const Home = () => {
 }
 
 export default Home
+
+export async function getStaticProps({ preview = false }) {
+  const allTestimonials = (await getAllTestimonialsForHome(preview)) || []
+  const lastReferences = (await getLastReferences(preview)) || []
+  return {
+    props: { allTestimonials, lastReferences }
+  }
+}

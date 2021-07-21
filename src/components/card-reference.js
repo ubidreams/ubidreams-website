@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Image } from 'react-datocms'
 
 /**
  * Card référence et collaborateur
@@ -9,7 +9,13 @@ const CardReference = ({ config = [] }) => {
     return (
       <a key={index} className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link' href='#!'>
         <div className='card-zoom'>
-          <Image src={item.img} alt={item.subtitle} className='card-img-top' />
+          <Image
+            alt=''
+            data={{
+              ...item.cardCover.responsiveImage
+            }}
+            className='card-img-top'
+          />
         </div>
 
         <div className='card-body'>

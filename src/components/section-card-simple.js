@@ -1,4 +1,6 @@
-import Image from 'next/image'
+import ImageStatic from 'next/image'
+import { Image } from 'react-datocms'
+
 import TextContainer from './text-container'
 import TextTechno from './text-techno'
 
@@ -11,7 +13,16 @@ const SectionCardSimple = ({ data = {}, type = '', index }) => {
         ${index % 2 === 1 && type === 'techno' ? 'flex-md-row-reverse' : 'me-md-3'}`}
     >
       <div className='w-md-50 start-3 p-4 text-center position-relative' style={{ maxWidth: '12em' }}>
-        <Image src={data.img} alt={data.img.alt} />
+        {type === 'temoignage' ? (
+          <Image
+            alt=''
+            data={{
+              ...data.img.responsiveImage
+            }}
+          />
+        ) : (
+          <ImageStatic src={data.img} alt={data.img.alt} />
+        )}
       </div>
       <div className='w-100 w-md-75 d-flex flex-column p-4'>
         {type === 'techno' ? (

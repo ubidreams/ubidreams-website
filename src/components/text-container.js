@@ -7,6 +7,10 @@
 const TextContainer = ({ config, alignText, className = '' }) => {
   const { title, subtitle, content, footer } = config
 
+  function createMarkup() {
+    return { __html: content }
+  }
+
   return (
     <div className={`${className} text-${alignText}`}>
       {title && <h2 className='fw-bold'>{title}</h2>}
@@ -14,9 +18,11 @@ const TextContainer = ({ config, alignText, className = '' }) => {
       {subtitle && <p className='text-muted mb-6 mb-md-8'>{subtitle}</p>}
 
       {content && (
-        <p className='text-gray-700' style={{ whiteSpace: 'pre-line' }}>
-          {content}
-        </p>
+        <div
+          className='text-gray-700'
+          style={{ whiteSpace: 'pre-line' }}
+          dangerouslySetInnerHTML={createMarkup()}
+        ></div>
       )}
 
       {footer && (
