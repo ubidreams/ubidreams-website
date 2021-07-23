@@ -1,0 +1,100 @@
+{
+    "hero": {
+        "img": {
+            "key": "home",
+            "alt": "Web and Mobile Development"
+        },
+        "title": "Creation of mobile applications and connected objects",
+        "description": "Ubidreams supports you in the realization of your projects",
+        "buttonDetails": [
+            {
+                "name": "Our Expertise",
+                "path": "/expertises",
+                "class": "btn-blue"
+            },
+            {
+                "name": "Agency",
+                "path": "/agence",
+                "class": "soft-blue"
+            }
+        ]
+    },
+    "introduction": {
+        "title": "Digital agency based in La Rochelle",
+        "subtitle": "Dream digital",
+        "content": "We are a digital service company for the creation of customised mobile and software solutions. Ubidreams support you in each stage of your digital transformation.\n\nWe are experts in the creation of web and mobile apps. We also create connected devices and  give you advice and technical expertise in intersecting fields of business software and application development."
+    },
+    "featureContainer": [
+        {
+            "delay": 0,
+            "img": {
+                "key": "code",
+                "alt": "Icon balise html"
+            },
+            "title": "Web and Mobile Development",
+            "description": "We are specialists in the design and development of web business software and web and mobile applications."
+        },
+        {
+            "delay": 50,
+            "img": {
+                "key": "router",
+                "alt": "Icon router"
+            },
+            "title": "Internet of Things",
+            "description": "We bring you our expertise in IOT and we help you to create smart objects, connected to your IT tools."
+        },
+        {
+            "delay": 100,
+            "img": {
+                "key": "smile",
+                "alt": "Icon smiley content"
+            },
+            "title": "Consulting",
+            "description": "We guide you in all important stages of your digital strategy, GDPR, networks and cybersecurity, Business Intelligence and Data science."
+        }
+    ],
+    "technology" : {
+        "title": "Our favorites technologies and methods",
+        "firstSection": [
+          {
+            "img": {
+              "key": "multiplateforme",
+              "alt": "Cross-platform compatibility illustration"
+            },
+            "title": "Your multiplatforms mobile application with",
+            "textLink": "React Native",
+            "content": "We develop mobile app for Android and IOS with the framework React Native."
+          }
+        ],
+        "secondSection": [
+          {
+            "img": {
+              "key": "iot",
+              "alt": "Connected truck illustration"
+            },
+            "title": "Your IOT project with",
+            "textLink": "Beacon",
+            "content":
+              "We build connected architectures basing ourselves on communication technologies like Beacons."
+          },
+          {
+            "img": {
+              "key": "design",
+              "alt": "Web design illustration"
+            },
+            "title": "Optimized use thanks to",
+            "textLink": "UX design",
+            "content":
+              "We think your application with the most attractive and qualitative user experience."
+          }
+        ]
+      },
+    "testimony": {
+        "title": "Our customers trust us",
+        "subtitle": "Discover our partner and customer’s testimony that we supported in project design and development."
+    },
+    "reference": {
+        "title": "Our last references",
+        "subtitle": "Discover our last projects developed for our customers!"
+    }
+}

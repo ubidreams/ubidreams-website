@@ -1,15 +1,19 @@
 import Image from 'next/image'
 import { Contact } from '../config/StaticImagesExport'
-
-const config = {
-  img: {
-    ...Contact,
-    alt: "Photo d'un groupe de discussion"
-  },
-  content: 'Une question, un projet ? \n Nous vous aidons définir votre projet.'
-}
+import useTranslation from 'next-translate/useTranslation'
 
 const ContactSection = () => {
+  const { t } = useTranslation('common')
+
+  const config = {
+    img: {
+      ...Contact,
+      alt: t('contact.img.alt')
+    },
+    content: t('contact.content'),
+    buttonLabel: t('contact.button')
+  }
+
   return (
     <div className='card card-row shadow-light-lg mb-6'>
       <div className='d-md-flex gx-0'>
@@ -32,7 +36,7 @@ const ContactSection = () => {
                 {config.content}
               </p>
               <footer className='blockquote-footer'>
-                <button className='btn btn-blue'>Contactez-nous</button>
+                <button className='btn btn-blue'>{config.buttonLabel}</button>
               </footer>
             </blockquote>
           </div>

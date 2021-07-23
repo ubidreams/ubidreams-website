@@ -1,7 +1,8 @@
 import { getAllTestimonialsForHome, getLastReferences } from '../lib/api'
+import useTranslation from 'next-translate/useTranslation'
 
 import FeatureContainer from '../components/feature-container'
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import PageTitle from '../components/page-title'
 import Section from '../components/section'
 import SectionCardSimple from '../components/section-card-simple'
@@ -10,25 +11,18 @@ import ContactSection from '../components/contact-section'
 import SliderComponent from '../components/slider'
 import CardReference from '../components/card-reference'
 import { Recherche, IdeesRightCropped } from '../config/StaticImagesExport'
-import {
-  configFeatureContainer,
-  configPageTitle,
-  configIntroduction,
-  configDataTechnos,
-  configTestimony,
-  configReference
-} from '../config/indexConfig'
 
 export const Home = ({ allTestimonials, lastReferences }) => {
+  const { t } = useTranslation('home')
   return (
     <Layout>
       {/* Entête > titre + illustration à droite */}
-      <PageTitle config={configPageTitle} displayImage='reverse' alignText='left' />
+      <PageTitle namespace='home' displayImage='reverse' alignText='left' />
 
       {/* Présentation de 3 expertises (développement, IOT, Conseil) */}
       <Section>
         <div className='d-md-flex d-lg-flex'>
-          <FeatureContainer config={configFeatureContainer} displayDirection='column' />
+          <FeatureContainer namespace='home' displayDirection='column' />
         </div>
       </Section>
 
@@ -39,17 +33,21 @@ export const Home = ({ allTestimonials, lastReferences }) => {
           backgroundImage: `url(${Recherche.src}), url(${IdeesRightCropped.src})`
         }}
       >
-        <TextContainer config={configIntroduction} alignText='center' className='adaptive-padding' />
+        <TextContainer
+          namespace={{ name: 'home', section: 'introduction' }}
+          alignText='center'
+          className='adaptive-padding'
+        />
       </Section>
 
       {/* Triple blocs de technologies */}
       <Section>
-        <TextContainer config={{ title: 'Nos technologies et méthodes favorites' }} alignText='center' />
-        {configDataTechnos.firstSection.map((item, index) => (
+        <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
+        {t('technology.firstSection', {}, { returnObjects: true }).map((item, index) => (
           <SectionCardSimple key={index} data={item} index={index} type='techno' />
         ))}
         <div className='d-md-flex'>
-          {configDataTechnos.secondSection.map((item, index) => (
+          {t('technology.secondSection', {}, { returnObjects: true }).map((item, index) => (
             <SectionCardSimple key={index} data={item} index={index} type='techno' />
           ))}
         </div>
@@ -62,7 +60,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
 
       {/* Slider de témoignage clients */}
       <Section bgColor='bg-gray-200'>
-        <TextContainer config={configTestimony.introduction} alignText='center' />
+        <TextContainer namespace={{ name: 'home', section: 'testimony' }} alignText='center' />
         <SliderComponent className='shadow-light-lg'>
           {allTestimonials.temoignages.map((item, index) => (
             <SectionCardSimple key={index} data={item} index={index} type='temoignage' />
@@ -72,7 +70,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
 
       {/* Dernières références */}
       <Section>
-        <TextContainer config={configReference.introduction} alignText='center' />
+        <TextContainer namespace={{ name: 'home', section: 'reference' }} alignText='center' />
         <div className='d-md-flex'>
           <CardReference config={lastReferences} />
         </div>
@@ -83,9 +81,9 @@ export const Home = ({ allTestimonials, lastReferences }) => {
 
 export default Home
 
-export async function getStaticProps({ preview = false }) {
-  const allTestimonials = (await getAllTestimonialsForHome(preview)) || []
-  const lastReferences = (await getLastReferences(preview)) || []
+export async function getStaticProps({ preview = false, locale }) {
+  const allTestimonials = (await getAllTestimonialsForHome(preview, locale)) || []
+  const lastReferences = (await getLastReferences(preview, locale)) || []
   return {
     props: { allTestimonials, lastReferences }
   }

@@ -1,12 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
+
+import { Img } from '../config/StaticImagesExport'
 /**
  * zone de texte associée à une image et un bouton (optionnel)
  * config (données sous la forme d'un tableau d'objet (title, description, image, aos-delay))
  * displayDirection (position des blocs > image au dessus ou à gauche)
  */
-const FeatureContainer = ({ config = [], displayDirection }) => {
-  return config.map((item, index) => {
+const FeatureContainer = ({ namespace = '', displayDirection }) => {
+  const { t } = useTranslation(namespace)
+  const features = t('featureContainer', {}, { returnObjects: true })
+
+  return features?.map((item, index) => {
     return (
       <div
         key={index}
@@ -19,7 +25,7 @@ const FeatureContainer = ({ config = [], displayDirection }) => {
         }}
       >
         <div style={{ marginRight: '1em', minWidth: '4rem' }} className='icon mb-3'>
-          <Image src={item.img} alt={item.img.alt} width={45} height={45} />
+          <Image src={Img[item.img.key]} alt={item.img.alt} width={45} height={45} />
         </div>
 
         <div

@@ -38,11 +38,11 @@ async function fetchAPI(query, { variables, preview } = {}) {
   return json.data
 }
 
-export async function getAllTestimonialsForHome(preview) {
+export async function getAllTestimonialsForHome(preview, locale) {
   const data = await fetchAPI(
     `
       {
-        home {
+        home(locale: ${locale}) {
           temoignages {
             footer
             content
@@ -63,11 +63,11 @@ export async function getAllTestimonialsForHome(preview) {
   return data?.home
 }
 
-export async function getLastReferences(preview) {
+export async function getLastReferences(preview, locale) {
   const data = await fetchAPI(
     `
       {
-        allReferences(orderBy: _createdAt_DESC, first: "3") {
+        allReferences(locale: ${locale}, orderBy: _createdAt_DESC, first: "3") {
           subtitle
           title
           slug

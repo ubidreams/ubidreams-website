@@ -1,0 +1,49 @@
+{
+  "header": {
+    "home": "Home",
+    "expertise": {
+      "title": "Expertises",
+      "development": "Web and mobile development",
+      "iot": "IOT - Connected devices",
+      "consulting": "Advice and Audits",
+      "design": "UI/UX design",
+      "expertises": "All our expertises"
+    },
+    "agency": "Agency",
+    "references": "References",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer" :{
+    "slogan" : "Dream digital",
+    "location" : {
+      "title": "Location",
+      "address": "3 Boulevard du commandant Charcot, \n17440 Aytré, \nFrance",
+      "phone": "+33 5 16 49 27 26"
+    },
+    "legal" : { 
+      "title": "Legal", 
+      "links" : [
+        {
+          "name" : "General development conditions",
+          "path" : "/"
+        },
+        {
+          "name" : "Cookies policies",
+          "path" : ""
+        },
+        {
+          "name": "Legal Notice",
+          "path": "/"
+        } 
+      ]
+    }
+  },
+  "contact" : {
+    "img": {
+      "alt": "Photo of a working group"
+    },
+    "content": "A question, a project ? \nWe help you define your project.",
+    "button": "Contact-us"
+  }
+}

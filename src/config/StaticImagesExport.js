@@ -58,3 +58,20 @@ export {
   French,
   English
 }
+
+export const Img = {
+  home: Accueil,
+  search: Recherche,
+  ideas: Idees,
+  ideasCrop: IdeesRightCropped,
+  multiplateforme: Multiplatforme,
+  iot: Iot,
+  design: Design,
+  logo: Ubidreams,
+  fb: Facebook,
+  lkd: Linkedin,
+  twt: Twitter,
+  code: Code,
+  smile: Smile,
+  router: Router
+}

@@ -1,0 +1,49 @@
+{
+  "header": {
+    "home": "Accueil",
+    "expertise": {
+      "title": "Expertises",
+      "development": "Développement Web et Mobile",
+      "iot": "IOT - Objets connectés",
+      "consulting": "Conseils et Audits",
+      "design": "UI/UX design",
+      "expertises": "Toutes nos expertises"
+    },
+    "agency": "L'agence",
+    "references": "Références",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer":{
+    "slogan" : "Rêvons digital",
+    "location" : {
+      "title": "Localisation",
+      "address": "3 Boulevard du commandant Charcot, \n17440 Aytré, \nFrance",
+      "phone": "05 16 49 27 26"
+    },
+    "legal" : { 
+      "title": "Légal", 
+      "links" : [
+        {
+          "name" : "Conditions générales de développement",
+          "path" : "/"
+        },
+        {
+          "name" : "Politiques de cookies",
+          "path" : ""
+        },
+        {
+          "name": "Mentions Légales",
+          "path": "/"
+        } 
+      ]
+    }
+  },
+  "contact" : {
+    "img": {
+      "alt": "Photo d'un groupe de discussion"
+    },
+    "content": "Une question, un projet ? \n Nous vous aidons définir votre projet.",
+    "button": "Contactez-nous"
+  }
+}
