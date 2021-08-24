@@ -7,6 +7,8 @@ import Idees from '../../public/img/illustrations/idees.png'
 import Multiplatforme from '../../public/img/illustrations/multiplatforme.png'
 import Iot from '../../public/img/illustrations/iot2.png'
 import Design from '../../public/img/illustrations/design.png'
+import Conseil from '../../public/img/illustrations/conseil.png'
+import Expertises from '../../public/img/illustrations/expertise.png'
 
 /* Temporary imgs, should come later from datoCMS */
 import Reference1 from '../../public/img/illustrations/Rectangle1.png'
@@ -23,6 +25,11 @@ import KnaufIndustrie from '../../public/img/logos/knauf-industrie.png'
 import Elonglife from '../../public/img/logos/e-longlife.png'
 import Ubidreams from '../../public/img/logos/cropped-logo.png'
 
+/* logo solutions */
+import POI from '../../public/img/logos/UbiPOI.svg'
+import track from '../../public/img/logos/UbiTrack.svg'
+import PTW from '../../public/img/logos/UbiPTW.svg'
+
 /* ICON */
 import Facebook from '../../public/img/icons/social/facebook.svg'
 import Linkedin from '../../public/img/icons/social/linkedin.svg'
@@ -33,31 +40,7 @@ import Router from '../../public/img/icons/Router.svg'
 import French from '../../public/img/icons/france.png'
 import English from '../../public/img/icons/united-kingdom.png'
 
-export {
-  Accueil,
-  Recherche,
-  Idees,
-  IdeesRightCropped,
-  Multiplatforme,
-  Iot,
-  Design,
-  Reference1,
-  Reference2,
-  Reference3,
-  Contact,
-  Gendarmerie,
-  KnaufIndustrie,
-  Elonglife,
-  Ubidreams,
-  Facebook,
-  Linkedin,
-  Twitter,
-  Code,
-  Smile,
-  Router,
-  French,
-  English
-}
+export { Recherche, IdeesRightCropped, Contact, Ubidreams, Facebook, Linkedin, Twitter }
 
 export const Img = {
   home: Accueil,
@@ -67,11 +50,16 @@ export const Img = {
   multiplateforme: Multiplatforme,
   iot: Iot,
   design: Design,
+  expertises: Expertises,
+  conseil: Conseil,
   logo: Ubidreams,
   fb: Facebook,
   lkd: Linkedin,
   twt: Twitter,
   code: Code,
   smile: Smile,
-  router: Router
+  router: Router,
+  POI: POI,
+  track: track,
+  PTW: PTW
 }

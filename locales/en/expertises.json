@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "img": {
+      "key": "expertises",
+      "alt": "Advise and support in development"
+    },
+    "title": "Experts for your applications"
+  },
+  "introduction": {
+    "title": "Our work is to support you",
+    "subtitle": "We implement a methodology to help you in your digital transformation and in the achievement of your projects. UbiDreams brings you the best in development of mobile applications and connected devices creation. All you have to do is dream it and we will designit for you and with you. "
+  },
+  "stepContainer": [
+    {
+      "delay": 0,
+      "step": "1",
+      "title": "Analysis and design",
+      "description": "Together, we study the technical feasibility of your project. Our experts suggest to you the most suitable solutions for your needs and advise you on the most efficient technologies."
+    },
+    {
+      "delay": 50,
+      "step": "2",
+      "title": "Development",
+      "description": "Development is handled by our team who provide you regular and customised monitoring through the duration of our partnership. Prior to the development and based on the mock-up, we create prototypes in order to optimise development. "
+    },
+    {
+      "delay": 100,
+      "step": "3",
+      "title": "Maintenance and evolution",
+      "description": "When the project is over, we deliver your project and support you in its implementation and operation.We are committed to ensuring the durability of your project and offer you a maintenance contract for this purpose."
+    }
+  ],
+  "expertiseFields": {
+    "title": "Our expertise fields",
+    "fields": [
+      {
+        "img": {
+          "key": "multiplateforme",
+          "alt": "Cross-platform compatibility illustration"
+        },
+        "title": "Web and mobile development",
+        "content": "We master the last tools and technologies to create your application and respond in a custom way to your problems (API, Databases, PWA, native development….)."
+      },
+      {
+        "img": {
+          "key": "design",
+          "alt": "Web design illustration"
+        },
+        "title": "Design UX/UI",
+        "content": "Our designers create the mock-up and graphic design of your projects to create a quality experience for your users. We make sure to offer you the latest graphic trend to provide you impactful designs."
+      },
+      {
+        "img": {
+          "key": "iot",
+          "alt": "IConnected truck illustration"
+        },
+        "title": "IOT",
+        "content": "We support you on all stages of your project, from creation of IOT architecture to on-site installation, not forgetting the development of a web operating interface."
+      },
+      {
+        "img": {
+          "key": "conseil",
+          "alt": "Brainstorming illustration"
+        },
+        "title": "Consulting",
+        "content": "Our experts support you and help you to bring an innovative and operational approach to your digital strategy. We offer you efficient monitoring and personalized advice on a variety of topics."
+      }
+    ]
+  },
+  "solution": {
+    "introduction": {
+      "title": "Our solutions",
+      "subtitle": "Due to its geographical localisation in La Rochelle, Ubidreams has become  close to customers from the port sector. The commercial port of La Rochelle is one of the seven biggest french ports and is one of the leading ports for cereals, fertilisers and paper. Some issues linked to this industrial port environment, such as the bulk management or hydrocarbon deposits, have enabled  us to imagine solutions that are easily adaptable and transposable to other ports."
+    },
+    "conclusion": {
+      "subtitle" : "Since 2018, Ubidreams created digital solutions for his clients, Ubidreams is co-owner of those with his customers. Ubidreams proposes those solutions for France and the international market. Their usage is appropriate to export in Africa for example where Ubidreams already has activities."
+    },
+    "fields" : [
+
+      {
+        "img": {
+          "key": "POI",
+          "alt": "Logo UbiPOI"
+        },
+        "textLink": "UbiPOI",
+        "content": "In the aim to help professionals to follow scenarios during an Internal Operation Plan, we developed a web application which allows users to make the inventory of the stocks and to follow the evolution of a disaster."
+      },
+      {
+        "img": {
+          "key": "PTW",
+          "alt": "Logo UbiPTW"
+        },
+        "textLink": "UbiPTW",
+        "content": "It’s a web software which makes easier digital edition of work permit for workers on your operating site in a simple and intuitive way."
+      },
+      {
+        "img": {
+          "key": "track",
+          "alt": "Logo UbiTrack"
+        },
+        "col": "100",
+        "textLink": "UbiTrack",
+        "content": "This solution for monitoring boat unloading activity in real time is composed of IOT infrastructure with the use of connected devices and a web-based software for monitoring and processing data (back office)."
+      }
+    ]
+  }
+}

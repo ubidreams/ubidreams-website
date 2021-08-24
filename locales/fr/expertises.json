@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "img": {
+      "key": "expertises",
+      "alt": "Conseil et expertise en développement"
+    },
+    "title": "Des experts au service de vos applications"
+  },
+  "introduction": {
+    "title": "Notre mission est de vous accompagner",
+    "subtitle": "Nous mettons en place une méthodologie pour vous aider dans votre transformation numérique et dans la réalisation de vos projets. Pour cela, UBIDREAMS vous apporte le meilleur en matière de développement d’applications mobiles et de création d’objets connectés. Vous n’avez qu’à le rêver et nous le concevons sur mesure pour vous et avec vous."
+  },
+  "stepContainer": [
+    {
+      "delay": 50,
+      "step": "1",
+      "title": "Analyse et Conception",
+      "description": "Nous étudions ensemble la faisabilité technique de votre projet. Nos experts vous proposent les solutions les plus adaptées à vos besoins et vous conseillent les technologies les plus performantes."
+    },
+    {
+      "delay": 50,
+      "step": "2",
+      "title": "Développement",
+      "description": "Le développement est assuré par nos équipes qui vous apportent un suivi régulier et personnalisé pendant toute la durée de notre partenariat. En nous basant sur le maquettage, nous réalisons le prototype afin d’optimiser par la suite le processus de développement."
+    },
+    {
+      "delay": 50,
+      "step": "3",
+      "title": "Maintenance et évolution",
+      "description": "Le moment venu nous vous remettrons votre projet et vous accompagnerons dans sa prise en main et son exploitation. Nous avons à cœur de vous garantir la pérennité de votre projet et vous proposons pour cela un suivi de maintenance."
+    }
+  ],
+  "expertiseFields": {
+    "title": "Nos domaines d'expertise",
+    "fields": [
+      {
+        "delay": 50,
+        "img": {
+          "key": "multiplateforme",
+          "alt": "Illustration compatibilité crossplateforme"
+        },
+        "title": "Développement web et mobile",
+        "content": "Nous maîtrisons les derniers outils et technologies de développement pour créer vos applications et répondre de manière personnalisée à vos problématiques.",
+        "buttonDetails": {
+          "name": "En savoir plus",
+          "path": "/",
+          "class": "btn-blue"
+        }
+      },
+      {
+        "delay": 50,
+        "img": {
+          "key": "design",
+          "alt": "Illustration design web"
+        },
+        "title": "Design UX/UI",
+        "content": "Nous veillons à vous proposer les dernières tendances graphiques pour vous offrir des designs percutants et créer une expérience de qualité pour vos utilisateurs.",
+        "buttonDetails": {
+          "name": "En savoir plus",
+          "path": "/",
+          "class": "btn-blue"
+        }
+      },
+      {
+        "delay": 100,
+        "img": {
+          "key": "iot",
+          "alt": "Illustration véhicule connecté"
+        },
+        "title": "IOT",
+        "content": "Nous vous accompagnons sur toutes les phases de développement de vos projets, de la création de l’architecture IOT à l’installation sur site, sans oublier le développement d’une interface web d'exploitation.",
+        "buttonDetails": {
+          "name": "En savoir plus",
+          "path": "/",
+          "class": "btn-blue"
+        }
+      },
+      {
+        "delay": 100,
+        "img": {
+          "key": "conseil",
+          "alt": "Illustration brainstorming"
+        },
+        "title": "Conseil",
+        "content": "Nos experts vous accompagnent et vous aident à apporter une approche innovante et opérationnelle pour votre stratégie numérique.",
+        "buttonDetails": {
+          "name": "En savoir plus",
+          "path": "/",
+          "class": "btn-blue"
+        }
+      }
+    ]
+  },
+  "solution": {
+    "introduction": {
+      "title": "Nos solutions",
+      "subtitle": "De par sa localisation géographique à la Rochelle, UBIDREAMS s’est rapproché de clients dans le milieu portuaire. Le Port de commerce de la Rochelle fait partie des sept grands ports français et il compte parmi les premiers pour l’activité céréales, engrais et papiers. Certaines problématiques liées à ce milieu industriel portuaire comme la gestion du VRAC ou des dépôts d’hydrocarbure nous ont permis d’imaginer des solutions adaptables et transposables à d’autres ports."
+    },
+    "conclusion": {
+      "subtitle": "Ainsi depuis 2018, UBIDREAMS a conçu et réalisé pour ses clients des solutions numériques dont UBIDREAMS est copropriétaire avec ses clients et qu’elle peut proposer au marché en FRANCE et à l’étranger. Ces solutions sont en effet très bien dimensionnées pour être exportées en AFRIQUE par exemple où UBIDREAMS a déjà des activités par ailleurs."
+    },
+    "fields": [
+
+      {
+        "img": {
+          "key": "POI",
+          "alt": "Logo UbiPOI"
+        },
+        "textLink": "UbiPOI",
+        "content": "Afin d’aider les professionnels à suivre les scénarios lors d’un Plan d’Opération Interne, nous avons développé une application web qui permet de faire l’état des lieux des stocks et de suivre l’évolution d’un sinistre."
+      },
+      {
+        "img": {
+          "key": "PTW",
+          "alt": "Logo UbiPTW"
+        },
+        "textLink": "UbiPTW",
+        "content": "Ce logiciel web permet de faciliter l’édition numérique des permis de travail des intervenants sur votre site d’exploitation de façon simple et intuitive."
+      },
+      {
+        "img": {
+          "key": "track",
+          "alt": "Logo UbiTrack"
+        },
+        "col": "100",
+        "textLink": "UbiTrack",
+        "content": "Cette solution de suivi de l’activité de déchargement des bateaux en temps réel est composée d’une infrastructure IOT avec l’utilisation d’objet connecté et d’un logiciel web de suivi et de traitement des données (back office)."
+      }
+    ]
+  }
+}
