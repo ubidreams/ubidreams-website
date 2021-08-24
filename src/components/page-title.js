@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
-
+import Link from 'next/link'
 import { Img } from '../config/StaticImagesExport'
 
 /**
@@ -9,9 +8,9 @@ import { Img } from '../config/StaticImagesExport'
  * @param displayDirection (position des blocs > image à droite ou à gauche)
  * @param alignText
  */
-const PageTitle = ({ namespace = '', displayImage, alignText }) => {
+const PageTitle = ({ namespace = '', displayImage = '', classText = '', classImg = '', showButton = false }) => {
   const { t } = useTranslation(namespace)
-  const buttons = t('hero.buttonDetails', {}, { returnObjects: true })
+  const buttons = t('hero.buttonDetails', {}, { returnObjects: true, fallback: '' })
 
   return (
     <div
@@ -20,23 +19,20 @@ const PageTitle = ({ namespace = '', displayImage, alignText }) => {
         '-' + displayImage
       } align-items-center text-center text-md-start justify-content-between`}
     >
-      <div>
-        <Image src={Img[t('hero.img.key')]} alt={t('hero.img.alt')} data-aos='fade-right' />
+      <div className={classImg}>
+        <Image src={Img[t('hero.img.key')]} alt={t('hero.img.alt')} />
       </div>
 
-      <div className={`text-${alignText}`}>
+      <div className={classText}>
         <h1 className='display-1 fw-bold'>
-          <div data-aos='fade-left'>
-            <strong>{t('hero.title')}</strong>
-          </div>
+          <strong>{t('hero.title')}</strong>
         </h1>
-
         {t('hero.description', {}, { fallback: '' }) && (
           <p className='fs-lg text-muted mb-0' data-aos='fade-left' data-aos-delay='100'>
             {t('hero.description')}
           </p>
         )}
-        {buttons && (
+        {showButton && (
           <div className='mt-5' data-aos='fade-left' data-aos-delay='150'>
             {buttons.map((btn, index) => {
               return (

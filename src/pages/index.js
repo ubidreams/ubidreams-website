@@ -11,13 +11,14 @@ import ContactSection from '../components/contact-section'
 import SliderComponent from '../components/slider'
 import CardReference from '../components/card-reference'
 import { Recherche, IdeesRightCropped } from '../config/StaticImagesExport'
+import SliderItem from '../components/slider-item'
 
 export const Home = ({ allTestimonials, lastReferences }) => {
   const { t } = useTranslation('home')
   return (
     <Layout>
       {/* Entête > titre + illustration à droite */}
-      <PageTitle namespace='home' displayImage='reverse' alignText='left' />
+      <PageTitle namespace='home' displayImage='reverse' classText='text-left' showButton />
 
       {/* Présentation de 3 expertises (développement, IOT, Conseil) */}
       <Section>
@@ -43,12 +44,9 @@ export const Home = ({ allTestimonials, lastReferences }) => {
       {/* Triple blocs de technologies */}
       <Section>
         <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
-        {t('technology.firstSection', {}, { returnObjects: true }).map((item, index) => (
-          <SectionCardSimple key={index} data={item} index={index} type='techno' />
-        ))}
-        <div className='d-md-flex'>
-          {t('technology.secondSection', {}, { returnObjects: true }).map((item, index) => (
-            <SectionCardSimple key={index} data={item} index={index} type='techno' />
+        <div className='row'>
+          {t('technology.details', {}, { returnObjects: true }).map((item, index) => (
+            <SectionCardSimple key={index} data={item} showShadows reverse={index % 2 === 1} />
           ))}
         </div>
       </Section>
@@ -63,7 +61,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
         <TextContainer namespace={{ name: 'home', section: 'testimony' }} alignText='center' />
         <SliderComponent className='shadow-light-lg'>
           {allTestimonials.temoignages.map((item, index) => (
-            <SectionCardSimple key={index} data={item} index={index} type='temoignage' />
+            <SliderItem key={index} data={item} />
           ))}
         </SliderComponent>
       </Section>

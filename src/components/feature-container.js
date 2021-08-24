@@ -36,13 +36,13 @@ const FeatureContainer = ({ namespace = '', displayDirection }) => {
           }}
         >
           <h3>{item.title}</h3>
-          <p className='text-gray-700 mb-6 mb-md-0' style={{ textAlign: 'justify' }}>
+          <p className='text-gray-700 mb-6 mb-md-0' style={{ textAlign: 'left' }}>
             {item.description}
           </p>
         </div>
         {item.buttonDetails && (
-          <Link href={item.showButton.path}>
-            <a className='btn btn-primary-soft'>{item.showButton.name}</a>
+          <Link href={item.buttonDetails.path}>
+            <a className='btn btn-primary-soft'>{item.buttonDetails.name}</a>
           </Link>
         )}
       </div>

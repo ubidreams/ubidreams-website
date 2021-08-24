@@ -77,7 +77,7 @@ const Header = () => {
                           <MenuLink
                             key={[route?.key, item?.key].join('/')}
                             type='dropdown-item'
-                            href={route?.path}
+                            href={item.path}
                             name={t(`header.${route?.key}.${item?.key}`)}
                           />
                         )

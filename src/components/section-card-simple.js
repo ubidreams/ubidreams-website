@@ -1,35 +1,26 @@
 import ImageStatic from 'next/image'
-import { Image } from 'react-datocms'
 
 import { Img } from '../config/StaticImagesExport'
-import TextContainer from './text-container'
 import TextTechno from './text-techno'
 
-const SectionCardSimple = ({ data = {}, type = '', index }) => {
+const SectionCardSimple = ({ data = {}, reverse, showShadows = false, textJustifyBetween = false }) => {
   return (
     <div
-      className={`d-md-flex flex-md-row card align-items-center p-3 
-        ${type === 'techno' ? 'mb-3 shadow-light-lg' : 'minHeight'} 
-        ${index % 2 === 1 && type === 'techno' ? 'flex-md-row-reverse' : 'me-md-3'}`}
+      className={`p-3 mb-3
+        mw-md-${data.col ? data.col : '50'}
+        ${showShadows ? 'shadow-light-lg' : ''}
+        ${reverse ? 'flex-md-row-reverse' : ''}`}
     >
-      <div className='w-md-50 start-3 p-4 text-center position-relative' style={{ maxWidth: '12em' }}>
-        {type === 'temoignage' ? (
-          <Image
-            alt=''
-            data={{
-              ...data.img.responsiveImage
-            }}
-          />
-        ) : (
+      <div className='d-md-flex flex-md-row  align-items-center card h-100'>
+        <div className='w-md-50 start-3 p-4 text-center position-relative' style={{ maxWidth: '12em' }}>
           <ImageStatic src={Img[data.img.key]} alt={data.img.alt} />
-        )}
-      </div>
-      <div className='w-100 w-md-75 d-flex flex-column p-4'>
-        {type === 'techno' ? (
+        </div>
+        <div
+          className={`w-100 h-100 w-md-75 d-flex flex-column p-5 text-left 
+          ${textJustifyBetween ? 'justify-content-between' : ''}`}
+        >
           <TextTechno config={data} alignText='left' />
-        ) : (
-          <TextContainer config={data} alignText='left' />
-        )}
+        </div>
       </div>
     </div>
   )

@@ -55,18 +55,17 @@
     ],
     "technology" : {
         "title": "Nos technologies et méthodes favorites",
-        "firstSection": [
+        "details": [
           {
             "img": {
               "key": "multiplateforme",
               "alt": "Illustration compatibilité crossplateforme"
             },
+            "col" : "100",
             "title": "Votre application mobile multiplateforme avec",
             "textLink": "React Native",
             "content": "Nous développons des applications mobiles pour Android et IOS avec le framework React Native."
-          }
-        ],
-        "secondSection": [
+          },
           {
             "img": {
               "key": "iot",
