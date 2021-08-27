@@ -159,3 +159,16 @@ a {
 .ratio:before{
   padding-top: 0;
 }
+
+.grid{
+  position: relative;
+  height: auto !important;
+}
+
+.grid-item{
+  position: relative !important;
+}
+
+.object-cover > img, .object-cover picture img{
+  object-fit: cover;
+}

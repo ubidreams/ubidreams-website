@@ -36,16 +36,16 @@ export const Agency = ({ allMembers, galleryImg }) => {
 
       {/* Gallerie photo */}
       <Section>
-        <div className='row position-relative' data-masonry='{ percentPosition: true }'>
+        <div className='row grid'>
           {galleryImg.gallerie.map((img, index) => {
             return (
-              <div key={index} className='col-12 col-md-4 mb-2 px-md-1 position-custom'>
+              <div key={index} className='col-12 col-md-4 mb-2 px-md-1 grid-item'>
                 <Image
                   alt=''
                   data={{
                     ...img.responsiveImage
                   }}
-                  className='card-img'
+                  className='card-img object-cover h-100'
                 />
               </div>
             )
