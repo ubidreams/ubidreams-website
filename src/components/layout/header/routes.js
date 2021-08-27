@@ -1,49 +1,38 @@
 const routes = [
   {
-    key: 'home',
-    path: '/'
+    key: 'home'
   },
   {
     key: 'expertise',
-    path: '/',
     items: [
       {
-        key: 'development',
-        path: '/'
+        key: 'development'
       },
       {
-        key: 'iot',
-        path: '/'
+        key: 'iot'
       },
       {
-        key: 'consulting',
-        path: '/'
+        key: 'consulting'
       },
       {
-        key: 'design',
-        path: '/'
+        key: 'design'
       },
       {
-        key: 'expertises',
-        path: '/expertises'
+        key: 'expertises'
       }
     ]
   },
   {
-    key: 'agency',
-    path: '/'
+    key: 'agency'
   },
   {
-    key: 'references',
-    path: '/'
+    key: 'references'
   },
   {
-    key: 'blog',
-    path: '/'
+    key: 'blog'
   },
   {
-    key: 'contact',
-    path: '/'
+    key: 'contact'
   }
 ]
 

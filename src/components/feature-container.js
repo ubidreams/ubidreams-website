@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
+import { isEmpty } from 'lodash'
 
 import { Img } from '../config/StaticImagesExport'
 /**
@@ -8,9 +9,10 @@ import { Img } from '../config/StaticImagesExport'
  * config (données sous la forme d'un tableau d'objet (title, description, image, aos-delay))
  * displayDirection (position des blocs > image au dessus ou à gauche)
  */
-const FeatureContainer = ({ namespace = '', displayDirection }) => {
-  const { t } = useTranslation(namespace)
-  const features = t('featureContainer', {}, { returnObjects: true })
+const FeatureContainer = ({ namespace = null, displayDirection, data = {}, className = '' }) => {
+  const { t } = useTranslation(namespace && namespace.name)
+  const section = namespace.section ? namespace.section + '.featureContainer' : 'featureContainer'
+  const features = isEmpty(data) ? t(`${section}`, {}, { returnObjects: true }) : data.featureContainer
 
   return features?.map((item, index) => {
     return (
@@ -18,11 +20,7 @@ const FeatureContainer = ({ namespace = '', displayDirection }) => {
         key={index}
         data-aos='fade-up'
         data-aos-delay={item.delay}
-        style={{
-          display: 'flex',
-          flexDirection: displayDirection,
-          margin: '0.5em'
-        }}
+        className={`${className} d-flex flex-${displayDirection}`}
       >
         <div style={{ marginRight: '1em', minWidth: '4rem' }} className='icon mb-3'>
           <Image src={Img[item.img.key]} alt={item.img.alt} width={45} height={45} />

@@ -1,18 +1,48 @@
 {
   "header": {
-    "home": "Home",
+    "home": {
+      "name" : "Home", 
+      "path": "/"
+    }, 
     "expertise": {
       "title": "Expertises",
-      "development": "Web and mobile development",
-      "iot": "IOT - Connected devices",
-      "consulting": "Advice and Audits",
-      "design": "UI/UX design",
-      "expertises": "All our expertises"
+      "development": {
+        "name": "Web and mobile development", 
+        "path": "/"
+      },
+      "iot": {
+        "name":"IOT - Connected devices",
+        "path": "/"
+      },
+      "consulting": {
+        "name":"Advice and Audits",
+        "path": "/"
+      },
+      "design": {
+        "name":"UI/UX design",
+        "path": "/"
+      },
+      "expertises": {
+        "name": "All our expertises",
+        "path": "/expertises"
+      }
     },
-    "agency": "Agency",
-    "references": "References",
-    "blog": "Blog",
-    "contact": "Contact"
+    "agency": {
+      "name": "Agency",
+      "path": "/agency"
+    },
+    "references": {
+      "name": "References",
+      "path": "/references"
+    },
+    "blog": {
+      "name": "Blog",
+      "path": "/blog"
+    },
+    "contact": {
+      "name": "Contact",
+      "path": "/contact"
+    }
   },
   "footer" :{
     "slogan" : "Dream digital",

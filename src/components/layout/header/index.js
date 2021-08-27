@@ -77,15 +77,20 @@ const Header = () => {
                           <MenuLink
                             key={[route?.key, item?.key].join('/')}
                             type='dropdown-item'
-                            href={item.path}
-                            name={t(`header.${route?.key}.${item?.key}`)}
+                            href={t(`header.${route?.key}.${item?.key}.path`)}
+                            name={t(`header.${route?.key}.${item?.key}.name`)}
                           />
                         )
                       })}
                     </ul>
                   </li>
                 ) : (
-                  <MenuLink key={route?.key} type='nav-item' href={route?.path} name={t(`header.${route?.key}`)} />
+                  <MenuLink
+                    key={route?.key}
+                    type='nav-item'
+                    href={t(`header.${route?.key}.path`)}
+                    name={t(`header.${route?.key}.name`)}
+                  />
                 )
               })}
             </ul>

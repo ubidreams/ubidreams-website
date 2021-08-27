@@ -23,7 +23,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
       {/* Présentation de 3 expertises (développement, IOT, Conseil) */}
       <Section>
         <div className='d-md-flex d-lg-flex'>
-          <FeatureContainer namespace='home' displayDirection='column' />
+          <FeatureContainer className='m-2' namespace={{ name: 'home' }} displayDirection='column' />
         </div>
       </Section>
 
@@ -69,7 +69,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
       {/* Dernières références */}
       <Section>
         <TextContainer namespace={{ name: 'home', section: 'reference' }} alignText='center' />
-        <div className='d-md-flex'>
+        <div className='row row-cols-3'>
           <CardReference config={lastReferences} />
         </div>
       </Section>

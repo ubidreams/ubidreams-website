@@ -1,18 +1,48 @@
 {
   "header": {
-    "home": "Accueil",
+    "home": {
+      "name" : "Accueil", 
+      "path": "/"
+    }, 
     "expertise": {
       "title": "Expertises",
-      "development": "Développement Web et Mobile",
-      "iot": "IOT - Objets connectés",
-      "consulting": "Conseils et Audits",
-      "design": "UI/UX design",
-      "expertises": "Toutes nos expertises"
+      "development": {
+        "name": "Développement Web et Mobile", 
+        "path": "/"
+      },
+      "iot": {
+        "name":"IOT - Objets connectés",
+        "path": "/"
+      },
+      "consulting": {
+        "name":"Conseils et Audits",
+        "path": "/"
+      },
+      "design": {
+        "name":"UI/UX design",
+        "path": "/"
+      },
+      "expertises": {
+        "name": "Toutes nos expertises",
+        "path": "/expertises"
+      }
     },
-    "agency": "L'agence",
-    "references": "Références",
-    "blog": "Blog",
-    "contact": "Contact"
+    "agency": {
+      "name": "L'agence",
+      "path": "/agence"
+    },
+    "references": {
+      "name": "Références",
+      "path": "/references"
+    },
+    "blog": {
+      "name": "Blog",
+      "path": "/blog"
+    },
+    "contact": {
+      "name": "Contact",
+      "path": "/contact"
+    }
   },
   "footer":{
     "slogan" : "Rêvons digital",
