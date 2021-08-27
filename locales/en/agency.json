@@ -1,0 +1,144 @@
+{
+    "hero": {
+        "title": "Digital dreams",
+        "subtitle": "Ubidreams innovation story in La Rochelle since 2009"
+    },
+    "introduction": {
+        "title": "Our values",
+        "subtitle": "Consideration and evolution, continuous improvement, customer focus, innovation, eco-responsibility and many other values ​​are part of our company's DNA."
+    },
+    "valeurs": [
+        {
+            "title": "Shared by everyone",
+            "featureContainer": [
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "smile",
+                        "alt": "Icon smiley"
+                    },
+                    "title": "Mutual assistance",
+                    "description": "Because collaboration is the key to success, we all benefit from sharing our knowledge and expertise on our customers projects. “You will never code alone” could well be the developers’ maxim."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "bezier",
+                        "alt": "Icon balance"
+                    },
+                    "title": "Flexibility",
+                    "description": "Flexibility schedules mean allowing everyone to organise their time according to their constraints and preferences. Fulfillment at work while respecting co-workers and one’s own commitments."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "like",
+                        "alt": "Icon like"
+                    },
+                    "title": "Autonomy",
+                    "description": "Because it’s important to encourage the interpersonal values of each individual, Ubidreams values the decision making of its employees."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "waiting",
+                        "alt": "Icon sun"
+                    },
+                    "title": "Achievement",
+                    "description": "UBIDREAMS' challenge to its employees is to enable them to achieve their potential by valuing not only their savoir-faire but also their interpersonal skills."
+                }
+            ]
+        },
+        {
+            "title": "Our renderings and products",
+            "featureContainer": [
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "pen",
+                        "alt": "Icon pencil"
+                    },
+                    "title": "Design",
+                    "description": "At UBIDREAMS, design isn’t only a graphics rendering, it’s a complete experience for our clients, their users and also our co-workers."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "pantone",
+                        "alt": "Icon color chart"
+                    },
+                    "title": "Aesthetic",
+                    "description": "Beauty is expressed in simplicity. To meet the needs of our customers, we highlight their branding through our graphic renderings."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "brush",
+                        "alt": "Icon brush"
+                    },
+                    "title": "Creativity",
+                    "description": "Creativity is a key value at UBIDREAMS. Our co-workers are free to create and innovate, which allows us to adapt to rapid changes in the web and development world. "
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "target",
+                        "alt": "Icon target"
+                    },
+                    "title": "Initiative",
+                    "description": "Our employees' initiatives are our greatest strength. UBIDREAMS is first and foremost its employees, and being able to provide a sympathetic ear that allows us to be a lever of performance and the development of our teams."
+                }
+            ]
+        },
+        {
+            "title": "Our key words",
+            "featureContainer": [
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "timer",
+                        "alt": "Icon stopwatch"
+                    },
+                    "title": "Challenge",
+                    "description": "At UBIDREAMS, we like to be challenged,  whether it comes from your own problems or those of your collaborators. It's an opportunity for us to improve our skills, performance and expertise. It's also a guarantee that we'll never be bored at the office!"
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "code2",
+                        "alt": "Icon code tag"
+                    },
+                    "title": "Technical requirements",
+                    "description": "Because you are right to be demanding, we at UBIDREAMS we are too. We advise you as closely as possible on your needs and do our utmost to meet them by aiming for excellence."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "thunder",
+                        "alt": "Icon flash"
+                    },
+                    "title": "Reactivity",
+                    "description": "At UBIDREAMS, we set up a permanent dialogue between the teams and the customers to detect the problematic points and bring solutions."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "bulb",
+                        "alt": "Icon ampule"
+                    },
+                    "title": "Innovation",
+                    "description": "Because creativity, initiative and a taste for challenge are part of our DNA, Ubidreams is also involved in research projects and change management in order to improve performances and our process."
+                }
+            ]
+        }
+    ],
+    "equipe": {
+        "title": "Our team",
+        "subtitle": "UBIDREAMS is made up of skilled engineers and technicians who share our company  values but who also enjoy spending time together for a few sessions of musical blind tests or to meet over a drink."
+    }, 
+    "localisation": {
+        "title": "Come and meet us near La Rochelle", 
+        "subtitle": "UBIDREAMS, it’s a %color% unique localization %color% south of %color% La Rochelle", 
+        "content": "Established in the dynamic region of Grande-Aquitaine, the agency benefits from a partner of choice with universities, schools but also companies to evolve in a high-performance technological environment."
+    }
+}

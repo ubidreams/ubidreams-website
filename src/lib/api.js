@@ -86,3 +86,48 @@ export async function getLastReferences(preview, locale) {
   )
   return data?.allReferences
 }
+
+export async function getTeamMembers(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        agence(locale: ${locale}){
+          membres {
+            id
+            subtitle
+            title
+            cardCover {
+              responsiveImage {
+                ...responsiveImageFragment
+              }
+            }
+          }
+        }
+      }
+  
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.agence
+}
+
+export async function getGalleryImg(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        agence(locale: ${locale}){
+          gallerie {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+        }
+      }
+  
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.agence
+}

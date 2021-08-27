@@ -1,0 +1,144 @@
+{
+    "hero": {
+        "title": "Ubidreams, \n Ensemble rêvons digital",
+        "subtitle": "Ubidreams, une histoire d’innovation à La Rochelle depuis 2009"
+    },
+    "introduction": {
+        "title": "Nos valeurs",
+        "subtitle": "Considération et évolution, amélioration continue, satisfaction client, innovation, écoresponsabilité et bien d'autres valeurs font partes de l'ADN de notre entreprise."
+    },
+    "valeurs": [
+        {
+            "title": "Partagées par tous",
+            "featureContainer": [
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "smile",
+                        "alt": "Icon smiley"
+                    },
+                    "title": "Entraide",
+                    "description": "Parce que la collaboration est une clé de la réussite, on gagne tous à partager nos savoirs et notre expertise sur les sujets de nos clients. “You will never code alone” pourrait bien être la devise des développeurs."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "bezier",
+                        "alt": "Icon equilibre"
+                    },
+                    "title": "Souplesse",
+                    "description": "La souplesse des horaires, c’est permettre à chacun de gérer son temps selon ses contraintes et ses préférences. S’épanouir au travail tout en respectant ses collègues et ses propres engagements. "
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "like",
+                        "alt": "Icon j'aime"
+                    },
+                    "title": "Autonomie",
+                    "description": "Parce qu’il est important de cultiver les valeurs interpersonnelles de chacun, Ubidreams valorise la prise de décision de ses collaborateurs. Chaque idée est écoutée et prise en considération pour le bien commun des collaborateurs."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "waiting",
+                        "alt": "Icon soleil"
+                    },
+                    "title": "Accomplissement",
+                    "description": "L’enjeu d’UBIDREAMS auprès de ses collaborateurs est de leur permettre cet accomplissement en valorisant non seulement leur savoir-faire mais aussi leur savoir-être."
+                }
+            ]
+        },
+        {
+            "title": "Pour nos rendus et produits",
+            "featureContainer": [
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "pen",
+                        "alt": "Icon crayon"
+                    },
+                    "title": "Design",
+                    "description": "Le design, chez UBIDREAMS, ce n’est pas seulement un rendu graphique, c’est une expérience complète pour nos clients, leurs utilisateurs mais aussi nos collaborateurs."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "pantone",
+                        "alt": "Icon nuancier"
+                    },
+                    "title": "Esthétique",
+                    "description": "C’est dans la simplicité que s’exprime la beauté. Pour répondre aux besoins de nos clients, nous faisons ressortir leur image de marque à travers nos rendus graphiques."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "brush",
+                        "alt": "Icon pinceau"
+                    },
+                    "title": "Créativité",
+                    "description": "La créativité est une valeur clé chez UBIDREAMS. Nos collaborateurs sont libres d’innover et de créer, ce qui nous permet de nous adapter aux changements rapides du monde du web et du développement."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "target",
+                        "alt": "Icon cible"
+                    },
+                    "title": "Initiative",
+                    "description": "Les initiatives de nos collaborateurs sont notre plus grande force. UBIDREAMS c’est avant tout ses collaborateurs, et être capable de fournir une écoute bienveillante qui permet d’être un levier de performance et d’épanouissement de nos équipes."
+                }
+            ]
+        },
+        {
+            "title": "Nos mots clés",
+            "featureContainer": [
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "timer",
+                        "alt": "Icon chronomètre"
+                    },
+                    "title": "Challenge",
+                    "description": "Qu’il provienne de vos problématiques ou de celles de collaborateurs, chez UBIDREAMS, on aime être mis au défi. C’est pour nous l’occasion d’améliorer nos compétences, performances et notre expertise. C’est aussi la garantie de ne jamais s’ennuyer au bureau !"
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "code2",
+                        "alt": "Icon balise code"
+                    },
+                    "title": "Exigences techniques",
+                    "description": "Parce que vous avez raison d’être exigeant, chez UBIDREAMS nous le sommes aussi. Nous vous conseillons au plus près de vos besoins et mettons tout en œuvre pour y répondre en visant l’excellence."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "thunder",
+                        "alt": "Icon eclair"
+                    },
+                    "title": "Réactivité",
+                    "description": "Personne n’a envie d’obtenir une réponse 3 jours après avoir posé une question. Nous mettons en place un dialogue permanent entre les équipes et les clients pour détecter les points problématiques et y apporter des solutions."
+                },
+                {
+                    "delay": 0,
+                    "img": {
+                        "key": "bulb",
+                        "alt": "Icon ampoule"
+                    },
+                    "title": "Innovation",
+                    "description": "Parce que la créativité, la prise d’initiative et notre goût du challenge nous définissent, UBIDREAMS s’engage aussi sur des projets de recherche et de la conduite du changement afin d’améliorer nos performances et nos process."
+                }
+            ]
+        }
+    ],
+    "equipe": {
+        "title": "Les membres de l’équipe",
+        "subtitle": "UBIDREAMS ce sont des ingénieurs et des techniciens compétents qui partagent les valeurs de notre entreprise mais qui aiment aussi passer du temps ensemble pour quelques sessions de blind tests musicaux ou encore se retrouver autour d’un verre."
+    }, 
+    "localisation": {
+        "title": "Venez nous rencontrer près de La Rochelle", 
+        "subtitle": "UBIDREAMS, c’est une %color% localisation unique %color% au Sud de %color% la Rochelle", 
+        "content": "Implanté dans la région dynamique de la Grande-Aquitaine, la société bénéficie de partenaire de choix auprès des universités, des écoles mais aussi des entreprises pour évoluer dans un environnement technologique performant."
+    }
+}

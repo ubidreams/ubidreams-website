@@ -14,6 +14,14 @@ module.exports = {
     locales: ['en', 'fr'],
     defaultLocale: 'fr'
   },
+  async rewrites() {
+    return [
+      {
+        source: '/:lang(fr)?/agence',
+        destination: '/agency'
+      }
+    ]
+  },
   reactStrictMode: true,
   /* Add Your Scss File Folder Path Here */
   sassOptions: {

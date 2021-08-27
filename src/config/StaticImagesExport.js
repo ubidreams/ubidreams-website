@@ -9,20 +9,13 @@ import Iot from '../../public/img/illustrations/iot2.png'
 import Design from '../../public/img/illustrations/design.png'
 import Conseil from '../../public/img/illustrations/conseil.png'
 import Expertises from '../../public/img/illustrations/expertise.png'
-
-/* Temporary imgs, should come later from datoCMS */
-import Reference1 from '../../public/img/illustrations/Rectangle1.png'
-import Reference2 from '../../public/img/illustrations/Rectangle2.png'
-import Reference3 from '../../public/img/illustrations/Rectangle3.png'
+import AccueilCropped from '../../public/img/illustrations/accueil_cropped.png'
+import ConseilCropped from '../../public/img/illustrations/conseil_cropped.png'
 
 /* photos */
-
 import Contact from '../../public/img/photos/photo-2.jpg'
 
 /* logo */
-import Gendarmerie from '../../public/img/logos/gendarmerie.png'
-import KnaufIndustrie from '../../public/img/logos/knauf-industrie.png'
-import Elonglife from '../../public/img/logos/e-longlife.png'
 import Ubidreams from '../../public/img/logos/cropped-logo.png'
 
 /* logo solutions */
@@ -37,12 +30,25 @@ import Twitter from '../../public/img/icons/social/twitter.svg'
 import Code from '../../public/img/icons/Code.svg'
 import Smile from '../../public/img/icons/Smile.svg'
 import Router from '../../public/img/icons/Router.svg'
+import Bezier from '../../public/img/icons/Bezier-curve.svg'
+import Brush from '../../public/img/icons/Brush.svg'
+import Bulb from '../../public/img/icons/Bulb1.svg'
+import Code2 from '../../public/img/icons/Code-2.svg'
+import Like from '../../public/img/icons/Like.svg'
+import Pantone from '../../public/img/icons/Pantone.svg'
+import Pen from '../../public/img/icons/Pen&ruller.svg'
+import Target from '../../public/img/icons/Target.svg'
+import Thunder from '../../public/img/icons/Thunder-move.svg'
+import Timer from '../../public/img/icons/Timer.svg'
+import Waiting from '../../public/img/icons/Waiting.svg'
+
 import French from '../../public/img/icons/france.png'
 import English from '../../public/img/icons/united-kingdom.png'
 
-export { Recherche, IdeesRightCropped, Contact, Ubidreams, Facebook, Linkedin, Twitter }
+export { Recherche, IdeesRightCropped, ConseilCropped, AccueilCropped, Contact, Ubidreams, Facebook, Linkedin, Twitter }
 
 export const Img = {
+  /* illustration */
   home: Accueil,
   search: Recherche,
   ideas: Idees,
@@ -52,14 +58,27 @@ export const Img = {
   design: Design,
   expertises: Expertises,
   conseil: Conseil,
+  /* logo */
   logo: Ubidreams,
   fb: Facebook,
   lkd: Linkedin,
   twt: Twitter,
+  POI: POI,
+  track: track,
+  PTW: PTW,
+  /* icon */
   code: Code,
   smile: Smile,
   router: Router,
-  POI: POI,
-  track: track,
-  PTW: PTW
+  waiting: Waiting,
+  bezier: Bezier,
+  brush: Brush,
+  bulb: Bulb,
+  code2: Code2,
+  like: Like,
+  pantone: Pantone,
+  pen: Pen,
+  target: Target,
+  thunder: Thunder,
+  timer: Timer
 }

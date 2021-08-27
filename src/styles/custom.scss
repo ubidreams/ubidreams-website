@@ -67,7 +67,6 @@ $theme-colors: (
 
 }
 
-
 //Custom link
 a {
   color: $blue;
@@ -122,7 +121,7 @@ a {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
-  }
+}
 
 .adaptive-padding {
   padding-left: 7.25rem;
@@ -149,4 +148,14 @@ a {
 /* Page-title  */
 .expertise-img > div {
   max-width: 97% !important;
+}
+
+/* MAP SECTION */
+.mapContainer{
+  height: 400px;
+}
+
+  //
+.ratio:before{
+  padding-top: 0;
 }
