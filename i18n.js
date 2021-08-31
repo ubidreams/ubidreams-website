@@ -6,7 +6,8 @@ module.exports = {
     '*': ['common'],
     '/': ['home'],
     '/expertises': ['expertises'],
-    '/agency': ['agency']
+    '/agency': ['agency'],
+    'rgx:^/references': ['references']
   },
   interpolation: {
     prefix: '${',

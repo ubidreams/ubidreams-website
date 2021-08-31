@@ -8,7 +8,10 @@ const CardReference = ({ config = [] }) => {
   return config.map((item, index) => {
     return (
       <div key={index} className='mb-6'>
-        <a className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link h-100' href='#!'>
+        <a
+          className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link h-100'
+          href={item.slug ? `/references/` + item?.slug : '#!'}
+        >
           <div className='card-zoom'>
             <Image
               alt=''

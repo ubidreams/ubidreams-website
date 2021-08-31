@@ -155,11 +155,11 @@ a {
   height: 400px;
 }
 
-  //
 .ratio:before{
   padding-top: 0;
 }
 
+//Galerie image Page Agence
 .grid{
   position: relative;
   height: auto !important;
@@ -171,4 +171,29 @@ a {
 
 .object-cover > img, .object-cover picture img{
   object-fit: cover;
+}
+
+//PAGE REFERENCES
+  //taille de l'image définie à 200px et img configurée sur contain
+.img-regies{
+  height: 200px;
+}
+
+.object-contain > img, .object-contain picture img{
+  object-fit: contain;
+}
+
+//Pagination 
+
+.pagination .page-link:hover,
+.pagination .page-link:active,
+.pagination .page-link:focus {
+  background-color: mix(#000, $light-grey, 5%); 
+  color: $dark-green !important;
+  text-decoration: none !important;
+}
+
+.page-item.active .page-link{
+  background-color: $green;
+  border-color: $green;
 }

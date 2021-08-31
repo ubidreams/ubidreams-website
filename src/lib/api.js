@@ -1,6 +1,7 @@
 const API_URL = 'https://graphql.datocms.com'
 const API_TOKEN = process.env.DATOCMS_API_TOKEN
 
+/* FRAGMENTS */
 const responsiveImageFragment = `
   fragment responsiveImageFragment on ResponsiveImage {
     srcSet
@@ -14,6 +15,20 @@ const responsiveImageFragment = `
     title
     bgColor
     base64
+  }
+`
+
+const referenceFragment = `
+  fragment ReferenceRecordFragment on ReferenceRecord {
+    id
+    title
+    subtitle
+    slug
+    cardCover {
+      responsiveImage {
+        ...responsiveImageFragment
+      }
+    }
   }
 `
 
@@ -38,6 +53,7 @@ async function fetchAPI(query, { variables, preview } = {}) {
   return json.data
 }
 
+/* PAGE HOME */
 export async function getAllTestimonialsForHome(preview, locale) {
   const data = await fetchAPI(
     `
@@ -54,8 +70,7 @@ export async function getAllTestimonialsForHome(preview, locale) {
             id
           }
         }
-      }
-  
+      }  
       ${responsiveImageFragment}
     `,
     { preview }
@@ -68,18 +83,10 @@ export async function getLastReferences(preview, locale) {
     `
       {
         allReferences(locale: ${locale}, orderBy: _createdAt_DESC, first: "3") {
-          subtitle
-          title
-          slug
-          id
-          cardCover {
-            responsiveImage {
-              ...responsiveImageFragment
-            }
-          }
+          ...ReferenceRecordFragment
         }
       }
-  
+      ${referenceFragment}
       ${responsiveImageFragment}
     `,
     { preview }
@@ -87,6 +94,53 @@ export async function getLastReferences(preview, locale) {
   return data?.allReferences
 }
 
+/* PAGE REFERENCES */
+export async function getAllReferences(preview, locale, page = 0) {
+  const refPerPage = 6
+  // Si page = 0 on renvoie 0 comme index
+  // Si page > 0 on renvoie l'index de la page -1
+  const pageXReference = page === 0 ? page : page - 1 > 0 ? (page - 1) * refPerPage : 0
+  const data = await fetchAPI(
+    `
+      {
+        allReferences(locale: ${locale}, orderBy: _createdAt_DESC, first: ${refPerPage}, skip: ${pageXReference}) {
+          ...ReferenceRecordFragment
+        }
+        _allReferencesMeta {
+          count
+        }
+      }
+      ${referenceFragment}
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data
+}
+
+export async function getAllRegies(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allRegies(locale: ${locale}, orderBy: _createdAt_ASC) {
+          id
+          mission
+          nomEntreprise
+          img {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+        }
+      }
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.allRegies
+}
+
+/* PAGE AGENCE  */
 export async function getTeamMembers(preview, locale) {
   const data = await fetchAPI(
     `
