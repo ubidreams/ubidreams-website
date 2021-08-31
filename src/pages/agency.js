@@ -59,7 +59,13 @@ export const Agency = ({ allMembers, galleryImg }) => {
 
       {/* Slider valeurs */}
       <Section bgColor='bg-gray-200' display=''>
-        <SliderComponent buttonSpace='250' className='mx-md-11' slideArrow900={false}>
+        <SliderComponent
+          buttonSpace='250'
+          className='mx-md-11'
+          slideArrow900={false}
+          showArrow={{ show: true, break1000: true }}
+          option={{ slidesToShow: 1, adaptiveHeight: true, fade: true }}
+        >
           {t('valeurs', {}, { returnObjects: true }).map((item, index) => (
             <section key={index} className='container d-block'>
               <h3 className='display-4 text-center mb-4 text-uppercase'>{item.title}</h3>

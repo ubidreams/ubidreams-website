@@ -3,36 +3,44 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-const SliderComponent = ({ children, className, slideArrow900 = true }) => {
-  const responsive_900 = {
-    breakpoint: 1024,
-    settings: {
-      dots: true,
-      nextArrow: <SampleNextArrow display='d-none' />,
-      prevArrow: <SamplePrevArrow display='d-none' />
+const SliderComponent = ({ children, className, showArrow = { show: true, break1000: false }, option = {} }) => {
+  let optionArrow = {}
+  let optionResponsive = {}
+
+  if (showArrow.show) {
+    optionArrow = {
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />
     }
   }
 
-  const optionResponsive = slideArrow900 ? {} : responsive_900
+  if (showArrow.break1000) {
+    optionResponsive = {
+      breakpoint: 1024,
+      settings: {
+        dots: true,
+        slidesToShow: 1,
+        nextArrow: <SampleNextArrow display='d-none' />,
+        prevArrow: <SamplePrevArrow display='d-none' />
+      }
+    }
+  }
 
   const settings = {
+    ...option,
+    ...optionArrow,
     dots: true,
     className: className,
-    fade: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    adaptiveHeight: true,
     swipeToSlide: true,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
     responsive: [
       optionResponsive,
       {
         breakpoint: 480,
         settings: {
           dots: true,
+          slidesToShow: 1,
           nextArrow: <SampleNextArrow display='d-none' />,
           prevArrow: <SamplePrevArrow display='d-none' />
         }

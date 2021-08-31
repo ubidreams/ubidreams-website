@@ -59,7 +59,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
       {/* Slider de témoignage clients */}
       <Section bgColor='bg-gray-200'>
         <TextContainer namespace={{ name: 'home', section: 'testimony' }} alignText='center' />
-        <SliderComponent className='shadow-light-lg'>
+        <SliderComponent className='shadow-light-lg' option={{ slidesToShow: 1, adaptiveHeight: true, fade: true }}>
           {allTestimonials.temoignages.map((item, index) => (
             <SliderItem key={index} data={item} />
           ))}
