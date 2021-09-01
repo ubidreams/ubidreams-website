@@ -1,44 +1,44 @@
+import { useState, useEffect, useCallback } from 'react'
 import { getAllReferences, getAllRegies } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
-import CardReference from '../../components/card-reference'
+import { Image } from 'react-datocms'
 
+import CardReference from '../../components/card-reference'
 import Layout from '../../components/layout/layout'
 import Section from '../../components/section'
 import Title from '../../components/title'
-import Link from 'next/link'
 import SliderComponent from '../../components/slider'
-import { Image } from 'react-datocms'
+import PaginationComponent from '../../components/pagination'
 
-export const References = ({ sixReferences, totalReferences, regies, page = 1 }) => {
+export const References = ({ references, regies }) => {
   const { t } = useTranslation('references')
-  const PageLinks = () => {
-    let links = []
-    for (var i = 1; i <= Math.ceil(totalReferences / 6); i++) {
-      links.push(
-        <li key={i} className={`page-item ${page == i ? 'active' : ''}`} aria-current='page'>
-          <Link href={`/references/${i}`}>
-            <a className='page-link text-green'>{i}</a>
-          </Link>
-        </li>
-      )
+  const [activePage, setActivePage] = useState(1)
+  const [refPaginated, setRefPaginated] = useState([])
+
+  useEffect(() => {
+    const referencesByPage = () => {
+      let array = []
+      references.forEach((el, i) => {
+        if (i % 6 === 0) {
+          array.push(references.slice(i, i + 6))
+        }
+      })
+      array.length != 0 ? setRefPaginated(array[activePage - 1]) : setRefPaginated([])
     }
-    return links
-  }
+    referencesByPage()
+    window.scrollTo(0, 0)
+  }, [activePage, references])
 
   return (
     <Layout>
       <Section>
         <Title title={t('realisations.title')} subtitle={t('realisations.subtitle')} />
         <div className='row row-cols-md-3 mt-6'>
-          <CardReference config={sixReferences} />
+          <CardReference config={refPaginated} />
         </div>
-        {totalReferences > 6 && (
-          <nav aria-label='pagination'>
-            <ul className='pagination pagination-sm justify-content-center mt-4'>
-              <PageLinks />
-            </ul>
-          </nav>
-        )}
+        <div className='text-center'>
+          <PaginationComponent data={references} current={activePage} onChange={setActivePage} />
+        </div>
       </Section>
       <Section>
         <Title title={t('regies.title')} subtitle={t('regies.subtitle')} />
@@ -80,9 +80,7 @@ export default References
 export async function getStaticProps({ preview, locale }) {
   const references = (await getAllReferences(preview, locale)) || []
   const regies = (await getAllRegies(preview, locale)) || []
-  const sixReferences = references.allReferences
-  const totalReferences = references._allReferencesMeta.count
   return {
-    props: { sixReferences, totalReferences, regies }
+    props: { references, regies }
   }
 }

@@ -95,19 +95,12 @@ export async function getLastReferences(preview, locale) {
 }
 
 /* PAGE REFERENCES */
-export async function getAllReferences(preview, locale, page = 0) {
-  const refPerPage = 6
-  // Si page = 0 on renvoie 0 comme index
-  // Si page > 0 on renvoie l'index de la page -1
-  const pageXReference = page === 0 ? page : page - 1 > 0 ? (page - 1) * refPerPage : 0
+export async function getAllReferences(preview, locale) {
   const data = await fetchAPI(
     `
       {
-        allReferences(locale: ${locale}, orderBy: _createdAt_DESC, first: ${refPerPage}, skip: ${pageXReference}) {
+        allReferences(locale: ${locale}, orderBy: _createdAt_DESC) {
           ...ReferenceRecordFragment
-        }
-        _allReferencesMeta {
-          count
         }
       }
       ${referenceFragment}
@@ -115,7 +108,7 @@ export async function getAllReferences(preview, locale, page = 0) {
     `,
     { preview }
   )
-  return data
+  return data?.allReferences
 }
 
 export async function getAllRegies(preview, locale) {

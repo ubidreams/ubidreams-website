@@ -1,6 +1,6 @@
 import Pagination from 'rc-pagination'
 
-export const PaginationComponent = ({ posts = [], current = 1, onChange }) => {
+export const PaginationComponent = ({ data = [], current = 1, onChange }) => {
   const itemRender = (current, type, element) => {
     if (type === 'page') {
       return (
@@ -14,7 +14,7 @@ export const PaginationComponent = ({ posts = [], current = 1, onChange }) => {
 
   return (
     <Pagination
-      total={posts.length}
+      total={data.length}
       defaultPageSize={6}
       onChange={onChange}
       itemRender={itemRender}

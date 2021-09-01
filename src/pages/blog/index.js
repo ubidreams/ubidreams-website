@@ -73,6 +73,7 @@ export const References = ({ posts, tags, locale }) => {
       array.length != 0 ? setPostsPaginated(array[activePage - 1]) : setPostsPaginated([])
     }
     postsByPage()
+    window.scrollTo(0, 0)
   }, [activePage, visiblePosts])
 
   return (
@@ -135,7 +136,7 @@ export const References = ({ posts, tags, locale }) => {
           )}
         </div>
         <div className='text-center'>
-          <PaginationComponent posts={visiblePosts} current={activePage} onChange={setActivePage} />
+          <PaginationComponent data={visiblePosts} current={activePage} onChange={setActivePage} />
         </div>
       </Section>
     </Layout>
