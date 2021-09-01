@@ -1,5 +1,6 @@
 import '../../public/css/theme.bundle.css'
 import '../../public/css/libs.bundle.css'
+import 'rc-pagination/assets/index.css'
 import '../styles/custom.scss'
 import React from 'react'
 import appWithI18n from 'next-translate/appWithI18n'

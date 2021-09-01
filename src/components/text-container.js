@@ -1,8 +1,6 @@
 import useTranslation from 'next-translate/useTranslation'
 import ReactHtmlParser from 'react-html-parser'
 
-import Link from 'next/link'
-
 //check for more informations: https://github.com/vinissimus/next-translate/issues/429
 const checkIfTraductionExists = (t, config, section, field) => {
   return config && config[field] ? config[field] : t(section + `.${field}`, {}, { fallback: '' })

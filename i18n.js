@@ -7,7 +7,8 @@ module.exports = {
     '/': ['home'],
     '/expertises': ['expertises'],
     '/agency': ['agency'],
-    'rgx:^/references': ['references']
+    'rgx:^/references': ['references'],
+    'rgx:^/blog': ['blog']
   },
   interpolation: {
     prefix: '${',

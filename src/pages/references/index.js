@@ -11,7 +11,6 @@ import { Image } from 'react-datocms'
 
 export const References = ({ sixReferences, totalReferences, regies, page = 1 }) => {
   const { t } = useTranslation('references')
-  console.log(page)
   const PageLinks = () => {
     let links = []
     for (var i = 1; i <= Math.ceil(totalReferences / 6); i++) {

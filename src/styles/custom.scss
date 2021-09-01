@@ -19,7 +19,6 @@ $theme-colors: (
   "orange": $orange
 );
 
-
 // Generate color utilities
 @each $color, $value in $theme-colors {
     //`.bg-*`  
@@ -65,8 +64,18 @@ $theme-colors: (
       text-decoration: none !important;
     }
 
-}
+    /* SOFT BADGE */
+    .badge.bg-#{$color}-soft.active{
+      background-color: $value;
+      color:#fff;
+    }
 
+    .badge.bg-#{$color}-soft{
+      background-color: rgba(80,102,144,.1);
+      color: #506690;
+    }
+
+}
 //Custom link
 a {
   color: $blue;
@@ -182,18 +191,43 @@ a {
 .object-contain > img, .object-contain picture img{
   object-fit: contain;
 }
+/* PAGE BLOG */
+.badge.active:hover {
+  color:#fff !important;
+}
+
+.search-bar button:focus, .nav button:focus{
+  outline: none;
+}
+
 
 //Pagination 
-
-.pagination .page-link:hover,
-.pagination .page-link:active,
-.pagination .page-link:focus {
-  background-color: mix(#000, $light-grey, 5%); 
-  color: $dark-green !important;
-  text-decoration: none !important;
+.rc-pagination-prev, .rc-pagination-next{
+  display: none
 }
 
-.page-item.active .page-link{
-  background-color: $green;
+.rc-pagination-item {
+  min-height: 1em;
+  font-family: inherit;
+  font-size: 1.3em;
+  border: none;
+
+  & a {
+    color: $green
+  }
+}
+
+.rc-pagination-item a:hover,
+.rc-pagination-item a:focus,
+.rc-pagination-item a:active{
+  text-decoration: none !important;
+  color: $dark-green !important;
+}
+
+.rc-pagination-item-active {
+  background-color: mix(#000, $light-grey, 5%); 
+  text-decoration: none;
+  color: $dark-green !important; 
   border-color: $green;
 }
+

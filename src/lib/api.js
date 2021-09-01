@@ -185,3 +185,41 @@ export async function getGalleryImg(preview, locale) {
   )
   return data?.agence
 }
+
+/* PAGE BLOG */
+export async function getBlog(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allPosts(locale: ${locale}, orderBy: date_DESC) {
+          date
+          slug
+          title
+          content
+          author {
+            name
+          }
+          heroCover {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+          tags {
+            name
+            slug
+            id
+          }
+        },
+        allTags(locale: ${locale}) {
+          name
+          id
+          slug
+        }
+      }
+  
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data
+}

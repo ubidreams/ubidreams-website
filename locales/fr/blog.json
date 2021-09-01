@@ -1,0 +1,11 @@
+{
+    "blog" : {
+        "title": "Le Blog", 
+        "subtitle": "Découvrez l'actualité de l'agence, nos projets, nos technologies ...",
+        "search" : {
+            "placeholder" : "Rechercher", 
+            "button": "Rechercher"
+        },
+        "noResult": "Nous n'avons aucun résultat correspondant à votre recherche."
+    }
+}

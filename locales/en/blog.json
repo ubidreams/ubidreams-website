@@ -1,0 +1,11 @@
+{
+    "blog" : {
+        "title": "Blog", 
+        "subtitle": "Discover the agency's news, our projects, our technologies...",
+        "search" : {
+            "placeholder" : "Search our blog", 
+            "button": "Search"
+        },
+        "noResult": "We have no results corresponding to your search."
+    }
+}
