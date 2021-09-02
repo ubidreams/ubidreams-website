@@ -8,6 +8,10 @@ import Link from 'next/link'
 const TextTechno = ({ config }) => {
   const { title, content, textLink, buttonDetails } = config
 
+  function splitColor(string, character) {
+    return string.split(character)
+  }
+
   return (
     <>
       <h4 className='fw-bold'>
@@ -15,7 +19,21 @@ const TextTechno = ({ config }) => {
         {textLink && textLink && <a href='#'>{textLink}</a>}
       </h4>
 
-      {content && <p className='text-muted mb-0'>{content}</p>}
+      {content && (
+        <p className='text-muted mb-0'>
+          {splitColor(content, '%color%').map((word, index) => {
+            if ((index + 1) % 2 == 0) {
+              return (
+                <span key={index} className='text-green'>
+                  {word}
+                </span>
+              )
+            } else {
+              return word
+            }
+          })}
+        </p>
+      )}
 
       {buttonDetails && (
         <Link href={buttonDetails.path}>

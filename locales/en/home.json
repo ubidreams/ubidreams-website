@@ -74,7 +74,7 @@
             "title": "Your IOT project with",
             "textLink": "Beacon",
             "content":
-              "We build connected architectures basing ourselves on communication technologies like Beacons."
+              "We build connected architectures basing ourselves on communication technologies like %color% Beacons."
           },
           {
             "img": {
@@ -84,7 +84,7 @@
             "title": "Optimized use thanks to",
             "textLink": "UX design",
             "content":
-              "We think your application with the most attractive and qualitative user experience."
+              "We think your application with the most attractive and qualitative %color% user experience."
           }
         ]
       },

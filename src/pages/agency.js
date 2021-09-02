@@ -2,7 +2,6 @@ import { getTeamMembers, getGalleryImg } from '../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 import { Image } from 'react-datocms'
 
-import CardReference from '../components/card-reference'
 import FeatureContainer from '../components/feature-container'
 import Layout from '../components/layout/layout'
 import Section from '../components/section'
@@ -11,6 +10,7 @@ import Title from '../components/title'
 import { AccueilCropped, ConseilCropped, Contact } from '../config/StaticImagesExport'
 import '../components/map.js'
 import MapBox from '../components/map.js'
+import CardMember from '../components/card-member'
 
 export const Agency = ({ allMembers, galleryImg }) => {
   const { t } = useTranslation('agency')
@@ -89,7 +89,7 @@ export const Agency = ({ allMembers, galleryImg }) => {
           <p className='lead text-muted'>{t('equipe.subtitle')}</p>
         </div>
         <div className='row row-cols-12 row-cols-md-3 mt-6'>
-          <CardReference config={allMembers.membres} />
+          <CardMember config={allMembers.membres} />
         </div>
       </Section>
 

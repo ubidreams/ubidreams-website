@@ -143,6 +143,7 @@ export async function getTeamMembers(preview, locale) {
             id
             subtitle
             title
+            citation
             cardCover {
               responsiveImage {
                 ...responsiveImageFragment

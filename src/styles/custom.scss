@@ -137,6 +137,68 @@ a {
   padding-right: 7.25rem;
 }
 
+
+
+/* Page-title  */
+.expertise-img > div {
+  max-width: 97% !important;
+}
+
+/* PAGE AGENCE */
+.card-blur{
+  box-sizing: border-box;
+  overflow: hidden!important;
+  border-radius: inherit;
+}
+
+.citation{
+  opacity: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.card:hover .card-blur {
+  position: relative;
+
+  & > .card-img-top{
+    transition: all 0.3s ease;
+    filter: blur(7px);
+  }
+
+  & > .card-img-overlay{
+    transition: all 1s ease;
+    opacity: 1;
+  }
+}
+
+.citation code {
+  color: $light-grey !important;
+}
+
+/* MAP SECTION */
+.mapContainer{
+  height: 400px;
+}
+
+.ratio:before{
+  padding-top: 0;
+}
+
+//Galerie image 
+.grid{
+  position: relative;
+  height: auto !important;
+}
+
+.grid-item{
+  position: relative !important;
+}
+
+.object-cover > img, .object-cover picture img{
+  object-fit: cover;
+}
+
+//PAGE REFERENCES
 /* Card Reference */
 .card-zoom div {
   height: 100%;
@@ -154,35 +216,6 @@ a {
   min-height: 20em;
 }
 
-/* Page-title  */
-.expertise-img > div {
-  max-width: 97% !important;
-}
-
-/* MAP SECTION */
-.mapContainer{
-  height: 400px;
-}
-
-.ratio:before{
-  padding-top: 0;
-}
-
-//Galerie image Page Agence
-.grid{
-  position: relative;
-  height: auto !important;
-}
-
-.grid-item{
-  position: relative !important;
-}
-
-.object-cover > img, .object-cover picture img{
-  object-fit: cover;
-}
-
-//PAGE REFERENCES
   //taille de l'image définie à 200px et img configurée sur contain
 .img-regies{
   height: 200px;

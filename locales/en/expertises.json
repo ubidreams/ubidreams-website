@@ -39,7 +39,7 @@
           "alt": "Cross-platform compatibility illustration"
         },
         "title": "Web and mobile development",
-        "content": "We master the last tools and technologies to create your application and respond in a custom way to your problems (API, Databases, PWA, native development….)."
+        "content": "We master the %color% last tools and technologies %color% to create your application and respond in a custom way to your problems (API, Databases, PWA, native development….)."
       },
       {
         "img": {
@@ -47,7 +47,7 @@
           "alt": "Web design illustration"
         },
         "title": "Design UX/UI",
-        "content": "Our designers create the mock-up and graphic design of your projects to create a quality experience for your users. We make sure to offer you the latest graphic trend to provide you impactful designs."
+        "content": "Our designers create the mock-up and graphic design of your projects to create a %color% quality experience %color% for your users. We make sure to offer you the latest graphic trend to provide you %color% impactful designs%color%."
       },
       {
         "img": {
@@ -55,7 +55,7 @@
           "alt": "IConnected truck illustration"
         },
         "title": "IOT",
-        "content": "We support you on all stages of your project, from creation of IOT architecture to on-site installation, not forgetting the development of a web operating interface."
+        "content": "We support you on all stages of your project, from creation of %color% IOT architecture %color% to on-site installation, not forgetting the development of a web operating interface."
       },
       {
         "img": {
@@ -63,7 +63,7 @@
           "alt": "Brainstorming illustration"
         },
         "title": "Consulting",
-        "content": "Our experts support you and help you to bring an innovative and operational approach to your digital strategy. We offer you efficient monitoring and personalized advice on a variety of topics."
+        "content": "Our experts support you and help you to bring %color% an innovative and operational approach %color% to your digital strategy. We offer you efficient monitoring and personalized advice on a variety of topics."
       }
     ]
   },
@@ -83,7 +83,7 @@
           "alt": "Logo UbiPOI"
         },
         "textLink": "UbiPOI",
-        "content": "In the aim to help professionals to follow scenarios during an Internal Operation Plan, we developed a web application which allows users to make the inventory of the stocks and to follow the evolution of a disaster."
+        "content": "In the aim to help professionals to follow scenarios during an %color% Internal Operation Plan%color%, we developed a web application which allows users to make the inventory of the stocks and to follow the evolution of a disaster."
       },
       {
         "img": {
@@ -91,7 +91,7 @@
           "alt": "Logo UbiPTW"
         },
         "textLink": "UbiPTW",
-        "content": "It’s a web software which makes easier digital edition of work permit for workers on your operating site in a simple and intuitive way."
+        "content": "It’s a web software which makes easier digital edition of %color% work permit %color% for workers on your operating site in a simple and intuitive way."
       },
       {
         "img": {
@@ -100,7 +100,7 @@
         },
         "col": "100",
         "textLink": "UbiTrack",
-        "content": "This solution for monitoring boat unloading activity in real time is composed of IOT infrastructure with the use of connected devices and a web-based software for monitoring and processing data (back office)."
+        "content": "This solution for monitoring %color% boat unloading activity %color% in real time is composed of IOT infrastructure with the use of connected devices and a web-based software for monitoring and processing data (back office)."
       }
     ]
   }

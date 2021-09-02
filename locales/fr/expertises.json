@@ -40,7 +40,7 @@
           "alt": "Illustration compatibilité crossplateforme"
         },
         "title": "Développement web et mobile",
-        "content": "Nous maîtrisons les derniers outils et technologies de développement pour créer vos applications et répondre de manière personnalisée à vos problématiques.",
+        "content": "Nous maîtrisons les %color% derniers outils et technologies %color% de développement pour créer vos applications et répondre de manière personnalisée à vos problématiques.",
         "buttonDetails": {
           "name": "En savoir plus",
           "path": "/",
@@ -54,7 +54,7 @@
           "alt": "Illustration design web"
         },
         "title": "Design UX/UI",
-        "content": "Nous veillons à vous proposer les dernières tendances graphiques pour vous offrir des designs percutants et créer une expérience de qualité pour vos utilisateurs.",
+        "content": "Nous veillons à vous proposer les dernières tendances graphiques pour vous offrir des %color% designs percutants %color% et créer une %color% expérience de qualité %color% pour vos utilisateurs.",
         "buttonDetails": {
           "name": "En savoir plus",
           "path": "/",
@@ -68,7 +68,7 @@
           "alt": "Illustration véhicule connecté"
         },
         "title": "IOT",
-        "content": "Nous vous accompagnons sur toutes les phases de développement de vos projets, de la création de l’architecture IOT à l’installation sur site, sans oublier le développement d’une interface web d'exploitation.",
+        "content": "Nous vous accompagnons sur toutes les phases de développement de vos projets, de la création de %color% l'architecture IOT %color% à l’installation sur site, sans oublier le développement d’une interface web d'exploitation.",
         "buttonDetails": {
           "name": "En savoir plus",
           "path": "/",
@@ -82,7 +82,7 @@
           "alt": "Illustration brainstorming"
         },
         "title": "Conseil",
-        "content": "Nos experts vous accompagnent et vous aident à apporter une approche innovante et opérationnelle pour votre stratégie numérique.",
+        "content": "Nos experts vous accompagnent et vous aident à apporter %color% une approche innovante et opérationnelle %color% pour votre stratégie numérique.",
         "buttonDetails": {
           "name": "En savoir plus",
           "path": "/",
@@ -107,7 +107,7 @@
           "alt": "Logo UbiPOI"
         },
         "textLink": "UbiPOI",
-        "content": "Afin d’aider les professionnels à suivre les scénarios lors d’un Plan d’Opération Interne, nous avons développé une application web qui permet de faire l’état des lieux des stocks et de suivre l’évolution d’un sinistre."
+        "content": "Afin d’aider les professionnels à suivre les scénarios lors d’un %color% Plan d’Opération Interne%color%, nous avons développé une application web qui permet de faire l’état des lieux des stocks et de suivre l’évolution d’un sinistre."
       },
       {
         "img": {
@@ -115,7 +115,7 @@
           "alt": "Logo UbiPTW"
         },
         "textLink": "UbiPTW",
-        "content": "Ce logiciel web permet de faciliter l’édition numérique des permis de travail des intervenants sur votre site d’exploitation de façon simple et intuitive."
+        "content": "Ce logiciel web permet de faciliter l’édition numérique des %color% permis de travail %color% des intervenants sur votre site d’exploitation de façon simple et intuitive."
       },
       {
         "img": {
@@ -124,7 +124,7 @@
         },
         "col": "100",
         "textLink": "UbiTrack",
-        "content": "Cette solution de suivi de l’activité de déchargement des bateaux en temps réel est composée d’une infrastructure IOT avec l’utilisation d’objet connecté et d’un logiciel web de suivi et de traitement des données (back office)."
+        "content": "Cette solution de suivi de %color% l’activité de déchargement des bateaux %color% en temps réel est composée d’une infrastructure IOT avec l’utilisation d’objet connecté et d’un logiciel web de suivi et de traitement des données (back office)."
       }
     ]
   }

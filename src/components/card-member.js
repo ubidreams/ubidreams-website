@@ -1,18 +1,16 @@
 import { Image } from 'react-datocms'
+import ReactHtmlParser from 'react-html-parser'
 
 /**
- * Card référence projet
+ * Card collaborateur
  * @param config (données sous la forme d'un tableau d'objet)
  */
-const CardReference = ({ config = [] }) => {
+const CardMember = ({ config = [] }) => {
   return config.map((item, index) => {
     return (
       <div key={index} className='mb-6'>
-        <a
-          className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link h-100'
-          href={`/references/` + item?.slug}
-        >
-          <div className='card-zoom'>
+        <div className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link h-100'>
+          <div className={item?.citation ? 'card-blur' : ''}>
             <Image
               alt=''
               data={{
@@ -20,6 +18,11 @@ const CardReference = ({ config = [] }) => {
               }}
               className='card-img-top'
             />
+            {item?.citation && (
+              <div className='card-img-overlay citation'>
+                <div className='card-text'>{ReactHtmlParser(item?.citation)}</div>
+              </div>
+            )}
           </div>
 
           <div className='card-body'>
@@ -33,10 +36,10 @@ const CardReference = ({ config = [] }) => {
 
             <h4 className='mb-0'>{item.title}</h4>
           </div>
-        </a>
+        </div>
       </div>
     )
   })
 }
 
-export default CardReference
+export default CardMember

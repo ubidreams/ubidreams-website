@@ -74,7 +74,7 @@
             "title": "Votre projet IoT avec",
             "textLink": "Beacon",
             "content":
-              "Nous créons des infrastructures connectées en nous basant sur des technologies de communication comme les Beacons"
+              "Nous créons des infrastructures connectées en nous basant sur des technologies de communication comme %color% les Beacons%color%."
           },
           {
             "img": {
@@ -84,7 +84,7 @@
             "title": "Une utilisation optimisée grâce à l’",
             "textLink": "UX design",
             "content":
-              "Nous plaçons les utilisateurs finaux au centre du processus de création afin de leur offrir la meilleure expérience utilisateur possible."
+              "Nous plaçons les utilisateurs finaux au centre du processus de création afin de leur offrir la meilleure %color% expérience utilisateur %color% possible."
           }
         ]
       },
