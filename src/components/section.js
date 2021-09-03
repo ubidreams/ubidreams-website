@@ -1,6 +1,6 @@
-const Section = ({ bgColor = '', children, customStyle = {}, display = 'container' }) => {
+const Section = ({ bgClass = '', children, customStyle = {}, display = 'container' }) => {
   return (
-    <section className={'bg-between py-8 py-md-11' + ' ' + bgColor} style={customStyle}>
+    <section className={'py-8 py-md-11' + ' ' + bgClass} style={customStyle}>
       <div className={`${display}`}>{children}</div>
     </section>
   )

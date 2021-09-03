@@ -49,7 +49,8 @@
     "location" : {
       "title": "Localisation",
       "address": "3 Boulevard du commandant Charcot, \n17440 Aytré, \nFrance",
-      "phone": "05 16 49 27 26"
+      "phone": "05 16 49 27 26",
+      "mail": "contact@ubidreams.com"
     },
     "legal" : { 
       "title": "Légal", 
@@ -75,5 +76,12 @@
     },
     "content": "Une question, un projet ? \n Nous vous aidons définir votre projet.",
     "button": "Contactez-nous"
+  },
+  "error" : {
+    "404": {
+      "title": "Nous rencontrons un problème",
+      "content": "Votre navigation a conduit à une erreur. Pas d'inquiétude nous travaillons à résoudre ces problèmes.",
+      "button": "Retourner à l'accueil"
+    }
   }
 }

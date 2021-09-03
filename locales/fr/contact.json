@@ -1,0 +1,22 @@
+{
+    "hero": {
+        "title": "Un projet, une question ?",
+        "subtitle": "Nous vous aidons à réaliser votre projet."
+    },
+    "coordonnee": {
+        "location-title": "Passez-nous voir",
+        "phone-title": "Appelez-nous",
+        "mail-title": "Envoyez-nous un message"
+    },
+    "form" :{
+        "title": "Laissez-nous un message",
+        "subtitle": "Nous sommes à votre écoute et avons hâte de pouvoir échanger sur votre projet. N'hésitez pas à nous contacter, nous répondrons dans les plus bref délais",
+        "identite": "Nom, prénom",
+        "email": "Email",
+        "email-format": "Vous devez respecter le format suivant : example@mail.com",
+        "message": "Comment pouvons-nous vous aider ?",
+        "button": "Envoyer",
+        "error": "Nous rencontrons un problème à l'envoi de votre message. Veuillez nous excuser pour la gène occasionnée. Vous pouvez réessayer ou envoyer directement à l'adresse : contact@ubidreams.com",
+        "success": "Votre message a bien été envoyé, merci de votre confiance et à bientôt."
+    }
+}

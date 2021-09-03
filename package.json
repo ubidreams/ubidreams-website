@@ -17,6 +17,7 @@
     "mapbox-gl": "^2.4.1",
     "next": "11.0.1",
     "next-translate": "^1.0.7",
+    "nodemailer": "^6.6.3",
     "rc-pagination": "^3.1.9",
     "react": "17.0.2",
     "react-datocms": "^1.6.3",

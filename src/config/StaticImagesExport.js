@@ -14,6 +14,7 @@ import ConseilCropped from '../../public/img/illustrations/conseil_cropped.png'
 
 /* photos */
 import Contact from '../../public/img/photos/photo-2.jpg'
+import ContactHeader from '../../public/img/photos/photo-14.jpg'
 
 /* logo */
 import Ubidreams from '../../public/img/logos/cropped-logo.png'
@@ -45,7 +46,18 @@ import Waiting from '../../public/img/icons/Waiting.svg'
 import French from '../../public/img/icons/france.png'
 import English from '../../public/img/icons/united-kingdom.png'
 
-export { Recherche, IdeesRightCropped, ConseilCropped, AccueilCropped, Contact, Ubidreams, Facebook, Linkedin, Twitter }
+export {
+  Recherche,
+  IdeesRightCropped,
+  ConseilCropped,
+  AccueilCropped,
+  Contact,
+  ContactHeader,
+  Ubidreams,
+  Facebook,
+  Linkedin,
+  Twitter
+}
 
 export const Img = {
   /* illustration */

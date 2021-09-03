@@ -1,80 +1,109 @@
 /* UBIDREAMS COLORS */
-$light-grey: #F1F4F8;
-$dark-grey: #6B7C93;
-$grey: #E6ECF8;
-$grey-blue: #9FC5D7;
-$blue: #2D90CA;
-$green: #59BDB1;
-$dark-green: #3A9185;
-$orange: #DEB68C;
+$light-grey: #f1f4f8;
+$dark-grey: #6b7c93;
+$grey: #e6ecf8;
+$grey-blue: #9fc5d7;
+$blue: #2d90ca;
+$green: #59bdb1;
+$dark-green: #3a9185;
+$orange: #deb68c;
+
+/* OPACITY VALUES */
+$v25: 0.25;
+$v50: 0.5;
+$v75: 0.75;
+$v1: 1;
 
 $theme-colors: (
-  "light-grey": $light-grey,
-  "dark-grey": $dark-grey,
-  "grey": $grey,
-  "grey-blue": $grey-blue,
-  "blue": $blue,
-  "green": $green,
-  "dark-green": $dark-green,
-  "orange": $orange
+  'light-grey': $light-grey,
+  'dark-grey': $dark-grey,
+  'grey': $grey,
+  'grey-blue': $grey-blue,
+  'blue': $blue,
+  'green': $green,
+  'dark-green': $dark-green,
+  'orange': $orange
+);
+
+$axes: ('top', 'bottom', 'left', 'right');
+
+$opacity: (
+  '25': $v25,
+  '50': $v50,
+  '75': $v75,
+  '100': $v1
 );
 
 // Generate color utilities
 @each $color, $value in $theme-colors {
-    //`.bg-*`  
-    .bg-#{$color} {
+  //`.bg-*`
+  .bg-#{$color} {
+    background-color: $value;
+  }
+
+  //`.text-*`
+  .text-#{$color} {
+    color: $value;
+  }
+
+  /* BUTTON */
+  .btn-#{$color} {
+    color: #fff;
+    background-color: $value;
+    border-color: $value;
+  }
+
+  .btn-#{$color}:hover,
+  .btn-#{$color}:active,
+  .btn-#{$color}:focus,
+  .btn-#{$color}.active {
+    background: mix(#000, $value, 10%);
+    border-color: mix(#000, $value, 10%);
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  /* SOFT BUTTON */
+  .soft-#{$color} {
+    color: $value;
+    background-color: $light-grey;
+    border-color: $value;
+  }
+
+  .soft-#{$color}:hover,
+  .soft-#{$color}:active,
+  .soft-#{$color}:focus,
+  .soft-#{$color}.active {
+    background-color: mix(#000, $light-grey, 5%);
+    color: $value !important;
+    text-decoration: none !important;
+  }
+
+  /* SOFT BADGE */
+  .badge.bg-#{$color}-soft.active {
+    background-color: $value;
+    color: #fff;
+  }
+
+  .badge.bg-#{$color}-soft {
+    background-color: rgba(80, 102, 144, 0.1);
+    color: #506690;
+  }
+
+  /* BG-COLOR-OPACITY */
+  @each $var, $intensity in $opacity {
+    .bg-#{$color}-#{$var} {
       background-color: $value;
+      opacity: $intensity;
     }
+  }
 
-    //`.text-*`
-    .text-#{$color} {
-      color: $value;
+  /* BORDER */
+  @each $axe in $axes {
+    .border-#{$axe}.border-#{$color} {
+      border-color: $value !important;
     }
-
-    /* BUTTON */
-    .btn-#{$color} {
-      color: #fff;
-      background-color: $value;
-      border-color: $value;
-    }
-
-    .btn-#{$color}:hover,
-    .btn-#{$color}:active,
-    .btn-#{$color}:focus,
-    .btn-#{$color}.active {
-      background: mix(#000, $value, 10%);
-      border-color:  mix(#000, $value, 10%);
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-
-    /* SOFT BUTTON */
-    .soft-#{$color} {
-      color: $value;
-      background-color: $light-grey;
-      border-color: $value;
-    }
-    
-    .soft-#{$color}:hover,
-    .soft-#{$color}:active,
-    .soft-#{$color}:focus,
-    .soft-#{$color}.active {
-      background-color: mix(#000, $light-grey, 5%); 
-      color: $value !important;
-      text-decoration: none !important;
-    }
-
-    /* SOFT BADGE */
-    .badge.bg-#{$color}-soft.active{
-      background-color: $value;
-      color:#fff;
-    }
-
-    .badge.bg-#{$color}-soft{
-      background-color: rgba(80,102,144,.1);
-      color: #506690;
-    }
-
+  }
 }
 //Custom link
 a {
@@ -84,7 +113,6 @@ a {
     color: $blue !important;
     text-decoration: underline !important;
   }
-
 }
 
 .custom-card-link:hover {
@@ -92,18 +120,19 @@ a {
 }
 
 //Custom next/prev buttun for slider
-.slick-prev-custom, .slick-next-custom {
+.slick-prev-custom,
+.slick-next-custom {
   font-size: 0;
   line-height: 0;
   position: absolute;
   top: 50%;
   padding: 0;
-  width: 3rem; 
+  width: 3rem;
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   cursor: pointer;
@@ -123,7 +152,7 @@ a {
 //custom background between
 @media (max-width: 1500px) {
   .bg-between {
-      background-image: none !important;
+    background-image: none !important;
   }
 
   .adaptive-padding {
@@ -137,21 +166,19 @@ a {
   padding-right: 7.25rem;
 }
 
-
-
 /* Page-title  */
 .expertise-img > div {
   max-width: 97% !important;
 }
 
 /* PAGE AGENCE */
-.card-blur{
+.card-blur {
   box-sizing: border-box;
-  overflow: hidden!important;
+  overflow: hidden !important;
   border-radius: inherit;
 }
 
-.citation{
+.citation {
   opacity: 0;
   color: #fff;
   background: rgba(0, 0, 0, 0.4);
@@ -160,12 +187,12 @@ a {
 .card:hover .card-blur {
   position: relative;
 
-  & > .card-img-top{
+  & > .card-img-top {
     transition: all 0.3s ease;
     filter: blur(7px);
   }
 
-  & > .card-img-overlay{
+  & > .card-img-overlay {
     transition: all 1s ease;
     opacity: 1;
   }
@@ -176,25 +203,26 @@ a {
 }
 
 /* MAP SECTION */
-.mapContainer{
+.mapContainer {
   height: 400px;
 }
 
-.ratio:before{
+.ratio:before {
   padding-top: 0;
 }
 
-//Galerie image 
-.grid{
+//Galerie image
+.grid {
   position: relative;
   height: auto !important;
 }
 
-.grid-item{
+.grid-item {
   position: relative !important;
 }
 
-.object-cover > img, .object-cover picture img{
+.object-cover > img,
+.object-cover picture img {
   object-fit: cover;
 }
 
@@ -204,11 +232,11 @@ a {
   height: 100%;
 }
 
-.card:hover > .card-zoom  > div > [class*="card-img"] {
+.card:hover > .card-zoom > div > [class*='card-img'] {
   transform: scale(1.1);
 }
-.card-zoom > div > [class*="card-img"] {
-  transition: all .3s ease;
+.card-zoom > div > [class*='card-img'] {
+  transition: all 0.3s ease;
   transform-origin: center center;
 }
 
@@ -216,27 +244,29 @@ a {
   min-height: 20em;
 }
 
-  //taille de l'image définie à 200px et img configurée sur contain
-.img-regies{
+//taille de l'image définie à 200px et img configurée sur contain
+.img-regies {
   height: 200px;
 }
 
-.object-contain > img, .object-contain picture img{
+.object-contain > img,
+.object-contain picture img {
   object-fit: contain;
 }
 /* PAGE BLOG */
 .badge.active:hover {
-  color:#fff !important;
+  color: #fff !important;
 }
 
-.search-bar button:focus, .nav button:focus{
+.search-bar button:focus,
+.nav button:focus {
   outline: none;
 }
 
-
-//Pagination 
-.rc-pagination-prev, .rc-pagination-next{
-  display: none
+//Pagination
+.rc-pagination-prev,
+.rc-pagination-next {
+  display: none;
 }
 
 .rc-pagination-item {
@@ -246,21 +276,26 @@ a {
   border: none;
 
   & a {
-    color: $green
+    color: $green;
   }
 }
 
 .rc-pagination-item a:hover,
 .rc-pagination-item a:focus,
-.rc-pagination-item a:active{
+.rc-pagination-item a:active {
   text-decoration: none !important;
   color: $dark-green !important;
 }
 
 .rc-pagination-item-active {
-  background-color: mix(#000, $light-grey, 5%); 
+  background-color: mix(#000, $light-grey, 5%);
   text-decoration: none;
-  color: $dark-green !important; 
+  color: $dark-green !important;
   border-color: $green;
 }
 
+
+/* PAGE CONTACT */
+.form-label.required:after{
+  content: '*';
+}

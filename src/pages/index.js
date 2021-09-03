@@ -29,7 +29,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
 
       {/* Présentation de l'entreprise */}
       <Section
-        bgColor='bg-gray-200'
+        bgClass='bg-gray-200 bg-between'
         customStyle={{
           backgroundImage: `url(${Recherche.src}), url(${IdeesRightCropped.src})`
         }}
@@ -57,7 +57,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
       </Section>
 
       {/* Slider de témoignage clients */}
-      <Section bgColor='bg-gray-200'>
+      <Section bgClass='bg-gray-200'>
         <TextContainer namespace={{ name: 'home', section: 'testimony' }} alignText='center' />
         <SliderComponent className='shadow-light-lg' option={{ slidesToShow: 1, adaptiveHeight: true, fade: true }}>
           {allTestimonials.temoignages.map((item, index) => (

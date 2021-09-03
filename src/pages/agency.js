@@ -23,6 +23,7 @@ export const Agency = ({ allMembers, galleryImg }) => {
     <Layout>
       {/* Entete de page != du hero classique donc usage du background-image + composant Title */}
       <Section
+        bgClass='bg-between'
         customStyle={{
           backgroundImage: `url(${ConseilCropped.src}), url(${AccueilCropped.src})`,
           //override the default background-size property made by the theme bundle
@@ -58,7 +59,7 @@ export const Agency = ({ allMembers, galleryImg }) => {
       </Section>
 
       {/* Slider valeurs */}
-      <Section bgColor='bg-gray-200' display=''>
+      <Section bgClass='bg-gray-200' display=''>
         <SliderComponent
           buttonSpace='250'
           className='mx-md-11'

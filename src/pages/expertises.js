@@ -48,7 +48,7 @@ export const Expertises = () => {
       </Section>
 
       {/* Présentation des solutions */}
-      <Section bgColor='bg-gray-200'>
+      <Section bgClass='bg-gray-200'>
         <TextContainer namespace={{ name: 'expertises', section: 'solution.introduction' }} alignText='center' />
         <div className='row'>
           {t('solution.fields', {}, { returnObjects: true }).map((item, index) => (

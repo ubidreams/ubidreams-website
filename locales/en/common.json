@@ -49,7 +49,8 @@
     "location" : {
       "title": "Location",
       "address": "3 Boulevard du commandant Charcot, \n17440 Aytré, \nFrance",
-      "phone": "+33 5 16 49 27 26"
+      "phone": "+33 5 16 49 27 26",
+      "mail": "contact@ubidreams.com"
     },
     "legal" : { 
       "title": "Legal", 
@@ -75,5 +76,12 @@
     },
     "content": "A question, a project ? \nWe help you define your project.",
     "button": "Contact-us"
+  }, 
+  "error" : {
+    "404": {
+      "title": "We have an issue",
+      "content": "We ran into an issue, but don’t worry, we’ll take care of it for sure.",
+      "button": "Back to Home"
+    }
   }
 }
