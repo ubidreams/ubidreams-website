@@ -11,6 +11,8 @@ import Conseil from '../../public/img/illustrations/conseil.png'
 import Expertises from '../../public/img/illustrations/expertise.png'
 import AccueilCropped from '../../public/img/illustrations/accueil_cropped.png'
 import ConseilCropped from '../../public/img/illustrations/conseil_cropped.png'
+import Projet from '../../public/img/illustrations/projet.png'
+import Regie from '../../public/img/illustrations/regie.png'
 
 /* photos */
 import Contact from '../../public/img/photos/photo-2.jpg'
@@ -70,6 +72,8 @@ export const Img = {
   design: Design,
   expertises: Expertises,
   conseil: Conseil,
+  regie: Regie,
+  projet: Projet,
   /* logo */
   logo: Ubidreams,
   fb: Facebook,

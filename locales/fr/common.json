@@ -8,7 +8,7 @@
       "title": "Expertises",
       "development": {
         "name": "Développement Web et Mobile", 
-        "path": "/"
+        "path": "/expertises/developpement"
       },
       "iot": {
         "name":"IOT - Objets connectés",

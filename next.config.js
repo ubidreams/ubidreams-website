@@ -14,15 +14,22 @@ module.exports = {
     locales: ['en', 'fr'],
     defaultLocale: 'fr'
   },
+  images: {
+    domains: ['www.datocms-assets.com']
+  },
   async rewrites() {
     return [
       {
         source: '/:lang(fr)?/agence',
         destination: '/agency'
+      },
+      {
+        source: '/:lang(fr)?/expertises/developpement',
+        destination: '/expertises/development'
       }
     ]
   },
-  reactStrictMode: true,
+  reactStrictMode: false,
   /* Add Your Scss File Folder Path Here */
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]

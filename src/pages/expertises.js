@@ -23,7 +23,7 @@ export const Expertises = () => {
       {/* Entête > titre + illustration à droite */}
       <PageTitle namespace='expertises' classText='ps-md-10' classImg='expertise-img mw-50 pt-4 mx-auto mx-md-0' />
 
-      {/* Présentation de l'entreprise */}
+      {/* Présentation de notre méthodologie */}
       <Section>
         <TextContainer
           namespace={{ name: 'expertises', section: 'introduction' }}
@@ -42,7 +42,7 @@ export const Expertises = () => {
         <TextContainer namespace={{ name: 'expertises', section: 'featureContainer' }} alignText='center' />
         <div className='row'>
           {t('expertiseFields.fields', {}, { returnObjects: true }).map((item, index) => (
-            <SectionCardSimple key={index} data={item} reverse={false} textJustifyBetween />
+            <SectionCardSimple key={index} data={item} reverse={false} textJustify='justify-content-between' />
           ))}
         </div>
       </Section>

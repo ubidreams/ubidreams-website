@@ -1,0 +1,37 @@
+{
+    "hero": {
+        "img": {
+            "key": "multiplateforme",
+            "alt": "Web and mobile application"
+        },
+        "title": "Mobile and business web software Development",
+        "description": "We remain connected to the latest trends in the web and mobile world to provide you with state-of-the-art digital products. Our team master the languages and tools that allow  us to create your web solution and mobile applications."
+    },
+    "technologies": {
+        "title": "The technologies we use",
+        "subtitle": "We develop custom solutions, from design to implementation of databases, APIs, web software and mobile applications available for all  iOS and Android devices, smartphones and tablets. Whatever the challenge, we’ll take it on !"
+    },
+    "projets": {
+        "title": "Our project management methods",
+        "features": [
+            {
+                "img": {
+                    "key": "regie",
+                    "alt": "Join team illustration"
+                },
+                "col" : "100",
+                "title": "Regies",
+                "content": "In order to address your issues as as efficiently as possible, we provide you with our collaborators for the entire duration of your project. Whether it concerns web or mobile development or UX and UI design needs, our collaborators can intervene in your projects. The mission starts with an initial meeting and can continue entirely or partly in teleworking."
+            },
+            {
+                "img": {
+                    "key": "projet",
+                    "alt": "Group work illustration"
+                },
+                "col" : "100",
+                "title": "Project monitoring ",
+                "content": "We are responsible for managing and monitoring the project from its conception to its delivery. As part of our agility philosophy, we conduct regular reviews with the client to keep them informed of the project's progress and validate the project's milestones."
+            }
+        ]
+    }
+}

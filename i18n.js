@@ -9,7 +9,8 @@ module.exports = {
     '/agency': ['agency'],
     'rgx:^/references': ['references'],
     'rgx:^/blog': ['blog'],
-    '/contact': ['contact']
+    '/contact': ['contact'],
+    'rgx:^(/\\S{3,}/development)': ['development']
   },
   interpolation: {
     prefix: '${',

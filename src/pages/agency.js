@@ -89,7 +89,7 @@ export const Agency = ({ allMembers, galleryImg }) => {
           <h3 className='display-4 mb-4'>{t('equipe.title')}</h3>
           <p className='lead text-muted'>{t('equipe.subtitle')}</p>
         </div>
-        <div className='row row-cols-12 row-cols-md-3 mt-6'>
+        <div className='row row-cols-1 row-cols-md-3 mt-6'>
           <CardMember config={allMembers.membres} />
         </div>
       </Section>

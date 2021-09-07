@@ -18,6 +18,18 @@ const responsiveImageFragment = `
   }
 `
 
+const svgFragment = `
+  fragment svgFieldFragment on FileField {
+    alt
+    filename
+    url
+    filename
+    title
+    height
+    width
+  }
+`
+
 const referenceFragment = `
   fragment ReferenceRecordFragment on ReferenceRecord {
     id
@@ -216,4 +228,26 @@ export async function getBlog(preview, locale) {
     { preview }
   )
   return data
+}
+
+/* EXPERTISES */
+export async function getExpertisesByField(preview, locale, field) {
+  const data = await fetchAPI(
+    `
+      {
+        allExpertises(filter: {expertise: {matches: {pattern: "${field}"}}}, locale: ${locale}) {
+          title
+          id
+          description
+          icon {
+            ...svgFieldFragment
+          }
+        }
+      }
+  
+      ${svgFragment}
+    `,
+    { preview }
+  )
+  return data?.allExpertises
 }

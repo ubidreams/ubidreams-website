@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Contact } from '../config/StaticImagesExport'
 import useTranslation from 'next-translate/useTranslation'
+import Link from 'next/link'
 
 const ContactSection = () => {
   const { t } = useTranslation('common')
@@ -36,7 +37,9 @@ const ContactSection = () => {
                 {config.content}
               </p>
               <footer className='blockquote-footer'>
-                <button className='btn btn-blue'>{config.buttonLabel}</button>
+                <Link href='/contact'>
+                  <a className='btn btn-blue'>{config.buttonLabel}</a>
+                </Link>
               </footer>
             </blockquote>
           </div>

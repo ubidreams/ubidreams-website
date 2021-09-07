@@ -46,7 +46,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
         <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
         <div className='row'>
           {t('technology.details', {}, { returnObjects: true }).map((item, index) => (
-            <SectionCardSimple key={index} data={item} showShadows reverse={index % 2 === 1} />
+            <SectionCardSimple key={index} data={item} showShadows reverse={index / 2 === 1} />
           ))}
         </div>
       </Section>

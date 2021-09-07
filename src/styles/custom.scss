@@ -172,6 +172,14 @@ a {
 }
 
 /* PAGE AGENCE */
+.card-img-top {
+  max-height: 18em;
+
+  & > picture img{
+    object-fit: cover;
+  }
+}
+
 .card-blur {
   box-sizing: border-box;
   overflow: hidden !important;
@@ -294,8 +302,31 @@ a {
   border-color: $green;
 }
 
-
 /* PAGE CONTACT */
-.form-label.required:after{
+.form-label.required:after {
   content: '*';
+}
+
+.card-expert {
+  position: relative;
+  min-height: 26em;
+}
+
+/* STYLE BREADCRUMB */
+
+.breadcrumb-item + .breadcrumb-item {
+  
+  &:before {
+    padding-top: 5px;
+    content: url(../../public/img/icons/Breadcrumb.svg);
+  }
+}
+
+.breadcrumb-item a {
+  color: $blue;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.breadcrumb-item.active a {
+  color: $grey-blue;
 }

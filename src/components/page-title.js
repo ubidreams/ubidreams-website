@@ -28,9 +28,7 @@ const PageTitle = ({ namespace = '', displayImage = '', classText = '', classImg
           <strong>{t('hero.title')}</strong>
         </h1>
         {t('hero.description', {}, { fallback: '' }) && (
-          <p className='fs-lg text-muted mb-0' data-aos='fade-left' data-aos-delay='100'>
-            {t('hero.description')}
-          </p>
+          <p className='fs-lg text-muted mb-0'>{t('hero.description')}</p>
         )}
         {showButton && (
           <div className='mt-5' data-aos='fade-left' data-aos-delay='150'>
