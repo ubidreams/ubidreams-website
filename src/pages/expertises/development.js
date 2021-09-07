@@ -28,7 +28,7 @@ export const Developpement = ({ expertises = [] }) => {
       <Section>
         {/* Introduction à nos technologies */}
         <TextContainer
-          namespace={{ name: 'development', section: 'technologies' }}
+          namespace={{ name: 'development', section: 'expertises' }}
           alignText='center'
           data-aos='fade-up'
         />

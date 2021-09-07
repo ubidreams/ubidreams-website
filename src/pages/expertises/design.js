@@ -33,7 +33,7 @@ export const Design = ({ expertises = [] }) => {
 
       {/* Présentation de notre expertise/nos outils */}
       <Section>
-        <TextContainer namespace={{ name: 'design', section: 'outils' }} alignText='center' data-aos='fade-up' />
+        <TextContainer namespace={{ name: 'design', section: 'expertises' }} alignText='center' data-aos='fade-up' />
         <div className='row row-cols-1 row-cols-md-2'>
           <CardExpertise config={expertises} />
         </div>

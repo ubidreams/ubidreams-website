@@ -23,9 +23,13 @@ export const Design = ({ expertises = [] }) => {
         minHeight='80vh'
       />
 
-      {/* Présentation de notre expertise/nos outils */}
+      {/* Présentation de notre expertise */}
       <Section>
-        <TextContainer namespace={{ name: 'consulting', section: 'conseils' }} alignText='center' data-aos='fade-up' />
+        <TextContainer
+          namespace={{ name: 'consulting', section: 'expertises' }}
+          alignText='center'
+          data-aos='fade-up'
+        />
         <div className='row row-cols-1 row-cols-md-2'>
           <CardExpertise config={expertises} />
         </div>
