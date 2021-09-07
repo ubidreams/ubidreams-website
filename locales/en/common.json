@@ -15,8 +15,8 @@
         "path": "/"
       },
       "consulting": {
-        "name":"Advice and Audits",
-        "path": "/"
+        "name":"Consulting and Audits",
+        "path": "/expertises/consulting"
       },
       "design": {
         "name":"UI/UX design",

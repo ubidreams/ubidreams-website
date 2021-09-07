@@ -26,6 +26,10 @@ module.exports = {
       {
         source: '/:lang(fr)?/expertises/developpement',
         destination: '/expertises/development'
+      },
+      {
+        source: '/:lang(fr)?/expertises/conseil',
+        destination: '/expertises/consulting'
       }
     ]
   },

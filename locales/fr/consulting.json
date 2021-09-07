@@ -1,0 +1,14 @@
+{
+    "hero": {
+        "img": {
+            "key": "conseil",
+            "alt": "Illustration brainstorming"
+        },
+        "title": "Conseil et Audit",
+        "description": "Parce que nous vous accompagnons dans toutes les étapes de vos projets et que nous sommes fiers de participer à votre réussite nous vous apportons notre expertise dans l’élaboration de votre stratégie numérique, en cybersécurité ou encore Data Management."
+    },
+      "conseils": {
+          "title": "Les phases clés de la transformation numérique",
+          "subtitle": "Notre équipe d’experts a à cœur de vous apporter ses conseils et son expertise technique en transformation numérique, en conformité réglementaire RGPD, en gestion et administration des réseaux sécurisés et en valorisation de vos données."
+      }
+}
