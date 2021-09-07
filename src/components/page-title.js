@@ -4,17 +4,27 @@ import Link from 'next/link'
 import { Img } from '../config/StaticImagesExport'
 
 /**
- * @param config (données sous la forme d'un objet (title, description, image, showButton))
- * @param displayDirection (position des blocs > image à droite ou à gauche)
- * @param alignText
+ * @param namespace (namespace de référence pour trouver la traduction associée)
+ * @param displayImage (position des blocs > image à droite ou à gauche)
+ * @param classText (divers class permettant de customiser l'affichage du texte)
+ * @param classImg (divers class permettant de customiser l'affichage de l'image)
+ * @param showButton (Booléan indiquant la necessité d'afficher un bouton ou non)
+ * @param minHeight (taille minimum du hero 90vh par defaut, mais plus petit parfois (ex: les sous-pages expertise avec l'ajout du breadcrumb))
  */
-const PageTitle = ({ namespace = '', displayImage = '', classText = '', classImg = '', showButton = false }) => {
+const PageTitle = ({
+  namespace = '',
+  displayImage = '',
+  classText = '',
+  classImg = '',
+  showButton = false,
+  minHeight = '90vh'
+}) => {
   const { t } = useTranslation(namespace)
   const buttons = t('hero.buttonDetails', {}, { returnObjects: true, fallback: '' })
 
   return (
     <div
-      style={{ minHeight: '90vh' }}
+      style={{ minHeight: minHeight }}
       className={`px-md-10 d-md-flex d-lg-flex flex-row${
         '-' + displayImage
       } align-items-center text-center text-md-start justify-content-between`}

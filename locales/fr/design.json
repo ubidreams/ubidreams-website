@@ -1,0 +1,38 @@
+{
+    "hero": {
+        "img": {
+            "key": "design",
+            "alt": "Illustration design d'application"
+        },
+        "title": "Design UX/UI",
+        "description": "Ce double acronyme “Users Experience” et “User Interface” place l’utilisateur au centre de la démarche de design de toute solution numérique pour un objectif recherché de lui procurer le maximum de satisfaction lorsqu’il navigue sur son PC, son Smartphone ou sa Tablette."
+    },
+    "methodologie": {
+        "title": "La méthodologie que nous utilisons",
+        "subtitle": "Une expérience utilisateur réussie passe à la fois par un rendu graphique agréable à regarder et par un parcours intuitif de la solution par les utilisateurs. Les spécialistes d’UBIDREAMS en design UX/UI pensent ces deux éléments dans un processus organisé et méthodologique au début de chaque projet."
+    },
+    "stepContainer": [
+        {
+          "delay": 50,
+          "step": "1",
+          "title": "Compréhension du besoin",
+          "description": "Le point de départ consiste à se concentrer sur la compréhension du besoin, sa formulation à travers des schémas comme le “story mapping” et les représentations des processus métiers du client. Ces restitutions sont amendées et validées par le client avant de passer à l’étape suivante."
+        },
+        {
+          "delay": 50,
+          "step": "2",
+          "title": "Le wireframe",
+          "description": "Ensuite, les designers UX/UI d’UBIDREAMS réalisent les “wireframes” qui décrivent l'enchaînement des écrans, c'est-à-dire  la navigation proposée pour l’utilisation du produit."
+        },
+        {
+          "delay": 50,
+          "step": "3",
+          "title": "Le maquettage",
+          "description": "Lorsque cette nouvelle étape est validée, nous construisons la maquette des écrans à haute fidélité pour permettre à notre client de se projeter dans sa future application et de valider ainsi le contour fonctionnel définitif de la version de son produit avant de passer à son développement."
+        }
+      ],
+      "outils": {
+          "title": "Nos outils et processus",
+          "subtitle": "Un projet se construit toujours avec le client et avec ses utilisateurs. Il implique aussi les  développeurs d’UBIDREAMS pour anticiper la productivité du développement. Qu’il s'agisse d’application web ou mobile, nous faisons en sorte que votre expérience soit unique."
+      }
+}
