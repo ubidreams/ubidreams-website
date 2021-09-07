@@ -12,7 +12,7 @@
       },
       "iot": {
         "name":"IOT - Objets connectés",
-        "path": "/"
+        "path": "/expertises/objets-connectes"
       },
       "consulting": {
         "name":"Conseils et Audits",

@@ -30,6 +30,14 @@ module.exports = {
       {
         source: '/:lang(fr)?/expertises/conseil',
         destination: '/expertises/consulting'
+      },
+      {
+        source: '/:lang(en)?/expertises/internet-of-things',
+        destination: '/expertises/iot'
+      },
+      {
+        source: '/:lang(fr)?/expertises/objets-connectes',
+        destination: '/expertises/iot'
       }
     ]
   },

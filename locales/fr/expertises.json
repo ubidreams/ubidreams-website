@@ -43,6 +43,7 @@
         "content": "Nous maîtrisons les %color% derniers outils et technologies %color% de développement pour créer vos applications et répondre de manière personnalisée à vos problématiques.",
         "buttonDetails": {
           "name": "En savoir plus",
+          "key": "development",
           "path": "/",
           "class": "btn-blue"
         }
@@ -57,7 +58,8 @@
         "content": "Nous veillons à vous proposer les dernières tendances graphiques pour vous offrir des %color% designs percutants %color% et créer une %color% expérience de qualité %color% pour vos utilisateurs.",
         "buttonDetails": {
           "name": "En savoir plus",
-          "path": "/",
+          "key": "design",
+          "path": "/", 
           "class": "btn-blue"
         }
       },
@@ -71,6 +73,7 @@
         "content": "Nous vous accompagnons sur toutes les phases de développement de vos projets, de la création de %color% l'architecture IOT %color% à l’installation sur site, sans oublier le développement d’une interface web d'exploitation.",
         "buttonDetails": {
           "name": "En savoir plus",
+          "key": "iot",
           "path": "/",
           "class": "btn-blue"
         }
@@ -85,6 +88,7 @@
         "content": "Nos experts vous accompagnent et vous aident à apporter %color% une approche innovante et opérationnelle %color% pour votre stratégie numérique.",
         "buttonDetails": {
           "name": "En savoir plus",
+          "key": "consulting",
           "path": "/",
           "class": "btn-blue"
         }

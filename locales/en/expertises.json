@@ -39,7 +39,13 @@
           "alt": "Cross-platform compatibility illustration"
         },
         "title": "Web and mobile development",
-        "content": "We master the %color% last tools and technologies %color% to create your application and respond in a custom way to your problems (API, Databases, PWA, native development….)."
+        "content": "We master the %color% last tools and technologies %color% to create your application and respond in a custom way to your problems (API, Databases, PWA, native development….).",
+        "buttonDetails": {
+          "name": "More",
+          "key": "development",
+          "path": "/",
+          "class": "btn-blue"
+        }
       },
       {
         "img": {
@@ -47,7 +53,13 @@
           "alt": "Web design illustration"
         },
         "title": "Design UX/UI",
-        "content": "Our designers create the mock-up and graphic design of your projects to create a %color% quality experience %color% for your users. We make sure to offer you the latest graphic trend to provide you %color% impactful designs%color%."
+        "content": "Our designers create the mock-up and graphic design of your projects to create a %color% quality experience %color% for your users. We make sure to offer you the latest graphic trend to provide you %color% impactful designs%color%.",
+        "buttonDetails": {
+          "name": "More",
+          "key": "design",
+          "path": "/", 
+          "class": "btn-blue"
+        }
       },
       {
         "img": {
@@ -55,7 +67,13 @@
           "alt": "IConnected truck illustration"
         },
         "title": "IOT",
-        "content": "We support you on all stages of your project, from creation of %color% IOT architecture %color% to on-site installation, not forgetting the development of a web operating interface."
+        "content": "We support you on all stages of your project, from creation of %color% IOT architecture %color% to on-site installation, not forgetting the development of a web operating interface.",
+        "buttonDetails": {
+          "name": "More",
+          "key": "iot",
+          "path": "/",
+          "class": "btn-blue"
+        }
       },
       {
         "img": {
@@ -63,7 +81,13 @@
           "alt": "Brainstorming illustration"
         },
         "title": "Consulting",
-        "content": "Our experts support you and help you to bring %color% an innovative and operational approach %color% to your digital strategy. We offer you efficient monitoring and personalized advice on a variety of topics."
+        "content": "Our experts support you and help you to bring %color% an innovative and operational approach %color% to your digital strategy. We offer you efficient monitoring and personalized advice on a variety of topics.",
+        "buttonDetails": {
+          "name": "More",
+          "key": "consulting",
+          "path": "/",
+          "class": "btn-blue"
+        }
       }
     ]
   },

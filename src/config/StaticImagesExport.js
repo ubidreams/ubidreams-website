@@ -6,6 +6,7 @@ import IdeesRightCropped from '../../public/img/illustrations/ideescropped.png'
 import Idees from '../../public/img/illustrations/idees.png'
 import Multiplatforme from '../../public/img/illustrations/multiplatforme.png'
 import Iot from '../../public/img/illustrations/iot2.png'
+import Iot_lg from '../../public/img/illustrations/iot.png'
 import Design from '../../public/img/illustrations/design.png'
 import Conseil from '../../public/img/illustrations/conseil.png'
 import Expertises from '../../public/img/illustrations/expertise.png'
@@ -20,6 +21,11 @@ import ContactHeader from '../../public/img/photos/photo-14.jpg'
 
 /* logo */
 import Ubidreams from '../../public/img/logos/cropped-logo.png'
+
+/* logo partenaires */
+import Hellermann from '../../public/img/logos/HellermannTyton.png'
+import Nove from '../../public/img/logos/Nove3D.png'
+import GigaConcept from '../../public/img/logos/GigaConcept.jpeg'
 
 /* logo solutions */
 import POI from '../../public/img/logos/UbiPOI.svg'
@@ -69,6 +75,7 @@ export const Img = {
   ideasCrop: IdeesRightCropped,
   multiplateforme: Multiplatforme,
   iot: Iot,
+  iotLG: Iot_lg,
   design: Design,
   expertises: Expertises,
   conseil: Conseil,
@@ -82,6 +89,9 @@ export const Img = {
   POI: POI,
   track: track,
   PTW: PTW,
+  nove: Nove,
+  hellermann: Hellermann,
+  concept: GigaConcept,
   /* icon */
   code: Code,
   smile: Smile,

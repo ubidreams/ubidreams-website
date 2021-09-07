@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
 /**
  * Zone de texte pour les technos, solutions, méthodes, option : titre, sous titre, description
@@ -6,6 +7,7 @@ import Link from 'next/link'
  * @param alignText: aligne le text en fonction de la props passée
  */
 const TextTechno = ({ config }) => {
+  const { t } = useTranslation('common')
   const { title, content, textLink, buttonDetails } = config
 
   function splitColor(string, character) {
@@ -36,7 +38,7 @@ const TextTechno = ({ config }) => {
       )}
 
       {buttonDetails && (
-        <Link href={buttonDetails.path}>
+        <Link href={buttonDetails.key ? t(`header.expertise.${buttonDetails.key}.path`) : buttonDetails.path}>
           <a className={`btn btn-sm ${buttonDetails.class} me-md-2 mt-2`}>{buttonDetails.name}</a>
         </Link>
       )}

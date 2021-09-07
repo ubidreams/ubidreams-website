@@ -12,7 +12,8 @@ module.exports = {
     '/contact': ['contact'],
     'rgx:^(/\\S{3,}/development)': ['development'],
     'rgx:^(/\\S{3,}/design)': ['design'],
-    'rgx:^(/\\S{3,}/consulting)': ['consulting']
+    'rgx:^(/\\S{3,}/consulting)': ['consulting'],
+    'rgx:^(/\\S{3,}/iot)': ['iot']
   },
   interpolation: {
     prefix: '${',
