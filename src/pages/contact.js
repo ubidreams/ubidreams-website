@@ -35,9 +35,7 @@ export const Contact = () => {
         body: JSON.stringify(data)
       })
 
-      console.log('pages/contact', response)
       if (response && response.status === 500) {
-        console.log('erreur')
         setMessageRequest({ code: 'error', message: t('form.error') })
       } else if (response.status === 200) {
         setMessageRequest({ code: 'success', message: t('form.success') })

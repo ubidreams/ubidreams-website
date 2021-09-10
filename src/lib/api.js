@@ -238,7 +238,13 @@ export async function getExpertisesByField(preview, locale, field) {
         allExpertises(filter: {expertise: {matches: {pattern: "${field}"}}}, locale: ${locale}) {
           title
           id
-          description
+          description {
+            value
+            links {
+              id
+              slug
+            }
+          }
           icon {
             ...svgFieldFragment
           }

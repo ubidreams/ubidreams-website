@@ -17,30 +17,6 @@ module.exports = {
   images: {
     domains: ['www.datocms-assets.com']
   },
-  async rewrites() {
-    return [
-      {
-        source: '/:lang(fr)?/agence',
-        destination: '/agency'
-      },
-      {
-        source: '/:lang(fr)?/expertises/developpement',
-        destination: '/expertises/development'
-      },
-      {
-        source: '/:lang(fr)?/expertises/conseil',
-        destination: '/expertises/consulting'
-      },
-      {
-        source: '/:lang(en)?/expertises/internet-of-things',
-        destination: '/expertises/iot'
-      },
-      {
-        source: '/:lang(fr)?/expertises/objets-connectes',
-        destination: '/expertises/iot'
-      }
-    ]
-  },
   reactStrictMode: false,
   /* Add Your Scss File Folder Path Here */
   sassOptions: {

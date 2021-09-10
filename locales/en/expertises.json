@@ -70,7 +70,7 @@
         "content": "We support you on all stages of your project, from creation of %color% IOT architecture %color% to on-site installation, not forgetting the development of a web operating interface.",
         "buttonDetails": {
           "name": "More",
-          "key": "iot",
+          "key": "internet-of-things",
           "path": "/",
           "class": "btn-blue"
         }
@@ -127,5 +127,18 @@
         "content": "This solution for monitoring %color% boat unloading activity %color% in real time is composed of IOT infrastructure with the use of connected devices and a web-based software for monitoring and processing data (back office)."
       }
     ]
+  },
+  "referencesLinked": {
+    "title": "Our last realisations using this technology",
+    "subtitle": "Discover our last projects developed for our customers"
+  },
+  "internalExperts": {
+    "title": "Our experts presentation"
+  },
+  "externalExperts": {
+    "title": "Our experts partners"
+  },
+  "partners": {
+    "title": "Our partners"
   }
 }

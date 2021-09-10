@@ -1,8 +1,13 @@
 import Image from 'next/image'
-import ReactHtmlParser from 'react-html-parser'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { StructuredText } from 'react-datocms'
+import { LinkBeautify } from './link-beautify'
 
 export const CardExpertise = ({ config = [] }) => {
   const colors = ['blue', 'green', 'dark-grey', 'orange']
+  const router = useRouter()
+
   return config.map((item, index) => {
     return (
       <div key={index}>
@@ -20,8 +25,18 @@ export const CardExpertise = ({ config = [] }) => {
             </div>
 
             <h4 className='fw-bold'>{item?.title}</h4>
-
-            <div className='text-gray-700 mb-5'>{ReactHtmlParser(item?.description)}</div>
+            <div className='text-gray-700 mb-5'>
+              <StructuredText
+                data={item?.description}
+                renderLinkToRecord={({ record, children, transformedMeta }) => {
+                  return (
+                    <LinkBeautify record={record} router={router} meta={transformedMeta}>
+                      {children}
+                    </LinkBeautify>
+                  )
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -19,6 +19,7 @@ const MenuLink = ({ type, href, name }) => {
 
 const Header = () => {
   const { t } = useTranslation('common')
+
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-white'>
@@ -57,34 +58,7 @@ const Header = () => {
             </button>
             <ul className='navbar-nav mx-auto'>
               {map(routes, (route) => {
-                const isSubMenu = !isNil(route?.items) && !isEmpty(route?.items)
-
-                return isSubMenu ? (
-                  <li key={route?.key} className='nav-item dropdown'>
-                    <a
-                      className='nav-link dropdown-toggle'
-                      id='subMenu'
-                      role='button'
-                      data-bs-toggle='dropdown'
-                      aria-expanded='false'
-                    >
-                      {t(`header.${route?.key}.title`)}
-                    </a>
-
-                    <ul className='dropdown-menu' aria-labelledby='subMenu'>
-                      {map(defaultTo(route?.items, []), (item) => {
-                        return (
-                          <MenuLink
-                            key={[route?.key, item?.key].join('/')}
-                            type='dropdown-item'
-                            href={t(`header.${route?.key}.${item?.key}.path`)}
-                            name={t(`header.${route?.key}.${item?.key}.name`)}
-                          />
-                        )
-                      })}
-                    </ul>
-                  </li>
-                ) : (
+                return (
                   <MenuLink
                     key={route?.key}
                     type='nav-item'

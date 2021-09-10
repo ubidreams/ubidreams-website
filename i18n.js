@@ -5,7 +5,7 @@ module.exports = {
   pages: {
     '*': ['common'],
     '/': ['home'],
-    '/expertises': ['expertises'],
+    'rgx:^/expertises': ['expertises'],
     '/agency': ['agency'],
     'rgx:^/references': ['references'],
     'rgx:^/blog': ['blog'],
@@ -13,7 +13,7 @@ module.exports = {
     'rgx:^(/\\S{3,}/development)': ['development'],
     'rgx:^(/\\S{3,}/design)': ['design'],
     'rgx:^(/\\S{3,}/consulting)': ['consulting'],
-    'rgx:^(/\\S{3,}/iot)': ['iot']
+    'rgx:^(/\\S{3,}/internet-of-things)': ['iot']
   },
   interpolation: {
     prefix: '${',

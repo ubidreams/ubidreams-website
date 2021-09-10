@@ -9,7 +9,7 @@ const routes = [
         key: 'development'
       },
       {
-        key: 'iot'
+        key: 'internet-of-things'
       },
       {
         key: 'consulting'

@@ -73,7 +73,7 @@
         "content": "Nous vous accompagnons sur toutes les phases de développement de vos projets, de la création de %color% l'architecture IOT %color% à l’installation sur site, sans oublier le développement d’une interface web d'exploitation.",
         "buttonDetails": {
           "name": "En savoir plus",
-          "key": "iot",
+          "key": "internet-of-things",
           "path": "/",
           "class": "btn-blue"
         }
@@ -131,5 +131,18 @@
         "content": "Cette solution de suivi de %color% l’activité de déchargement des bateaux %color% en temps réel est composée d’une infrastructure IOT avec l’utilisation d’objet connecté et d’un logiciel web de suivi et de traitement des données (back office)."
       }
     ]
+  },
+  "referencesLinked": {
+    "title": "Nos dernières réalisations utilisant cette technologie",
+    "subtitle": "Découvrez nos derniers projets développés pour nos clients"
+  },
+  "internalExperts": {
+    "title": "Les portraits de nos experts"
+  },
+  "externalExperts": {
+    "title": "Nos experts partenaires"
+  },
+  "partners": {
+    "title": "Nos partenaires"
   }
 }

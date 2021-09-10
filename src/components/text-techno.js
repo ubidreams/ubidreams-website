@@ -38,7 +38,7 @@ const TextTechno = ({ config }) => {
       )}
 
       {buttonDetails && (
-        <Link href={buttonDetails.key ? t(`header.expertise.${buttonDetails.key}.path`) : buttonDetails.path}>
+        <Link href={buttonDetails.key ? t(`header.expertise.items.${buttonDetails.key}.path`) : buttonDetails.path}>
           <a className={`btn btn-sm ${buttonDetails.class} me-md-2 mt-2`}>{buttonDetails.name}</a>
         </Link>
       )}

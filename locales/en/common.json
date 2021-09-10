@@ -1,30 +1,34 @@
 {
   "header": {
     "home": {
-      "name" : "Home", 
+      "name": "Home",
       "path": "/"
-    }, 
+    },
     "expertise": {
-      "title": "Expertises",
-      "development": {
-        "name": "Web and mobile development", 
-        "path": "/expertises/development"
-      },
-      "iot": {
-        "name":"IOT - Connected devices",
-        "path": "/expertises/internet-of-things"
-      },
-      "consulting": {
-        "name":"Consulting and Audits",
-        "path": "/expertises/consulting"
-      },
-      "design": {
-        "name":"UI/UX design",
-        "path": "/expertises/design"
-      },
-      "expertises": {
-        "name": "All our expertises",
-        "path": "/expertises"
+      "name": "Expertises",
+      "path": "/expertises",
+      "items": {
+        "development": {
+          "name": "Web and mobile development",
+          "path": "/expertises/development",
+          "key": "development"
+        },
+        "internet-of-things": {
+          "name": "IOT - Connected devices",
+          "path": "/expertises/internet-of-things"
+        },
+        "consulting": {
+          "name": "Consulting and Audits",
+          "path": "/expertises/consulting"
+        },
+        "design": {
+          "name": "UI/UX design",
+          "path": "/expertises/design"
+        },
+        "expertises": {
+          "name": "All our expertises",
+          "path": "/expertises"
+        }
       }
     },
     "agency": {
@@ -44,40 +48,40 @@
       "path": "/contact"
     }
   },
-  "footer" :{
-    "slogan" : "Dream digital",
-    "location" : {
+  "footer": {
+    "slogan": "Dream digital",
+    "location": {
       "title": "Location",
       "address": "3 Boulevard du commandant Charcot, \n17440 Aytré, \nFrance",
       "phone": "+33 5 16 49 27 26",
       "mail": "contact@ubidreams.com"
     },
-    "legal" : { 
-      "title": "Legal", 
-      "links" : [
+    "legal": {
+      "title": "Legal",
+      "links": [
         {
-          "name" : "General development conditions",
-          "path" : "/"
+          "name": "General development conditions",
+          "path": "/"
         },
         {
-          "name" : "Cookies policies",
-          "path" : "/"
+          "name": "Cookies policies",
+          "path": "/"
         },
         {
           "name": "Legal Notice",
           "path": "/"
-        } 
+        }
       ]
     }
   },
-  "contact" : {
+  "contact": {
     "img": {
       "alt": "Photo of a working group"
     },
     "content": "A question, a project ? \nWe help you define your project.",
     "button": "Contact-us"
-  }, 
-  "error" : {
+  },
+  "error": {
     "404": {
       "title": "We have an issue",
       "content": "We ran into an issue, but don’t worry, we’ll take care of it for sure.",
