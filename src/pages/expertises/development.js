@@ -55,7 +55,7 @@ export const Developpement = ({ expertises = [] }) => {
 export default Developpement
 
 export async function getStaticProps({ preview = false, locale }) {
-  const expertises = (await getExpertisesByField(preview, locale, 'developpement')) || []
+  const expertises = (await getExpertisesByField(preview, locale, 'development')) || []
   return {
     props: { expertises }
   }

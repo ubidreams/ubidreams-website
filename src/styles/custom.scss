@@ -172,7 +172,7 @@ a {
 }
 
 /* PAGE AGENCE */
-.card-img-top {
+.members .card-img-top {
   max-height: 18em;
 
   & > picture img{
@@ -324,11 +324,21 @@ a {
   }
 }
 
-.breadcrumb-item a {
+.breadcrumb-item a, .breadcrumb-item span {
   color: $blue;
   font-weight: 500;
   font-size: 1.2em;
 }
-.breadcrumb-item.active a {
+.breadcrumb-item.active a, .breadcrumb-item.active span {
   color: $grey-blue;
+}
+
+
+/* STYLE PAGE TEMPLATE */
+.img-page {
+  max-height: 22em;
+
+  & > picture img{
+    object-fit: contain;
+  }
 }

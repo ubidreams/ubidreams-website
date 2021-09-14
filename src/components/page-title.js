@@ -41,7 +41,7 @@ const PageTitle = ({
           <p className='fs-lg text-muted mb-0'>{t('hero.description')}</p>
         )}
         {showButton && (
-          <div className='mt-5' data-aos='fade-left' data-aos-delay='150'>
+          <div className='mt-5'>
             {buttons.map((btn, index) => {
               return (
                 <Link key={index} href={btn.path}>

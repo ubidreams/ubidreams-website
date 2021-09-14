@@ -30,6 +30,19 @@ const svgFragment = `
   }
 `
 
+const expertFragment = `
+  fragment MembreRecordFragment on MembreRecord {
+    title
+    subtitle
+    presentation
+    cardCover {
+      responsiveImage {
+        ...responsiveImageFragment
+      }
+    }
+  }
+`
+
 const referenceFragment = `
   fragment ReferenceRecordFragment on ReferenceRecord {
     id
@@ -256,4 +269,100 @@ export async function getExpertisesByField(preview, locale, field) {
     { preview }
   )
   return data?.allExpertises
+}
+
+/* PAGES SLUG */
+export async function getAllPageSlugs(categorie, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allPages(filter: {categorie: {matches: {pattern: "${categorie}"}}}, locale: ${locale}) {
+          slug
+          categorie
+        }
+      }
+    `
+  )
+  return data?.allPages
+}
+
+export async function getLastRefByTech(id_etiquette, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allReferences(filter: {etiquettes: {eq: "${id_etiquette}"}}, first: "3", orderBy: _firstPublishedAt_DESC, locale: ${locale}) {
+          ...ReferenceRecordFragment
+        }
+      }
+      ${referenceFragment}
+      ${responsiveImageFragment}
+    `
+  )
+  return data?.allReferences
+}
+
+export async function getOnePageBySlug(preview, locale, slug) {
+  const data = await fetchAPI(
+    `
+      {
+        page(filter: {slug: {eq: "${slug}"}}, locale: ${locale}) {
+          id
+          slug
+          title
+          subtitle
+          image {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+          content {
+            value
+            links {
+              id
+              slug
+              categorie
+            }
+            blocks {
+              id
+              image {
+                responsiveImage {
+                  ...responsiveImageFragment
+                }
+              }
+            }
+          }
+          afficherContact
+          etiquette {
+            id
+          }
+          expertInterne {
+            ...MembreRecordFragment
+          }
+          expertPartenaires {
+            ...MembreRecordFragment
+          }
+          partenaires {
+            name
+            content
+            image {
+              responsiveImage {
+                ...responsiveImageFragment
+              }
+            }
+          }
+        }
+      }
+      ${responsiveImageFragment}
+      ${expertFragment}
+    `,
+    {
+      preview,
+      variables: {
+        locale,
+        slug
+      }
+    }
+  )
+
+  return data?.page
 }
