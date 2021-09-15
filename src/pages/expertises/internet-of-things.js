@@ -54,7 +54,7 @@ export const Design = ({ expertises = [] }) => {
 export default Design
 
 export async function getStaticProps({ preview = false, locale }) {
-  const expertises = (await getExpertisesByField(preview, locale, 'iot')) || []
+  const expertises = (await getExpertisesByField(preview, locale, 'internet-of-things')) || []
   return {
     props: { expertises }
   }
