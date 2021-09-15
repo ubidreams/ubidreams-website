@@ -57,6 +57,17 @@ const referenceFragment = `
   }
 `
 
+const miniaturePageFragment = `
+  fragment MiniaturePageFieldFragment on PageModelMiniaturePageField {
+    value
+    links {
+      slug
+      categorie
+      id
+    }
+  }
+`
+
 async function fetchAPI(query, { variables, preview } = {}) {
   const res = await fetch(API_URL + (preview ? '/preview' : ''), {
     method: 'POST',
@@ -117,6 +128,36 @@ export async function getLastReferences(preview, locale) {
     { preview }
   )
   return data?.allReferences
+}
+
+/* PAGE EXPERTISE */
+export async function getSolutions(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allPages(filter: {categorie: {matches: {pattern: "solution"}}}, locale: ${locale}) {
+          miniaturePage {
+            ...MiniaturePageFieldFragment
+          }
+          image {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+        }
+      }
+      ${miniaturePageFragment}
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+
+  return data?.allPages.map((miniature) => {
+    return {
+      image: miniature.image,
+      content: miniature.miniaturePage
+    }
+  })
 }
 
 /* PAGE REFERENCES */

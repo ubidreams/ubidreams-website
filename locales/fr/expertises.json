@@ -102,35 +102,7 @@
     },
     "conclusion": {
       "subtitle": "Ainsi depuis 2018, UBIDREAMS a conçu et réalisé pour ses clients des solutions numériques dont UBIDREAMS est copropriétaire avec ses clients et qu’elle peut proposer au marché en FRANCE et à l’étranger. Ces solutions sont en effet très bien dimensionnées pour être exportées en AFRIQUE par exemple où UBIDREAMS a déjà des activités par ailleurs."
-    },
-    "fields": [
-
-      {
-        "img": {
-          "key": "POI",
-          "alt": "Logo UbiPOI"
-        },
-        "textLink": "UbiPOI",
-        "content": "Afin d’aider les professionnels à suivre les scénarios lors d’un %color% Plan d’Opération Interne%color%, nous avons développé une application web qui permet de faire l’état des lieux des stocks et de suivre l’évolution d’un sinistre."
-      },
-      {
-        "img": {
-          "key": "PTW",
-          "alt": "Logo UbiPTW"
-        },
-        "textLink": "UbiPTW",
-        "content": "Ce logiciel web permet de faciliter l’édition numérique des %color% permis de travail %color% des intervenants sur votre site d’exploitation de façon simple et intuitive."
-      },
-      {
-        "img": {
-          "key": "track",
-          "alt": "Logo UbiTrack"
-        },
-        "col": "100",
-        "textLink": "UbiTrack",
-        "content": "Cette solution de suivi de %color% l’activité de déchargement des bateaux %color% en temps réel est composée d’une infrastructure IOT avec l’utilisation d’objet connecté et d’un logiciel web de suivi et de traitement des données (back office)."
-      }
-    ]
+    }
   },
   "referencesLinked": {
     "title": "Nos dernières réalisations utilisant cette technologie",

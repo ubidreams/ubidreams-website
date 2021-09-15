@@ -1,4 +1,6 @@
 import useTranslation from 'next-translate/useTranslation'
+import { getSolutions } from '../lib/api'
+import { useRouter } from 'next/router'
 
 import StepContainer from '../components/step-container'
 import Layout from '../components/layout/layout'
@@ -7,9 +9,11 @@ import Section from '../components/section'
 import TextContainer from '../components/text-container'
 import SectionCardSimple from '../components/section-card-simple'
 import ContactSection from '../components/contact-section'
+import Card from '../components/card'
 
-export const Expertises = () => {
+export const Expertises = ({ solutions }) => {
   const { t } = useTranslation('expertises')
+  const router = useRouter()
   return (
     <Layout>
       <div className='shape shape-fluid-x shape-blur-2 text-light-grey d-none d-md-block'>
@@ -51,9 +55,7 @@ export const Expertises = () => {
       <Section bgClass='bg-gray-200'>
         <TextContainer namespace={{ name: 'expertises', section: 'solution.introduction' }} alignText='center' />
         <div className='row'>
-          {t('solution.fields', {}, { returnObjects: true }).map((item, index) => (
-            <SectionCardSimple key={index} data={item} reverse={index % 2 === 1} />
-          ))}
+          <Card config={solutions} router={router} large={3} />
         </div>
         <TextContainer
           namespace={{ name: 'expertises', section: 'solution.conclusion' }}
@@ -71,3 +73,10 @@ export const Expertises = () => {
 }
 
 export default Expertises
+
+export async function getStaticProps({ preview = false, locale }) {
+  const solutions = (await getSolutions(preview, locale)) || []
+  return {
+    props: { solutions }
+  }
+}

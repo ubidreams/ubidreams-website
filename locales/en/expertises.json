@@ -98,35 +98,7 @@
     },
     "conclusion": {
       "subtitle" : "Since 2018, Ubidreams created digital solutions for his clients, Ubidreams is co-owner of those with his customers. Ubidreams proposes those solutions for France and the international market. Their usage is appropriate to export in Africa for example where Ubidreams already has activities."
-    },
-    "fields" : [
-
-      {
-        "img": {
-          "key": "POI",
-          "alt": "Logo UbiPOI"
-        },
-        "textLink": "UbiPOI",
-        "content": "In the aim to help professionals to follow scenarios during an %color% Internal Operation Plan%color%, we developed a web application which allows users to make the inventory of the stocks and to follow the evolution of a disaster."
-      },
-      {
-        "img": {
-          "key": "PTW",
-          "alt": "Logo UbiPTW"
-        },
-        "textLink": "UbiPTW",
-        "content": "It’s a web software which makes easier digital edition of %color% work permit %color% for workers on your operating site in a simple and intuitive way."
-      },
-      {
-        "img": {
-          "key": "track",
-          "alt": "Logo UbiTrack"
-        },
-        "col": "100",
-        "textLink": "UbiTrack",
-        "content": "This solution for monitoring %color% boat unloading activity %color% in real time is composed of IOT infrastructure with the use of connected devices and a web-based software for monitoring and processing data (back office)."
-      }
-    ]
+    }
   },
   "referencesLinked": {
     "title": "Our last realisations using this technology",
