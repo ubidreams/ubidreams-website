@@ -1,19 +1,18 @@
-import { getAllPageSlugs, getOnePageBySlug, getLastRefByTech } from '../../../lib/api'
-import { useRouter } from 'next/router'
-import { StructuredText } from 'react-datocms'
+import { renderRule, StructuredText } from 'react-datocms'
+import { isSpan } from 'datocms-structured-text-utils'
 import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
-import { isEmpty } from 'lodash'
+import { includes, isEmpty } from 'lodash'
 
-import Layout from '../../../components/layout/layout'
-import Breadcrumb from '../../../components/breadcrumb'
-import Section from '../../../components/section'
-import { LinkBeautify } from '../../../components/link-beautify'
-import CardReference from '../../../components/card-reference'
-import TextContainer from '../../../components/text-container'
-import ContactSection from '../../../components/contact-section'
-import CardExpert from '../../../components/card-expert'
-import CardPartner from '../../../components/card-partner'
+import Breadcrumb from '../breadcrumb'
+import Section from '../section'
+import { LinkBeautify } from '../link-beautify'
+import CardReference from '../card-reference'
+import TextContainer from '../text-container'
+import ContactSection from '../contact-section'
+import CardExpert from '../card-expert'
+import CardPartner from '../card-partner'
+import Layout from '../layout/layout'
 
 const renderPage = (type, page) => {
   switch (type) {
@@ -71,11 +70,7 @@ const renderPage = (type, page) => {
       null
   }
 }
-const Page = ({ page, lastRef }) => {
-  const router = useRouter()
-
-  if (router.isFallback) return null
-
+const PageTemplate = ({ page, lastRef, router }) => {
   return (
     <Layout>
       <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
@@ -84,13 +79,13 @@ const Page = ({ page, lastRef }) => {
           <h1 className='display-2 fw-bold'>{page.title}</h1>
           {renderPage('subtitle', page)}
         </div>
-        {renderPage('image', page)}
+        {page.image && renderPage('image', page)}
         <div className='my-6'>
           <StructuredText
             data={page.content}
             renderLinkToRecord={({ record, children, transformedMeta }) => {
               return (
-                <LinkBeautify record={record} router={router} meta={transformedMeta} oldSlug={page.slug}>
+                <LinkBeautify record={record} meta={transformedMeta}>
                   {children}
                 </LinkBeautify>
               )
@@ -98,10 +93,22 @@ const Page = ({ page, lastRef }) => {
             renderBlock={({ record }) => {
               return <Image data={record.image.responsiveImage} alt='' />
             }}
+            customRules={[
+              renderRule(isSpan, ({ node, children, key }) => {
+                if (node.marks && includes(node.marks, 'highlight')) {
+                  return (
+                    <node.type key={key} className='text-green'>
+                      {node.value}
+                    </node.type>
+                  )
+                } else {
+                  return <node.type key={key}>{node.value}</node.type>
+                }
+              })
+            ]}
           />
         </div>
       </Section>
-
       {!isEmpty(page.expertInterne) && renderPage('expertInterne', page)}
       {!isEmpty(page.expertPartenaires) && renderPage('expertPartenaire', page)}
       {!isEmpty(page.partenaires) && renderPage('partenaires', page)}
@@ -110,42 +117,4 @@ const Page = ({ page, lastRef }) => {
     </Layout>
   )
 }
-export default Page
-
-export async function getStaticProps({ preview = false, locale, ...props }) {
-  const page = await getOnePageBySlug(preview, locale, props.params?.slug)
-  const lastRef = await getLastRefByTech(page.etiquette.id, locale)
-
-  if (!page) {
-    return {
-      notFound: true
-    }
-  }
-  return {
-    props: { page, lastRef }
-  }
-}
-
-export async function getStaticPaths({ locales }) {
-  //https://mariestarck.com/how-to-localize-your-next-js-application-with-next-translate/
-
-  const paths = []
-
-  const en = await getAllPageSlugs('development', 'en')
-  const fr = await getAllPageSlugs('development', 'fr')
-
-  const fillPaths = (array) => {
-    array.forEach(({ slug, categorie }) => {
-      paths.push({
-        params: {
-          slug,
-          expertise: categorie
-        }
-      })
-    })
-  }
-  fillPaths(en)
-  fillPaths(fr)
-
-  return { paths, fallback: true }
-}
+export default PageTemplate

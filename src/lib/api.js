@@ -83,7 +83,6 @@ async function fetchAPI(query, { variables, preview } = {}) {
 
   const json = await res.json()
   if (json.errors) {
-    console.error(json.errors)
     throw new Error('Failed to fetch API')
   }
   return json.data
@@ -297,6 +296,7 @@ export async function getExpertisesByField(preview, locale, field) {
             links {
               id
               slug
+              categorie
             }
           }
           icon {

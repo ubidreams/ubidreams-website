@@ -33,7 +33,7 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
                   data={content}
                   renderLinkToRecord={({ record, children, transformedMeta }) => {
                     return (
-                      <LinkBeautify record={record} router={router} meta={transformedMeta}>
+                      <LinkBeautify record={record} meta={transformedMeta}>
                         {children}
                       </LinkBeautify>
                     )

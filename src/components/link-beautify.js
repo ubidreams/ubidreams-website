@@ -1,27 +1,41 @@
 import Link from 'next/link'
-import { replace } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 
-export const LinkBeautify = ({ router, record, meta, children, oldSlug }) => {
+export const LinkBeautify = ({ record, meta, children }) => {
   const { t } = useTranslation('common')
-  let pathname = '/expertises/[expertise]/[slug]'
+  let pathname
   let newAs
+  let query = { slug: record.slug }
 
-  if (oldSlug) {
-    newAs = replace(router.asPath, `/${oldSlug}`, `/${record.slug}`)
-  } else {
-    newAs = router.asPath + `/${record.slug}`
+  switch (record.categorie) {
+    case 'solution':
+      pathname = '/expertises/[params]'
+      newAs = `/expertises/${record.slug}`
+      break
+    case 'development':
+    case 'consulting':
+    case 'design':
+    case 'internet-of-things':
+      pathname = '/expertises/[params]/[slug]'
+      newAs = `/expertises/${record.categorie}/${record.slug}`
+      query = { ...query, params: record.categorie }
+      break
+    case 'reference':
+      pathname = '/references/[params]'
+      newAs = `/references/${record.slug}`
+      break
+    default:
+      pathname = '/'
+      newAs = `/`
   }
+
   if (!record.slug) pathname = '/404'
 
   return (
     <Link
       href={{
         pathname: pathname,
-        query: {
-          expertise: t(`header.expertise.items.${record.categorie}.key`),
-          slug: record.slug
-        }
+        query
       }}
       as={newAs}
     >
