@@ -1,5 +1,5 @@
 import { renderRule, StructuredText } from 'react-datocms'
-import { isSpan } from 'datocms-structured-text-utils'
+import { isSpan, isHeading } from 'datocms-structured-text-utils'
 import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { includes, isEmpty } from 'lodash'
@@ -33,7 +33,7 @@ const renderPage = (type, page) => {
           </div>
         </Section>
       )
-    case 'expertPartenaires':
+    case 'expertPartenaire':
       return (
         <Section>
           <TextContainer namespace={{ name: 'expertises', section: 'externalExperts' }} alignText='center' />
@@ -101,10 +101,26 @@ const PageTemplate = ({ page, lastRef, router }) => {
                       {node.value}
                     </node.type>
                   )
-                } else {
-                  return <node.type key={key}>{node.value}</node.type>
                 }
-              })
+
+                if (node.marks && includes(node.marks, 'strong')) {
+                  return (
+                    <node.type key={key}>
+                      <strong>{node.value}</strong>
+                    </node.type>
+                  )
+                }
+
+                return <node.type key={key}>{node.value}</node.type>
+              }),
+              renderRule(isHeading, ({ node, children, key }) => {
+                const HeadingTag = `h${node.level}`
+                return (
+                  <HeadingTag key={key} className='pt-4'>
+                    {children}
+                  </HeadingTag>
+                )
+              }),
             ]}
           />
         </div>

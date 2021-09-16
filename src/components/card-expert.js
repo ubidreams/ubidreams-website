@@ -15,9 +15,11 @@ export const CardExpert = ({ config = {} }) => {
               className='card-img-top'
             />
           </div>
-          <div className='card-img-overlay pt-0 card-img-overlay-hover'>
-            <div className='card-body h-100 mb-2 text-muted bg-white'>{ReactHtmlParser(expert.presentation)}</div>
-          </div>
+          {expert.presentation && (
+            <div className='card-img-overlay pt-0 card-img-overlay-hover'>
+              <div className='card-body h-100 mb-2 text-muted bg-white'>{ReactHtmlParser(expert.presentation)}</div>
+            </div>
+          )}
           <div className='card-body bg-white'>
             <div className='shape shape-bottom-100 shape-fluid-x text-white'>
               <svg viewBox='0 0 2880 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
