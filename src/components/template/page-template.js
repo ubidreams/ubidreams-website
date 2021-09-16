@@ -11,8 +11,8 @@ import CardReference from '../card-reference'
 import TextContainer from '../text-container'
 import ContactSection from '../contact-section'
 import CardExpert from '../card-expert'
-import CardPartner from '../card-partner'
 import Layout from '../layout/layout'
+import Card from '../card'
 
 const renderPage = (type, page) => {
   switch (type) {
@@ -46,8 +46,8 @@ const renderPage = (type, page) => {
       return (
         <Section bgClass='bg-gray-300'>
           <TextContainer namespace={{ name: 'expertises', section: 'partners' }} alignText='center' />
-          <div className='row row-cols-md-2 pt-6 justify-content-center'>
-            <CardPartner config={page.partenaires} />
+          <div className='row pt-6 justify-content-center'>
+            <Card config={page.partenaires} large={3} />
           </div>
         </Section>
       )

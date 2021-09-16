@@ -429,8 +429,14 @@ export async function getOnePageBySlug(preview, locale, slug) {
             ...MembreRecordFragment
           }
           partenaires {
-            name
-            content
+            content {
+              value
+              links {
+                slug
+                categorie
+                id
+              }
+            }
             image {
               responsiveImage {
                 ...responsiveImageFragment

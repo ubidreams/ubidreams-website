@@ -3,11 +3,12 @@ import { Image, renderRule, StructuredText } from 'react-datocms'
 import { isSpan, isHeading, isParagraph } from 'datocms-structured-text-utils'
 import { LinkBeautify } from './link-beautify'
 
-const Card = ({ config = {}, reverse = false, showShadows = false, textJustify = '', large = 1, router }) => {
+const Card = ({ config = {}, reverse = false, showShadows = false, textJustify = '', large = 1 }) => {
   return config.map((contentCard, index) => {
     const { image, content } = contentCard
     //Si le reverse est passé en props (true) alors le reverse par défault est inversé
     const conditionReverse = !reverse ? index % 2 == 1 : index / 2 == 1
+
     if (!isNull(content)) {
       return (
         <div
