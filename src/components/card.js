@@ -1,6 +1,6 @@
 import { includes, isNull } from 'lodash'
 import { Image, renderRule, StructuredText } from 'react-datocms'
-import { isSpan } from 'datocms-structured-text-utils'
+import { isSpan, isHeading, isParagraph } from 'datocms-structured-text-utils'
 import { LinkBeautify } from './link-beautify'
 
 const Card = ({ config = {}, reverse = false, showShadows = false, textJustify = '', large = 1, router }) => {
@@ -50,16 +50,27 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
 
                       if (node.marks && includes(node.marks, 'strong')) {
                         return (
-                          <node.type key={key} className='fs-4 fw-bold'>
+                          <node.type key={key} className='fw-bold'>
                             {node.value}
                           </node.type>
                         )
                       }
 
+                      return <node.type key={key}>{node.value}</node.type>
+                    }),
+                    renderRule(isHeading, ({ node, children, key }) => {
+                      const HeadingTag = `h${node.level}`
                       return (
-                        <node.type key={key} className='text-muted'>
-                          {node.value}
-                        </node.type>
+                        <HeadingTag key={key} className='fs-4 fw-bolder'>
+                          {children}
+                        </HeadingTag>
+                      )
+                    }),
+                    renderRule(isParagraph, ({ node, children, key }) => {
+                      return (
+                        <p key={key} className='text-muted'>
+                          {children}
+                        </p>
                       )
                     })
                   ]}

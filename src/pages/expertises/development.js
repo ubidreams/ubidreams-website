@@ -36,6 +36,7 @@ export const Developpement = ({ expertises = [] }) => {
           <CardExpertise config={expertises} />
         </div>
       </Section>
+      {/* Nos gestions de projet */}
       <Section bgClass='bg-gray-300'>
         <h2 className='text-center'>{t('projets.title')}</h2>
         <div className='row'>

@@ -1,3 +1,5 @@
+import { isNull } from 'lodash'
+
 const API_URL = 'https://graphql.datocms.com'
 const API_TOKEN = process.env.DATOCMS_API_TOKEN
 
@@ -113,6 +115,44 @@ export async function getAllTestimonialsForHome(preview, locale) {
   return data?.home
 }
 
+export async function getPagesFavorites(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        home(locale: ${locale}) {
+          pageFavorite {
+            miniaturePage {
+              ...MiniaturePageFieldFragment
+            }
+            image {
+              responsiveImage {
+                ...responsiveImageFragment
+              }
+            }
+            alternativeImage {
+              responsiveImage {
+                ...responsiveImageFragment
+              }
+            }
+          }
+        }
+      }  
+      ${miniaturePageFragment}
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+
+  return data?.home.pageFavorite.map((miniature) => {
+    //S'il n'y a pas d'image de miniature alors l'image par défaut de la page est prise
+    const image = isNull(miniature.alternativeImage) ? miniature.image : miniature.alternativeImage
+    return {
+      image,
+      content: miniature.miniaturePage
+    }
+  })
+}
+
 export async function getLastReferences(preview, locale) {
   const data = await fetchAPI(
     `
@@ -143,6 +183,11 @@ export async function getSolutions(preview, locale) {
               ...responsiveImageFragment
             }
           }
+          alternativeImage {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
         }
       }
       ${miniaturePageFragment}
@@ -152,8 +197,9 @@ export async function getSolutions(preview, locale) {
   )
 
   return data?.allPages.map((miniature) => {
+    const image = isNull(miniature.alternativeImage) ? miniature.image : miniature.alternativeImage
     return {
-      image: miniature.image,
+      image,
       content: miniature.miniaturePage
     }
   })

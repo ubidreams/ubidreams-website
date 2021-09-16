@@ -54,39 +54,7 @@
         }
     ],
     "technology" : {
-        "title": "Our favorites technologies and methods",
-        "details": [
-          {
-            "img": {
-              "key": "multiplateforme",
-              "alt": "Cross-platform compatibility illustration"
-            },
-            "col": "100",
-            "title": "Your multiplatforms mobile application with",
-            "textLink": "React Native",
-            "content": "We develop mobile app for Android and IOS with the framework React Native."
-          },
-          {
-            "img": {
-              "key": "iot",
-              "alt": "Connected truck illustration"
-            },
-            "title": "Your IOT project with",
-            "textLink": "Beacon",
-            "content":
-              "We build connected architectures basing ourselves on communication technologies like %color% Beacons."
-          },
-          {
-            "img": {
-              "key": "design",
-              "alt": "Web design illustration"
-            },
-            "title": "Optimized use thanks to",
-            "textLink": "UX design",
-            "content":
-              "We think your application with the most attractive and qualitative %color% user experience."
-          }
-        ]
+        "title": "Our favorites technologies and methods"
       },
     "testimony": {
         "title": "Our customers trust us",

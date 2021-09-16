@@ -1,20 +1,22 @@
-import { getAllTestimonialsForHome, getLastReferences } from '../lib/api'
+import { getAllTestimonialsForHome, getLastReferences, getPagesFavorites } from '../lib/api'
 import useTranslation from 'next-translate/useTranslation'
+import { useRouter } from 'next/router'
 
 import FeatureContainer from '../components/feature-container'
 import Layout from '../components/layout/layout'
 import PageTitle from '../components/page-title'
 import Section from '../components/section'
-import SectionCardSimple from '../components/section-card-simple'
 import TextContainer from '../components/text-container'
 import ContactSection from '../components/contact-section'
 import SliderComponent from '../components/slider'
 import CardReference from '../components/card-reference'
 import { Recherche, IdeesRightCropped } from '../config/StaticImagesExport'
 import SliderItem from '../components/slider-item'
+import Card from '../components/card'
 
-export const Home = ({ allTestimonials, lastReferences }) => {
+export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
   const { t } = useTranslation('home')
+  const router = useRouter()
   return (
     <Layout>
       {/* Entête > titre + illustration à droite */}
@@ -45,9 +47,7 @@ export const Home = ({ allTestimonials, lastReferences }) => {
       <Section>
         <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
         <div className='row'>
-          {t('technology.details', {}, { returnObjects: true }).map((item, index) => (
-            <SectionCardSimple key={index} data={item} showShadows reverse={index / 2 === 1} />
-          ))}
+          <Card config={pagesFavorites} router={router} large={1} reverse showShadows />
         </div>
       </Section>
 
@@ -80,9 +80,12 @@ export const Home = ({ allTestimonials, lastReferences }) => {
 export default Home
 
 export async function getStaticProps({ preview = false, locale }) {
+  const pagesFavorites = (await getPagesFavorites(preview, locale)) || []
   const allTestimonials = (await getAllTestimonialsForHome(preview, locale)) || []
   const lastReferences = (await getLastReferences(preview, locale)) || []
+
+  console.log(pagesFavorites)
   return {
-    props: { allTestimonials, lastReferences }
+    props: { allTestimonials, lastReferences, pagesFavorites }
   }
 }
