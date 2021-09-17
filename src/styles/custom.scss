@@ -79,6 +79,21 @@ $opacity: (
     text-decoration: none !important;
   }
 
+  /* OUTLINE BUTTON */
+  .btn-outline-#{$color} {
+    border-color: #d9e2ef;
+    color: $value;
+  }
+
+  .btn-outline-#{$color}:hover,
+  .btn-outline-#{$color}:active,
+  .btn-outline-#{$color}:focus,
+  .btn-outline-#{$color}.active {
+    background-color: $value;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
   /* SOFT BADGE */
   .badge.bg-#{$color}-soft.active {
     background-color: $value;

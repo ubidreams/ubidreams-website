@@ -7,5 +7,14 @@
             "button": "Rechercher"
         },
         "noResult": "Nous n'avons aucun résultat correspondant à votre recherche."
+    },
+    "post": {
+        "date": "Publié le",
+        "share": "Partager",
+        "update": "Dernière modification le",
+        "lastPost": {
+            "title": "Nos derniers articles",
+            "subtitle": "Découvrez nos dernières actualités."
+        }
     }
 }

@@ -7,5 +7,14 @@
             "button": "Search"
         },
         "noResult": "We have no results corresponding to your search."
+    },
+    "post": {
+        "date": "Published on",
+        "share": "Share",
+        "update": "Updated on",
+        "lastPost": {
+            "title": "Latest Stories",
+            "subtitle": "Here's what we've been up to recently."
+        }
     }
 }

@@ -84,7 +84,6 @@ export async function getStaticProps({ preview = false, locale }) {
   const allTestimonials = (await getAllTestimonialsForHome(preview, locale)) || []
   const lastReferences = (await getLastReferences(preview, locale)) || []
 
-  console.log(pagesFavorites)
   return {
     props: { allTestimonials, lastReferences, pagesFavorites }
   }

@@ -10,7 +10,7 @@ import Link from 'next/link'
 import CardArticle from '../../components/card-article'
 import PaginationComponent from '../../components/pagination'
 
-export const References = ({ posts, tags, locale }) => {
+export const Blog = ({ posts, tags, locale }) => {
   const { t } = useTranslation('blog')
   const [activeTag, setActiveTag] = useState(null)
   const [visiblePosts, setVisiblePosts] = useState(posts)
@@ -143,9 +143,9 @@ export const References = ({ posts, tags, locale }) => {
   )
 }
 
-export default References
+export default Blog
 
-export async function getStaticProps({ preview, locale }, context) {
+export async function getStaticProps({ preview, locale }) {
   const blog = (await getBlog(preview, locale)) || []
   const posts = blog.allPosts
   const tags = blog.allTags

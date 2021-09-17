@@ -35,7 +35,7 @@ export const CardArticle = ({ config = {}, locale }) => {
           <div className='card-body' href='#!'>
             <h3>{post.title}</h3>
 
-            <div className='mb-0 text-muted'>{ReactHtmlParser(post.content.substr(0, 100) + '...')}</div>
+            <div className='mb-0 text-muted'>{ReactHtmlParser(post.subtitle.substr(0, 100) + '...')}</div>
           </div>
 
           <div className='card-meta mt-auto' href='#!'>

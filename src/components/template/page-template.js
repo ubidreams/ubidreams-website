@@ -120,7 +120,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
                     {children}
                   </HeadingTag>
                 )
-              }),
+              })
             ]}
           />
         </div>

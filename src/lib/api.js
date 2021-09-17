@@ -300,7 +300,7 @@ export async function getBlog(preview, locale) {
           date
           slug
           title
-          content
+          subtitle
           author {
             name
           }
@@ -327,6 +327,97 @@ export async function getBlog(preview, locale) {
     { preview }
   )
   return data
+}
+
+export async function getLastPosts(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allPosts(locale: ${locale}, orderBy: date_DESC, first: "3") {
+          date
+          slug
+          title
+          subtitle
+          author {
+            name
+          }
+          heroCover {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+        }
+      }
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.allPosts
+}
+
+export async function getAllPostsSlugs(locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allPosts(locale: ${locale}) {
+          slug
+        }
+      }
+    `
+  )
+  return data?.allPosts
+}
+
+export async function getOnePostBySlug(preview, locale, slug) {
+  const data = await fetchAPI(
+    `
+      {
+        post(locale: ${locale}, filter: {slug: {eq: "${slug}"}}) {
+          id
+          slug
+          title
+          subtitle
+          _publishedAt
+          updatedAt
+          author {
+            name
+          }
+          date
+          heroCover {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+          content {
+            value
+            links {
+              ... on PageRecord {
+                id
+                slug
+                categorie
+              }
+              ... on PostRecord {
+                id
+                slug
+              }
+            }
+            blocks {
+              id
+              image {
+                responsiveImage {
+                  ...responsiveImageFragment
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.post
 }
 
 /* EXPERTISES */
