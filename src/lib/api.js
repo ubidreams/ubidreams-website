@@ -507,6 +507,9 @@ export async function getOnePageBySlug(preview, locale, slug) {
             blocks {
               id
               image {
+                format
+                url
+                title
                 responsiveImage {
                   ...responsiveImageFragment
                 }

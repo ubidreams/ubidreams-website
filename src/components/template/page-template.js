@@ -3,7 +3,9 @@ import { isSpan, isHeading } from 'datocms-structured-text-utils'
 import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { includes, isEmpty } from 'lodash'
+import ImageNext from 'next/image'
 
+import { Download } from '../../config/StaticImagesExport'
 import Breadcrumb from '../breadcrumb'
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
@@ -91,6 +93,21 @@ const PageTemplate = ({ page, lastRef, router }) => {
               )
             }}
             renderBlock={({ record }) => {
+              const { title, format, url } = record.image
+              if (format === 'pdf') {
+                return (
+                  <a
+                    target='_blank'
+                    rel='noreferrer'
+                    href={url}
+                    className='d-block d-md-inline-block text-center border border-gray-300 p-2 rounded me-md-2 mb-2'
+                  >
+                    <ImageNext src={Download} alt='icon download' width={50} height={50} />
+                    <p className='mb-0'>{title}</p>
+                  </a>
+                )
+              }
+
               return <Image data={record.image.responsiveImage} alt='' />
             }}
             customRules={[

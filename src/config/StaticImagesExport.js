@@ -50,6 +50,7 @@ import Target from '../../public/img/icons/Target.svg'
 import Thunder from '../../public/img/icons/Thunder-move.svg'
 import Timer from '../../public/img/icons/Timer.svg'
 import Waiting from '../../public/img/icons/Waiting.svg'
+import Download from '../../public/img/icons/Downloaded-file.svg'
 
 import French from '../../public/img/icons/france.png'
 import English from '../../public/img/icons/united-kingdom.png'
@@ -62,6 +63,7 @@ export {
   Contact,
   ContactHeader,
   Ubidreams,
+  Download,
   Facebook,
   Linkedin,
   Twitter
