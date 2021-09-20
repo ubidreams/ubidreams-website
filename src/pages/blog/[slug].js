@@ -14,7 +14,7 @@ export default Post
 
 export async function getStaticProps({ preview = false, locale, params }) {
   const post = await getOnePostBySlug(preview, locale, params?.slug)
-  const lastPosts = (await getLastPosts(preview, locale)) || []
+  const lastPosts = post?.tags?.id ? await getLastPosts(preview, locale, post?.tags?.id, post?.id) : []
 
   if (!post) {
     return {

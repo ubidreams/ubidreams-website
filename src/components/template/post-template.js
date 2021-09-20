@@ -2,7 +2,8 @@ import { renderRule, StructuredText } from 'react-datocms'
 import { Image } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
 import ReactHtmlParser from 'react-html-parser'
-import { includes, last } from 'lodash'
+import { includes } from 'lodash'
+import { Parallax, Background } from 'react-parallax'
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
 
@@ -49,8 +50,18 @@ const PostTemplate = ({ post, locale, lastPosts }) => {
     { icon: Twitter, alt: 'Twitter' },
     { icon: Linkedin, alt: 'Linkedin' }
   ]
+
+  const imageCover = { src: post.heroCover.responsiveImage.src, alt: post.heroCover.responsiveImage.alt }
+
   return (
     <Layout>
+      <Parallax
+        bgImage={imageCover.src}
+        bgImageAlt={imageCover.alt}
+        strength={500}
+        className='py-12 py-md-14 bg-grey-blue'
+        bgImageStyle={{ top: '-30%' }}
+      ></Parallax>
       <Section>
         <div className='text-center mb-8'>
           {renderPage('title', post)}
@@ -115,7 +126,7 @@ const PostTemplate = ({ post, locale, lastPosts }) => {
               renderRule(isHeading, ({ node, children, key }) => {
                 const HeadingTag = `h${node.level}`
                 return (
-                  <HeadingTag key={key} className='pt-4'>
+                  <HeadingTag key={key} className='pt-6'>
                     {children}
                   </HeadingTag>
                 )

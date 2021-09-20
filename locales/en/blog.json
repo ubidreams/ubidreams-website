@@ -13,8 +13,8 @@
         "share": "Share",
         "update": "Updated on",
         "lastPost": {
-            "title": "Latest Stories",
-            "subtitle": "Here's what we've been up to recently."
+            "title": "Latest Related Stories",
+            "subtitle": "Discover our latest news on the same topic."
         }
     }
 }

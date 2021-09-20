@@ -13,8 +13,8 @@
         "share": "Partager",
         "update": "Dernière modification le",
         "lastPost": {
-            "title": "Nos derniers articles",
-            "subtitle": "Découvrez nos dernières actualités."
+            "title": "Nos derniers articles liés",
+            "subtitle": "Découvrez nos dernières actualités sur le même thème."
         }
     }
 }

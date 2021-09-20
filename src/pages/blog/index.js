@@ -17,27 +17,33 @@ export const Blog = ({ posts, tags, locale }) => {
   const [searchValue, setSearchValue] = useState('')
   const [activePage, setActivePage] = useState(1)
   const [postsPaginated, setPostsPaginated] = useState([])
-  const [cleanSearchButton, setCleanSearchButton] = useState(false)
 
+  /* Gestion event : clique sur un tag afin de filtrer la recherche
+    param : tag sélectionné
+    action : vide la searchbar, filtre les posts et retourne ceux affiliés au tag, réinitialise la page active à 1
+  */
   const handleTagClicked = useCallback(
     (activeTag) => {
       if (searchValue) setSearchValue('')
       setActiveTag(activeTag)
+
       let newVisiblePostsArray = []
       forEach(posts, (post) => {
-        post.tags.forEach((tag) => {
-          if (tag.name === activeTag) {
-            newVisiblePostsArray.push(post)
-          }
-        })
+        if (post.tags.name === activeTag) {
+          newVisiblePostsArray.push(post)
+        }
       })
-      setCleanSearchButton(false)
+
       setActivePage(1)
       setVisiblePosts(newVisiblePostsArray)
     },
     [posts, searchValue]
   )
 
+  /* Gestion event : validation du champ de recherche
+    param : event
+    action : filtre les posts et retourne ceux dont le titre match la recherche, réinitialise la page active à 1
+  */
   const handleSearchValue = (e) => {
     e.preventDefault()
     const newVisiblePostsArray = filter(posts, (post) => includes(post.title.toLowerCase(), searchValue.toLowerCase()))
@@ -45,19 +51,21 @@ export const Blog = ({ posts, tags, locale }) => {
     setActivePage(1)
     setVisiblePosts(newVisiblePostsArray)
   }
+
+  /* Gestion event : changement de la valeur de la recherche
+    param : valeur saisie
+    action : réinitialise les filtres par tag, stock la valeur saisie dans un state
+  */
   const handleChangeSearchValue = useCallback(({ target: { value } }) => {
-    if (value === '') {
-      setCleanSearchButton(false)
-    } else {
-      setCleanSearchButton(true)
-    }
     setActiveTag(null)
     setSearchValue(value)
   }, [])
 
+  /* Gestion event : réinitialisation de la recherche
+    action : réinitialise les filtres par tag, vide la searchbar
+  */
   const cleanSearch = useCallback(() => {
     setActiveTag(null)
-    setCleanSearchButton(false)
     setSearchValue('')
     setVisiblePosts(posts)
   }, [posts])
@@ -84,14 +92,16 @@ export const Blog = ({ posts, tags, locale }) => {
           <div>
             <form className='mb-4 search-bar'>
               <div className='rounded input-group input-group-lg border border-gray-300'>
-                <button
-                  className='input-group-text border-0 pe-1'
-                  disabled={!cleanSearchButton}
-                  onClick={() => cleanSearch()}
-                >
-                  {/* Si cleanSearchButton = true alors j'affiche l'icon "X" pour indiquer que l'on peut nettoyer la recherche */}
-                  {cleanSearchButton ? <i className='fe fe-x'></i> : <i className='fe fe-search'></i>}
-                </button>
+                {searchValue.length === 0 && (
+                  <div className='input-group-text border-0 pe-1'>
+                    <i className='fe fe-search' />
+                  </div>
+                )}
+                {searchValue.length > 0 && (
+                  <span className='input-group-text border-0 pe-1' onClick={cleanSearch}>
+                    <i className='fe fe-x' />
+                  </span>
+                )}
                 <input
                   type='text'
                   className='form-control border-0 px-1'
@@ -121,7 +131,7 @@ export const Blog = ({ posts, tags, locale }) => {
                 </Link>
               )
             })}
-            <button className='border-0 pe-1 bg-white me-2 mb-1' onClick={() => cleanSearch()}>
+            <button className='border-0 pe-1 bg-white me-2 mb-1' onClick={cleanSearch}>
               <span className='h6 text-uppercase'>
                 <i className='fe fe-x'></i>
               </span>

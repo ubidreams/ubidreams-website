@@ -69,7 +69,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
       {/* Dernières références */}
       <Section>
         <TextContainer namespace={{ name: 'home', section: 'reference' }} alignText='center' />
-        <div className='row row-cols-3'>
+        <div className='row row-cols-md-3'>
           <CardReference config={lastReferences} />
         </div>
       </Section>

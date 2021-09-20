@@ -120,6 +120,10 @@ $opacity: (
     }
   }
 }
+/* GLOBAL RULES */
+html {
+  overflow-y: auto !important;
+}
 //Custom link
 a {
   color: $blue;

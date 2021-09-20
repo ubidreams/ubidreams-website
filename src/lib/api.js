@@ -329,11 +329,11 @@ export async function getBlog(preview, locale) {
   return data
 }
 
-export async function getLastPosts(preview, locale) {
+export async function getLastPosts(preview, locale, tag, current_post) {
   const data = await fetchAPI(
     `
       {
-        allPosts(locale: ${locale}, orderBy: date_DESC, first: "3") {
+        allPosts(locale: ${locale}, orderBy: date_DESC, first: "3", filter: {tags: {eq: "${tag}"}, id: {neq: "${current_post}"}}) {
           date
           slug
           title
@@ -409,6 +409,10 @@ export async function getOnePostBySlug(preview, locale, slug) {
                 }
               }
             }
+          }
+          tags {
+            id
+            slug
           }
         }
       }
