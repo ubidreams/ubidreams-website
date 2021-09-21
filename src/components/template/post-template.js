@@ -2,10 +2,11 @@ import { renderRule, StructuredText } from 'react-datocms'
 import { Image } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
 import ReactHtmlParser from 'react-html-parser'
-import { includes } from 'lodash'
-import { Parallax, Background } from 'react-parallax'
+import { includes, isEmpty } from 'lodash'
+import { Parallax } from 'react-parallax'
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share'
 
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
@@ -14,7 +15,14 @@ import Layout from '../layout/layout'
 
 import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 import CardArticle from '../card-article'
-import TextContainer from '../text-container'
+
+const URL = process.env.NEXT_PUBLIC_URL_GLOBAL
+
+const iconsSocialMedia = [
+  { icon: Facebook, alt: 'Facebook' },
+  { icon: Twitter, alt: 'Twitter' },
+  { icon: Linkedin, alt: 'Linkedin' }
+]
 
 const renderPage = (type, post) => {
   switch (type) {
@@ -24,6 +32,18 @@ const renderPage = (type, post) => {
       return <h2 className='lead mb-7 text-center text-muted'>{ReactHtmlParser(post.subtitle)}</h2>
     case 'author':
       return <h6 className='text-uppercase mb-0'>{post.author.name}</h6>
+    case 'etiquettes':
+      return (
+        <div className='mb-4'>
+          {post.etiquettes.map((etiquette, index) => {
+            return (
+              <span key={index} className='badge bg-secondary-soft mx-2'>
+                {etiquette.name}
+              </span>
+            )
+          })}
+        </div>
+      )
     case 'image':
       return (
         <div>
@@ -34,7 +54,43 @@ const renderPage = (type, post) => {
       null
   }
 }
-const PostTemplate = ({ post, locale, lastPosts }) => {
+
+const renderSocialButtons = (item, router, post) => {
+  const styleProps = {
+    width: 25,
+    height: 25,
+    className: 'list-social-icon'
+  }
+  switch (item.alt) {
+    case 'Facebook':
+      let hastag = ''
+      post.etiquettes.forEach((etiquette) => {
+        hastag = hastag.concat('#', etiquette.slug, ' ')
+      })
+      return (
+        <FacebookShareButton url={URL + router.asPath} quote={post.title} hashtag={hastag}>
+          <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
+        </FacebookShareButton>
+      )
+    case 'Linkedin':
+      return (
+        <LinkedinShareButton url={URL + router.asPath} title={post.title} summary={post.subtitle} source={URL}>
+          <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
+        </LinkedinShareButton>
+      )
+    case 'Twitter':
+      let hastags = []
+      post.etiquettes.forEach((etiquette) => {
+        hastags.push(etiquette.slug)
+      })
+      return (
+        <TwitterShareButton url={URL + router.asPath} title={post.title} hashtags={hastags}>
+          <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
+        </TwitterShareButton>
+      )
+  }
+}
+const PostTemplate = ({ post, locale, lastPosts, router }) => {
   const { t } = useTranslation('blog')
   const dateFormatted = new Intl.DateTimeFormat(locale, { month: 'short', day: 'numeric', year: 'numeric' }).format(
     new Date(post.date)
@@ -44,12 +100,6 @@ const PostTemplate = ({ post, locale, lastPosts }) => {
     day: 'numeric',
     year: 'numeric'
   }).format(new Date(post.updatedAt))
-
-  const iconsSocialMedia = [
-    { icon: Facebook, alt: 'Facebook' },
-    { icon: Twitter, alt: 'Twitter' },
-    { icon: Linkedin, alt: 'Linkedin' }
-  ]
 
   const imageCover = { src: post.heroCover.responsiveImage.src, alt: post.heroCover.responsiveImage.alt }
 
@@ -78,12 +128,10 @@ const PostTemplate = ({ post, locale, lastPosts }) => {
             <span className='h6 text-uppercase text-muted d-none d-md-inline me-4'>{t('post.share')}:</span>
 
             <ul className='d-inline list-unstyled list-inline list-social m-0'>
-              {iconsSocialMedia.map(({ icon, alt }, index) => {
+              {iconsSocialMedia.map((item, index) => {
                 return (
                   <li key={index} className='list-inline-item list-social-item me-3'>
-                    <a href='#!' className='text-decoration-none'>
-                      <ImageNext src={icon} alt={alt} width={25} height={25} className='list-social-icon' />
-                    </a>
+                    {renderSocialButtons(item, router, post)}
                   </li>
                 )
               })}
@@ -144,6 +192,7 @@ const PostTemplate = ({ post, locale, lastPosts }) => {
           />
         </div>
         <div className='text-center border-top border-gray-300 pt-6'>
+          {!isEmpty(post.etiquettes) && renderPage('etiquettes', post)}
           <time className='fs-sm text-muted' dateTime={updatedDateFormatted}>
             {t('post.update') + ' ' + updatedDateFormatted}
           </time>
@@ -164,7 +213,7 @@ const PostTemplate = ({ post, locale, lastPosts }) => {
           </div>
           <div className='col-md-auto'>
             <a href={t('common:header.blog.path')} className='btn btn-sm btn-outline-blue d-none d-md-inline'>
-              View all
+              {t('post.lastPost.more')}
             </a>
           </div>
         </div>

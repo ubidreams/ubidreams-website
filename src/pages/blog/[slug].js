@@ -8,7 +8,7 @@ const Post = ({ post, lastPosts }) => {
 
   if (router.isFallback) return null
 
-  return <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} />
+  return <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} router={router} />
 }
 export default Post
 

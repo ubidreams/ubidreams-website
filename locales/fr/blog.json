@@ -14,7 +14,8 @@
         "update": "Dernière modification le",
         "lastPost": {
             "title": "Nos derniers articles liés",
-            "subtitle": "Découvrez nos dernières actualités sur le même thème."
+            "subtitle": "Découvrez nos dernières actualités sur le même thème.",
+            "more": "Voir plus"
         }
     }
 }

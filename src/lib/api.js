@@ -414,6 +414,11 @@ export async function getOnePostBySlug(preview, locale, slug) {
             id
             slug
           }
+          etiquettes {
+            slug
+            name
+            id
+          }
         }
       }
   

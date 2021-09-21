@@ -14,7 +14,8 @@
         "update": "Updated on",
         "lastPost": {
             "title": "Latest Related Stories",
-            "subtitle": "Discover our latest news on the same topic."
+            "subtitle": "Discover our latest news on the same topic.",
+            "more": "View all"
         }
     }
 }
