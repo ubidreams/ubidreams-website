@@ -1,4 +1,4 @@
-export const htmlBody = (name, email, message) => {
+export const htmlBody = (name, email, message, object) => {
   return `
     <!doctype html>
     <html>
@@ -19,7 +19,7 @@ export const htmlBody = (name, email, message) => {
       <body>
         <div id='content-mail'>
             <p class='align-center'><img src="https://www.datocms-assets.com/45470/1626703732-cropped-logo.png" width="172" height="49"/></p>
-            <h3>Nouveau message sur Ubidreams.fr</h3>
+            <h3>Nouveau message sur Ubidreams : ${object}</h3>
             <div>
                 <p><strong>Envoyé par : </strong>
                   ${name} | ${email}

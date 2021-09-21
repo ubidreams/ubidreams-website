@@ -1,19 +1,22 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import { ContactHeader } from '../config/StaticImagesExport'
-import { isNull } from 'lodash'
+import { isEmpty, isNull } from 'lodash'
 
 import ContactMeta from '../components/contact-meta'
 import Layout from '../components/layout/layout'
 import Section from '../components/section'
 import Title from '../components/title'
+import { useRouter } from 'next/dist/client/router'
 
 export const Contact = () => {
   const { t } = useTranslation('contact')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [object, setObject] = useState('')
   const [message, setMessage] = useState('')
   const [messageRequest, setMessageRequest] = useState({ code: null, message: null })
+  const router = useRouter()
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -23,6 +26,7 @@ export const Contact = () => {
       let data = {
         name,
         email,
+        object,
         message
       }
 
@@ -41,11 +45,19 @@ export const Contact = () => {
         setMessageRequest({ code: 'success', message: t('form.success') })
         setName('')
         setEmail('')
+        setObject('')
         setMessage('')
       }
     },
-    [email, message, name, t]
+    [email, message, name, object, t]
   )
+  useEffect(() => {
+    if (!isEmpty(router.query)) {
+      setObject(router.query.object)
+    } else {
+      setObject(t('form.default-object'))
+    }
+  }, [router.query, t])
 
   return (
     <Layout bgColor='bg-light-grey'>
@@ -116,6 +128,22 @@ export const Contact = () => {
             </div>
           </div>
           <div className='row'>
+            <div className='form-group mb-5'>
+              <label className='form-label required' htmlFor='contactObject'>
+                {t('form.object')}
+              </label>
+
+              <input
+                className='form-control border-gray-300'
+                id='contactObject'
+                type='text'
+                placeholder={t('form.object')}
+                onChange={(e) => setObject(e.target.value)}
+                value={object}
+                title={t('form.object')}
+                required
+              />
+            </div>
             <div className='form-group mb-7 mb-md-7'>
               <label className='form-label required' htmlFor='contactMessage'>
                 {t('form.message')}

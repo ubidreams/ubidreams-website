@@ -2,9 +2,11 @@ import Image from 'next/image'
 import { Contact } from '../config/StaticImagesExport'
 import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
+import { isEmpty } from 'lodash'
 
-const ContactSection = () => {
+const ContactSection = ({ mailObject = '' }) => {
   const { t } = useTranslation('common')
+  const query = isEmpty(mailObject) ? {} : { object: mailObject }
 
   const config = {
     img: {
@@ -37,7 +39,7 @@ const ContactSection = () => {
                 {config.content}
               </p>
               <footer className='blockquote-footer'>
-                <Link href='/contact'>
+                <Link href={{ pathname: '/contact', query }} as='/contact'>
                   <a className='btn btn-blue'>{config.buttonLabel}</a>
                 </Link>
               </footer>

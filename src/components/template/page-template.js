@@ -56,7 +56,7 @@ const renderPage = (type, page) => {
     case 'afficherContact':
       return (
         <Section>
-          <ContactSection />
+          <ContactSection mailObject={page.objetMail} />
         </Section>
       )
     case 'lastRef':

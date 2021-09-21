@@ -522,6 +522,7 @@ export async function getOnePageBySlug(preview, locale, slug) {
             }
           }
           afficherContact
+          objetMail
           etiquette {
             id
           }

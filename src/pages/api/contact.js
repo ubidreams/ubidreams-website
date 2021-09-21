@@ -19,9 +19,9 @@ export default async function handler(req, res) {
     from: process.env.MAIL_SMTP_SENDER,
     to: process.env.MAIL_SMTP_RECIPIENT,
     replyTo: req.body.email,
-    subject: `${req.body.name} a envoyé un message depuis le site web`,
+    subject: `${req.body.object}`,
     text: req.body.message + ' | Envoyé par : ' + req.body.email + ' - ' + req.body.email,
-    html: htmlBody(req.body.name, req.body.email, req.body.message)
+    html: htmlBody(req.body.name, req.body.email, req.body.message, req.body.object)
   }
 
   transporter.sendMail(mailData, function (error, info) {
