@@ -437,6 +437,7 @@ export async function getExpertisesByField(preview, locale, field) {
         allExpertises(filter: {expertise: {matches: {pattern: "${field}"}}}, locale: ${locale}) {
           title
           id
+          domaine
           description {
             value
             links {

@@ -1,5 +1,7 @@
 import { getExpertisesByField } from '../../lib/api'
 import { useRouter } from 'next/router'
+import { groupBy, isEmpty } from 'lodash'
+import useTranslation from 'next-translate/useTranslation'
 
 import Layout from '../../components/layout/layout'
 import PageTitle from '../../components/page-title'
@@ -9,8 +11,11 @@ import CardExpertise from '../../components/card-expertise'
 import ContactSection from '../../components/contact-section'
 import Breadcrumb from '../../components/breadcrumb'
 
-export const Design = ({ expertises = [] }) => {
+export const Consulting = ({ expertises = [] }) => {
+  const { t } = useTranslation('consulting')
   const router = useRouter()
+  const expertisesGroupByDomaine = groupBy(expertises, 'domaine')
+  const domainesExpertise = t('expertises.domaine-expertise', {}, { returnObjects: true })
 
   return (
     <Layout>
@@ -30,10 +35,23 @@ export const Design = ({ expertises = [] }) => {
           alignText='center'
           data-aos='fade-up'
         />
-        <div className='row row-cols-1 row-cols-md-2'>
-          <CardExpertise config={expertises} />
-        </div>
       </Section>
+      {domainesExpertise.map((domaine, index) => {
+        const oneDomaineExp = expertisesGroupByDomaine[domaine.key]
+        if (!isEmpty(oneDomaineExp)) {
+          return (
+            <Section key={index}>
+              <div className='text-center pb-5'>
+                <h3 className='fw-bold'>{domaine.title}</h3>
+                <p className='text-muted'>{domaine.subtitle}</p>
+              </div>
+              <div className='row row-cols-1 row-cols-md-2'>
+                <CardExpertise config={oneDomaineExp} />
+              </div>
+            </Section>
+          )
+        }
+      })}
       {/* Card de contact */}
       <Section>
         <ContactSection />
@@ -42,7 +60,7 @@ export const Design = ({ expertises = [] }) => {
   )
 }
 
-export default Design
+export default Consulting
 
 export async function getStaticProps({ preview = false, locale }) {
   const expertises = (await getExpertisesByField(preview, locale, 'consulting')) || []

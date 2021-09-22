@@ -1,5 +1,5 @@
 import { renderRule, StructuredText } from 'react-datocms'
-import { isSpan, isHeading } from 'datocms-structured-text-utils'
+import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
 import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { includes, isEmpty } from 'lodash'
@@ -136,6 +136,15 @@ const PageTemplate = ({ page, lastRef, router }) => {
                   <HeadingTag key={key} className='pt-4'>
                     {children}
                   </HeadingTag>
+                )
+              }),
+              renderRule(isBlockquote, ({ node, children, key }) => {
+                return (
+                  <div key={key} className='border-top border-bottom border-green my-5 py-4'>
+                    <node.type className='blockquote'>
+                      <div className='h3 mb-0 text-center text-green'>{children}</div>
+                    </node.type>
+                  </div>
                 )
               })
             ]}

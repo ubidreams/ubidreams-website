@@ -5,7 +5,7 @@ import { StructuredText } from 'react-datocms'
 import { LinkBeautify } from './link-beautify'
 
 export const CardExpertise = ({ config = [] }) => {
-  const colors = ['blue', 'green', 'dark-grey', 'orange']
+  const colors = ['blue', 'green', 'dark-grey', 'orange', 'grey-blue', 'grey', 'dark-green']
   const router = useRouter()
 
   return config.map((item, index) => {

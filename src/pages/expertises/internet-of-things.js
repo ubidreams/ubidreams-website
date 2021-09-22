@@ -11,7 +11,7 @@ import ContactSection from '../../components/contact-section'
 import Breadcrumb from '../../components/breadcrumb'
 import SectionCardSimple from '../../components/section-card-simple'
 
-export const Design = ({ expertises = [] }) => {
+export const IOT = ({ expertises = [] }) => {
   const router = useRouter()
   const { t } = useTranslation('iot')
 
@@ -51,7 +51,7 @@ export const Design = ({ expertises = [] }) => {
   )
 }
 
-export default Design
+export default IOT
 
 export async function getStaticProps({ preview = false, locale }) {
   const expertises = (await getExpertisesByField(preview, locale, 'internet-of-things')) || []
