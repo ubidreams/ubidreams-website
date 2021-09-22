@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { getAllReferences, getAllRegies } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 import { Image } from 'react-datocms'
@@ -9,6 +9,7 @@ import Section from '../../components/section'
 import Title from '../../components/title'
 import SliderComponent from '../../components/slider'
 import PaginationComponent from '../../components/pagination'
+import SlidItemPartner from '../../components/slide-item-partner'
 
 export const References = ({ references, regies }) => {
   const { t } = useTranslation('references')
@@ -31,6 +32,7 @@ export const References = ({ references, regies }) => {
 
   return (
     <Layout>
+      {/* Présentation References */}
       <Section>
         <Title title={t('realisations.title')} subtitle={t('realisations.subtitle')} />
         <div className='row row-cols-md-3 mt-6'>
@@ -40,6 +42,7 @@ export const References = ({ references, regies }) => {
           <PaginationComponent data={references} current={activePage} onChange={setActivePage} />
         </div>
       </Section>
+      {/* Présentation Regies */}
       <Section>
         <Title title={t('regies.title')} subtitle={t('regies.subtitle')} />
       </Section>
@@ -49,26 +52,7 @@ export const References = ({ references, regies }) => {
         option={{ slidesToShow: 4 }}
       >
         {regies.map((regie, index) => {
-          return (
-            <div key={index} className='card mb-6 mb-xl-0 px-4'>
-              <div className='card-img-top shadow-light-lg'>
-                <Image
-                  alt=''
-                  data={{
-                    ...regie.img.responsiveImage
-                  }}
-                  className='img-fluid object-contain img-regies'
-                />
-              </div>
-              <div className='card-body'>
-                <h6 className='text-uppercase mb-1 text-muted'>{regie.nomEntreprise}</h6>
-
-                <p className='h4 mb-0' style={{ whiteSpace: 'pre-line' }}>
-                  {regie.mission}
-                </p>
-              </div>
-            </div>
-          )
+          return <SlidItemPartner key={index} config={regie} />
         })}
       </SliderComponent>
     </Layout>

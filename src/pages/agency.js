@@ -1,4 +1,4 @@
-import { getTeamMembers, getGalleryImg } from '../lib/api'
+import { getTeamMembers, getGalleryImg, getMembership } from '../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 import { Image } from 'react-datocms'
 
@@ -11,8 +11,9 @@ import { AccueilCropped, ConseilCropped, Contact } from '../config/StaticImagesE
 import '../components/map.js'
 import MapBox from '../components/map.js'
 import CardMember from '../components/card-member'
+import SlidItemPartner from '../components/slide-item-partner'
 
-export const Agency = ({ allMembers, galleryImg }) => {
+export const Agency = ({ allMembers, galleryImg, allMembership }) => {
   const { t } = useTranslation('agency')
 
   function splitColor(string, character) {
@@ -131,6 +132,22 @@ export const Agency = ({ allMembers, galleryImg }) => {
           </div>
         </div>
       </Section>
+      {/* Présentation des Associations partenaires */}
+      <Section>
+        <div className='text-center'>
+          <h3 className='display-4 mb-4'>{t('adhesion.title')}</h3>
+          <p className='lead text-muted'>{t('adhesion.subtitle')}</p>
+        </div>
+      </Section>
+      <SliderComponent
+        className='center mt-14 mt-md-12'
+        showArrow={{ show: false, break1000: true }}
+        option={{ slidesToShow: 4 }}
+      >
+        {allMembership.adhesionAssociation.map((adhesion, index) => {
+          return <SlidItemPartner key={index} config={adhesion} />
+        })}
+      </SliderComponent>
     </Layout>
   )
 }
@@ -140,7 +157,8 @@ export default Agency
 export async function getStaticProps({ preview = false, locale }) {
   const allMembers = (await getTeamMembers(preview, locale)) || []
   const galleryImg = (await getGalleryImg(preview, locale)) || []
+  const allMembership = (await getMembership(preview, locale)) || []
   return {
-    props: { allMembers, galleryImg }
+    props: { allMembers, galleryImg, allMembership }
   }
 }

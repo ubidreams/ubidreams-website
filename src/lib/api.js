@@ -228,8 +228,8 @@ export async function getAllRegies(preview, locale) {
       {
         allRegies(locale: ${locale}, orderBy: _createdAt_ASC) {
           id
-          mission
-          nomEntreprise
+          description
+          nom
           img {
             responsiveImage {
               ...responsiveImageFragment
@@ -279,6 +279,30 @@ export async function getGalleryImg(preview, locale) {
           gallerie {
             responsiveImage {
               ...responsiveImageFragment
+            }
+          }
+        }
+      }
+  
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.agence
+}
+
+export async function getMembership(preview, locale) {
+  const data = await fetchAPI(
+    `
+      {
+        agence(locale: ${locale}){
+          adhesionAssociation {
+            id
+            nom
+            img {
+              responsiveImage {
+                ...responsiveImageFragment
+              }
             }
           }
         }

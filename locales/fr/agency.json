@@ -140,5 +140,9 @@
         "title": "Venez nous rencontrer près de La Rochelle", 
         "subtitle": "UBIDREAMS, c’est une %color% localisation unique %color% au Sud de %color% la Rochelle", 
         "content": "Implanté dans la région dynamique de la Grande-Aquitaine, la société bénéficie de partenaire de choix auprès des universités, des écoles mais aussi des entreprises pour évoluer dans un environnement technologique performant."
+    },
+    "adhesion" : {
+        "title": "Associations partenaires",
+        "subtitle": "Découvrez les associations et clubs auquel Ubidreams adhère."
     }
 }

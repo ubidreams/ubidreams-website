@@ -140,5 +140,9 @@
         "title": "Come and meet us near La Rochelle", 
         "subtitle": "UBIDREAMS, it’s a %color% unique localization %color% south of %color% La Rochelle", 
         "content": "Established in the dynamic region of Grande-Aquitaine, the agency benefits from a partner of choice with universities, schools but also companies to evolve in a high-performance technological environment."
+    },
+    "adhesion" : {
+        "title": "Partner associations",
+        "subtitle": "Discover the associations and clubs to which Ubidreams adheres."
     }
 }
