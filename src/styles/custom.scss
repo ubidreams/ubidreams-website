@@ -168,6 +168,11 @@ a {
   right: -25px;
 }
 
+/* Slider items min height */
+.minHeight {
+  min-height: 20em;
+}
+
 //custom background between
 @media (max-width: 1500px) {
   .bg-between {
@@ -267,10 +272,27 @@ a {
   transform-origin: center center;
 }
 
-.minHeight {
-  min-height: 20em;
+.cards-reference .card-img-top {
+  max-height: 22em;
+
+  & > picture img{
+    object-fit: cover;
+  }
 }
 
+/* list référence */
+.list-item-reference {
+  margin-bottom: 1em;
+
+  & p {
+    margin-bottom: 0;
+  }
+
+  & div {
+    width: 34px;
+    align-self: center;
+  }
+}
 //taille de l'image définie à 200px et img configurée sur contain
 .img-regies {
   height: 200px;

@@ -6,5 +6,13 @@
     "regies": {
         "title": "Time and materials projects",
         "subtitle": "Discover the companies we work for!"
+    }, 
+    "reference": {
+        "update": "Last update on"
+    },
+    "lastReference": {
+        "title": "Our last references",
+        "subtitle": "Discover our last projects developed for our customers!",
+        "more": "View all"
     }
 }

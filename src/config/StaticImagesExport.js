@@ -51,6 +51,7 @@ import Thunder from '../../public/img/icons/Thunder-move.svg'
 import Timer from '../../public/img/icons/Timer.svg'
 import Waiting from '../../public/img/icons/Waiting.svg'
 import Download from '../../public/img/icons/Downloaded-file.svg'
+import DoneCircle from '../../public/img/icons/Done-circle.svg'
 
 import French from '../../public/img/icons/france.png'
 import English from '../../public/img/icons/united-kingdom.png'
@@ -64,6 +65,7 @@ export {
   ContactHeader,
   Ubidreams,
   Download,
+  DoneCircle,
   Facebook,
   Linkedin,
   Twitter

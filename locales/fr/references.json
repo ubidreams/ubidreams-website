@@ -6,5 +6,13 @@
     "regies": {
         "title": "Nos régies clients",
         "subtitle": "Découvrez les entreprises pour lesquelles nous intervenons !"
+    },
+    "reference": {
+        "update": "Dernière mise à jour le"
+    },
+    "lastReference": {
+        "title": "Nos dernières réalisations",
+        "subtitle": "Découvrez nos derniers projets développés pour nos clients !",
+        "more": "Voir plus"
     }
 }

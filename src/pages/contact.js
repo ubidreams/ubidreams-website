@@ -139,8 +139,7 @@ export const Contact = () => {
                 type='text'
                 placeholder={t('form.object')}
                 onChange={(e) => setObject(e.target.value)}
-                value={object}
-                title={t('form.object')}
+                defaultValue={object}
                 required
               />
             </div>

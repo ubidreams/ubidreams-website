@@ -1,8 +1,6 @@
 import Link from 'next/link'
-import useTranslation from 'next-translate/useTranslation'
 
 export const LinkBeautify = ({ record, meta, children }) => {
-  const { t } = useTranslation('common')
   let pathname
   let newAs
   let query = { slug: record.slug }

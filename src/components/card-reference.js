@@ -9,7 +9,7 @@ const CardReference = ({ config = [] }) => {
     return (
       <div key={index} className='mb-6'>
         <a
-          className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link h-100'
+          className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link h-100 cards-reference'
           href={`/references/` + item?.slug}
         >
           <div className='card-zoom'>

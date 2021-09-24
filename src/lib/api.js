@@ -210,7 +210,7 @@ export async function getAllReferences(preview, locale) {
   const data = await fetchAPI(
     `
       {
-        allReferences(locale: ${locale}, orderBy: _createdAt_DESC) {
+        allReferences(locale: ${locale}) {
           ...ReferenceRecordFragment
         }
       }
@@ -242,6 +242,84 @@ export async function getAllRegies(preview, locale) {
     { preview }
   )
   return data?.allRegies
+}
+
+export async function getAllReferencesSlugs(locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allReferences(locale: ${locale}) {
+          slug
+        }
+      }
+    `
+  )
+  return data?.allReferences
+}
+
+export async function getOneReferencesBySlug(preview, locale, slug) {
+  const data = await fetchAPI(
+    `
+      {
+        reference(locale: ${locale},filter: {slug: {eq: "${slug}"}}) {
+          title
+          subtitle
+          slug
+          id
+          outils
+          updatedAt
+          etiquettes {
+            name
+            id
+            slug
+          }
+          coverImage {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+          content {
+            blocks {
+              ... on ReferenceGalerieRecord {
+                id
+                _modelApiKey
+                galleryColumn1 {
+                  responsiveImage {
+                    ...responsiveImageFragment
+                  }
+                }
+                galleryColumn2 {
+                  responsiveImage {
+                    ...responsiveImageFragment
+                  }
+                }
+              }
+              ... on ImageRecord {
+                id
+                _modelApiKey
+                image {
+                  responsiveImage {
+                    ...responsiveImageFragment
+                  }
+                }
+              }
+            }
+            value
+            links {
+              id
+              slug
+              title
+              categorie
+            }
+          }
+        }
+      }
+  
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.reference
 }
 
 /* PAGE AGENCE  */

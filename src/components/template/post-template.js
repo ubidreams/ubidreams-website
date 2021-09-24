@@ -225,7 +225,9 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
           )}
         </div>
       </Section>
-      <div className='container border-bottom border-gray-300'></div>
+      <div className='bg-light'>
+        <div className='container border-bottom border-gray-300'></div>
+      </div>
       <Section bgClass='bg-light'>
         <ContactSection />
       </Section>
