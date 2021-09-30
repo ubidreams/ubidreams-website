@@ -72,7 +72,7 @@ export const Contact = () => {
       </div>
       <Section bgClass='border-gray-300 border-bottom' id='info'>
         <div className='text-center'>
-          <a href='#info' className='btn btn-white btn-rounded-circle shadow mt-n11 mt-md-n14' data-scroll>
+          <a href='#contact-form' className='btn btn-white btn-rounded-circle shadow mt-n11 mt-md-n14' data-scroll>
             <i className='fe fe-arrow-down'></i>
           </a>
         </div>
@@ -82,7 +82,7 @@ export const Contact = () => {
           <ContactMeta title={t('coordonnee.mail-title')} content={t('common:footer.location.mail')} />
         </div>
       </Section>
-      <Section>
+      <Section id='contact-form'>
         <Title title={t('form.title')} subtitle={t('form.subtitle')} titleH='h2' subtitleH='h4' />
         <form onSubmit={handleSubmit}>
           <div className='row row-cols-1 row-cols-md-2 mt-7'>
