@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 import { ContactHeader } from '../config/StaticImagesExport'
-import { isEmpty, isNull } from 'lodash'
+import { isNil, isNull } from 'lodash'
 
 import ContactMeta from '../components/contact-meta'
 import Layout from '../components/layout/layout'
@@ -10,13 +10,13 @@ import Title from '../components/title'
 import { useRouter } from 'next/dist/client/router'
 
 export const Contact = () => {
+  const router = useRouter()
   const { t } = useTranslation('contact')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [object, setObject] = useState('')
   const [message, setMessage] = useState('')
   const [messageRequest, setMessageRequest] = useState({ code: null, message: null })
-  const router = useRouter()
+  const [object, setObject] = useState(isNil(router.query) ? router.query.object : t('form.default-object'))
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -51,14 +51,6 @@ export const Contact = () => {
     },
     [email, message, name, object, t]
   )
-  useEffect(() => {
-    if (!isEmpty(router.query)) {
-      setObject(router.query.object)
-    } else {
-      setObject(t('form.default-object'))
-    }
-  }, [router.query, t])
-
   return (
     <Layout bgColor='bg-light-grey'>
       <Section
@@ -138,8 +130,8 @@ export const Contact = () => {
                 id='contactObject'
                 type='text'
                 placeholder={t('form.object')}
-                onChange={(e) => setObject(e.target.value)}
                 defaultValue={object}
+                onChange={(e) => setObject(e.target.value)}
                 required
               />
             </div>
