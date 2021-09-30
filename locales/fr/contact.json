@@ -10,7 +10,7 @@
     },
     "form" :{
         "title": "Laissez-nous un message",
-        "subtitle": "Nous sommes à votre écoute et avons hâte de pouvoir échanger sur votre projet. N'hésitez pas à nous contacter, nous répondrons dans les plus bref délais",
+        "subtitle": "Nous sommes à votre écoute et avons hâte de pouvoir échanger sur votre projet. N'hésitez pas à nous contacter, nous répondrons dans les plus brefs délais",
         "identite": "Nom, prénom",
         "email": "Email",
         "email-format": "Vous devez respecter le format suivant : example@mail.com",
