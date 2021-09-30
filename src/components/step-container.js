@@ -1,8 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 
-import { Img } from '../config/StaticImagesExport'
 /**
  * zone de texte associée à une image et un bouton (optionnel)
  * config (données sous la forme d'un tableau d'objet (title, description, image, aos-delay))
@@ -26,9 +24,9 @@ const StepContainer = ({ namespace = '', displayDirection }) => {
       >
         <div className='mb-3 d-flex gx-0 align-items-center'>
           <div>
-            <a href='#!' className='btn btn-sm btn-rounded-circle btn-gray-400 disabled opacity-1'>
+            <div className='btn btn-sm btn-rounded-circle bg-dark-grey text-white fs-4 disabled opacity-1'>
               <span>{item.step}</span>
-            </a>
+            </div>
           </div>
           {index !== 2 && (
             <div className='w-100'>
