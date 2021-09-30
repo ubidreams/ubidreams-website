@@ -66,7 +66,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
           className='mx-md-11'
           slideArrow900={false}
           showArrow={{ show: true, break1000: true }}
-          option={{ slidesToShow: 1, adaptiveHeight: true, fade: true }}
+          option={{ slidesToShow: 1, fade: true }}
         >
           {t('valeurs', {}, { returnObjects: true }).map((item, index) => (
             <section key={index} className='container d-block'>
