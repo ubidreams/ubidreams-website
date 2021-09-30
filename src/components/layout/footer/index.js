@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
 
-import { Ubidreams, Facebook, Linkedin, Twitter } from '../../../config/StaticImagesExport.js'
+import { Ubidreams, Img } from '../../../config/StaticImagesExport.js'
 
 const Footer = () => {
   const { t } = useTranslation('common')
@@ -39,21 +39,15 @@ const Footer = () => {
 
               {/* <!-- Social --> */}
               <ul className='list-unstyled list-inline list-social mb-6 mb-md-0'>
-                <li className='list-inline-item list-social-item me-4'>
-                  <a href='#!' className='text-decoration-none'>
-                    <Image src={Facebook} alt='Facebook' width={25} height={25} />
-                  </a>
-                </li>
-                <li className='list-inline-item list-social-item me-4'>
-                  <a href='#!' className='text-decoration-none'>
-                    <Image src={Twitter} alt='Twitter' width={25} height={25} />
-                  </a>
-                </li>
-                <li className='list-inline-item list-social-item me-4'>
-                  <a href='#!' className='text-decoration-none'>
-                    <Image src={Linkedin} alt='Linkedin' width={25} height={25} />
-                  </a>
-                </li>
+                {t('footer.social', {}, { returnObjects: true }).map((socialMedia, index) => {
+                  return (
+                    <li key={index} className='list-inline-item list-social-item me-4'>
+                      <a href={socialMedia.path} className='text-decoration-none' target='_blank' rel='noreferrer'>
+                        <Image src={Img[socialMedia.img.key]} alt={socialMedia.img.alt} width={25} height={25} />
+                      </a>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
             {/* Location */}
