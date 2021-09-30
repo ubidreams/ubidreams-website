@@ -72,7 +72,30 @@
           "path": "/"
         }
       ]
-    }
+    },
+    "social": [
+      {
+        "path": "https://www.facebook.com/ubidreams/",
+        "img":{
+          "key":"fb",
+          "alt": "Facebook"
+        }
+      },
+      {
+        "path": "https://www.linkedin.com/company/ubidreams/",
+        "img":{
+          "key":"lkd",
+          "alt": "Linkedin"
+        }
+      },
+      {
+        "path": "https://twitter.com/ubidreams",
+        "img":{
+          "key":"twt",
+          "alt": "Twitter"
+        }
+      }
+    ]
   },
   "contact": {
     "img": {
