@@ -14,7 +14,7 @@
             },
             {
                 "name": "Agency",
-                "path": "/agence",
+                "path": "/agency",
                 "class": "soft-blue"
             }
         ]
