@@ -561,7 +561,7 @@ export async function getExpertisesByField(preview, locale, field) {
   return data?.allExpertises
 }
 
-export async function getPartenairesByField(preview, locale, field){
+export async function getPartenairesByField(preview, locale, field) {
   const data = await fetchAPI(
     `
       {
