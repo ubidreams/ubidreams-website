@@ -1,4 +1,4 @@
-import { getExpertisesByField } from '../../lib/api'
+import { getExpertisesByField, getPartenairesByField } from '../../lib/api'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 
@@ -10,8 +10,9 @@ import CardExpertise from '../../components/card-expertise'
 import ContactSection from '../../components/contact-section'
 import Breadcrumb from '../../components/breadcrumb'
 import SectionCardSimple from '../../components/section-card-simple'
+import Card from '../../components/card'
 
-export const IOT = ({ expertises = [] }) => {
+export const IOT = ({ expertises = [], partners = [] }) => {
   const router = useRouter()
   const { t } = useTranslation('iot')
 
@@ -36,10 +37,8 @@ export const IOT = ({ expertises = [] }) => {
 
       <Section bgClass='bg-gray-300'>
         <h2 className='text-center'>{t('partenaires.title')}</h2>
-        <div className='row'>
-          {t('partenaires.partenaires_list', {}, { returnObjects: true }).map((item, index) => (
-            <SectionCardSimple key={index} data={item} reverse={index % 2 === 1} textJustify='justify-content-center' />
-          ))}
+        <div className='row pt-6 justify-content-center'>
+          <Card config={partners} large={3} />
         </div>
       </Section>
 
@@ -55,7 +54,8 @@ export default IOT
 
 export async function getStaticProps({ preview = false, locale }) {
   const expertises = (await getExpertisesByField(preview, locale, 'internet-of-things')) || []
+  const partners = (await getPartenairesByField(preview, locale, 'iot')) || []
   return {
-    props: { expertises }
+    props: { expertises, partners }
   }
 }

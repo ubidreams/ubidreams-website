@@ -561,6 +561,33 @@ export async function getExpertisesByField(preview, locale, field) {
   return data?.allExpertises
 }
 
+export async function getPartenairesByField(preview, locale, field){
+  const data = await fetchAPI(
+    `
+      {
+        allPartenaires(locale: ${locale}, filter: {domaine: {in: ["${field}"]}}) {
+          domaine
+          content {
+            value
+            links {
+              id
+            }
+          }
+          image {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
+        }
+      }
+  
+      ${responsiveImageFragment}
+    `,
+    { preview }
+  )
+  return data?.allPartenaires
+}
+
 /* PAGES SLUG */
 export async function getAllPageSlugs(categorie, locale) {
   const data = await fetchAPI(
@@ -635,7 +662,7 @@ export async function getOnePageBySlug(preview, locale, slug) {
           expertPartenaires {
             ...MembreRecordFragment
           }
-          partenaires {
+          partenaire {
             content {
               value
               links {

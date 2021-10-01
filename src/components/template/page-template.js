@@ -44,12 +44,12 @@ const renderPage = (type, page) => {
           </div>
         </Section>
       )
-    case 'partenaires':
+    case 'partenaire':
       return (
         <Section bgClass='bg-gray-300'>
           <TextContainer namespace={{ name: 'expertises', section: 'partners' }} alignText='center' />
           <div className='row pt-6 justify-content-center'>
-            <Card config={page.partenaires} large={3} />
+            <Card config={page.partenaire} large={3} />
           </div>
         </Section>
       )
@@ -73,6 +73,7 @@ const renderPage = (type, page) => {
   }
 }
 const PageTemplate = ({ page, lastRef, router }) => {
+  console.log(page)
   return (
     <Layout>
       <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
@@ -153,7 +154,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
       </Section>
       {!isEmpty(page.expertInterne) && renderPage('expertInterne', page)}
       {!isEmpty(page.expertPartenaires) && renderPage('expertPartenaire', page)}
-      {!isEmpty(page.partenaires) && renderPage('partenaires', page)}
+      {!isEmpty(page.partenaire) && renderPage('partenaire', page)}
       {!isEmpty(lastRef) && renderPage('lastRef', lastRef)}
       {page.afficherContact && renderPage('afficherContact', page)}
     </Layout>

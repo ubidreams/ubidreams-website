@@ -12,33 +12,6 @@
         "subtitle": "We advise you in the choice of technologies and suitable sensors. Then we build optimized infrastructures for your projects. The IOT environment is a complex environment, which is why we custom design it for your projects."
     },
     "partenaires": {
-        "title": "Our partners",
-        "partenaires_list": [
-            {
-                "img": {
-                  "key": "nove",
-                  "alt": "Logo Nove 3D"
-                },
-                "textLink": "Nove 3D",
-                "content": "We are working in collaboration with Nove 3D for the production of prototypes of the supports (3D prints) of our connected objects."
-            },
-            {
-                "img": {
-                  "key": "concept",
-                  "alt": "Logo GigaConcept"
-                },
-                "textLink": "GigaConcept",
-                "content": "We are working with the company GigaConcept for the selection of sensors, optimization of LoRa antennas and the physical installation of IOT infrastructures."
-            },
-            {
-                "img": {
-                  "key": "hellermann",
-                  "alt": "Logo Hellermann Tyton"
-                },
-                "col": 100,
-                "textLink": "Hellermann Tyton",
-                "content": "We have also signed a partnership with Hellermann Tyton for the implementation of an RFID inventory solution."
-            }
-        ]
+        "title": "Our partners"
     }
 }
