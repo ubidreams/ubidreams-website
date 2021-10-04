@@ -57,21 +57,7 @@
       "mail": "contact@ubidreams.com"
     },
     "legal": {
-      "title": "Legal",
-      "links": [
-        {
-          "name": "General development conditions",
-          "path": "/"
-        },
-        {
-          "name": "Cookies policies",
-          "path": "/"
-        },
-        {
-          "name": "Legal Notice",
-          "path": "/"
-        }
-      ]
+      "title": "Legal"
     },
     "social": [
       {
@@ -110,5 +96,11 @@
       "content": "We ran into an issue, but don’t worry, we’ll take care of it for sure.",
       "button": "Back to Home"
     }
+  }, 
+  "legalPage": {
+    "update": "Updated on",
+    "help": "Have a question?",
+    "call": "Call anytime",
+    "email": "Email us"
   }
 }

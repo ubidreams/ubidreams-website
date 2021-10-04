@@ -3,15 +3,15 @@ import useTranslation from 'next-translate/useTranslation'
 import { Image } from 'react-datocms'
 
 import FeatureContainer from '../components/feature-container'
-import Layout from '../components/layout/layout'
 import Section from '../components/section'
 import SliderComponent from '../components/slider'
 import Title from '../components/title'
-import { AccueilCropped, ConseilCropped, Contact } from '../config/StaticImagesExport'
 import '../components/map.js'
 import MapBox from '../components/map.js'
 import CardMember from '../components/card-member'
 import SlidItemPartner from '../components/slide-item-partner'
+
+import { AccueilCropped, ConseilCropped } from '../config/StaticImagesExport'
 
 export const Agency = ({ allMembers, galleryImg, allMembership }) => {
   const { t } = useTranslation('agency')
@@ -21,7 +21,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
   }
 
   return (
-    <Layout>
+    <main>
       {/* Entete de page != du hero classique donc usage du background-image + composant Title */}
       <Section
         bgClass='bg-between'
@@ -148,7 +148,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
           return <SlidItemPartner key={index} config={adhesion} />
         })}
       </SliderComponent>
-    </Layout>
+    </main>
   )
 }
 

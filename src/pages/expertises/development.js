@@ -16,7 +16,7 @@ export const Developpement = ({ expertises = [] }) => {
   const router = useRouter()
 
   return (
-    <Layout>
+    <main>
       <Breadcrumb router={router} />
       <PageTitle
         namespace='development'
@@ -49,7 +49,7 @@ export const Developpement = ({ expertises = [] }) => {
       <Section>
         <ContactSection />
       </Section>
-    </Layout>
+    </main>
   )
 }
 

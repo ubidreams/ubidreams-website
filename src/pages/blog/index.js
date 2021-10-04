@@ -1,9 +1,8 @@
 import { useCallback, useState, useEffect } from 'react'
 import { getBlog } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
-import { size, forEach, filter, includes } from 'lodash'
+import { forEach, filter, includes } from 'lodash'
 
-import Layout from '../../components/layout/layout'
 import Section from '../../components/section'
 import Title from '../../components/title'
 import Link from 'next/link'
@@ -85,7 +84,7 @@ export const Blog = ({ posts, tags, locale }) => {
   }, [activePage, visiblePosts])
 
   return (
-    <Layout>
+    <main>
       <Section>
         <Title className='text-gray-800' title={t('blog.title')} subtitle={t('blog.subtitle')} />
         <div className='my-8'>
@@ -149,7 +148,7 @@ export const Blog = ({ posts, tags, locale }) => {
           <PaginationComponent data={visiblePosts} current={activePage} onChange={setActivePage} />
         </div>
       </Section>
-    </Layout>
+    </main>
   )
 }
 

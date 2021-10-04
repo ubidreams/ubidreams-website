@@ -3,7 +3,6 @@ import { getAllReferences, getAllRegies } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 
 import CardReference from '../../components/card-reference'
-import Layout from '../../components/layout/layout'
 import Section from '../../components/section'
 import Title from '../../components/title'
 import SliderComponent from '../../components/slider'
@@ -30,7 +29,7 @@ export const References = ({ references, regies }) => {
   }, [activePage, references])
 
   return (
-    <Layout>
+    <main>
       {/* Présentation References */}
       <Section>
         <Title title={t('realisations.title')} subtitle={t('realisations.subtitle')} />
@@ -54,7 +53,7 @@ export const References = ({ references, regies }) => {
           return <SlidItemPartner key={index} config={regie} />
         })}
       </SliderComponent>
-    </Layout>
+    </main>
   )
 }
 

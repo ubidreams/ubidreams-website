@@ -3,7 +3,6 @@ import { getSolutions } from '../lib/api'
 import { useRouter } from 'next/router'
 
 import StepContainer from '../components/step-container'
-import Layout from '../components/layout/layout'
 import PageTitle from '../components/page-title'
 import Section from '../components/section'
 import TextContainer from '../components/text-container'
@@ -15,7 +14,7 @@ export const Expertises = ({ solutions }) => {
   const { t } = useTranslation('expertises')
   const router = useRouter()
   return (
-    <Layout>
+    <main>
       <div className='shape shape-fluid-x shape-blur-2 text-light-grey d-none d-md-block'>
         <svg viewBox='0 0 1313 768' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
@@ -68,7 +67,7 @@ export const Expertises = ({ solutions }) => {
       <Section>
         <ContactSection />
       </Section>
-    </Layout>
+    </main>
   )
 }
 

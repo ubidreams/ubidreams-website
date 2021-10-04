@@ -4,7 +4,6 @@ import { ContactHeader } from '../config/StaticImagesExport'
 import { isNil, isNull } from 'lodash'
 
 import ContactMeta from '../components/contact-meta'
-import Layout from '../components/layout/layout'
 import Section from '../components/section'
 import Title from '../components/title'
 import { useRouter } from 'next/dist/client/router'
@@ -52,7 +51,7 @@ export const Contact = () => {
     [email, message, name, object, t]
   )
   return (
-    <Layout bgColor='bg-light-grey'>
+    <main className='bg-light-grey'>
       <Section
         bgClass='overlay overlay-black overlay-60 bg-cover'
         customStyle={{ backgroundImage: `url(${ContactHeader.src})` }}
@@ -168,7 +167,7 @@ export const Contact = () => {
           </div>
         </form>
       </Section>
-    </Layout>
+    </main>
   )
 }
 

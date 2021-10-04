@@ -13,7 +13,6 @@ import CardReference from '../card-reference'
 import TextContainer from '../text-container'
 import ContactSection from '../contact-section'
 import CardExpert from '../card-expert'
-import Layout from '../layout/layout'
 import Card from '../card'
 
 const renderPage = (type, page) => {
@@ -73,9 +72,8 @@ const renderPage = (type, page) => {
   }
 }
 const PageTemplate = ({ page, lastRef, router }) => {
-  console.log(page)
   return (
-    <Layout>
+    <main>
       <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
       <Section>
         <div className='text-center mb-8'>
@@ -157,7 +155,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
       {!isEmpty(page.partenaire) && renderPage('partenaire', page)}
       {!isEmpty(lastRef) && renderPage('lastRef', lastRef)}
       {page.afficherContact && renderPage('afficherContact', page)}
-    </Layout>
+    </main>
   )
 }
 export default PageTemplate

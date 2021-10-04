@@ -1,7 +1,7 @@
 import { isNull } from 'lodash'
 
 const API_URL = 'https://graphql.datocms.com'
-const API_TOKEN = process.env.DATOCMS_API_TOKEN
+const API_TOKEN = process.env.NEXT_PUBLIC_DATOCMS_API_TOKEN
 
 /* FRAGMENTS */
 const responsiveImageFragment = `
@@ -71,7 +71,7 @@ const miniaturePageFragment = `
 `
 
 async function fetchAPI(query, { variables, preview } = {}) {
-  const res = await fetch(API_URL + (preview ? '/preview' : ''), {
+  const res = await fetch(API_URL + (preview ? '/preview' : '/'), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -692,4 +692,62 @@ export async function getOnePageBySlug(preview, locale, slug) {
   )
 
   return data?.page
+}
+
+/* PAGE OBLIGATOIRES : politiques de confidentialités, mentions légales.... */
+export async function getAllLegalPages(locale) {
+  const data = await fetchAPI(
+    `
+      {
+        allPageObligatoires(locale: ${locale}) {
+          slug
+          title
+          id
+        }
+      }
+    `
+  )
+
+  return data?.allPageObligatoires
+}
+
+export async function getLegalPageBySlug(preview, locale, slug) {
+  const data = await fetchAPI(
+    `
+      {
+        pageObligatoire(filter: {slug: {eq: "${slug}"}}, locale: ${locale}) {
+          id
+          title
+          updatedAt
+          tel
+          email
+          aide
+          content {
+            value
+            blocks {
+              id
+              image {
+                format
+                url
+                title
+                responsiveImage {
+                  ...responsiveImageFragment
+                }
+              }
+            }
+          }
+        }
+      }
+      ${responsiveImageFragment}
+    `,
+    {
+      preview,
+      variables: {
+        locale,
+        slug
+      }
+    }
+  )
+
+  return data?.pageObligatoire
 }

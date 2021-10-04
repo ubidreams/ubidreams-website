@@ -3,7 +3,6 @@ import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 
 import FeatureContainer from '../components/feature-container'
-import Layout from '../components/layout/layout'
 import PageTitle from '../components/page-title'
 import Section from '../components/section'
 import TextContainer from '../components/text-container'
@@ -18,7 +17,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
   const { t } = useTranslation('home')
   const router = useRouter()
   return (
-    <Layout>
+    <main>
       {/* Entête > titre + illustration à droite */}
       <PageTitle namespace='home' displayImage='reverse' classText='text-left' showButton />
 
@@ -73,7 +72,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
           <CardReference config={lastReferences} />
         </div>
       </Section>
-    </Layout>
+    </main>
   )
 }
 

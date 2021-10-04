@@ -9,8 +9,6 @@ import ImageNext from 'next/image'
 
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
-import ContactSection from '../contact-section'
-import Layout from '../layout/layout'
 
 import { DoneCircle } from '../../config/StaticImagesExport'
 import CardReference from '../card-reference'
@@ -60,7 +58,7 @@ const ReferenceTemplate = ({ project, locale, lastProject, router }) => {
   const imageCover = { src: project.coverImage.responsiveImage.src, alt: project.coverImage.responsiveImage.alt }
 
   return (
-    <Layout>
+    <main>
       <Parallax
         bgImage={imageCover.src}
         bgImageAlt={imageCover.alt}
@@ -207,7 +205,7 @@ const ReferenceTemplate = ({ project, locale, lastProject, router }) => {
           <CardReference config={lastProject} />
         </div>
       </Section>
-    </Layout>
+    </main>
   )
 }
 export default ReferenceTemplate

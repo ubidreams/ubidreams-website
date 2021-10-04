@@ -18,7 +18,7 @@ export const Consulting = ({ expertises = [] }) => {
   const domainesExpertise = t('expertises.domaine-expertise', {}, { returnObjects: true })
 
   return (
-    <Layout>
+    <main>
       <Breadcrumb router={router} />
       <PageTitle
         namespace='consulting'
@@ -56,7 +56,7 @@ export const Consulting = ({ expertises = [] }) => {
       <Section>
         <ContactSection />
       </Section>
-    </Layout>
+    </main>
   )
 }
 

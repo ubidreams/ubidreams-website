@@ -5,9 +5,14 @@ import '../styles/custom.scss'
 import React from 'react'
 import appWithI18n from 'next-translate/appWithI18n'
 import i18nConfig from '../../i18n'
+import Layout from '../components/layout/layout'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default appWithI18n(MyApp, {

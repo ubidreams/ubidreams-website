@@ -3,9 +3,16 @@ import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
 
 import { Ubidreams, Img } from '../../../config/StaticImagesExport.js'
+import { useEffect, useState } from 'react'
+import { getAllLegalPages } from '../../../lib/api.js'
 
 const Footer = () => {
   const { t } = useTranslation('common')
+  const [legalPages, setLegalPages] = useState([])
+
+  useEffect(() => {
+    getAllLegalPages('fr').then((data) => setLegalPages(data))
+  }, [])
 
   const MenuLink = ({ href, name }) => {
     return (
@@ -69,8 +76,8 @@ const Footer = () => {
 
               {/* <!-- List --> */}
               <ul className='list-unstyled text-muted mb-0'>
-                {t('footer.legal.links', {}, { returnObjects: true }).map((link, index) => {
-                  return <MenuLink key={index} href={link.path} name={link.name} />
+                {legalPages.map((link, index) => {
+                  return <MenuLink key={index} href={link.slug} name={link.title} />
                 })}
               </ul>
             </div>

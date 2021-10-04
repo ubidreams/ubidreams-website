@@ -11,7 +11,6 @@ import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 're
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
 import ContactSection from '../contact-section'
-import Layout from '../layout/layout'
 
 import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 import CardArticle from '../card-article'
@@ -104,7 +103,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
   const imageCover = { src: post.heroCover.responsiveImage.src, alt: post.heroCover.responsiveImage.alt }
 
   return (
-    <Layout>
+    <main>
       <Parallax
         bgImage={imageCover.src}
         bgImageAlt={imageCover.alt}
@@ -231,7 +230,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
       <Section bgClass='bg-light'>
         <ContactSection />
       </Section>
-    </Layout>
+    </main>
   )
 }
 export default PostTemplate

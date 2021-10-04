@@ -17,7 +17,7 @@ export const IOT = ({ expertises = [], partners = [] }) => {
   const { t } = useTranslation('iot')
 
   return (
-    <Layout>
+    <main>
       <Breadcrumb router={router} />
       <PageTitle
         namespace='iot'
@@ -46,7 +46,7 @@ export const IOT = ({ expertises = [], partners = [] }) => {
       <Section>
         <ContactSection />
       </Section>
-    </Layout>
+    </main>
   )
 }
 

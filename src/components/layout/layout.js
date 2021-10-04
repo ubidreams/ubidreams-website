@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Header from './header'
 import Footer from './footer'
 
-export default function Layout({ preview, children, bgColor = '' }) {
+export default function Layout({ children }) {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export default function Layout({ preview, children, bgColor = '' }) {
       </Head>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Header />
-        <main className={bgColor}>{children}</main>
+        {children}
         <Footer />
       </div>
     </>
