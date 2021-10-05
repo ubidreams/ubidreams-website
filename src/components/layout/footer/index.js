@@ -76,9 +76,10 @@ const Footer = () => {
 
               {/* <!-- List --> */}
               <ul className='list-unstyled text-muted mb-0'>
-                {legalPages.map((link, index) => {
-                  return <MenuLink key={index} href={link.slug} name={link.title} />
-                })}
+                {legalPages &&
+                  legalPages.map((link, index) => {
+                    return <MenuLink key={index} href={link.slug} name={link.title} />
+                  })}
               </ul>
             </div>
           </div>
