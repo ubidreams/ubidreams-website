@@ -377,6 +377,7 @@ export async function getMembership(preview, locale) {
           adhesionAssociation {
             id
             nom
+            url
             img {
               responsiveImage {
                 ...responsiveImageFragment
