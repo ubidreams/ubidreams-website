@@ -4,7 +4,7 @@ export const ContactMeta = ({ title = '', content = '' }) => {
       <h6 className='text-uppercase text-gray-700 mb-1'>{title}</h6>
 
       <div className='mb-5 mb-md-0'>
-        <p className='h4'>{content}</p>
+        <div className='h4'>{content}</div>
       </div>
     </div>
   )

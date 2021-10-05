@@ -1,18 +1,21 @@
+import { useEffect, useState } from 'react'
+import ReactHtmlParser from 'react-html-parser'
 import Link from 'next/link'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
+import { getAllLegalPages, getCoordonnees } from '../../../lib/api.js'
 
 import { Ubidreams, Img } from '../../../config/StaticImagesExport.js'
-import { useEffect, useState } from 'react'
-import { getAllLegalPages } from '../../../lib/api.js'
 
 const Footer = () => {
-  const { t } = useTranslation('common')
+  const { t, lang } = useTranslation('common')
   const [legalPages, setLegalPages] = useState([])
+  const [coordonnees, setCoordonnees] = useState({})
 
   useEffect(() => {
-    getAllLegalPages('fr').then((data) => setLegalPages(data))
-  }, [])
+    getAllLegalPages(lang).then((data) => setLegalPages(data))
+    getCoordonnees(lang).then((data) => setCoordonnees(data))
+  }, [lang])
 
   const MenuLink = ({ href, name }) => {
     return (
@@ -63,11 +66,15 @@ const Footer = () => {
               <h6 className='fw-bold text-uppercase text-gray-700'>{t('footer.location.title')}</h6>
 
               {/* <!-- List --> */}
-              <p className='text-muted mb-6 mb-md-8 mb-lg-0' style={{ whiteSpace: 'pre-line' }}>
-                {t('footer.location.address')}
+              <div className='text-muted mb-6 mb-md-8 mb-lg-0' style={{ whiteSpace: 'pre-line' }}>
+                {coordonnees.telephone}
                 <br />
-                {t('footer.location.phone')}
-              </p>
+                {coordonnees.email}
+                <br />
+                <div>{coordonnees.adresse + ','}</div>
+                <div>{coordonnees.ville + ','}</div>
+                <div>{coordonnees.pays}</div>
+              </div>
             </div>
             {/* link mentions */}
             <div className='col-6 col-md-4 col-lg-4'>

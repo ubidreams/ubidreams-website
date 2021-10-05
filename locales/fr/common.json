@@ -51,10 +51,7 @@
   "footer": {
     "slogan": "Rêvons digital",
     "location": {
-      "title": "Localisation",
-      "address": "3 Boulevard du commandant Charcot, \n17440 Aytré, \nFrance",
-      "phone": "05 16 49 27 26",
-      "mail": "contact@ubidreams.com"
+      "title": "Localisation"
     },
     "legal": {
       "title": "Légal"

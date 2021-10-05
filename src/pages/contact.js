@@ -1,14 +1,19 @@
 import { useCallback, useState } from 'react'
+import ReactHtmlParser from 'react-html-parser'
 import useTranslation from 'next-translate/useTranslation'
-import { ContactHeader } from '../config/StaticImagesExport'
+import { useRouter } from 'next/dist/client/router'
+
 import { isNil, isNull } from 'lodash'
+
+import { ContactHeader } from '../config/StaticImagesExport'
 
 import ContactMeta from '../components/contact-meta'
 import Section from '../components/section'
 import Title from '../components/title'
-import { useRouter } from 'next/dist/client/router'
 
-export const Contact = () => {
+import { getCnilMentionForm, getCoordonnees } from '../lib/api'
+
+export const Contact = ({ coordonnees, cnilMention }) => {
   const router = useRouter()
   const { t } = useTranslation('contact')
   const [name, setName] = useState('')
@@ -16,6 +21,7 @@ export const Contact = () => {
   const [message, setMessage] = useState('')
   const [messageRequest, setMessageRequest] = useState({ code: null, message: null })
   const [object, setObject] = useState(isNil(router.query) ? router.query.object : t('form.default-object'))
+  const adresse = coordonnees.adresse + ', ' + coordonnees.ville + ', ' + coordonnees.pays
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -76,9 +82,9 @@ export const Contact = () => {
           </a>
         </div>
         <div className='row row-cols-1 row-cols-md-3'>
-          <ContactMeta title={t('coordonnee.location-title')} content={t('common:footer.location.address')} />
-          <ContactMeta title={t('coordonnee.phone-title')} content={t('common:footer.location.phone')} />
-          <ContactMeta title={t('coordonnee.mail-title')} content={t('common:footer.location.mail')} />
+          <ContactMeta title={t('coordonnee.location-title')} content={adresse} />
+          <ContactMeta title={t('coordonnee.phone-title')} content={coordonnees.telephone} />
+          <ContactMeta title={t('coordonnee.mail-title')} content={coordonnees.email} />
         </div>
       </Section>
       <Section id='contact-form'>
@@ -164,6 +170,10 @@ export const Contact = () => {
                 {t('form.button')}
               </button>
             </div>
+            <div>
+              <hr className='my-6 my-md-8 text-gray-500' />
+              <div className='text-gray-800'>{ReactHtmlParser(cnilMention)}</div>
+            </div>
           </div>
         </form>
       </Section>
@@ -172,3 +182,12 @@ export const Contact = () => {
 }
 
 export default Contact
+
+export async function getStaticProps({ locale }) {
+  const coordonnees = (await getCoordonnees(locale)) || []
+  const cnilMention = (await getCnilMentionForm(locale)) || []
+
+  return {
+    props: { coordonnees, cnilMention }
+  }
+}

@@ -51,10 +51,7 @@
   "footer": {
     "slogan": "Dream digital",
     "location": {
-      "title": "Location",
-      "address": "3 Boulevard du commandant Charcot, \n17440 Aytré, \nFrance",
-      "phone": "+33 5 16 49 27 26",
-      "mail": "contact@ubidreams.com"
+      "title": "Location"
     },
     "legal": {
       "title": "Legal"
