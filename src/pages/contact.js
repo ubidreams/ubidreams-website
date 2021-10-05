@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/dist/client/router'
-
-import { isNil, isNull } from 'lodash'
+import { isNil } from 'lodash'
+import Swal from 'sweetalert2'
 
 import { ContactHeader } from '../config/StaticImagesExport'
 
@@ -12,49 +12,56 @@ import Section from '../components/section'
 import Title from '../components/title'
 
 import { getCnilMentionForm, getCoordonnees } from '../lib/api'
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'bottom',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
 
 export const Contact = ({ coordonnees, cnilMention }) => {
   const router = useRouter()
   const { t } = useTranslation('contact')
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [messageRequest, setMessageRequest] = useState({ code: null, message: null })
-  const [object, setObject] = useState(isNil(router.query) ? router.query.object : t('form.default-object'))
+  const [contactForm, setContactForm] = useState({
+    object: isNil(router.query) ? router.query.object : t('form.default-object')
+  })
+  const [sendingMessage, setSendingMessage] = useState(false)
   const adresse = coordonnees.adresse + ', ' + coordonnees.ville + ', ' + coordonnees.pays
 
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault()
-      setMessageRequest({ code: null, message: null })
-
-      let data = {
-        name,
-        email,
-        object,
-        message
-      }
-
+      setSendingMessage(true)
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           Accept: 'application/json, text/plain, */*',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(contactForm)
       })
-
-      if (response && response.status === 500) {
-        setMessageRequest({ code: 'error', message: t('form.error') })
-      } else if (response.status === 200) {
-        setMessageRequest({ code: 'success', message: t('form.success') })
-        setName('')
-        setEmail('')
-        setObject('')
-        setMessage('')
+      if (response) {
+        setSendingMessage(false)
+        if (response && response.status === 500) {
+          Toast.fire({
+            icon: 'error',
+            title: t('form.error')
+          })
+        } else if (response.status === 200) {
+          setContactForm({})
+          Toast.fire({
+            icon: 'success',
+            title: t('form.success')
+          })
+        }
       }
     },
-    [email, message, name, object, t]
+    [contactForm, t]
   )
   return (
     <main className='bg-light-grey'>
@@ -101,8 +108,13 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 id='contactName'
                 type='text'
                 placeholder={t('form.identite')}
-                onChange={(e) => setName(e.target.value)}
-                value={name}
+                onChange={(e) =>
+                  setContactForm({
+                    ...contactForm,
+                    name: e.target.value
+                  })
+                }
+                value={contactForm.name || ''}
                 required
               />
             </div>
@@ -116,8 +128,13 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 id='contactEmail'
                 type='email'
                 placeholder={t('form.email')}
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+                onChange={(e) =>
+                  setContactForm({
+                    ...contactForm,
+                    email: e.target.value
+                  })
+                }
+                value={contactForm.email || ''}
                 pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
                 title={t('form.email-format')}
                 required
@@ -135,8 +152,13 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 id='contactObject'
                 type='text'
                 placeholder={t('form.object')}
-                defaultValue={object}
-                onChange={(e) => setObject(e.target.value)}
+                onChange={(e) =>
+                  setContactForm({
+                    ...contactForm,
+                    object: e.target.value
+                  })
+                }
+                value={contactForm.object || ''}
                 required
               />
             </div>
@@ -150,24 +172,22 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 id='contactMessage'
                 rows='5'
                 placeholder={t('form.message')}
-                onChange={(e) => setMessage(e.target.value)}
-                value={message}
+                onChange={(e) =>
+                  setContactForm({
+                    ...contactForm,
+                    message: e.target.value
+                  })
+                }
+                value={contactForm.message || ''}
                 required
               ></textarea>
             </div>
             <div className='text-center'>
-              {!isNull(messageRequest.code) && (
-                <div
-                  className={`border-left border-4 border-${messageRequest.code == 'error' ? 'orange' : 'green'} mb-4`}
-                >
-                  <p className={`p-2 bg-${messageRequest.code == 'error' ? 'orange' : 'green'}-75`}>
-                    {messageRequest.code == 'error' && <span className='fe fe-alert-circle'></span>}
-                    {messageRequest.message}
-                  </p>
-                </div>
-              )}
-              <button type='submit' className='btn btn-blue lift'>
-                {t('form.button')}
+              <button type='submit' className='btn btn-blue lift' disabled={sendingMessage}>
+                {sendingMessage && (
+                  <span className='spinner-border spinner-border-sm me-2' role='status' aria-hidden='true' />
+                )}
+                {sendingMessage ? t('form.load') : t('form.button')}
               </button>
             </div>
             <div>

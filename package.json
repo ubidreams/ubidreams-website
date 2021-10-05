@@ -27,7 +27,8 @@
     "react-share": "^4.4.0",
     "react-slick": "^0.28.1",
     "sass": "^1.35.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.1.7"
   },
   "devDependencies": {
     "eslint": "7.30.0",

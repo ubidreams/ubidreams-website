@@ -26,8 +26,10 @@ export default async function handler(req, res) {
 
   transporter.sendMail(mailData, function (error, info) {
     if (error) {
+      res.send('NOT SENT')
       res.status(500).end()
     } else {
+      res.send('SENT')
       res.status(200).end()
     }
   })
