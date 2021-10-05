@@ -31,6 +31,7 @@
                 "key": "code",
                 "alt": "Icon balise html"
             },
+            "key": "development",
             "title": "Développement d'applications mobile & web",
             "description": "Nous sommes spécialistes dans la conception et le développement de logiciels métier web et applications web et mobiles. "
         },
@@ -40,6 +41,7 @@
                 "key": "router",
                 "alt": "Icon router"
             },
+            "key": "internet-of-things",
             "title": "IOT & Objets connectés",
             "description": "Nous vous apportons notre expertise en IOT et nous vous aidons à créer des objets intelligents, connectés à vos outils informatiques."
         },
@@ -49,6 +51,7 @@
                 "key": "smile",
                 "alt": "Icon smiley content"
             },
+            "key": "consulting",
             "title": "Conseil & Expertises",
             "description": "Nous vous accompagnons durant tout le processus de vie de votre projet et nous vous conseillons dans différents domaines (Design UX et UI, RGDP, ....)."
         }

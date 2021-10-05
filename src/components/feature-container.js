@@ -33,7 +33,15 @@ const FeatureContainer = ({ namespace = null, displayDirection, data = {}, class
             maxWidth: '30rem'
           }}
         >
-          <h3>{item.title}</h3>
+          {item.key ? (
+            <Link href={t(`common:header.expertise.items.${item.key}.path`)}>
+              <a>
+                <h3>{item.title}</h3>
+              </a>
+            </Link>
+          ) : (
+            <h3>{item.title}</h3>
+          )}
           <p className='text-gray-700 mb-6 mb-md-0' style={{ textAlign: 'left' }}>
             {item.description}
           </p>

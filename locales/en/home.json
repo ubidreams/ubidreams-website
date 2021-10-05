@@ -31,6 +31,7 @@
                 "key": "code",
                 "alt": "Icon balise html"
             },
+            "key": "development",
             "title": "Web and Mobile Development",
             "description": "We are specialists in the design and development of web business software and web and mobile applications."
         },
@@ -40,6 +41,7 @@
                 "key": "router",
                 "alt": "Icon router"
             },
+            "key": "internet-of-things",
             "title": "Internet of Things",
             "description": "We bring you our expertise in IOT and we help you to create smart objects, connected to your IT tools."
         },
@@ -49,6 +51,7 @@
                 "key": "smile",
                 "alt": "Icon smiley content"
             },
+            "key": "consulting",
             "title": "Consulting",
             "description": "We guide you in all important stages of your digital strategy, GDPR, networks and cybersecurity, Business Intelligence and Data science."
         }
