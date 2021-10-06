@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/dist/client/router'
-import { isNil } from 'lodash'
+import { isEmpty, isNil } from 'lodash'
 import Swal from 'sweetalert2'
 
 import { ContactHeader } from '../config/StaticImagesExport'
@@ -37,13 +37,18 @@ export const Contact = ({ coordonnees, cnilMention }) => {
     async (e) => {
       e.preventDefault()
       setSendingMessage(true)
+      const contact = {
+        ...contactForm,
+        company: isEmpty(contactForm.company) ? 'Société non renseignée' : contactForm.company,
+        name: isEmpty(contactForm.name) ? 'Anonyme' : contactForm.name
+      }
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           Accept: 'application/json, text/plain, */*',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(contactForm)
+        body: JSON.stringify(contact)
       })
       if (response) {
         setSendingMessage(false)
@@ -99,7 +104,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
         <form onSubmit={handleSubmit}>
           <div className='row row-cols-1 row-cols-md-2 mt-7'>
             <div className='form-group mb-5'>
-              <label className='form-label required' htmlFor='contactName'>
+              <label className='form-label' htmlFor='contactName'>
                 {t('form.identite')}
               </label>
 
@@ -115,7 +120,6 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                   })
                 }
                 value={contactForm.name || ''}
-                required
               />
             </div>
             <div className='form-group mb-5'>
@@ -143,10 +147,30 @@ export const Contact = ({ coordonnees, cnilMention }) => {
           </div>
           <div className='row'>
             <div className='form-group mb-5'>
+              <label className='form-label' htmlFor='contactObject'>
+                {t('form.company')}
+              </label>
+
+              <input
+                className='form-control border-gray-300'
+                id='company'
+                type='text'
+                placeholder={t('form.company')}
+                onChange={(e) =>
+                  setContactForm({
+                    ...contactForm,
+                    company: e.target.value
+                  })
+                }
+                value={contactForm.company || ''}
+              />
+            </div>
+          </div>
+          <div className='row'>
+            <div className='form-group mb-5'>
               <label className='form-label required' htmlFor='contactObject'>
                 {t('form.object')}
               </label>
-
               <input
                 className='form-control border-gray-300'
                 id='contactObject'

@@ -14,6 +14,7 @@
         "identite": "Name, Firstname",
         "email": "Mail",
         "email-format": "You must respect the following format: example@mail.com",
+        "company": "Société",
         "object": "Object",
         "default-object": "Project idea",
         "message": "How can we help you ?",

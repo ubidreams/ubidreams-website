@@ -1,4 +1,4 @@
-export const htmlBody = (name, email, message, object) => {
+export const htmlBody = (name, email, message, object, company) => {
   return `
     <!doctype html>
     <html>
@@ -23,6 +23,9 @@ export const htmlBody = (name, email, message, object) => {
             <div>
                 <p><strong>Envoyé par : </strong>
                   ${name} | ${email}
+                </p>
+                <p><strong>Société : </strong>
+                  ${company} 
                 </p>
                 <p><strong>Message :</strong></p>
                 <p>${message}</p>

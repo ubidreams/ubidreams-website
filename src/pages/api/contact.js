@@ -20,8 +20,8 @@ export default async function handler(req, res) {
     to: process.env.MAIL_SMTP_RECIPIENT,
     replyTo: req.body.email,
     subject: `${req.body.object}`,
-    text: req.body.message + ' | Envoyé par : ' + req.body.email + ' - ' + req.body.email,
-    html: htmlBody(req.body.name, req.body.email, req.body.message, req.body.object)
+    text: req.body.message + ' | Envoyé par : ' + req.body.email + ' - ' + req.body.email + ' - ' + req.body.company,
+    html: htmlBody(req.body.name, req.body.email, req.body.message, req.body.object, req.body.company)
   }
 
   transporter.sendMail(mailData, function (error, info) {

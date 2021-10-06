@@ -15,6 +15,7 @@
         "email": "Email",
         "email-format": "Vous devez respecter le format suivant : example@mail.com",
         "message": "Comment pouvons-nous vous aider ?",
+        "company": "Société",
         "object": "Objet",
         "default-object": "Idée de projet",
         "button": "Envoyer",
