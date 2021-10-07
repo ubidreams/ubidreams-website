@@ -1,11 +1,12 @@
 import Link from 'next/link'
 
-export const LinkBeautify = ({ record, meta, children }) => {
+export const LinkBeautify = ({ record, meta = null, children }) => {
   let pathname
   let newAs
-  let query = { slug: record.slug }
+  let query = { slug: record?.slug }
+  console.log(meta)
 
-  switch (record.categorie) {
+  switch (record?.categorie) {
     case 'solution':
       pathname = '/expertises/[params]'
       newAs = `/expertises/${record.slug}`
@@ -27,7 +28,7 @@ export const LinkBeautify = ({ record, meta, children }) => {
       newAs = `/`
   }
 
-  if (!record.slug) pathname = '/404'
+  if (!record?.slug) pathname = '/404'
 
   return (
     <Link

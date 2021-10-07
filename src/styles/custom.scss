@@ -355,6 +355,25 @@ a {
   min-height: 27em;
 }
 
+.card-consulting {
+  position: relative;
+  min-height: 17em;
+
+  & a:hover {
+    text-decoration: none !important;
+
+    & h4 {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: 1000px){
+  .row-consulting > *{
+    flex: 0 0 auto;
+    width: 25%;
+  }
+}
 /* STYLE BREADCRUMB */
 
 .breadcrumb-item + .breadcrumb-item {

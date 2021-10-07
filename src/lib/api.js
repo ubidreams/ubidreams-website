@@ -552,6 +552,10 @@ export async function getExpertisesByField(preview, locale, field) {
           icon {
             ...svgFieldFragment
           }
+          offre {
+            slug
+            categorie
+          }
         }
       }
   
