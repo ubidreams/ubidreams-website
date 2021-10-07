@@ -12,6 +12,7 @@ import Section from '../components/section'
 import Title from '../components/title'
 
 import { getCnilMentionForm, getCoordonnees } from '../lib/api'
+
 const Toast = Swal.mixin({
   toast: true,
   position: 'bottom',
@@ -28,7 +29,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
   const router = useRouter()
   const { t } = useTranslation('contact')
   const [contactForm, setContactForm] = useState({
-    object: isNil(router.query) ? router.query.object : t('form.default-object')
+    object: !isNil(router.query) ? router.query.object : t('form.default-object')
   })
   const [sendingMessage, setSendingMessage] = useState(false)
   const adresse = coordonnees.adresse + ', ' + coordonnees.ville + ', ' + coordonnees.pays
