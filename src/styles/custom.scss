@@ -194,6 +194,15 @@ a {
 .expertise-img > div {
   max-width: 97% !important;
 }
+.hero {
+  min-height: 80vh;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+  }
+}
 
 /* PAGE AGENCE */
 .members .card-img-top {

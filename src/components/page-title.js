@@ -24,8 +24,7 @@ const PageTitle = ({
 
   return (
     <div
-      style={{ minHeight: minHeight }}
-      className={`px-md-10 d-md-flex d-lg-flex flex-row${
+      className={`hero px-md-10 d-md-flex d-lg-flex flex-row${
         '-' + displayImage
       } align-items-center text-center text-md-start justify-content-between`}
     >

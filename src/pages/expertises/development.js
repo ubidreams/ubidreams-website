@@ -23,7 +23,6 @@ export const Developpement = ({ expertises = [] }) => {
         displayImage='reverse'
         classText='text-left px-4 pe-md-8'
         classImg='w-100 px-4 px-md-0'
-        minHeight='80vh'
       />
       <Section>
         {/* Introduction à nos technologies */}

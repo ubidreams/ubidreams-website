@@ -31,7 +31,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
           backgroundSize: 'auto 60%'
         }}
       >
-        <div className='d-flex vh-50 justify-content-center align-items-center'>
+        <div className='d-flex vh-md-50 justify-content-center align-items-center'>
           <Title title={t('hero.title')} subtitle={t('hero.subtitle')} />
         </div>
       </Section>
