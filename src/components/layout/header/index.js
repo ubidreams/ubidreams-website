@@ -58,6 +58,36 @@ const Header = () => {
             </button>
             <ul className='navbar-nav mx-auto'>
               {map(routes, (route) => {
+                const subMenu = route?.items
+                if (!isEmpty(subMenu)) {
+                  return (
+                    <li key={route?.key} className='nav-item dropdown'>
+                      <span
+                        style={{ cursor: 'pointer' }}
+                        className='nav-link dropdown-toggle d-flex align-items-center'
+                        id='expertises'
+                        data-bs-toggle='dropdown'
+                        aria-expanded='false'
+                      >
+                        {t(`header.${route?.key}.name`)}
+                        <span className='ps-2 fe fe-chevron-down'></span>
+                      </span>
+                      <ul className='dropdown-menu' aria-labelledby='expertises'>
+                        {subMenu.map((subLink, index) => {
+                          return (
+                            <li key={index}>
+                              <Link href={t(`header.${route?.key}.items.${subLink.key}.path`)}>
+                                <a className='dropdown-item p-2 mx-4'>
+                                  {t(`header.${route?.key}.items.${subLink.key}.name`)}
+                                </a>
+                              </Link>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </li>
+                  )
+                }
                 return (
                   <MenuLink
                     key={route?.key}
