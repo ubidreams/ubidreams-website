@@ -645,14 +645,37 @@ export async function getOnePageBySlug(preview, locale, slug) {
               categorie
             }
             blocks {
-              id
-              image {
-                format
-                url
-                title
-                responsiveImage {
-                  ...responsiveImageFragment
+              ... on FocusPointRecord {
+                id
+                liste
+                _modelApiKey
+              }
+              ... on ListeCustomRecord {
+                id
+                liste
+                _modelApiKey
+              }
+              ... on ImageRecord {
+                id
+                image {
+                  url
+                  title
+                  format
+                  responsiveImage {
+                    ...responsiveImageFragment
+                  }
                 }
+                _modelApiKey
+              }
+              ... on TextAndImageRecord {
+                id
+                image {
+                  responsiveImage {
+                    ...responsiveImageFragment
+                  }
+                }
+                content
+                _modelApiKey
               }
             }
           }

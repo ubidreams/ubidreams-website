@@ -4,7 +4,6 @@ export const LinkBeautify = ({ record, meta = null, children }) => {
   let pathname
   let newAs
   let query = { slug: record?.slug }
-  console.log(meta)
 
   switch (record?.categorie) {
     case 'solution':

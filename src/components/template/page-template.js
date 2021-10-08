@@ -92,22 +92,42 @@ const PageTemplate = ({ page, lastRef, router }) => {
               )
             }}
             renderBlock={({ record }) => {
-              const { title, format, url } = record.image
-              if (format === 'pdf') {
-                return (
-                  <a
-                    target='_blank'
-                    rel='noreferrer'
-                    href={url}
-                    className='d-block d-md-inline-block text-center border border-gray-300 p-2 rounded me-md-2 mb-2'
-                  >
-                    <ImageNext src={Download} alt='icon download' width={50} height={50} />
-                    <p className='mb-0'>{title}</p>
-                  </a>
-                )
-              }
+              switch (record._modelApiKey) {
+                case 'image':
+                  const { title, format, url } = record.image
+                  if (format === 'pdf') {
+                    return (
+                      <a
+                        target='_blank'
+                        rel='noreferrer'
+                        href={url}
+                        className='d-block d-md-inline-block text-center border border-gray-300 p-2 rounded me-md-2 mb-2'
+                      >
+                        <ImageNext src={Download} alt='icon download' width={50} height={50} />
+                        <p className='mb-0'>{title}</p>
+                      </a>
+                    )
+                  }
+                  return <Image data={record.image.responsiveImage} alt='' />
+                case 'focus_point':
+                  return <div className='focus_point'>{ReactHtmlParser(record.liste)}</div>
+                case 'liste_custom':
+                  return <div className='liste_custom'>{ReactHtmlParser(record.liste)}</div>
+                case 'text_and_image':
+                  return (
+                    <div className='d-flex row bg-light-grey px-4 py-6 my-4'>
+                      {record.image && (
+                        <div className='mw-md-50 align-self-center'>
+                          <Image data={record.image.responsiveImage} alt='' />
+                        </div>
+                      )}
 
-              return <Image data={record.image.responsiveImage} alt='' />
+                      <div className={`${record.image && 'mw-md-50'} align-self-center pt-4 mt-md-0`}>
+                        {ReactHtmlParser(record.content)}
+                      </div>
+                    </div>
+                  )
+              }
             }}
             customRules={[
               renderRule(isSpan, ({ node, children, key }) => {

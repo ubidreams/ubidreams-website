@@ -374,6 +374,7 @@ a {
     width: 25%;
   }
 }
+
 /* STYLE BREADCRUMB */
 
 .breadcrumb-item + .breadcrumb-item {
@@ -400,5 +401,62 @@ a {
 
   & > picture img{
     object-fit: contain;
+  }
+}
+
+/* STYLE LISTE PAGE EXPERTISE */
+.liste_custom {
+  & li {
+    list-style: none;
+    
+  }
+
+  & li::before {
+    content: url('../../public/img/icons/Done-circle.svg');
+    display: inline-block; 
+    width: 2em;
+    margin-left: -1em;
+    vertical-align: text-top;
+  }
+}
+
+/* STYLE FOCUS POINT PAGE EXPERTISE */
+.focus_point {
+  & ul {
+    padding-left: 0;
+    display: flex;
+  }
+
+  & li {
+    list-style: none;
+    text-align: center;
+
+    position: relative;
+    width: 100%;
+    padding: 2em;
+    margin: 1em;
+
+    box-shadow: 0 1.5rem 4rem rgba(22,28,45,.05)!important;
+
+    &::before {
+      content: url('../../public/img/icons/Done-circle.svg');
+      display: inline-block; 
+      width: 4em;
+      margin-left: -1em;
+      vertical-align: text-top;
+    }
+  }
+}
+
+@media (max-width: 760px){
+  .focus_point ul {
+    flex-wrap: wrap;
+  }
+
+  .focus_point ul > * {
+    flex: 0 0 auto;
+    width: 100%;
+
+    margin: 1em 0;
   }
 }
