@@ -612,7 +612,7 @@ export async function getLastRefByTech(id_etiquette, locale) {
   const data = await fetchAPI(
     `
       {
-        allReferences(filter: {etiquettes: {allIn: "${id_etiquette}"}}, first: "3", orderBy: _firstPublishedAt_DESC, locale: ${locale}) {
+        allReferences(filter: {etiquettes: {allIn: "${id_etiquette}"}}, first: "3", locale: ${locale}) {
           ...ReferenceRecordFragment
         }
       }
