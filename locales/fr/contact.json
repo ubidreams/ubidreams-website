@@ -21,6 +21,7 @@
         "button": "Envoyer",
         "load": "Envoi...",
         "error": "Nous rencontrons un problème à l'envoi de votre message. Veuillez nous excuser pour la gène occasionnée. Vous pouvez réessayer ou envoyer directement à l'adresse : contact@ubidreams.com",
-        "success": "Votre message a bien été envoyé, merci de votre confiance et à bientôt."
+        "success": "Votre message a bien été envoyé, merci de votre confiance et à bientôt.",
+        "captcha-invalid": "Vous devez valider le reCaptcha afin de confirmer l'envoi du formulaire."
     }
 }

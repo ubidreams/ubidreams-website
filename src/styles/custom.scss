@@ -355,6 +355,12 @@ a {
 /* PAGE CONTACT */
 .form-label.required:after {
   content: '*';
+  margin-left: 5px;
+}
+
+#captcha {
+  display: inline-block;
+  margin: 1em auto;
 }
 
 /* SOUS PAGE EXPERTISE - card-expertise */

@@ -1,8 +1,12 @@
-import { useCallback, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/dist/client/router'
-import { isEmpty, isNil } from 'lodash'
+import { isEmpty } from 'lodash'
+
+import ReCAPTCHA from 'react-google-recaptcha'
+//https://github.com/dozoisch/react-google-recaptcha/issues/218
+//issue cookie : SameSite, n'empêche pas le focntionnement du captcha
 import Swal from 'sweetalert2'
 
 import { ContactHeader } from '../config/StaticImagesExport'
@@ -12,6 +16,8 @@ import Section from '../components/section'
 import Title from '../components/title'
 
 import { getCnilMentionForm, getCoordonnees } from '../lib/api'
+
+const CAPTCHA_API = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
 const Toast = Swal.mixin({
   toast: true,
@@ -29,46 +35,65 @@ export const Contact = ({ coordonnees, cnilMention }) => {
   const router = useRouter()
   const { t } = useTranslation('contact')
   const [contactForm, setContactForm] = useState({
-    object: !isNil(router.query) ? router.query.object : t('form.default-object')
+    object: !isEmpty(router.query) ? router.query.object : t('form.default-object')
   })
+
   const [sendingMessage, setSendingMessage] = useState(false)
   const adresse = coordonnees.adresse + ', ' + coordonnees.ville + ', ' + coordonnees.pays
+  const recaptchaRef = useRef(null)
 
-  const handleSubmit = useCallback(
-    async (e) => {
-      e.preventDefault()
-      setSendingMessage(true)
-      const contact = {
-        ...contactForm,
-        company: isEmpty(contactForm.company) ? 'Société non renseignée' : contactForm.company,
-        name: isEmpty(contactForm.name) ? 'Anonyme' : contactForm.name
-      }
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(contact)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    if (isEmpty(recaptchaRef.current.getValue())) {
+      return Toast.fire({
+        icon: 'error',
+        title: t('form.captcha-invalid')
       })
+    }
+
+    setSendingMessage(true)
+
+    const contact = {
+      ...contactForm,
+      captcha: recaptchaRef.current.getValue(),
+      company: isEmpty(contactForm.company) ? 'Société non renseignée' : contactForm.company,
+      name: isEmpty(contactForm.name) ? 'Anonyme' : contactForm.name
+    }
+
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contact)
+    })
+    if (response) {
+      setSendingMessage(false)
       if (response) {
-        setSendingMessage(false)
-        if (response && response.status === 500) {
-          Toast.fire({
-            icon: 'error',
-            title: t('form.error')
-          })
-        } else if (response.status === 200) {
-          setContactForm({})
-          Toast.fire({
-            icon: 'success',
-            title: t('form.success')
-          })
+        switch (response.status) {
+          case 200:
+            setContactForm({})
+            recaptchaRef.current.reset()
+            Toast.fire({
+              icon: 'success',
+              title: t('form.success')
+            })
+            break
+          case 400:
+          case 422:
+          case 500:
+            Toast.fire({
+              icon: 'error',
+              title: t('form.error')
+            })
+            break
         }
       }
-    },
-    [contactForm, t]
-  )
+    }
+  }
+
   return (
     <main className='bg-light-grey'>
       <Section
@@ -207,13 +232,18 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 required
               ></textarea>
             </div>
-            <div className='text-center'>
-              <button type='submit' className='btn btn-blue lift' disabled={sendingMessage}>
-                {sendingMessage && (
-                  <span className='spinner-border spinner-border-sm me-2' role='status' aria-hidden='true' />
-                )}
-                {sendingMessage ? t('form.load') : t('form.button')}
-              </button>
+            <div className='d-flex flex-column text-center'>
+              <div id='captcha'>
+                <ReCAPTCHA ref={recaptchaRef} sitekey={CAPTCHA_API} />
+              </div>
+              <div>
+                <button type='submit' className='btn btn-blue lift' disabled={sendingMessage}>
+                  {sendingMessage && (
+                    <span className='spinner-border spinner-border-sm me-2' role='status' aria-hidden='true' />
+                  )}
+                  {sendingMessage ? t('form.load') : t('form.button')}
+                </button>
+              </div>
             </div>
             <div>
               <hr className='my-6 my-md-8 text-gray-500' />
