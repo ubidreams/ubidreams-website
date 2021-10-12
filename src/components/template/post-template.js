@@ -14,6 +14,7 @@ import ContactSection from '../contact-section'
 
 import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 import CardArticle from '../card-article'
+import Video from '../video'
 
 const URL = process.env.NEXT_PUBLIC_URL_GLOBAL
 
@@ -148,7 +149,12 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
               )
             }}
             renderBlock={({ record }) => {
-              return <Image data={record.image.responsiveImage} alt='' className='img-page' />
+              switch (record._modelApiKey) {
+                case 'image':
+                  return <Image data={record.image.responsiveImage} alt='' className='img-page' />
+                case 'video':
+                  return <Video config={record.videoUrl} />
+              }
             }}
             customRules={[
               renderRule(isSpan, ({ node, children, key }) => {

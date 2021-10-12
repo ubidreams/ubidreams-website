@@ -505,10 +505,26 @@ export async function getOnePostBySlug(preview, locale, slug) {
               }
             }
             blocks {
-              id
-              image {
-                responsiveImage {
-                  ...responsiveImageFragment
+              ... on VideoRecord {
+                _modelApiKey
+                id
+                videoUrl {
+                  provider
+                  providerUid
+                  thumbnailUrl
+                  title
+                  url
+                  width
+                  height
+                }
+              }
+              ... on ImageRecord {
+                _modelApiKey
+                id
+                image {
+                  responsiveImage {
+                    ...responsiveImageFragment
+                  }
                 }
               }
             }

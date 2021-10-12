@@ -475,3 +475,9 @@ a {
     margin: 1em 0;
   }
 }
+
+/* VIDEO */
+.video iframe {
+  width: 100%;
+  min-height: 33em;
+}
