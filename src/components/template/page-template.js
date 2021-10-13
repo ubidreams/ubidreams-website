@@ -1,9 +1,10 @@
-import { renderRule, StructuredText } from 'react-datocms'
+import { renderRule, StructuredText, renderMetaTags } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
 import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { includes, isEmpty } from 'lodash'
 import ImageNext from 'next/image'
+import Head from 'next/head'
 
 import { Download } from '../../config/StaticImagesExport'
 import Breadcrumb from '../breadcrumb'
@@ -73,109 +74,112 @@ const renderPage = (type, page) => {
 }
 const PageTemplate = ({ page, lastRef, router }) => {
   return (
-    <main>
-      <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
-      <Section>
-        <div className='text-center mb-8'>
-          <h1 className='display-2 fw-bold'>{page.title}</h1>
-          {renderPage('subtitle', page)}
-        </div>
-        {page.image && renderPage('image', page)}
-        <div className='my-6'>
-          <StructuredText
-            data={page.content}
-            renderLinkToRecord={({ record, children, transformedMeta }) => {
-              return (
-                <LinkBeautify record={record} meta={transformedMeta}>
-                  {children}
-                </LinkBeautify>
-              )
-            }}
-            renderBlock={({ record }) => {
-              switch (record._modelApiKey) {
-                case 'image':
-                  const { title, format, url } = record.image
-                  if (format === 'pdf') {
+    <>
+      <Head>{renderMetaTags(page._seoMetaTags)}</Head>
+      <main>
+        <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
+        <Section>
+          <div className='text-center mb-8'>
+            <h1 className='display-2 fw-bold'>{page.title}</h1>
+            {renderPage('subtitle', page)}
+          </div>
+          {page.image && renderPage('image', page)}
+          <div className='my-6'>
+            <StructuredText
+              data={page.content}
+              renderLinkToRecord={({ record, children, transformedMeta }) => {
+                return (
+                  <LinkBeautify record={record} meta={transformedMeta}>
+                    {children}
+                  </LinkBeautify>
+                )
+              }}
+              renderBlock={({ record }) => {
+                switch (record._modelApiKey) {
+                  case 'image':
+                    const { title, format, url } = record.image
+                    if (format === 'pdf') {
+                      return (
+                        <a
+                          target='_blank'
+                          rel='noreferrer'
+                          href={url}
+                          className='d-block d-md-inline-block text-center border border-gray-300 p-2 rounded me-md-2 mb-2'
+                        >
+                          <ImageNext src={Download} alt='icon download' width={50} height={50} />
+                          <p className='mb-0'>{title}</p>
+                        </a>
+                      )
+                    }
+                    return <Image data={record.image.responsiveImage} alt='' />
+                  case 'focus_point':
+                    return <div className='focus_point'>{ReactHtmlParser(record.liste)}</div>
+                  case 'liste_custom':
+                    return <div className='liste_custom'>{ReactHtmlParser(record.liste)}</div>
+                  case 'text_and_image':
                     return (
-                      <a
-                        target='_blank'
-                        rel='noreferrer'
-                        href={url}
-                        className='d-block d-md-inline-block text-center border border-gray-300 p-2 rounded me-md-2 mb-2'
-                      >
-                        <ImageNext src={Download} alt='icon download' width={50} height={50} />
-                        <p className='mb-0'>{title}</p>
-                      </a>
+                      <div className='d-flex row bg-light-grey px-4 py-6 my-4'>
+                        {record.image && (
+                          <div className='mw-md-50 align-self-center'>
+                            <Image data={record.image.responsiveImage} alt='' />
+                          </div>
+                        )}
+
+                        <div className={`${record.image && 'mw-md-50'} align-self-center pt-4 mt-md-0`}>
+                          {ReactHtmlParser(record.content)}
+                        </div>
+                      </div>
+                    )
+                }
+              }}
+              customRules={[
+                renderRule(isSpan, ({ node, children, key }) => {
+                  if (node.marks && includes(node.marks, 'highlight')) {
+                    return (
+                      <node.type key={key} className='text-green'>
+                        {node.value}
+                      </node.type>
                     )
                   }
-                  return <Image data={record.image.responsiveImage} alt='' />
-                case 'focus_point':
-                  return <div className='focus_point'>{ReactHtmlParser(record.liste)}</div>
-                case 'liste_custom':
-                  return <div className='liste_custom'>{ReactHtmlParser(record.liste)}</div>
-                case 'text_and_image':
-                  return (
-                    <div className='d-flex row bg-light-grey px-4 py-6 my-4'>
-                      {record.image && (
-                        <div className='mw-md-50 align-self-center'>
-                          <Image data={record.image.responsiveImage} alt='' />
-                        </div>
-                      )}
 
-                      <div className={`${record.image && 'mw-md-50'} align-self-center pt-4 mt-md-0`}>
-                        {ReactHtmlParser(record.content)}
-                      </div>
+                  if (node.marks && includes(node.marks, 'strong')) {
+                    return (
+                      <node.type key={key}>
+                        <strong>{node.value}</strong>
+                      </node.type>
+                    )
+                  }
+
+                  return <node.type key={key}>{node.value}</node.type>
+                }),
+                renderRule(isHeading, ({ node, children, key }) => {
+                  const HeadingTag = `h${node.level}`
+                  return (
+                    <HeadingTag key={key} className='pt-4'>
+                      {children}
+                    </HeadingTag>
+                  )
+                }),
+                renderRule(isBlockquote, ({ node, children, key }) => {
+                  return (
+                    <div key={key} className='border-top border-bottom border-green my-5 py-4'>
+                      <node.type className='blockquote'>
+                        <div className='h3 mb-0 text-center text-green'>{children}</div>
+                      </node.type>
                     </div>
                   )
-              }
-            }}
-            customRules={[
-              renderRule(isSpan, ({ node, children, key }) => {
-                if (node.marks && includes(node.marks, 'highlight')) {
-                  return (
-                    <node.type key={key} className='text-green'>
-                      {node.value}
-                    </node.type>
-                  )
-                }
-
-                if (node.marks && includes(node.marks, 'strong')) {
-                  return (
-                    <node.type key={key}>
-                      <strong>{node.value}</strong>
-                    </node.type>
-                  )
-                }
-
-                return <node.type key={key}>{node.value}</node.type>
-              }),
-              renderRule(isHeading, ({ node, children, key }) => {
-                const HeadingTag = `h${node.level}`
-                return (
-                  <HeadingTag key={key} className='pt-4'>
-                    {children}
-                  </HeadingTag>
-                )
-              }),
-              renderRule(isBlockquote, ({ node, children, key }) => {
-                return (
-                  <div key={key} className='border-top border-bottom border-green my-5 py-4'>
-                    <node.type className='blockquote'>
-                      <div className='h3 mb-0 text-center text-green'>{children}</div>
-                    </node.type>
-                  </div>
-                )
-              })
-            ]}
-          />
-        </div>
-      </Section>
-      {!isEmpty(page.expertInterne) && renderPage('expertInterne', page)}
-      {!isEmpty(page.expertPartenaires) && renderPage('expertPartenaire', page)}
-      {!isEmpty(page.partenaire) && renderPage('partenaire', page)}
-      {!isEmpty(lastRef) && renderPage('lastRef', lastRef)}
-      {page.afficherContact && renderPage('afficherContact', page)}
-    </main>
+                })
+              ]}
+            />
+          </div>
+        </Section>
+        {!isEmpty(page.expertInterne) && renderPage('expertInterne', page)}
+        {!isEmpty(page.expertPartenaires) && renderPage('expertPartenaire', page)}
+        {!isEmpty(page.partenaire) && renderPage('partenaire', page)}
+        {!isEmpty(lastRef) && renderPage('lastRef', lastRef)}
+        {page.afficherContact && renderPage('afficherContact', page)}
+      </main>
+    </>
   )
 }
 export default PageTemplate
