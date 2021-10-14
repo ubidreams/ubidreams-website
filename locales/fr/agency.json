@@ -1,4 +1,9 @@
 {
+    "seo": {
+        "title": "Ubidreams, Ensemble inventons le numérique",
+        "description": "Ubidreams, une histoire d’innovation à La Rochelle depuis 2009. Venez découvrir notre équipe et nos valeurs !", 
+        "img_key":"ideas"
+    },
     "hero": {
         "title": "Ubidreams, \n Ensemble inventons le numérique",
         "subtitle": "Ubidreams, une histoire d’innovation à La Rochelle depuis 2009"

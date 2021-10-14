@@ -1,4 +1,9 @@
 {
+    "seo": {
+        "title": "Internet of Things (IOT)",
+        "description": "We work between physical and digital worlds to give you our experience in connected devices design and integration, and utilization of linked data.",
+        "img_key": "iotLG"
+    },
     "hero": {
         "img": {
             "key": "iotLG",

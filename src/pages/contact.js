@@ -1,4 +1,5 @@
-import React, { useCallback, useRef, useState } from 'react'
+import { getCnilMentionForm, getCoordonnees } from '../lib/api'
+import React, { useRef, useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/dist/client/router'
@@ -14,8 +15,7 @@ import { ContactHeader } from '../config/StaticImagesExport'
 import ContactMeta from '../components/contact-meta'
 import Section from '../components/section'
 import Title from '../components/title'
-
-import { getCnilMentionForm, getCoordonnees } from '../lib/api'
+import Helmet from '../components/layout/helmet-seo'
 
 const CAPTCHA_API = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
@@ -34,6 +34,7 @@ const Toast = Swal.mixin({
 export const Contact = ({ coordonnees, cnilMention }) => {
   const router = useRouter()
   const { t } = useTranslation('contact')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
   const [contactForm, setContactForm] = useState({
     object: !isEmpty(router.query) ? router.query.object : t('form.default-object')
   })
@@ -95,7 +96,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
   }
 
   return (
-    <main className='bg-light-grey'>
+    <Helmet metatags={metatags} router={router} className='bg-light-grey'>
       <Section
         bgClass='overlay overlay-black overlay-60 bg-cover'
         customStyle={{ backgroundImage: `url(${ContactHeader.src})` }}
@@ -252,7 +253,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
           </div>
         </form>
       </Section>
-    </main>
+    </Helmet>
   )
 }
 

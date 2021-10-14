@@ -1,4 +1,9 @@
 {
+    "seo": {
+        "title": "Développement d’application métier Web et Mobile",
+        "description": "Nous restons connectés aux dernières tendances du web et du monde mobile pour vous proposer des produits numériques à la pointe de la technologie. Nos équipes maîtrisent les langages et les outils qui permettent de créer votre solution web et vos applications mobiles.",
+        "img_key": "multiplateforme"
+    },
     "hero": {
         "img": {
             "key": "multiplateforme",
@@ -19,7 +24,7 @@
                     "key": "regie",
                     "alt": "Illustration rejoindre une équipe"
                 },
-                "col" : "100",
+                "col": "100",
                 "title": "Régies",
                 "content": "Afin de répondre le plus efficacement à vos problématiques nous mettons à votre disposition nos collaborateurs pour toute la durée de votre projet. Qu'il s'agisse de développement web ou mobile ou encore de besoins en UX et UI design, nos collaborateurs peuvent intervenir sur vos projets. La mission débute par une rencontre initiale et peut se poursuivre entièrement ou en partie en télétravail."
             },
@@ -28,7 +33,7 @@
                     "key": "projet",
                     "alt": "Illustration travail en groupe"
                 },
-                "col" : "100",
+                "col": "100",
                 "title": "Forfait",
                 "content": "Nous sommes garant de la gestion et du suivi du projet depuis sa conception jusqu’à sa livraison. Dans le cadre de notre philosophie d’agilité, nous effectuons des points réguliers avec le client pour le tenir au courant des avancées du projet et en valider les jalons."
             }

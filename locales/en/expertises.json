@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Experts for your applications",
+    "description": "We implement a methodology to help you in your digital transformation and in the achievement of your projects. UbiDreams brings you the best in development of mobile applications and connected devices creation. All you have to do is dream it and we will designit for you and with you.",
+    "img_key": "expertises"
+  },
   "hero": {
     "img": {
       "key": "expertises",
@@ -8,7 +13,7 @@
   },
   "introduction": {
     "title": "Our work is to support you",
-    "subtitle": "We implement a methodology to help you in your digital transformation and in the achievement of your projects. UbiDreams brings you the best in development of mobile applications and connected devices creation. All you have to do is dream it and we will designit for you and with you. "
+    "subtitle": "We implement a methodology to help you in your digital transformation and in the achievement of your projects. UbiDreams brings you the best in development of mobile applications and connected devices creation. All you have to do is dream it and we will designit for you and with you."
   },
   "stepContainer": [
     {
@@ -57,7 +62,7 @@
         "buttonDetails": {
           "name": "More",
           "key": "design",
-          "path": "/", 
+          "path": "/",
           "class": "btn-blue"
         }
       },
@@ -97,7 +102,7 @@
       "subtitle": "Due to its geographical localisation in La Rochelle, Ubidreams has become  close to customers from the port sector. The commercial port of La Rochelle is one of the seven biggest french ports and is one of the leading ports for cereals, fertilisers and paper. Some issues linked to this industrial port environment, such as the bulk management or hydrocarbon deposits, have enabled  us to imagine solutions that are easily adaptable and transposable to other ports."
     },
     "conclusion": {
-      "subtitle" : "Since 2018, Ubidreams created digital solutions for his clients, Ubidreams is co-owner of those with his customers. Ubidreams proposes those solutions for France and the international market. Their usage is appropriate to export in Africa for example where Ubidreams already has activities."
+      "subtitle": "Since 2018, Ubidreams created digital solutions for his clients, Ubidreams is co-owner of those with his customers. Ubidreams proposes those solutions for France and the international market. Their usage is appropriate to export in Africa for example where Ubidreams already has activities."
     }
   },
   "referencesLinked": {

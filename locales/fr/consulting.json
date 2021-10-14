@@ -1,36 +1,41 @@
 {
-    "hero": {
-        "img": {
-            "key": "conseil",
-            "alt": "Illustration brainstorming"
-        },
-        "title": "Consulting : RGPD et Cybersécurité",
-        "description": "Parce que nous vous accompagnons dans toutes les étapes de vos projets et que nous sommes fiers de participer à votre réussite nous vous apportons notre expertise dans l’élaboration de votre stratégie numérique, en cybersécurité ou mise en conformité RGPD."
+  "seo": {
+    "title": "Consulting : RGPD et Cybersécurité",
+    "description": "Parce que nous vous accompagnons dans toutes les étapes de vos projets et que nous sommes fiers de participer à votre réussite nous vous apportons notre expertise dans l’élaboration de votre stratégie numérique, en cybersécurité ou mise en conformité RGPD.",
+    "img_key": "conseil"
+  },
+  "hero": {
+    "img": {
+      "key": "conseil",
+      "alt": "Illustration brainstorming"
     },
-      "expertises": {
-          "title": "Les phases clés de la transformation numérique",
-          "subtitle": "Notre équipe d’experts a à cœur de vous apporter ses conseils et son expertise technique en transformation numérique, en conformité réglementaire RGPD, en gestion et administration des réseaux sécurisés et en valorisation de vos données.", 
-          "domaine-expertise": [
-              {
-                "key": "reseaux-cybersecurite",
-                "title": "Réseaux et Cybersécurité",
-                "subtitle": "La sécurité est un enjeu crucial des projets et transformations digitales, c’est pourquoi nous nous assurons de vous conseiller les meilleures pratiques en matière de cybersécurité et d'infrastructure réseaux."
-              },
-              {
-                "key": "rgpd",
-                "title": "Conformité réglementaire RGPD",
-                "subtitle": "La réglementation européenne concernant le traitement et la collecte des données personnelles impacte toutes les entreprises. C’est pourquoi nous vous proposons l’accompagnement de nos experts pour vous aider à réaliser vos mises en conformité."
-              },
-              {
-                "key": "data-intelligence",
-                "title": "Business intelligence et Data Science",
-                "subtitle": "La donnée est l’enjeu au cœur de la transformation numérique, bien utilisée, elle est un grand atout. Nos experts vous aident à exploiter et faire de ces données une réelle valeur ajoutée pour votre entreprise et votre activité."
-              },
-              {
-                "key": "infrastruture-iot",
-                "title": "Stratégie numérique et infrastructure IoT",
-                "subtitle": "Transformation numérique, augmentation et amélioration des performances, choix techniques sont toutes de bonnes raisons de solliciter l’aide de nos experts afin de penser et créer les solutions qui vous correspondent."
-              }
-          ]
+    "title": "Consulting : RGPD et Cybersécurité",
+    "description": "Parce que nous vous accompagnons dans toutes les étapes de vos projets et que nous sommes fiers de participer à votre réussite nous vous apportons notre expertise dans l’élaboration de votre stratégie numérique, en cybersécurité ou mise en conformité RGPD."
+  },
+  "expertises": {
+    "title": "Les phases clés de la transformation numérique",
+    "subtitle": "Notre équipe d’experts a à cœur de vous apporter ses conseils et son expertise technique en transformation numérique, en conformité réglementaire RGPD, en gestion et administration des réseaux sécurisés et en valorisation de vos données.",
+    "domaine-expertise": [
+      {
+        "key": "reseaux-cybersecurite",
+        "title": "Réseaux et Cybersécurité",
+        "subtitle": "La sécurité est un enjeu crucial des projets et transformations digitales, c’est pourquoi nous nous assurons de vous conseiller les meilleures pratiques en matière de cybersécurité et d'infrastructure réseaux."
+      },
+      {
+        "key": "rgpd",
+        "title": "Conformité réglementaire RGPD",
+        "subtitle": "La réglementation européenne concernant le traitement et la collecte des données personnelles impacte toutes les entreprises. C’est pourquoi nous vous proposons l’accompagnement de nos experts pour vous aider à réaliser vos mises en conformité."
+      },
+      {
+        "key": "data-intelligence",
+        "title": "Business intelligence et Data Science",
+        "subtitle": "La donnée est l’enjeu au cœur de la transformation numérique, bien utilisée, elle est un grand atout. Nos experts vous aident à exploiter et faire de ces données une réelle valeur ajoutée pour votre entreprise et votre activité."
+      },
+      {
+        "key": "infrastruture-iot",
+        "title": "Stratégie numérique et infrastructure IoT",
+        "subtitle": "Transformation numérique, augmentation et amélioration des performances, choix techniques sont toutes de bonnes raisons de solliciter l’aide de nos experts afin de penser et créer les solutions qui vous correspondent."
       }
+    ]
+  }
 }

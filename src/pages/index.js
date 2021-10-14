@@ -2,6 +2,8 @@ import { getAllTestimonialsForHome, getLastReferences, getPagesFavorites } from 
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 
+import { Recherche, IdeesRightCropped } from '../config/StaticImagesExport'
+
 import FeatureContainer from '../components/feature-container'
 import PageTitle from '../components/page-title'
 import Section from '../components/section'
@@ -9,15 +11,16 @@ import TextContainer from '../components/text-container'
 import ContactSection from '../components/contact-section'
 import SliderComponent from '../components/slider'
 import CardReference from '../components/card-reference'
-import { Recherche, IdeesRightCropped } from '../config/StaticImagesExport'
 import SliderItem from '../components/slider-item'
 import Card from '../components/card'
+import Helmet from '../components/layout/helmet-seo'
 
 export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
   const { t } = useTranslation('home')
   const router = useRouter()
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       {/* Entête > titre + illustration à droite */}
       <PageTitle namespace='home' displayImage='reverse' classText='text-left' showButton />
 
@@ -72,7 +75,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
           <CardReference config={lastReferences} />
         </div>
       </Section>
-    </main>
+    </Helmet>
   )
 }
 

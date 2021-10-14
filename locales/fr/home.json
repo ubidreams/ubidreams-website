@@ -1,4 +1,9 @@
 {
+    "seo": {
+        "title": "Création d'applications mobiles et d'objets connectés",
+        "description": "Ubidreams est une agence digitale basée à La Rochelle. Nous sommes spécialisés dans le développement d'applications mobiles, l'ux design et la création d'objets connectés.", 
+        "img_key":"home"
+    },
     "hero": {
         "img": {
             "key": "home",

@@ -1,38 +1,43 @@
 {
-    "hero": {
-        "img": {
-            "key": "design",
-            "alt": "Design of web application"
-        },
-        "title": "Design UX/UI",
-        "description": "This double acronym \"User Experience\" and \"User Interface\" places the user at the center of the design process of any digital solution, with the objective of providing maximum satisfaction when browsing on his PC, smartphone or tablet to the user."
+  "seo": {
+    "title": "Design UX/UI",
+    "description": "This double acronym \"User Experience\" and \"User Interface\" places the user at the center of the design process of any digital solution, with the objective of providing maximum satisfaction when browsing on his PC, smartphone or tablet to the user.",
+    "img_key": "design"
+  },
+  "hero": {
+    "img": {
+      "key": "design",
+      "alt": "Design of web application"
     },
-    "methodologie": {
-        "title": "The methodology we use",
-        "subtitle": "A successful user experience requires both visually pleasing rendering and an intuitive user experience.UBIDREAMS’s UX / UI design specialists think about these two elements in an organized and methodological process at the beginning of each project."
+    "title": "Design UX/UI",
+    "description": "This double acronym \"User Experience\" and \"User Interface\" places the user at the center of the design process of any digital solution, with the objective of providing maximum satisfaction when browsing on his PC, smartphone or tablet to the user."
+  },
+  "methodologie": {
+    "title": "The methodology we use",
+    "subtitle": "A successful user experience requires both visually pleasing rendering and an intuitive user experience.UBIDREAMS’s UX / UI design specialists think about these two elements in an organized and methodological process at the beginning of each project."
+  },
+  "stepContainer": [
+    {
+      "delay": 50,
+      "step": "1",
+      "title": "Comprehension of need",
+      "description": "The starting point is to focus on understanding the need, its formulation through diagrams such as “story mapping” and representations of the customer's business processes. These representations are amended and validated by the client before proceeding to the next stage."
     },
-    "stepContainer": [
-        {
-          "delay": 50,
-          "step": "1",
-          "title": "Comprehension of need",
-          "description": "The starting point is to focus on understanding the need, its formulation through diagrams such as “story mapping” and representations of the customer's business processes. These representations are amended and validated by the client before proceeding to the next stage."
-        },
-        {
-          "delay": 50,
-          "step": "2",
-          "title": "Wireframe",
-          "description": "Next, UBIDREAMS’s UX / UI designers produce the \"wireframes\" that describe the sequence of screens, i.e. the proposed navigation for using the product."
-        },
-        {
-          "delay": 50,
-          "step": "3",
-          "title": "Mocking up",
-          "description": "When this new step has been validated, we build the high-fidelity mock-up of the screens to allow our client to project himself into his future application and thus validate the final functional outline of the version of his product before moving on to its development."
-        }
-      ],
-      "expertises": {
-          "title": "Our tools and process",
-          "subtitle": "A Project is always built with the client and its users. It also involves UBIDREAMS developers to anticipate development productivity. Whether it's a web or mobile app, we make sure that your experience is unique."
-      }
+    {
+      "delay": 50,
+      "step": "2",
+      "title": "Wireframe",
+      "description": "Next, UBIDREAMS’s UX / UI designers produce the \"wireframes\" that describe the sequence of screens, i.e. the proposed navigation for using the product."
+    },
+    {
+      "delay": 50,
+      "step": "3",
+      "title": "Mocking up",
+      "description": "When this new step has been validated, we build the high-fidelity mock-up of the screens to allow our client to project himself into his future application and thus validate the final functional outline of the version of his product before moving on to its development."
+    }
+  ],
+  "expertises": {
+    "title": "Our tools and process",
+    "subtitle": "A Project is always built with the client and its users. It also involves UBIDREAMS developers to anticipate development productivity. Whether it's a web or mobile app, we make sure that your experience is unique."
+  }
 }

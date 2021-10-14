@@ -1,36 +1,41 @@
 {
-    "hero": {
-        "img": {
-            "key": "conseil",
-            "alt": "Brainstorming illustration"
-        },
-        "title": "Consulting: RGPD and Cybersecurity",
-        "description": "Because we accompany you in all the stages of your projects and are proud to participate in your success, we bring you our expertise in the elaboration of your digital strategy, in cybersecurity or GDPR compliance."
+  "seo": {
+    "title": "Consulting: RGPD and Cybersecurity",
+    "description": "Because we accompany you in all the stages of your projects and are proud to participate in your success, we bring you our expertise in the elaboration of your digital strategy, in cybersecurity or GDPR compliance.",
+    "img_key": "conseil"
+  },
+  "hero": {
+    "img": {
+      "key": "conseil",
+      "alt": "Brainstorming illustration"
     },
-      "expertises": {
-          "title": "The key phases of digital transformation",
-          "subtitle": "Our team of experts is committed to providing you with advice and technical expertise in digital transformation, GDPR regulatory compliance, secure network management and administration, and data valuation.",
-          "domaine-expertise": [
-            {
-              "key": "reseaux-cybersecurite",
-              "title": "Networks and Cybersecurity",
-              "subtitle": "Security is a crucial issue in digital projects and transformations, which is why we make sure to advise you on best practices in cybersecurity and networks."
-            },
-            {
-              "key": "rgpd",
-              "title": "GDPR (General Data Protection Regulation)",
-              "subtitle": "European regulations concerning the processing and collection of personal data impacts all businesses. This is why we offer you the support of our experts to help you achieve your compliance."
-            },
-            {
-              "key": "data-intelligence",
-              "title": "Business intelligence and Data Science",
-              "subtitle": "Data is the core of digital transformation, and when used properly, it is a great asset. Our experts help you to exploit and turn this data into real added value for your company and your business."
-            },
-            {
-              "key": "infrastruture-iot",
-              "title": "Digital strategy and IOT infrastructure",
-              "subtitle": "Digital transformation, increasing and improving performances, and technical choices are all good reasons to seek the help of our experts in order to think and create the solutions that correspond to you."
-            }
-        ]
+    "title": "Consulting: RGPD and Cybersecurity",
+    "description": "Because we accompany you in all the stages of your projects and are proud to participate in your success, we bring you our expertise in the elaboration of your digital strategy, in cybersecurity or GDPR compliance."
+  },
+  "expertises": {
+    "title": "The key phases of digital transformation",
+    "subtitle": "Our team of experts is committed to providing you with advice and technical expertise in digital transformation, GDPR regulatory compliance, secure network management and administration, and data valuation.",
+    "domaine-expertise": [
+      {
+        "key": "reseaux-cybersecurite",
+        "title": "Networks and Cybersecurity",
+        "subtitle": "Security is a crucial issue in digital projects and transformations, which is why we make sure to advise you on best practices in cybersecurity and networks."
+      },
+      {
+        "key": "rgpd",
+        "title": "GDPR (General Data Protection Regulation)",
+        "subtitle": "European regulations concerning the processing and collection of personal data impacts all businesses. This is why we offer you the support of our experts to help you achieve your compliance."
+      },
+      {
+        "key": "data-intelligence",
+        "title": "Business intelligence and Data Science",
+        "subtitle": "Data is the core of digital transformation, and when used properly, it is a great asset. Our experts help you to exploit and turn this data into real added value for your company and your business."
+      },
+      {
+        "key": "infrastruture-iot",
+        "title": "Digital strategy and IOT infrastructure",
+        "subtitle": "Digital transformation, increasing and improving performances, and technical choices are all good reasons to seek the help of our experts in order to think and create the solutions that correspond to you."
       }
+    ]
+  }
 }

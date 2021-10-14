@@ -1,4 +1,9 @@
 {
+    "seo": {
+        "title": "Digital dreams",
+        "description": "Ubidreams innovation story in La Rochelle since 2009. Come and discover our team and our values!", 
+        "img_key":"ideas"
+    },
     "hero": {
         "title": "Digital dreams",
         "subtitle": "Ubidreams innovation story in La Rochelle since 2009"
