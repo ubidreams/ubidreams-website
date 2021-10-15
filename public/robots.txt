@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.ubidreams.fr
+
+# Sitemaps
+Sitemap: https://www.ubidreams.fr/sitemap.xml
