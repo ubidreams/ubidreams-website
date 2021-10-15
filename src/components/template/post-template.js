@@ -1,24 +1,25 @@
+import { useCallback, useEffect, useState } from 'react'
 import { renderRule, StructuredText, renderMetaTags, Image } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
 import ReactHtmlParser from 'react-html-parser'
+import { Parallax } from 'react-parallax'
+import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share'
 
 import { includes, isEmpty } from 'lodash'
-import { Parallax } from 'react-parallax'
 
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
 import Head from 'next/head'
 
-import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share'
+import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
 import ContactSection from '../contact-section'
-
-import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 import CardArticle from '../card-article'
 import Video from '../video'
-import { useCallback, useEffect, useState } from 'react'
+
+import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 
 const URL = process.env.NEXT_PUBLIC_URL_GLOBAL
 
@@ -120,7 +121,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
 
   return (
     <>
-      <Head>{finalMetatagsSEO}</Head>
+      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
       <main>
         <Parallax
           bgImage={imageCover.src}

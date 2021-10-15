@@ -1,6 +1,7 @@
 const path = require('path')
 const withSass = require('@zeit/next-sass')
 const nextTranslate = require('next-translate')
+const allRedirection = require('./redirection')
 
 module.exports = nextTranslate()
 module.exports = withSass({
@@ -21,5 +22,8 @@ module.exports = {
   /* Add Your Scss File Folder Path Here */
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
+  },
+  async redirects() {
+    return allRedirection
   }
 }

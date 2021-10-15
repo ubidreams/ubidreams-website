@@ -3,7 +3,7 @@ module.exports = {
   changefreq: 'daily',
   priority: 0.7,
   sitemapSize: 5000,
-  generateRobotsTxt: false,
+  generateRobotsTxt: true,
   exclude: ['/404'],
   alternateRefs: [
     {
