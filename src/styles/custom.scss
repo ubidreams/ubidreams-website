@@ -34,6 +34,9 @@ $opacity: (
   '100': $v1
 );
 
+p {
+  color: $dark-grey
+}
 // Generate color utilities
 @each $color, $value in $theme-colors {
   //`.bg-*`
