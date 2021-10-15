@@ -1,6 +1,10 @@
 {
-    "realisations" : {
-        "title": "Nos dernières réalisations", 
+    "seo": {
+        "title": "Nos dernières réalisations",
+        "description": "Découvrez nos derniers projets développés pour nos clients. Développement, objets connectés, design, consulting et bien d'autre encore !"
+    },
+    "realisations": {
+        "title": "Nos dernières réalisations",
         "subtitle": "Découvrez nos derniers projets développés pour nos clients !"
     },
     "regies": {

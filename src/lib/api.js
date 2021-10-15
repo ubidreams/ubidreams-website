@@ -70,6 +70,14 @@ const miniaturePageFragment = `
   }
 `
 
+const tagSeoFragment = `
+  fragment TagFragment on Tag {
+    attributes
+    content
+    tag
+  }
+`
+
 async function fetchAPI(query, { variables, preview } = {}) {
   const res = await fetch(API_URL + (preview ? '/preview' : '/'), {
     method: 'POST',
@@ -175,6 +183,9 @@ export async function getSolutions(preview, locale) {
     `
       {
         allPages(filter: {categorie: {matches: {pattern: "solution"}}}, locale: ${locale}) {
+          _seoMetaTags {
+            ...TagFragment
+          }
           miniaturePage {
             ...MiniaturePageFieldFragment
           }
@@ -192,6 +203,7 @@ export async function getSolutions(preview, locale) {
       }
       ${miniaturePageFragment}
       ${responsiveImageFragment}
+      ${tagSeoFragment}
     `,
     { preview }
   )
@@ -262,6 +274,13 @@ export async function getOneReferencesBySlug(preview, locale, slug) {
     `
       {
         reference(locale: ${locale},filter: {slug: {eq: "${slug}"}}) {
+          _seoMetaTags {
+            ...TagFragment
+          }
+          _allSlugLocales {
+            value
+            locale
+          }
           title
           subtitle
           slug
@@ -316,6 +335,7 @@ export async function getOneReferencesBySlug(preview, locale, slug) {
       }
   
       ${responsiveImageFragment}
+      ${tagSeoFragment}
     `,
     { preview }
   )
@@ -477,6 +497,13 @@ export async function getOnePostBySlug(preview, locale, slug) {
       {
         post(locale: ${locale}, filter: {slug: {eq: "${slug}"}}) {
           id
+          _seoMetaTags {
+            ...TagFragment
+          }
+          _allSlugLocales {
+            value
+            locale
+          }
           slug
           title
           subtitle
@@ -542,6 +569,7 @@ export async function getOnePostBySlug(preview, locale, slug) {
       }
   
       ${responsiveImageFragment}
+      ${tagSeoFragment}
     `,
     { preview }
   )
@@ -644,8 +672,16 @@ export async function getOnePageBySlug(preview, locale, slug) {
     `
       {
         page(filter: {slug: {eq: "${slug}"}}, locale: ${locale}) {
+          _seoMetaTags {
+            ...TagFragment
+          }
+          _allSlugLocales {
+            value
+            locale
+          }
           id
           slug
+          categorie
           title
           subtitle
           image {
@@ -725,6 +761,7 @@ export async function getOnePageBySlug(preview, locale, slug) {
       }
       ${responsiveImageFragment}
       ${expertFragment}
+      ${tagSeoFragment}
     `,
     {
       preview,
@@ -761,6 +798,13 @@ export async function getLegalPageBySlug(preview, locale, slug) {
       {
         pageObligatoire(filter: {slug: {eq: "${slug}"}}, locale: ${locale}) {
           id
+          _seoMetaTags {
+            ...TagFragment
+          }
+          _allSlugLocales {
+            value
+            locale
+          }
           title
           updatedAt
           tel
@@ -783,6 +827,7 @@ export async function getLegalPageBySlug(preview, locale, slug) {
         }
       }
       ${responsiveImageFragment}
+      ${tagSeoFragment}
     `,
     {
       preview,

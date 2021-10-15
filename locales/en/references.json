@@ -1,12 +1,16 @@
 {
-    "realisations" : {
-        "title": "Our latest achievements", 
+    "seo": {
+        "title": "Our latest achievements",
+        "description": "Discover our latest projects developed for our clients. Development, connected devices, design, consulting and so on!"
+    },
+    "realisations": {
+        "title": "Our latest achievements",
         "subtitle": "Discover our latest projects developed for our clients!"
     },
     "regies": {
         "title": "Time and materials projects",
         "subtitle": "Discover the companies we work for!"
-    }, 
+    },
     "reference": {
         "update": "Last update on"
     },

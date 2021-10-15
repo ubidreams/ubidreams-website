@@ -1,6 +1,7 @@
 import { getTeamMembers, getGalleryImg, getMembership } from '../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 import { Image } from 'react-datocms'
+import { useRouter } from 'next/router'
 
 import FeatureContainer from '../components/feature-container'
 import Section from '../components/section'
@@ -10,18 +11,21 @@ import '../components/map.js'
 import MapBox from '../components/map.js'
 import CardMember from '../components/card-member'
 import SlidItemPartner from '../components/slide-item-partner'
+import Helmet from '../components/layout/helmet-seo'
 
 import { AccueilCropped, ConseilCropped } from '../config/StaticImagesExport'
 
 export const Agency = ({ allMembers, galleryImg, allMembership }) => {
+  const router = useRouter()
   const { t } = useTranslation('agency')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
 
   function splitColor(string, character) {
     return string.split(character)
   }
 
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       {/* Entete de page != du hero classique donc usage du background-image + composant Title */}
       <Section
         bgClass='bg-between'
@@ -148,7 +152,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
           return <SlidItemPartner key={index} config={adhesion} />
         })}
       </SliderComponent>
-    </main>
+    </Helmet>
   )
 }
 

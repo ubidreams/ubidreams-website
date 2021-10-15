@@ -9,15 +9,17 @@ import TextContainer from '../../components/text-container'
 import ContactSection from '../../components/contact-section'
 import Breadcrumb from '../../components/breadcrumb'
 import CardConsulting from '../../components/card-consulting'
+import Helmet from '../../components/layout/helmet-seo'
 
 export const Consulting = ({ expertises = [] }) => {
-  const { t } = useTranslation('consulting')
   const router = useRouter()
+  const { t } = useTranslation('consulting')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
   const expertisesGroupByDomaine = groupBy(expertises, 'domaine')
   const domainesExpertise = t('expertises.domaine-expertise', {}, { returnObjects: true })
 
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       <Breadcrumb router={router} />
       <PageTitle
         namespace='consulting'
@@ -55,7 +57,7 @@ export const Consulting = ({ expertises = [] }) => {
       <Section>
         <ContactSection />
       </Section>
-    </main>
+    </Helmet>
   )
 }
 

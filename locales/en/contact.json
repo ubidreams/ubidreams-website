@@ -1,4 +1,8 @@
 {
+    "seo": {
+        "title": "A project, a question?",
+        "description": "We help you realize your project. Contact us and share your idea!"
+    },
     "hero": {
         "title": "A project, a question?",
         "subtitle": "We help you realize your project."
@@ -8,7 +12,7 @@
         "phone-title": "Call us",
         "mail-title": "Send us a message"
     },
-    "form" :{
+    "form": {
         "title": "Leave us a message",
         "subtitle": "We are at your disposal and look forward to discussing your project. Do not hesitate to contact us, we will respond as soon as possible",
         "identite": "Name, Firstname",

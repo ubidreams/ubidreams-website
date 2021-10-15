@@ -1,4 +1,9 @@
 {
+    "seo": {
+        "title": "Internet des Objets (IOT)",
+        "description": "Nous travaillons à l’intersection entre le monde physique et le numérique pour vous apporter notre expérience dans la conception et l’intégration d’objets connectés et l’exploitation des données qui y sont liées.",
+        "img_key": "iotLG"
+    },
     "hero": {
         "img": {
             "key": "iotLG",

@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Creation of mobile applications and connected objects",
+    "description": "Ubidreams is a digital agency based in La Rochelle. We are specialized in mobile application development, ux design and the creation of connected objects.",
+    "img_key": "logo"
+  },
   "header": {
     "home": {
       "name": "Home",
@@ -59,22 +64,22 @@
     "social": [
       {
         "path": "https://www.facebook.com/ubidreams/",
-        "img":{
-          "key":"fb",
+        "img": {
+          "key": "fb",
           "alt": "Facebook"
         }
       },
       {
         "path": "https://www.linkedin.com/company/ubidreams/",
-        "img":{
-          "key":"lkd",
+        "img": {
+          "key": "lkd",
           "alt": "Linkedin"
         }
       },
       {
         "path": "https://twitter.com/ubidreams",
-        "img":{
-          "key":"twt",
+        "img": {
+          "key": "twt",
           "alt": "Twitter"
         }
       }
@@ -93,7 +98,7 @@
       "content": "We ran into an issue, but don’t worry, we’ll take care of it for sure.",
       "button": "Back to Home"
     }
-  }, 
+  },
   "legalPage": {
     "update": "Updated on",
     "help": "Have a question?",

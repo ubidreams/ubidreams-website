@@ -2,15 +2,20 @@ import { useCallback, useState, useEffect } from 'react'
 import { getBlog } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 import { forEach, filter, includes } from 'lodash'
+import { useRouter } from 'next/router'
+
+import Link from 'next/link'
 
 import Section from '../../components/section'
 import Title from '../../components/title'
-import Link from 'next/link'
 import CardArticle from '../../components/card-article'
 import PaginationComponent from '../../components/pagination'
+import Helmet from '../../components/layout/helmet-seo'
 
 export const Blog = ({ posts, tags, locale }) => {
+  const router = useRouter()
   const { t } = useTranslation('blog')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
   const [activeTag, setActiveTag] = useState(null)
   const [visiblePosts, setVisiblePosts] = useState(posts)
   const [searchValue, setSearchValue] = useState('')
@@ -84,7 +89,7 @@ export const Blog = ({ posts, tags, locale }) => {
   }, [activePage, visiblePosts])
 
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       <Section>
         <Title className='text-gray-800' title={t('blog.title')} subtitle={t('blog.subtitle')} />
         <div className='my-8'>
@@ -148,7 +153,7 @@ export const Blog = ({ posts, tags, locale }) => {
           <PaginationComponent data={visiblePosts} current={activePage} onChange={setActivePage} />
         </div>
       </Section>
-    </main>
+    </Helmet>
   )
 }
 

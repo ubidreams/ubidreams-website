@@ -1,7 +1,7 @@
 import { getExpertisesByField } from '../../lib/api'
 import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation'
 
-import Layout from '../../components/layout/layout'
 import PageTitle from '../../components/page-title'
 import Section from '../../components/section'
 import TextContainer from '../../components/text-container'
@@ -9,12 +9,15 @@ import CardExpertise from '../../components/card-expertise'
 import ContactSection from '../../components/contact-section'
 import Breadcrumb from '../../components/breadcrumb'
 import StepContainer from '../../components/step-container'
+import Helmet from '../../components/layout/helmet-seo'
 
 export const Design = ({ expertises = [] }) => {
   const router = useRouter()
+  const { t } = useTranslation('design')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
 
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       <Breadcrumb router={router} />
       <PageTitle
         namespace='design'
@@ -41,7 +44,7 @@ export const Design = ({ expertises = [] }) => {
       <Section>
         <ContactSection />
       </Section>
-    </main>
+    </Helmet>
   )
 }
 

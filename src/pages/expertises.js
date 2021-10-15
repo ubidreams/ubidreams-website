@@ -9,12 +9,14 @@ import TextContainer from '../components/text-container'
 import SectionCardSimple from '../components/section-card-simple'
 import ContactSection from '../components/contact-section'
 import Card from '../components/card'
+import Helmet from '../components/layout/helmet-seo'
 
 export const Expertises = ({ solutions }) => {
-  const { t } = useTranslation('expertises')
   const router = useRouter()
+  const { t } = useTranslation('expertises')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       <div className='shape shape-fluid-x shape-blur-2 text-light-grey d-none d-md-block'>
         <svg viewBox='0 0 1313 768' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
@@ -67,7 +69,7 @@ export const Expertises = ({ solutions }) => {
       <Section>
         <ContactSection />
       </Section>
-    </main>
+    </Helmet>
   )
 }
 

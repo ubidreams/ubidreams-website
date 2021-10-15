@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getAllReferences, getAllRegies } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
+import { useRouter } from 'next/router'
 
 import CardReference from '../../components/card-reference'
 import Section from '../../components/section'
@@ -8,9 +9,12 @@ import Title from '../../components/title'
 import SliderComponent from '../../components/slider'
 import PaginationComponent from '../../components/pagination'
 import SlidItemPartner from '../../components/slide-item-partner'
+import Helmet from '../../components/layout/helmet-seo'
 
 export const References = ({ references, regies }) => {
+  const router = useRouter()
   const { t } = useTranslation('references')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
   const [activePage, setActivePage] = useState(1)
   const [refPaginated, setRefPaginated] = useState([])
 
@@ -29,7 +33,7 @@ export const References = ({ references, regies }) => {
   }, [activePage, references])
 
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       {/* Présentation References */}
       <Section>
         <Title title={t('realisations.title')} subtitle={t('realisations.subtitle')} />
@@ -53,7 +57,7 @@ export const References = ({ references, regies }) => {
           return <SlidItemPartner key={index} config={regie} />
         })}
       </SliderComponent>
-    </main>
+    </Helmet>
   )
 }
 

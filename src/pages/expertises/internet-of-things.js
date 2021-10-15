@@ -2,22 +2,22 @@ import { getExpertisesByField, getPartenairesByField } from '../../lib/api'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 
-import Layout from '../../components/layout/layout'
 import PageTitle from '../../components/page-title'
 import Section from '../../components/section'
 import TextContainer from '../../components/text-container'
 import CardExpertise from '../../components/card-expertise'
 import ContactSection from '../../components/contact-section'
 import Breadcrumb from '../../components/breadcrumb'
-import SectionCardSimple from '../../components/section-card-simple'
 import Card from '../../components/card'
+import Helmet from '../../components/layout/helmet-seo'
 
 export const IOT = ({ expertises = [], partners = [] }) => {
   const router = useRouter()
   const { t } = useTranslation('iot')
+  const metatags = { ...t('seo', {}, { returnObjects: true }) }
 
   return (
-    <main>
+    <Helmet metatags={metatags} router={router}>
       <Breadcrumb router={router} />
       <PageTitle
         namespace='iot'
@@ -45,7 +45,7 @@ export const IOT = ({ expertises = [], partners = [] }) => {
       <Section>
         <ContactSection />
       </Section>
-    </main>
+    </Helmet>
   )
 }
 

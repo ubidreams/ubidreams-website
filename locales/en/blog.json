@@ -1,4 +1,8 @@
 {
+    "seo": {
+        "title": "Blog",
+        "description": "Discover the agency's news, our projects, our technologies..."
+    },
     "blog" : {
         "title": "Blog", 
         "subtitle": "Discover the agency's news, our projects, our technologies...",

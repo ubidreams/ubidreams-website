@@ -1,4 +1,9 @@
 {
+  "seo": {
+    "title": "Des experts au service de vos applications",
+    "description": "Nous mettons en place une méthodologie pour vous aider dans votre transformation numérique et dans la réalisation de vos projets. Pour cela, UBIDREAMS vous apporte le meilleur en matière de développement d’applications mobiles et de création d’objets connectés. Vous n’avez qu’à le rêver et nous le concevons sur mesure pour vous et avec vous.",
+    "img_key": "expertises"
+  },
   "hero": {
     "img": {
       "key": "expertises",
@@ -59,7 +64,7 @@
         "buttonDetails": {
           "name": "En savoir plus",
           "key": "design",
-          "path": "/", 
+          "path": "/",
           "class": "btn-blue"
         }
       },

@@ -20,7 +20,7 @@ const Footer = () => {
   const MenuLink = ({ href, name }) => {
     return (
       <li className='mb-3'>
-        <Link href={href}>
+        <Link href={'/' + href}>
           <a className='text-reset'>{name}</a>
         </Link>
       </li>
