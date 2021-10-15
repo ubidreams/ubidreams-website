@@ -2,13 +2,14 @@ import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 
 export const CardArticle = ({ config = {}, locale }) => {
+  const path = locale === 'en' ? '/en/blog' : '/blog'
   return config.map((post, index) => {
     const dateFormatted = new Intl.DateTimeFormat(locale, { month: 'short', day: 'numeric' }).format(
       new Date(post.date)
     )
     return (
       <div key={index} className='mb-6'>
-        <a className='card shadow-light-lg lift lift-lg h-100 custom-card-link' href={`/blog/${post.slug}`}>
+        <a className='card shadow-light-lg lift lift-lg h-100 custom-card-link' href={`${path}/${post.slug}`}>
           <div className='card-img-top'>
             <Image
               alt=''
