@@ -277,6 +277,10 @@ export async function getOneReferencesBySlug(preview, locale, slug) {
           _seoMetaTags {
             ...TagFragment
           }
+          _allSlugLocales {
+            value
+            locale
+          }
           title
           subtitle
           slug
@@ -496,6 +500,10 @@ export async function getOnePostBySlug(preview, locale, slug) {
           _seoMetaTags {
             ...TagFragment
           }
+          _allSlugLocales {
+            value
+            locale
+          }
           slug
           title
           subtitle
@@ -667,8 +675,13 @@ export async function getOnePageBySlug(preview, locale, slug) {
           _seoMetaTags {
             ...TagFragment
           }
+          _allSlugLocales {
+            value
+            locale
+          }
           id
           slug
+          categorie
           title
           subtitle
           image {
@@ -787,6 +800,10 @@ export async function getLegalPageBySlug(preview, locale, slug) {
           id
           _seoMetaTags {
             ...TagFragment
+          }
+          _allSlugLocales {
+            value
+            locale
           }
           title
           updatedAt

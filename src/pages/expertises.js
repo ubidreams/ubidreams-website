@@ -69,7 +69,7 @@ export const Expertises = ({ solutions }) => {
       <Section>
         <ContactSection />
       </Section>
-    </Helmet >
+    </Helmet>
   )
 }
 

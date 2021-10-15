@@ -1,3 +1,4 @@
+import { useCallback, useEffect, useState } from 'react'
 import { renderRule, StructuredText, Image, renderMetaTags } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote, isListItem } from 'datocms-structured-text-utils'
 import ReactHtmlParser from 'react-html-parser'
@@ -5,14 +6,15 @@ import { Parallax } from 'react-parallax'
 
 import { includes, isEmpty } from 'lodash'
 
+import { DoneCircle } from '../../config/StaticImagesExport'
+import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
+
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
 import Head from 'next/head'
 
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
-
-import { DoneCircle } from '../../config/StaticImagesExport'
 import CardReference from '../card-reference'
 
 const renderPage = (type, project) => {
@@ -50,6 +52,7 @@ const renderPage = (type, project) => {
 
 const ReferenceTemplate = ({ project, locale, lastProject, router }) => {
   const { t } = useTranslation('references')
+  const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
 
   const updatedDateFormatted = new Intl.DateTimeFormat(locale, {
     month: 'short',
@@ -59,9 +62,19 @@ const ReferenceTemplate = ({ project, locale, lastProject, router }) => {
 
   const imageCover = { src: project.coverImage.responsiveImage.src, alt: project.coverImage.responsiveImage.alt }
 
+  const { _seoMetaTags, _allSlugLocales } = project
+
+  const defineMetatags = useCallback(() => {
+    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales))
+  }, [_allSlugLocales, _seoMetaTags, router])
+
+  useEffect(() => {
+    defineMetatags()
+  }, [defineMetatags])
+
   return (
     <>
-      <Head>{renderMetaTags(project._seoMetaTags)}</Head>
+      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
       <main>
         <Parallax
           bgImage={imageCover.src}

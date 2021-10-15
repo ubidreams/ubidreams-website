@@ -1,12 +1,15 @@
-import { renderRule, StructuredText, renderMetaTags } from 'react-datocms'
+import { useCallback, useEffect, useState } from 'react'
+import { renderRule, StructuredText, renderMetaTags, Image } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
-import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { includes, isEmpty } from 'lodash'
 import ImageNext from 'next/image'
 import Head from 'next/head'
 
+import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
+
 import { Download } from '../../config/StaticImagesExport'
+
 import Breadcrumb from '../breadcrumb'
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
@@ -73,9 +76,21 @@ const renderPage = (type, page) => {
   }
 }
 const PageTemplate = ({ page, lastRef, router }) => {
+  const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
+
+  const { _seoMetaTags, _allSlugLocales, categorie } = page
+
+  const defineMetatags = useCallback(() => {
+    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, categorie))
+  }, [_allSlugLocales, _seoMetaTags, categorie, router])
+
+  useEffect(() => {
+    defineMetatags()
+  }, [defineMetatags])
+
   return (
     <>
-      <Head>{renderMetaTags(page._seoMetaTags)}</Head>
+      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
       <main>
         <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
         <Section>

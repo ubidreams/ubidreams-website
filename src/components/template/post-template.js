@@ -18,6 +18,7 @@ import ContactSection from '../contact-section'
 import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 import CardArticle from '../card-article'
 import Video from '../video'
+import { useCallback, useEffect, useState } from 'react'
 
 const URL = process.env.NEXT_PUBLIC_URL_GLOBAL
 
@@ -95,6 +96,7 @@ const renderSocialButtons = (item, router, post) => {
 }
 const PostTemplate = ({ post, locale, lastPosts, router }) => {
   const { t } = useTranslation('blog')
+  const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
   const dateFormatted = new Intl.DateTimeFormat(locale, { month: 'short', day: 'numeric', year: 'numeric' }).format(
     new Date(post.date)
   )
@@ -106,9 +108,19 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
 
   const imageCover = { src: post.heroCover.responsiveImage.src, alt: post.heroCover.responsiveImage.alt }
 
+  const { _seoMetaTags, _allSlugLocales } = post
+
+  const defineMetatags = useCallback(() => {
+    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales))
+  }, [_allSlugLocales, _seoMetaTags, router])
+
+  useEffect(() => {
+    defineMetatags()
+  }, [defineMetatags])
+
   return (
     <>
-      <Head>{renderMetaTags(post._seoMetaTags)}</Head>
+      <Head>{finalMetatagsSEO}</Head>
       <main>
         <Parallax
           bgImage={imageCover.src}

@@ -10,9 +10,12 @@ import { includes } from 'lodash'
 
 import Section from '../section'
 import Title from '../title'
+import { useCallback, useEffect, useState } from 'react'
+import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 
 const LegalTemplate = ({ page, router }) => {
   const { t } = useTranslation('common')
+  const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
 
   const dateFormatted = new Intl.DateTimeFormat(router.locale, {
     month: 'numeric',
@@ -20,9 +23,17 @@ const LegalTemplate = ({ page, router }) => {
     year: 'numeric'
   }).format(new Date(page.updatedAt))
 
+  const defineMetatags = useCallback(() => {
+    setFinalMetatagsSEO(defineMetatagsSEO(page._seoMetaTags, router, page._allSlugLocales))
+  }, [page._allSlugLocales, page._seoMetaTags, router])
+
+  useEffect(() => {
+    defineMetatags()
+  }, [defineMetatags])
+
   return (
     <>
-      <Head>{renderMetaTags(page._seoMetaTags)}</Head>
+      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
       <main className='bg-light-grey'>
         <Section>
           <Title title={page.title} subtitle={t('legalPage.update') + ' ' + dateFormatted} />
