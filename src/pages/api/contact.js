@@ -35,13 +35,12 @@ export default async function handler(req, res) {
     //Si le captcha est validé alors je lance le processus d'envoie de mail via nodemailer
     if (captchaValidation.success) {
       const transporter = nodemailer.createTransport({
-        port: 465,
+        port: 587,
         host: 'smtp.gmail.com',
         auth: {
           user: process.env.MAIL_SMTP_SENDER,
           pass: process.env.PASSWORD_SMTP_SENDER
-        },
-        secure: true
+        }
       })
 
       //En fonction du succès ou de l'échec de l'envoi, je renvoie le statut adapté
