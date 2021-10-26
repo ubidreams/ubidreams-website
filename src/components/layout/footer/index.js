@@ -91,6 +91,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <script async type='text/javascript' src='../../js/axeptio.js' />
       </footer>
     </div>
   )

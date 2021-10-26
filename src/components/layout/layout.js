@@ -9,7 +9,6 @@ export default function Layout({ children }) {
       <Head>
         <link rel='icon' href='/favicon.png' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-
         <script async type='text/javascript' src='../../js/theme.bundle.js' />
         <script async type='text/javascript' src='../../js/vendor.bundle.js' />
 
