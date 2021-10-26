@@ -42,7 +42,7 @@ const FeatureContainer = ({ namespace = null, displayDirection, data = {}, class
           ) : (
             <h3>{item.title}</h3>
           )}
-          <p className='text-gray-700 mb-6 mb-md-0' style={{ textAlign: 'left' }}>
+          <p className='mb-6 mb-md-0' style={{ textAlign: 'left' }}>
             {item.description}
           </p>
         </div>

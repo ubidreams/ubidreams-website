@@ -29,11 +29,7 @@ const TextContainer = ({ namespace = null, config = null, alignText, className =
 
       {data.subtitle && <p className='text-muted mb-6 mb-md-8'>{data.subtitle}</p>}
 
-      {data.content && (
-        <div className='text-gray-700' style={{ whiteSpace: 'pre-line' }}>
-          {ReactHtmlParser(data.content)}
-        </div>
-      )}
+      {data.content && <div style={{ whiteSpace: 'pre-line' }}>{ReactHtmlParser(data.content)}</div>}
 
       {data.footer && (
         <footer className='blockquote-footer mt-3'>

@@ -1,6 +1,7 @@
 /* UBIDREAMS COLORS */
 $light-grey: #f1f4f8;
 $dark-grey: #6b7c93;
+$black-grey: #384c74;
 $grey: #e6ecf8;
 $grey-blue: #9fc5d7;
 $blue: #2d90ca;
@@ -34,9 +35,6 @@ $opacity: (
   '100': $v1
 );
 
-p {
-  color: $dark-grey
-}
 // Generate color utilities
 @each $color, $value in $theme-colors {
   //`.bg-*`
@@ -137,6 +135,28 @@ a {
   }
 }
 
+.nav-link:hover, .nav-link:focus {
+  color: $blue !important;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+}
+
+p {
+  color: $black-grey;
+}
+
+.text-muted {
+  color: #465877 !important;
+}
+
 .custom-card-link:hover {
   text-decoration: none !important;
 }
@@ -211,7 +231,7 @@ a {
 .members .card-img-top {
   max-height: 18em;
 
-  & > picture img{
+  & > picture img {
     object-fit: cover;
   }
 }
@@ -287,7 +307,7 @@ a {
 .cards-reference .card-img-top {
   max-height: 22em;
 
-  & > picture img{
+  & > picture img {
     object-fit: cover;
   }
 }
@@ -356,6 +376,11 @@ a {
 }
 
 /* PAGE CONTACT */
+.contact {
+  h2 {
+    color: $light-grey !important;
+  }
+}
 .form-label.required:after {
   content: '*';
   margin-left: 5px;
@@ -386,38 +411,38 @@ a {
   }
 }
 
-@media (min-width: 1000px){
-  .row-consulting > *{
+@media (min-width: 1000px) {
+  .row-consulting > * {
     flex: 0 0 auto;
-    width: calc(100%/3);
+    width: calc(100% / 3);
   }
 }
 
 /* STYLE BREADCRUMB */
 
 .breadcrumb-item + .breadcrumb-item {
-  
   &:before {
     padding-top: 5px;
     content: url(../../public/img/icons/Breadcrumb.svg);
   }
 }
 
-.breadcrumb-item a, .breadcrumb-item span {
+.breadcrumb-item a,
+.breadcrumb-item span {
   color: $blue;
   font-weight: 500;
   font-size: 1.2em;
 }
-.breadcrumb-item.active a, .breadcrumb-item.active span {
+.breadcrumb-item.active a,
+.breadcrumb-item.active span {
   color: $grey-blue;
 }
-
 
 /* STYLE PAGE TEMPLATE */
 .img-page {
   max-height: 22em;
 
-  & > picture img{
+  & > picture img {
     object-fit: contain;
   }
 }
@@ -426,12 +451,11 @@ a {
 .liste_custom {
   & li {
     list-style: none;
-    
   }
 
   & li::before {
     content: url('../../public/img/icons/Done-circle.svg');
-    display: inline-block; 
+    display: inline-block;
     width: 2em;
     margin-left: -1em;
     vertical-align: text-top;
@@ -454,11 +478,11 @@ a {
     padding: 2em;
     margin: 1em;
 
-    box-shadow: 0 1.5rem 4rem rgba(22,28,45,.05)!important;
+    box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.05) !important;
 
     &::before {
       content: url('../../public/img/icons/Done-circle.svg');
-      display: inline-block; 
+      display: inline-block;
       width: 4em;
       margin-left: -1em;
       vertical-align: text-top;
@@ -466,7 +490,7 @@ a {
   }
 }
 
-@media (max-width: 760px){
+@media (max-width: 760px) {
   .focus_point ul {
     flex-wrap: wrap;
   }

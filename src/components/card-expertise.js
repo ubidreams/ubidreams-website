@@ -25,7 +25,7 @@ export const CardExpertise = ({ config = [] }) => {
             </div>
 
             <h4 className='fw-bold'>{item?.title}</h4>
-            <div className='text-gray-700 mb-5'>
+            <div className='mb-5'>
               <StructuredText
                 data={item?.description}
                 renderLinkToRecord={({ record, children, transformedMeta }) => {

@@ -44,9 +44,9 @@ const LegalTemplate = ({ page, router }) => {
               <div className='card shadow-light-lg'>
                 <div className='card-body'>
                   <h4>{t('legalPage.help')}</h4>
-                  <p className='fs-sm text-gray-800 mb-5'>{page.aide}</p>
+                  <p className='fs-sm mb-5'>{page.aide}</p>
 
-                  <h6 className='fw-bold text-uppercase text-gray-700 mb-2'>{t('legalPage.call')}</h6>
+                  <h6 className='fw-bold text-uppercase mb-2'>{t('legalPage.call')}</h6>
 
                   <p className='fs-sm mb-5'>
                     <a href={`tel:${page.tel}`} className='text-reset'>
@@ -54,7 +54,7 @@ const LegalTemplate = ({ page, router }) => {
                     </a>
                   </p>
 
-                  <h6 className='fw-bold text-uppercase text-gray-700 mb-2'>{t('legalPage.email')}</h6>
+                  <h6 className='fw-bold text-uppercase mb-2'>{t('legalPage.email')}</h6>
 
                   <p className='fs-sm mb-0'>
                     <a href={`mailto:${page.email}`} className='text-reset'>

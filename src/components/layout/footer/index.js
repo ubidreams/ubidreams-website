@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import ReactHtmlParser from 'react-html-parser'
 import Link from 'next/link'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
@@ -45,7 +44,7 @@ const Footer = () => {
               <Image src={Ubidreams} alt='Logo Ubidreams' width={150} height={43} />
 
               {/* <!-- Text --> */}
-              <p className='text-gray-700 mb-2'>{t('footer.slogan')}</p>
+              <p className='mb-2'>{t('footer.slogan')}</p>
 
               {/* <!-- Social --> */}
               <ul className='list-unstyled list-inline list-social mb-6 mb-md-0'>
@@ -63,7 +62,7 @@ const Footer = () => {
             {/* Location */}
             <div className='col-6 col-md-4 col-lg-4'>
               {/* <!-- Heading --> */}
-              <h6 className='fw-bold text-uppercase text-gray-700'>{t('footer.location.title')}</h6>
+              <h6 className='fw-bold text-uppercase'>{t('footer.location.title')}</h6>
 
               {/* <!-- List --> */}
               <div className='text-muted mb-6 mb-md-8 mb-lg-0' style={{ whiteSpace: 'pre-line' }}>
@@ -79,7 +78,7 @@ const Footer = () => {
             {/* link mentions */}
             <div className='col-6 col-md-4 col-lg-4'>
               {/* <!-- Heading --> */}
-              <h6 className='fw-bold text-uppercase text-gray-700'>{t('footer.legal.title')}</h6>
+              <h6 className='fw-bold text-uppercase'>{t('footer.legal.title')}</h6>
 
               {/* <!-- List --> */}
               <ul className='list-unstyled text-muted mb-0'>

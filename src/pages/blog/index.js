@@ -91,7 +91,7 @@ export const Blog = ({ posts, tags, locale }) => {
   return (
     <Helmet metatags={metatags} router={router}>
       <Section>
-        <Title className='text-gray-800' title={t('blog.title')} subtitle={t('blog.subtitle')} />
+        <Title title={t('blog.title')} subtitle={t('blog.subtitle')} />
         <div className='my-8'>
           <div>
             <form className='mb-4 search-bar'>

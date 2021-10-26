@@ -132,7 +132,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
                 })}
               </strong>
             </h3>
-            <p className='fs-lg text-gray-700'>{t('localisation.content')}</p>
+            <p className='fs-lg'>{t('localisation.content')}</p>
           </div>
         </div>
       </Section>

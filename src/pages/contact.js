@@ -103,7 +103,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
       >
         <div className='row justify-content-center'>
           <div className='col-12 col-md-10 col-lg-8 text-center'>
-            <Title title={t('hero.title')} subtitle={t('hero.subtitle')} className='text-white' />
+            <Title title={t('hero.title')} subtitle={t('hero.subtitle')} className='text-white contact' />
           </div>
         </div>
       </Section>
@@ -248,7 +248,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
             </div>
             <div>
               <hr className='my-6 my-md-8 text-gray-500' />
-              <div className='text-gray-800'>{ReactHtmlParser(cnilMention)}</div>
+              <div>{ReactHtmlParser(cnilMention)}</div>
             </div>
           </div>
         </form>
