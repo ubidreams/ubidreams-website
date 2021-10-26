@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    <!-- FR -->
+    <url>
+        <loc>https://www.ubidreams.fr/references</loc>
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/e-longlife</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/e-longlife"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/e-longlife"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/clicko</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/clicko"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/clicko"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/preventes</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/preventes"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/preventes"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/marine-assistance</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/marine-assistance"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/marine-assistance"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/sea-tags</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/sea-tags"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/sea-tags"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/amoco</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/amoco"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/amoco"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/sdlp</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/sdlp"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/sdlp"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/sugg1144-et-suggpro</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/sugg1144-et-suggpro"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/sugg1144-et-suggpro"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/ubinetwork</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/ubinetwork"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/ubinetwork"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/april-marine-assistance</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/april-marine-assistance"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/april-marine-assistance"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/mr-voyage</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/mr-voyage"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/mr-voyage"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/proviacal</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/proviacal"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/proviacal"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/habitat-44-gestion-des-impayes</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/habitat-44-management-of-unpaid-debts"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/habitat-44-gestion-des-impayes"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/habitat-44-suivi-des-interventions</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/habitat-44-monitoring-of-interventions"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/habitat-44-suivi-des-interventions"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/rwanda-20-ans-apres</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/rwanda-20-years-after"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/rwanda-20-ans-apres"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/portail-web-atena-suivi-de-l-activite-de-dechargement-de-vrac</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/atena-web-portal-monitoring-of-vrac-unloading-activity"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/portail-web-atena-suivi-de-l-activite-de-dechargement-de-vrac"/>
+    </url>
+
+
+    <!-- EN ************************************-->
+
+    <url>
+        <loc>https://www.ubidreams.fr/en/references</loc>
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/e-longlife</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/e-longlife"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/e-longlife"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/clicko</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/clicko"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/clicko"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/preventes</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/preventes"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/preventes"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/marine-assistance</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/marine-assistance"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/marine-assistance"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/sea-tags</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/sea-tags"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/sea-tags"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/amoco</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/amoco"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/amoco"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/sdlp</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/sdlp"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/sdlp"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/sugg1144-et-suggpro</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/sugg1144-et-suggpro"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/sugg1144-et-suggpro"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/ubinetwork</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/ubinetwork"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/ubinetwork"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/april-marine-assistance</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/april-marine-assistance"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/april-marine-assistance"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/mr-voyage</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/mr-voyage"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/mr-voyage"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/references/proviacal</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/proviacal"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/proviacal"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/references/habitat-44-management-of-unpaid-debts</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/habitat-44-management-of-unpaid-debts"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/habitat-44-gestion-des-impayes"/>
+    </url>
+
+    <url>
+        <loc>https://www.ubidreams.fr/en/references/habitat-44-monitoring-of-interventions</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/habitat-44-monitoring-of-interventions"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/habitat-44-suivi-des-interventions"/>
+    </url>
+
+    <url>
+        <loc>https://www.ubidreams.fr/en/references/rwanda-20-years-after</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/rwanda-20-years-after"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/rwanda-20-ans-apres"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/references/atena-web-portal-monitoring-of-vrac-unloading-activity</loc>
+        <priority>0.6</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/references/atena-web-portal-monitoring-of-vrac-unloading-activity"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/references/portail-web-atena-suivi-de-l-activite-de-dechargement-de-vrac"/>
+    </url>
+
+
+</urlset>

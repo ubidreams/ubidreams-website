@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    <!-- FR -->
+    <url>
+        <loc>https://www.ubidreams.fr/blog</loc>       
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/5-expressions-a-connaitre-pour-comprendre-un-developpeur</loc>       
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/5-expressions-to-know-to-understand-a-developer"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/5-expressions-a-connaitre-pour-comprendre-un-developpeur"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/seo-pourquoi-optimiser-son-site-web</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/seo-why-optimize-your-website"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/seo-pourquoi-optimiser-son-site-web"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/projet-autoroute-connectee-securite-routiere</loc>       
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/connected-mortorway-project-road-safety"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/projet-autoroute-connectee-securite-routiere"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/typescript-le-langage-de-programmation-open-source-javascript</loc>       
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/typescript-the-open-source-programming-language-for-javascript"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/typescript-le-langage-de-programmation-open-source-javascript"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/business-meeting-saint-nazaire</loc>       
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/business-meeting-saint-nazaire"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/business-meeting-saint-nazaire"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/information-covid-19</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/information-covid-19"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/information-covid-19"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/ubidreams-au-salon-techinnov-2018</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubidreams-salon-techinnov-2018"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubidreams-au-salon-techinnov-2018"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/comment-s-y-retrouver-dans-le-paysage-des-applications-mobiles</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/how-do-you-navigate-the-mobile-application-landscape"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/comment-s-y-retrouver-dans-le-paysage-des-applications-mobiles"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/ubisea-bouee-connectee</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubisea-connected-buoy"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubisea-bouee-connectee"/>
+    </url>
+
+
+
+
+    <!-- EN ************************************-->
+
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog</loc>        
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/5-expressions-to-know-to-understand-a-developer</loc>       
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/5-expressions-to-know-to-understand-a-developer"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/5-expressions-a-connaitre-pour-comprendre-un-developpeur"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/seo-why-optimize-your-website</loc>       
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/seo-why-optimize-your-website"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/seo-pourquoi-optimiser-son-site-web"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/connected-mortorway-project-road-safety</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/connected-mortorway-project-road-safety"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/projet-autoroute-connectee-securite-routiere"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/typescript-the-open-source-programming-language-for-javascript</loc>       
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/typescript-the-open-source-programming-language-for-javascript"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/typescript-le-langage-de-programmation-open-source-javascript"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/business-meeting-saint-nazaire</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/business-meeting-saint-nazaire"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/business-meeting-saint-nazaire"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/information-covid-19</loc>      
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/information-covid-19"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/information-covid-19"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/ubidreams-salon-techinnov-2018</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubidreams-salon-techinnov-2018"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubidreams-au-salon-techinnov-2018"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/how-do-you-navigate-the-mobile-application-landscape</loc> 
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/how-do-you-navigate-the-mobile-application-landscape"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/comment-s-y-retrouver-dans-le-paysage-des-applications-mobiles"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/ubisea-connected-buoy</loc>
+        <priority>0.5</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubisea-connected-buoy"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubisea-bouee-connectee"/>
+    </url>
+</urlset>

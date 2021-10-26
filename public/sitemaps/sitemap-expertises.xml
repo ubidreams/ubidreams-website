@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    <!-- FR -->
+    <url>
+        <loc>https://www.ubidreams.fr/expertises</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises"/>
+    </url>
+    <!-- 
+
+                DEVELOPMENT
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/development</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/development/les-differents-modes-de-developpements</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/the-different-development-modes"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/les-differents-modes-de-developpements"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/development/qu-est-ce-qu-une-pwa-progressive-web-app</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/what-is-a-pwa-progressive-web-app"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/qu-est-ce-qu-une-pwa-progressive-web-app"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/development/notre-expertise-django-python-a-votre-service</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/our-django-python-expertise-at-your-service"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/notre-expertise-django-python-a-votre-service"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/development/votre-design-d-interface-personnalise-grace-a-ant-design</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/your-personalized-interface-design-with-ant-design"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/votre-design-d-interface-personnalise-grace-a-ant-design"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/development/react-native</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/react-native"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/react-native"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/development/react-js</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/react-js"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/react-js"/>
+    </url>
+
+    <!-- 
+
+                CONSULTING
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/conformite-web</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/web-compliance"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/conformite-web"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/votre-logiciel-rgpd</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/your-rgpd-software"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/votre-logiciel-rgpd"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/etat-des-lieux-rgpd</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/gdpr-inventory"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/etat-des-lieux-rgpd"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/conseil-et-assistance-au-dpo</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/advice-and-assistance-to-the-dpo"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/conseil-et-assistance-au-dpo"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/dpo-externe</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/external-dpo"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/dpo-externe"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/cybersecurite</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/cybersecurity"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/cybersecurite"/>
+    </url>
+        <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/dsi-externalise-et-a-temps-partage</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/outsourced-and-time-shared-it-department"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/dsi-externalise-et-a-temps-partage"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/infrastructures-reseaux</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/network-infrastructures"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/infrastructures-reseaux"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/consulting/infogerance</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/outsourcing"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/infogerance"/>
+    </url>
+
+    <!-- 
+
+                DESIGN
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/design</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/design/le-story-mapping-au-service-de-la-communication-et-de-l-agilite</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design/story-mapping-for-communication-and-agility"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design/le-story-mapping-au-service-de-la-communication-et-de-l-agilite"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/design/nos-methodes-d-ux-design-pour-concevoir-des-services-et-produits</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design/our-ux-design-methods-for-designing-services-and-products"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design/nos-methodes-d-ux-design-pour-concevoir-des-services-et-produits"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/design/les-wireframes-et-l-architecture-de-l-information</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design/wireframes-and-information-architecture"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design/les-wireframes-et-l-architecture-de-l-information"/>
+    </url>
+    <!-- 
+
+                IOT
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/internet-of-things</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/internet-of-things/votre-projet-d-objet-connecte-avec-lora</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things/your-iot-project-with-lora"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things/votre-projet-d-objet-connecte-avec-lora"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/internet-of-things/beacon-votre-projet-iot-sur-mesure</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things/beacon-your-customized-iot-project"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things/beacon-votre-projet-iot-sur-mesure"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/internet-of-things/ensemble-construisons-votre-architecture-iot</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things/together-let-s-build-your-iot-architecture"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things/ensemble-construisons-votre-architecture-iot"/>
+    </url>
+
+    <!-- 
+
+                SOLUTION
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/ubiptw-obligations-reglementaires-pour-les-plans-de-prevention</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/ubiptw-regulatory-obligations-for-prevention-plans"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/ubiptw-obligations-reglementaires-pour-les-plans-de-prevention"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/ubipoi-logiciel-de-suivi-de-sinistre</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/ubipoi-disaster-tracking-software"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/ubipoi-logiciel-de-suivi-de-sinistre"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/expertises/ubitrack-votre-solution-de-suivi-de-l-activite-de-dechargement</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/ubitrack-your-unloading-activity-monitoring-solution"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/ubitrack-votre-solution-de-suivi-de-l-activite-de-dechargement"/>
+    </url>
+
+
+    <!-- EN ************************************-->
+
+
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises"/>
+    </url>
+    <!-- 
+
+                DEVELOPMENT
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/development</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/development/the-different-development-modes</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/the-different-development-modes"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/les-differents-modes-de-developpements"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/development/what-is-a-pwa-progressive-web-app</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/what-is-a-pwa-progressive-web-app"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/qu-est-ce-qu-une-pwa-progressive-web-app"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/development/our-django-python-expertise-at-your-service</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/our-django-python-expertise-at-your-service"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/notre-expertise-django-python-a-votre-service"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/development/your-personalized-interface-design-with-ant-design</loc>   
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/your-personalized-interface-design-with-ant-design"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/votre-design-d-interface-personnalise-grace-a-ant-design"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/development/react-native</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/react-native"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/react-native"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/development/react-js</loc>   
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/development/react-js"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/development/react-js"/>
+    </url>
+
+     <!-- 
+
+                CONSULTING
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/web-compliance</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/web-compliance"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/conformite-web"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/your-rgpd-software</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/your-rgpd-software"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/votre-logiciel-rgpd"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/gdpr-inventory</loc>   
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/gdpr-inventory"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/etat-des-lieux-rgpd"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/advice-and-assistance-to-the-dpo</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/advice-and-assistance-to-the-dpo"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/conseil-et-assistance-au-dpo"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/external-dpo</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/external-dpo"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/dpo-externe"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/cybersecurity</loc>   
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/cybersecurity"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/cybersecurite"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/outsourced-and-time-shared-it-department</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/outsourced-and-time-shared-it-department"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/dsi-externalise-et-a-temps-partage"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/network-infrastructures</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/network-infrastructures"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/infrastructures-reseaux"/>
+    </url>
+        <url>
+        <loc>https://www.ubidreams.fr/en/expertises/consulting/outsourcing</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/consulting/outsourcing"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/consulting/infogerance"/>
+    </url>
+
+     <!-- 
+
+                DESIGN
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/design</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/design/story-mapping-for-communication-and-agility</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design/story-mapping-for-communication-and-agility"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design/le-story-mapping-au-service-de-la-communication-et-de-l-agilite"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/design/our-ux-design-methods-for-designing-services-and-products</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design/our-ux-design-methods-for-designing-services-and-products"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design/nos-methodes-d-ux-design-pour-concevoir-des-services-et-produits"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/design/wireframes-and-information-architecture</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/design/wireframes-and-information-architecture"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/design/les-wireframes-et-l-architecture-de-l-information"/>
+    </url>
+
+     <!-- 
+
+                IOT
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/internet-of-things</loc>    
+        <priority>0.8</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things"/>
+    </url>
+        <url>
+        <loc>https://www.ubidreams.fr/en/expertises/internet-of-things/your-iot-project-with-lora</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things/your-iot-project-with-lora"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things/votre-projet-d-objet-connecte-avec-lora"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/internet-of-things/beacon-your-customized-iot-project</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things/beacon-your-customized-iot-project"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things/beacon-votre-projet-iot-sur-mesure"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/internet-of-things/together-let-s-build-your-iot-architecture</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/internet-of-things/together-let-s-build-your-iot-architecture"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/internet-of-things/ensemble-construisons-votre-architecture-iot"/>
+    </url>
+
+     <!-- 
+
+                SOLUTION
+
+     -->
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/ubiptw-regulatory-obligations-for-prevention-plans</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/ubiptw-regulatory-obligations-for-prevention-plans"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/ubiptw-obligations-reglementaires-pour-les-plans-de-prevention"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/ubipoi-disaster-tracking-software</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/ubipoi-disaster-tracking-software"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/ubipoi-logiciel-de-suivi-de-sinistre"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/expertises/ubitrack-your-unloading-activity-monitoring-solution</loc>    
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/expertises/ubitrack-your-unloading-activity-monitoring-solution"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/expertises/ubitrack-votre-solution-de-suivi-de-l-activite-de-dechargement"/>
+    </url>
+
+</urlset>
