@@ -16,8 +16,8 @@ import Projet from '../../public/img/illustrations/projet.png'
 import Regie from '../../public/img/illustrations/regie.png'
 
 /* photos */
-import Contact from '../../public/img/photos/photo-2.jpg'
-import ContactHeader from '../../public/img/photos/photo-14.jpg'
+import Contact from '../../public/img/photos/contact-cropped.jpg'
+import ContactHeader from '../../public/img/photos/contact-header-2.JPG'
 
 /* logo */
 import Ubidreams from '../../public/img/logos/cropped-logo.png'

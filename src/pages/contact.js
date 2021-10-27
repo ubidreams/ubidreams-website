@@ -99,7 +99,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
     <Helmet metatags={metatags} router={router} className='bg-light-grey'>
       <Section
         bgClass='overlay overlay-black overlay-60 bg-cover'
-        customStyle={{ backgroundImage: `url(${ContactHeader.src})` }}
+        customStyle={{ backgroundImage: `url(${ContactHeader.src})`, backgroundPosition: '50% 38%' }}
       >
         <div className='row justify-content-center'>
           <div className='col-12 col-md-10 col-lg-8 text-center'>

@@ -229,7 +229,7 @@ p {
 
 /* PAGE AGENCE */
 .members .card-img-top {
-  max-height: 18em;
+  height: 22em;
 
   & > picture img {
     object-fit: cover;
@@ -244,8 +244,11 @@ p {
 
 .citation {
   opacity: 0;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.5);
+
+  & code {
+    color: $black-grey;
+  }
 }
 
 .card:hover .card-blur {
@@ -260,10 +263,6 @@ p {
     transition: all 1s ease;
     opacity: 1;
   }
-}
-
-.citation code {
-  color: $light-grey !important;
 }
 
 /* MAP SECTION */
@@ -377,6 +376,8 @@ p {
 
 /* PAGE CONTACT */
 .contact {
+  margin: 1.5em auto;
+
   h2 {
     color: $light-grey !important;
   }
