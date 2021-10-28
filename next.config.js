@@ -11,6 +11,7 @@ module.exports = withSass({
 })
 
 module.exports = {
+  productionBrowserSourceMaps: true,
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'fr'

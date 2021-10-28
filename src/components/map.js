@@ -16,7 +16,7 @@ export const MapBox = ({ mapProps }) => {
       center: [-1.126, 46.135],
       zoom: 13,
       container: mapContainer.current,
-      style: 'mapbox://styles/developer-ubidreams/ckssofhmd0kav17tbrmcpjoyt',
+      style: 'mapbox://styles/developer-ubidreams/ckssofhmd0kav17tbrmcpjoyt?optimize=true',
       scrollZoom: false,
       interactive: false
     })
