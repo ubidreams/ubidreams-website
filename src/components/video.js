@@ -1,4 +1,4 @@
-const Video = ({ config }) => {
+const Video = ({ config, cookieYoutube, message }) => {
   const { url, title, provider } = config
   let src = url
 
@@ -7,7 +7,7 @@ const Video = ({ config }) => {
   }
 
   return (
-    <div className='video'>
+    <div className={`video ${cookieYoutube ? '' : 'hide-video'}`}>
       <iframe
         src={src}
         title={title}
@@ -18,6 +18,11 @@ const Video = ({ config }) => {
         allowFullScreen
         referrerPolicy='origin-when-cross-origin'
       />
+      {!cookieYoutube && (
+        <div className='display' data-aos='fade' aos-delay='1000'>
+          <p>{message}</p>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
 import { getAllLegalPages, getCoordonnees } from '../../../lib/api.js'
 
+import { CookiesContext } from '../../../helpers/cookiesContext'
+
 import { Ubidreams, Img } from '../../../config/StaticImagesExport.js'
 
 const Footer = () => {
+  const cookies = useContext(CookiesContext)
   const { t, lang } = useTranslation('common')
   const [legalPages, setLegalPages] = useState([])
   const [coordonnees, setCoordonnees] = useState({})
@@ -50,10 +53,19 @@ const Footer = () => {
               <ul className='list-unstyled list-inline list-social mb-6 mb-md-0'>
                 {t('footer.social', {}, { returnObjects: true }).map((socialMedia, index) => {
                   return (
-                    <li key={index} className='list-inline-item list-social-item me-4'>
-                      <a href={socialMedia.path} className='text-decoration-none' target='_blank' rel='noreferrer'>
-                        <Image src={Img[socialMedia.img.key]} alt={socialMedia.img.alt} width={25} height={25} />
-                      </a>
+                    <li key={index} className='list-inline-item list-social-item me-4 position-relative'>
+                      {cookies[socialMedia.cookieDesignation] ? (
+                        <a href={socialMedia.path} className='text-decoration-none' target='_blank' rel='noreferrer'>
+                          <Image src={Img[socialMedia.img.key]} alt={socialMedia.img.alt} width={25} height={25} />
+                        </a>
+                      ) : (
+                        <>
+                          <div className='popover pop-footer bg-gray-200'>{t('common:cookie.noAccept')}</div>
+                          <div style={{ opacity: '0.6' }}>
+                            <Image src={Img[socialMedia.img.key]} alt={socialMedia.img.alt} width={25} height={25} />
+                          </div>
+                        </>
+                      )}
                     </li>
                   )
                 })}

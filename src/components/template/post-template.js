@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import { renderRule, StructuredText, renderMetaTags, Image } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
 import ReactHtmlParser from 'react-html-parser'
@@ -12,6 +12,7 @@ import ImageNext from 'next/image'
 import Head from 'next/head'
 
 import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
+import { CookiesContext } from '../../helpers/cookiesContext'
 
 import Section from '../section'
 import { LinkBeautify } from '../link-beautify'
@@ -22,7 +23,6 @@ import Video from '../video'
 import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 
 const URL = process.env.NEXT_PUBLIC_URL_GLOBAL
-
 const iconsSocialMedia = [
   { icon: Facebook, alt: 'Facebook' },
   { icon: Twitter, alt: 'Twitter' },
@@ -60,7 +60,11 @@ const renderPage = (type, post) => {
   }
 }
 
-const renderSocialButtons = (item, router, post) => {
+const renderPopover = (t) => {
+  return <div className='popover bg-gray-200'>{t('common:cookie.noAccept')}</div>
+}
+
+const renderSocialButtons = (item, router, post, cookies, t) => {
   const styleProps = {
     width: 25,
     height: 25,
@@ -73,29 +77,56 @@ const renderSocialButtons = (item, router, post) => {
         hastag = hastag.concat('#', etiquette.slug, ' ')
       })
       return (
-        <FacebookShareButton url={URL + router.asPath} quote={post.title} hashtag={hastag}>
-          <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
-        </FacebookShareButton>
+        <>
+          {!cookies.facebook_pixel && renderPopover(t)}
+          <FacebookShareButton
+            url={URL + router.asPath}
+            quote={post.title}
+            hashtag={hastag}
+            disabled={!cookies.facebook_pixel}
+          >
+            <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
+          </FacebookShareButton>
+        </>
       )
     case 'Linkedin':
       return (
-        <LinkedinShareButton url={URL + router.asPath} title={post.title} summary={post.subtitle} source={URL}>
-          <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
-        </LinkedinShareButton>
+        <>
+          {!cookies.linkedin && renderPopover(t)}
+          <LinkedinShareButton
+            url={URL + router.asPath}
+            title={post.title}
+            summary={post.subtitle}
+            source={URL}
+            disabled={!cookies.linkedin}
+          >
+            <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
+          </LinkedinShareButton>
+        </>
       )
     case 'Twitter':
       let hastags = []
       post.etiquettes.forEach((etiquette) => {
         hastags.push(etiquette.slug)
       })
+
       return (
-        <TwitterShareButton url={URL + router.asPath} title={post.title} hashtags={hastags}>
-          <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
-        </TwitterShareButton>
+        <>
+          {!cookies.twitter && renderPopover(t)}
+          <TwitterShareButton
+            url={URL + router.asPath}
+            title={post.title}
+            hashtags={hastags}
+            disabled={!cookies.twitter}
+          >
+            <ImageNext src={item.icon} alt={item.alt} {...styleProps} />
+          </TwitterShareButton>
+        </>
       )
   }
 }
 const PostTemplate = ({ post, locale, lastPosts, router }) => {
+  const cookies = useContext(CookiesContext)
   const { t } = useTranslation('blog')
   const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
   const dateFormatted = new Intl.DateTimeFormat(locale, { month: 'short', day: 'numeric', year: 'numeric' }).format(
@@ -136,7 +167,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
             {post.subtitle && renderPage('subtitle', post)}
           </div>
           <div className='row align-items-center py-5 border-top border-bottom'>
-            <div className='col ms-n5'>
+            <div className='col ms-md-n5'>
               {renderPage('author', post)}
               <time className='fs-sm text-muted' dateTime={dateFormatted}>
                 {t('post.date') + ' ' + dateFormatted}
@@ -144,12 +175,11 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
             </div>
             <div className='col-auto d-flex align-items-center'>
               <span className='h6 text-uppercase text-muted d-none d-md-inline me-4'>{t('post.share')}:</span>
-
               <ul className='d-inline list-unstyled list-inline list-social m-0'>
                 {iconsSocialMedia.map((item, index) => {
                   return (
-                    <li key={index} className='list-inline-item list-social-item me-3'>
-                      {renderSocialButtons(item, router, post)}
+                    <li key={index} className='list-inline-item list-social-item me-3 position-relative'>
+                      {renderSocialButtons(item, router, post, cookies, t)}
                     </li>
                   )
                 })}
@@ -171,7 +201,13 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                   case 'image':
                     return <Image data={record.image.responsiveImage} alt='' className='img-page' />
                   case 'video':
-                    return <Video config={record.videoUrl} />
+                    return (
+                      <Video
+                        config={record.videoUrl}
+                        cookieYoutube={cookies.youtube}
+                        message={t('common:cookie.noAcceptYoutube')}
+                      />
+                    )
                 }
               }}
               customRules={[
@@ -228,29 +264,29 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
             </svg>
           </div>
         </div>
-        <Section bgClass='bg-light'>
-          <div className='row align-items-center mb-5'>
-            <div className='col'>
-              <h3 className='mb-0'>{t('post.lastPost.title')}</h3>
-              <p className='mb-0 text-muted'>{t('post.lastPost.subtitle')}</p>
+        {lastPosts.length != 0 && (
+          <>
+            <Section bgClass='bg-light'>
+              <div className='row align-items-center mb-5'>
+                <div className='col'>
+                  <h3 className='mb-0'>{t('post.lastPost.title')}</h3>
+                  <p className='mb-0 text-muted'>{t('post.lastPost.subtitle')}</p>
+                </div>
+                <div className='col-md-auto'>
+                  <a href={t('common:header.blog.path')} className='btn btn-sm btn-outline-blue d-none d-md-inline'>
+                    {t('post.lastPost.more')}
+                  </a>
+                </div>
+              </div>
+              <div className='row row-cols-md-3 mt-6'>
+                <CardArticle config={lastPosts} locale={locale} />
+              </div>
+            </Section>
+            <div className='bg-light'>
+              <div className='container border-bottom border-gray-300'></div>
             </div>
-            <div className='col-md-auto'>
-              <a href={t('common:header.blog.path')} className='btn btn-sm btn-outline-blue d-none d-md-inline'>
-                {t('post.lastPost.more')}
-              </a>
-            </div>
-          </div>
-          <div className='row row-cols-md-3 mt-6'>
-            {lastPosts.length === 0 ? (
-              <p className='w-100 text-center text-muted'>{t('blog.noResult')}</p>
-            ) : (
-              <CardArticle config={lastPosts} locale={locale} />
-            )}
-          </div>
-        </Section>
-        <div className='bg-light'>
-          <div className='container border-bottom border-gray-300'></div>
-        </div>
+          </>
+        )}
         <Section bgClass='bg-light'>
           <ContactSection />
         </Section>

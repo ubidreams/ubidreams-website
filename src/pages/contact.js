@@ -1,9 +1,11 @@
 import { getCnilMentionForm, getCoordonnees } from '../lib/api'
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/dist/client/router'
 import { isEmpty } from 'lodash'
+
+import { CookiesContext } from '../helpers/cookiesContext'
 
 import ReCAPTCHA from 'react-google-recaptcha'
 //https://github.com/dozoisch/react-google-recaptcha/issues/218
@@ -32,6 +34,7 @@ const Toast = Swal.mixin({
 })
 
 export const Contact = ({ coordonnees, cnilMention }) => {
+  const cookies = useContext(CookiesContext)
   const router = useRouter()
   const { t } = useTranslation('contact')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
@@ -233,19 +236,26 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 required
               ></textarea>
             </div>
-            <div className='d-flex flex-column text-center'>
-              <div id='captcha'>
-                <ReCAPTCHA ref={recaptchaRef} sitekey={CAPTCHA_API} />
+            {cookies.googlerecaptcha ? (
+              <div className='d-flex flex-column text-center'>
+                <div id='captcha'>
+                  <ReCAPTCHA ref={recaptchaRef} sitekey={CAPTCHA_API} />
+                </div>
+                <div>
+                  <button type='submit' className='btn btn-blue lift' disabled={sendingMessage}>
+                    {sendingMessage && (
+                      <span className='spinner-border spinner-border-sm me-2' role='status' aria-hidden='true' />
+                    )}
+                    {sendingMessage ? t('form.load') : t('form.button')}
+                  </button>
+                </div>
               </div>
-              <div>
-                <button type='submit' className='btn btn-blue lift' disabled={sendingMessage}>
-                  {sendingMessage && (
-                    <span className='spinner-border spinner-border-sm me-2' role='status' aria-hidden='true' />
-                  )}
-                  {sendingMessage ? t('form.load') : t('form.button')}
-                </button>
+            ) : (
+              <div className='text-center'>
+                <span className='fe fe-alert-circle'></span>
+                <p>{t('common:cookie.noAcceptCaptcha')}</p>
               </div>
-            </div>
+            )}
             <div>
               <hr className='my-6 my-md-8 text-gray-500' />
               <div>{ReactHtmlParser(cnilMention)}</div>

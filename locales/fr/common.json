@@ -64,23 +64,26 @@
     "social": [
       {
         "path": "https://www.facebook.com/ubidreams/",
+        "cookieDesignation": "facebook_pixel",
         "img": {
           "key": "fb",
           "alt": "Facebook"
         }
       },
       {
-        "path": "https://www.linkedin.com/company/ubidreams/",
-        "img": {
-          "key": "lkd",
-          "alt": "Linkedin"
-        }
-      },
-      {
         "path": "https://twitter.com/ubidreams",
+        "cookieDesignation": "twitter",
         "img": {
           "key": "twt",
           "alt": "Twitter"
+        }
+      },
+      {
+        "path": "https://www.linkedin.com/company/ubidreams/",
+        "cookieDesignation": "linkedin",
+        "img": {
+          "key": "lkd",
+          "alt": "Linkedin"
         }
       }
     ]
@@ -104,5 +107,10 @@
     "help": "Une question ?",
     "call": "Appelez-nous",
     "email": "Envoyez-nous un mail"
+  }, 
+  "cookie": {
+    "noAccept" : "Vous n'avez pas accepté les cookies pour activer ce service. Vous pouvez changer vos choix de cookies en cliquant en bas à gauche",
+    "noAcceptYoutube" : "Une vidéo est disponible sur cet article, pour la visionner acceptez les cookies. Vous pouvez changer vos choix de cookies en cliquant sur le bouton en bas à gauche.",
+    "noAcceptCaptcha": "Vous n'avez pas accepté les cookies permettant l'envoi du formulaire de contact en toute sécurité. Pour activer ce service vous pouvez changer vos choix de cookies en cliquant sur le bouton en bas à gauche, ensuite acceptez le cookie : Google Recaptcha."
   }
 }
