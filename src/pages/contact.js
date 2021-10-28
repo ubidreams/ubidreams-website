@@ -119,7 +119,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
       </div>
       <Section bgClass='border-gray-300 border-bottom' id='info'>
         <div className='text-center'>
-          <a href='#contact-form' className='btn btn-white btn-rounded-circle shadow mt-n11 mt-md-n14' data-scroll>
+          <a href='#contact-form' className='btn btn-white btn-rounded-circle shadow mt-n11 mt-md-n14'>
             <i className='fe fe-arrow-down'></i>
           </a>
         </div>
