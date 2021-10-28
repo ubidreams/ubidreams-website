@@ -22,7 +22,7 @@ export default function Layout({ children }) {
             - max-image-preview : Définissez la taille maximale d'un aperçu d'image pour cette page (large : un aperçu d'image de grande taille)
             - max-video-preview : nombre maximal de secondes que vous souhaitez appliquer à un extrait vidéo (-1 : la durée de l'extrait vidéo est illimitée.)
         */}
-        <meta name='robots' content='noindex, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
+        <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
       </Head>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Header />
