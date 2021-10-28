@@ -16,8 +16,8 @@ import Projet from '../../public/img/illustrations/projet.png'
 import Regie from '../../public/img/illustrations/regie.png'
 
 /* photos */
-import Contact from '../../public/img/photos/contact-cropped.jpg'
-import ContactHeader from '../../public/img/photos/contact.jpg'
+import Contact from '../../public/img/photos/contact-cropped.png'
+import ContactHeader from '../../public/img/photos/contact.png'
 
 /* logo */
 import Ubidreams from '../../public/img/logos/cropped-logo.png'
@@ -52,9 +52,6 @@ import Timer from '../../public/img/icons/Timer.svg'
 import Waiting from '../../public/img/icons/Waiting.svg'
 import Download from '../../public/img/icons/Downloaded-file.svg'
 import DoneCircle from '../../public/img/icons/Done-circle.svg'
-
-import French from '../../public/img/icons/france.png'
-import English from '../../public/img/icons/united-kingdom.png'
 
 export {
   Recherche,
