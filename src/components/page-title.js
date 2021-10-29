@@ -11,14 +11,7 @@ import { Img } from '../config/StaticImagesExport'
  * @param showButton (Booléan indiquant la necessité d'afficher un bouton ou non)
  * @param minHeight (taille minimum du hero 90vh par defaut, mais plus petit parfois (ex: les sous-pages expertise avec l'ajout du breadcrumb))
  */
-const PageTitle = ({
-  namespace = '',
-  displayImage = '',
-  classText = '',
-  classImg = '',
-  showButton = false,
-  minHeight = '90vh'
-}) => {
+const PageTitle = ({ namespace = '', displayImage = '', classText = '', classImg = '', showButton = false }) => {
   const { t } = useTranslation(namespace)
   const buttons = t('hero.buttonDetails', {}, { returnObjects: true, fallback: '' })
 

@@ -40,7 +40,7 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
                     )
                   }}
                   customRules={[
-                    renderRule(isSpan, ({ node, children, key }) => {
+                    renderRule(isSpan, ({ node, key }) => {
                       if (node.marks && includes(node.marks, 'highlight')) {
                         return (
                           <node.type key={key} className='text-green'>
@@ -67,7 +67,7 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
                         </HeadingTag>
                       )
                     }),
-                    renderRule(isParagraph, ({ node, children, key }) => {
+                    renderRule(isParagraph, ({ children, key }) => {
                       return (
                         <p key={key} className='text-muted'>
                           {children}

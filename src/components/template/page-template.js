@@ -66,7 +66,7 @@ const renderPage = (type, page) => {
       return (
         <Section>
           <TextContainer namespace={{ name: 'expertises', section: 'referencesLinked' }} alignText='center' />
-          <div className='row row-cols-3'>
+          <div className='row row-cols-md-3'>
             <CardReference config={page} />
           </div>
         </Section>
@@ -148,7 +148,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
                 }
               }}
               customRules={[
-                renderRule(isSpan, ({ node, children, key }) => {
+                renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
                       <node.type key={key} className='text-green'>

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { StructuredText } from 'react-datocms'
 import { LinkBeautify } from './link-beautify'

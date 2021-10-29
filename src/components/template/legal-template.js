@@ -82,7 +82,7 @@ const LegalTemplate = ({ page, router }) => {
                   }
                 }}
                 customRules={[
-                  renderRule(isSpan, ({ node, children, key }) => {
+                  renderRule(isSpan, ({ node, key }) => {
                     if (node.marks && includes(node.marks, 'highlight')) {
                       return (
                         <node.type key={key} className='text-green'>
@@ -109,7 +109,7 @@ const LegalTemplate = ({ page, router }) => {
                       </HeadingTag>
                     )
                   }),
-                  renderRule(isListItem, ({ node, children, key }) => {
+                  renderRule(isListItem, ({ children, key }) => {
                     return (
                       <div key={key} className='d-flex list-item-reference'>
                         <div>

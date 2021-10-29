@@ -1,19 +1,16 @@
-import { getTeamMembers, getGalleryImg, getMembership } from '../lib/api'
 import useTranslation from 'next-translate/useTranslation'
-import { Image } from 'react-datocms'
+import ImageNext from 'next/image'
 import { useRouter } from 'next/router'
-
+import { Image } from 'react-datocms'
+import CardMember from '../components/card-member'
 import FeatureContainer from '../components/feature-container'
+import Helmet from '../components/layout/helmet-seo'
 import Section from '../components/section'
+import SlidItemPartner from '../components/slide-item-partner'
 import SliderComponent from '../components/slider'
 import Title from '../components/title'
-import '../components/map.js'
-import MapBox from '../components/map.js'
-import CardMember from '../components/card-member'
-import SlidItemPartner from '../components/slide-item-partner'
-import Helmet from '../components/layout/helmet-seo'
-
-import { AccueilCropped, ConseilCropped } from '../config/StaticImagesExport'
+import { AccueilCropped, ConseilCropped, UbidreamsFront } from '../config/StaticImagesExport'
+import { getGalleryImg, getMembership, getTeamMembers } from '../lib/api'
 
 export const Agency = ({ allMembers, galleryImg, allMembership }) => {
   const router = useRouter()
@@ -104,11 +101,8 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
         <h3 className='display-4 text-center mb-6 text-uppercase'>{t('localisation.title')}</h3>
         <div className='row border' data-aos='fade-in' data-aos-delay='500'>
           <div className='col-12 col-md-6 px-md-0'>
-            <div className='ratio ratio-1x1 d-md-none'>
-              <MapBox />
-            </div>
-            <div className='position-relative h-100 vw-50 float-end d-none d-md-block'>
-              <MapBox />
+            <div className='position-relative h-100 vw-50 float-end d-none d-md-block' style={{ minHeight: '500px' }}>
+              <ImageNext src={UbidreamsFront} alt='' layout='fill' objectFit='cover' />
               <div className='shape shape-end shape-fluid-y svg-shim text-white'>
                 <svg viewBox='0 0 100 1544' fill='none' xmlns='http://www.w3.org/2000/svg'>
                   <path d='M0 386V0h100v1544H50v-386L0 386z' fill='currentColor' />

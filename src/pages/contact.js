@@ -1,23 +1,19 @@
-import { getCnilMentionForm, getCoordonnees } from '../lib/api'
-import React, { useContext, useRef, useState } from 'react'
-import ReactHtmlParser from 'react-html-parser'
+import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/dist/client/router'
-import { isEmpty } from 'lodash'
-
-import { CookiesContext } from '../helpers/cookiesContext'
-
+import React, { useContext, useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
+import ReactHtmlParser from 'react-html-parser'
 //https://github.com/dozoisch/react-google-recaptcha/issues/218
 //issue cookie : SameSite, n'empêche pas le focntionnement du captcha
 import Swal from 'sweetalert2'
-
-import { ContactHeader } from '../config/StaticImagesExport'
-
 import ContactMeta from '../components/contact-meta'
+import Helmet from '../components/layout/helmet-seo'
 import Section from '../components/section'
 import Title from '../components/title'
-import Helmet from '../components/layout/helmet-seo'
+import { ContactHeader } from '../config/StaticImagesExport'
+import { CookiesContext } from '../helpers/cookiesContext'
+import { getCnilMentionForm, getCoordonnees } from '../lib/api'
 
 const CAPTCHA_API = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 

@@ -44,7 +44,7 @@ export default async function handler(req, res) {
       })
 
       //En fonction du succès ou de l'échec de l'envoi, je renvoie le statut adapté
-      transporter.sendMail(mailData, function (error, info) {
+      transporter.sendMail(mailData, function (error) {
         if (error) {
           return res.status(500).send(error)
         } else {

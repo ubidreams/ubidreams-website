@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { StructuredText } from 'react-datocms'
 import { LinkBeautify } from './link-beautify'
 
@@ -25,12 +24,7 @@ export const CardConsulting = ({ config = [] }) => {
 
               <h4 className='fw-bold'>{item?.title}</h4>
               <div className='mb-5'>
-                <StructuredText
-                  data={item?.description}
-                  renderLinkToRecord={({ record, children, transformedMeta }) => {
-                    return null
-                  }}
-                />
+                <StructuredText data={item?.description} renderLinkToRecord={() => null} />
               </div>
             </div>
           </LinkBeautify>

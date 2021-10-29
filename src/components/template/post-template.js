@@ -211,7 +211,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                 }
               }}
               customRules={[
-                renderRule(isSpan, ({ node, children, key }) => {
+                renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
                       <node.type key={key} className='text-green'>

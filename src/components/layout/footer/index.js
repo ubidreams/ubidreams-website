@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
-import { getAllLegalPages, getCoordonnees } from '../../../lib/api.js'
-
+import Image from 'next/image'
+import Link from 'next/link'
+import { useContext, useEffect, useState } from 'react'
+import { Img, Ubidreams } from '../../../config/StaticImagesExport.js'
 import { CookiesContext } from '../../../helpers/cookiesContext'
-
-import { Ubidreams, Img } from '../../../config/StaticImagesExport.js'
+import { getAllLegalPages, getCoordonnees } from '../../../lib/api.js'
 
 const Footer = () => {
   const cookies = useContext(CookiesContext)
@@ -72,7 +70,7 @@ const Footer = () => {
               </ul>
             </div>
             {/* Location */}
-            <div className='col-6 col-md-4 col-lg-4'>
+            <div className='col-12 col-md-4 col-lg-4'>
               {/* <!-- Heading --> */}
               <h6 className='fw-bold text-uppercase'>{t('footer.location.title')}</h6>
 
@@ -88,7 +86,7 @@ const Footer = () => {
               </div>
             </div>
             {/* link mentions */}
-            <div className='col-6 col-md-4 col-lg-4'>
+            <div className='col-12 col-md-4 col-lg-4'>
               {/* <!-- Heading --> */}
               <h6 className='fw-bold text-uppercase'>{t('footer.legal.title')}</h6>
 
