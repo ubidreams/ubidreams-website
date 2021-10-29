@@ -26,7 +26,7 @@ export default function Layout({ children }) {
       </Head>
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Header />
-        {children}
+        <div className='mt-11'>{children}</div>
         <Footer />
       </div>
     </>

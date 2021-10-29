@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "prepare": "husky install",
-    "deploy": "vercel"
+    "deploy": "vercel",
+    "analyze": "source-map-explorer '.next/static/chunks/*.js'"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -29,7 +30,8 @@
     "react-slick": "^0.28.1",
     "sass": "^1.35.2",
     "slick-carousel": "^1.8.1",
-    "sweetalert2": "^11.1.7"
+    "sweetalert2": "^11.1.7",
+    "typed.js": "^2.0.12"
   },
   "devDependencies": {
     "eslint": "7.30.0",
@@ -38,6 +40,7 @@
     "eslint-plugin-prettier": "3.4.0",
     "husky": "7.0.1",
     "prettier": "2.3.2",
+    "source-map-explorer": "^2.5.2",
     "vercel": "23.0.1"
   }
 }

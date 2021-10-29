@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
-import { map, isNil, isEmpty, defaultTo } from 'lodash'
+import { map, isEmpty } from 'lodash'
 
 import routes from './routes'
 
 import { Ubidreams } from '../../../config/StaticImagesExport.js'
+import { useRouter } from 'next/dist/client/router'
+import { useEffect, useState } from 'react'
 
 const MenuLink = ({ type, href, name }) => {
   return (
@@ -19,10 +21,30 @@ const MenuLink = ({ type, href, name }) => {
 
 const Header = () => {
   const { t } = useTranslation('common')
+  const [routeChange, setRouteChange] = useState(false)
+  const router = useRouter()
 
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setRouteChange(true)
+    }
+    const handleRouteChangeComplete = () => {
+      setRouteChange(false)
+    }
+
+    router.events.on('routeChangeStart', handleRouteChange)
+    router.events.on('routeChangeComplete', handleRouteChangeComplete)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+      router.events.off('routeChangeComplete', handleRouteChangeComplete)
+    }
+  }, [router.events])
   return (
     <header>
-      <nav className='navbar navbar-expand-lg navbar-light bg-white'>
+      <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top'>
         <div className='container-fluid'>
           {/* Lien home "Ubidreams" et bouton mobile */}
           <Link href='/'>
@@ -44,7 +66,7 @@ const Header = () => {
           </button>
 
           {/* Menu principal */}
-          <div className='collapse navbar-collapse' id='navbarCollapse'>
+          <div className={`collapse navbar-collapse ${routeChange ? 'toggle-off' : 'toggle-on'}`} id='navbarCollapse'>
             {/* button toggler */}
             <button
               className='navbar-toggler'
@@ -77,7 +99,7 @@ const Header = () => {
                           return (
                             <li key={index}>
                               <Link href={t(`header.${route?.key}.items.${subLink.key}.path`)}>
-                                <a className='dropdown-item p-2 mx-4'>
+                                <a className='dropdown-item p-2 mx-2'>
                                   {t(`header.${route?.key}.items.${subLink.key}.name`)}
                                 </a>
                               </Link>

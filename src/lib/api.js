@@ -165,7 +165,7 @@ export async function getLastReferences(preview, locale) {
   const data = await fetchAPI(
     `
       {
-        allReferences(locale: ${locale}, orderBy: _createdAt_DESC, first: "3") {
+        allReferences(locale: ${locale}, first: "3") {
           ...ReferenceRecordFragment
         }
       }
@@ -242,6 +242,7 @@ export async function getAllRegies(preview, locale) {
           id
           description
           nom
+          mandataire
           img {
             responsiveImage {
               ...responsiveImageFragment
