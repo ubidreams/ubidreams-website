@@ -302,7 +302,7 @@ module.exports = [
   },
   {
     source: '/produits-solutions-digitales',
-    destination: '/en/expertises/development',
+    destination: '/expertises/development',
     permanent: true
   },
 
