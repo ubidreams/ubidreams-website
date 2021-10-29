@@ -1,7 +1,15 @@
 window.axeptioSettings = {
-  clientId: '61767cd8bb7099079e9e3df1',
-  cookiesVersion: 'ubidreams-base'
+  clientId: '61767cd8bb7099079e9e3df1'
 }
+
+if (document.documentElement.lang === 'en') {
+  window.axeptioSettings.cookiesVersion = 'ubidreams-base-en'
+}
+
+if (document.documentElement.lang === 'fr') {
+  window.axeptioSettings.cookiesVersion = 'ubidreams-base'
+}
+
 ;(function (d, s) {
   var t = d.getElementsByTagName(s)[0],
     e = d.createElement(s)
