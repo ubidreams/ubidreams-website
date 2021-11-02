@@ -438,11 +438,6 @@ export async function getBlog(preview, locale) {
             slug
             id
           }
-        },
-        allTags(locale: ${locale}) {
-          name
-          id
-          slug
         }
       }
   

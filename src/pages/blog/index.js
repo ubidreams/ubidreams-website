@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect } from 'react'
 import { getBlog } from '../../lib/api'
 import useTranslation from 'next-translate/useTranslation'
-import { forEach, filter, includes } from 'lodash'
+import { forEach, filter, includes, uniqWith, isEqual } from 'lodash'
 import { useRouter } from 'next/router'
 
 import Link from 'next/link'
@@ -135,11 +135,13 @@ export const Blog = ({ posts, tags, locale }) => {
                 </Link>
               )
             })}
-            <button className='border-0 pe-1 bg-white me-2 mb-1' onClick={cleanSearch}>
-              <span className='h6 text-uppercase'>
-                <i className='fe fe-x'></i>
-              </span>
-            </button>
+            {activeTag && (
+              <button className='border-0 pe-1 bg-white me-2 mb-1' onClick={cleanSearch}>
+                <span className='h6 text-uppercase'>
+                  <i className='fe fe-x'></i>
+                </span>
+              </button>
+            )}
           </nav>
         </div>
         <div className='row row-cols-md-3 mt-6'>
@@ -162,7 +164,15 @@ export default Blog
 export async function getStaticProps({ preview, locale }) {
   const blog = (await getBlog(preview, locale)) || []
   const posts = blog.allPosts
-  const tags = blog.allTags
+
+  const taglist = () => {
+    let tag = posts.map((post) => {
+      return post.tags
+    })
+    return uniqWith(tag, isEqual)
+  }
+
+  const tags = taglist()
 
   return {
     props: { posts, tags, locale }
