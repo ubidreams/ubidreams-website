@@ -810,6 +810,7 @@ export async function getLegalPageBySlug(preview, locale, slug) {
             value
             blocks {
               id
+              _modelApiKey
               image {
                 format
                 url
