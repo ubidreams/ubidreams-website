@@ -18,7 +18,7 @@ const ContactSection = ({ mailObject = '' }) => {
   }
 
   return (
-    <div className='card card-row shadow-light-lg mb-6'>
+    <div className='card card-row shadow-light-lg mb-6' id='contact'>
       <div className='d-md-flex gx-0'>
         <>
           <div className='w-md-50'>

@@ -138,7 +138,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 className='form-control border border-gray-300'
                 id='contactName'
                 type='text'
-                placeholder={t('form.identite')}
+                placeholder={t('form.identite-placeholder')}
                 onChange={(e) =>
                   setContactForm({
                     ...contactForm,
@@ -157,7 +157,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 className='form-control border-gray-300'
                 id='contactEmail'
                 type='email'
-                placeholder={t('form.email')}
+                placeholder={t('form.email-placeholder')}
                 onChange={(e) =>
                   setContactForm({
                     ...contactForm,
@@ -181,7 +181,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 className='form-control border-gray-300'
                 id='company'
                 type='text'
-                placeholder={t('form.company')}
+                placeholder={t('form.company-placeholder')}
                 onChange={(e) =>
                   setContactForm({
                     ...contactForm,
@@ -201,7 +201,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 className='form-control border-gray-300'
                 id='contactObject'
                 type='text'
-                placeholder={t('form.object')}
+                placeholder={t('form.object-placeholder')}
                 onChange={(e) =>
                   setContactForm({
                     ...contactForm,
@@ -211,6 +211,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 value={contactForm.object || ''}
                 required
               />
+              <p className='contact-help text-muted'>{t('form.object-help')}</p>
             </div>
             <div className='form-group mb-7 mb-md-7'>
               <label className='form-label required' htmlFor='contactMessage'>
@@ -221,7 +222,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
                 className='form-control border-gray-300'
                 id='contactMessage'
                 rows='5'
-                placeholder={t('form.message')}
+                placeholder={t('form.message-placeholder')}
                 onChange={(e) =>
                   setContactForm({
                     ...contactForm,
