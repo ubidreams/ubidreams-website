@@ -13,6 +13,8 @@ import Title from '../title'
 import { useCallback, useEffect, useState } from 'react'
 import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 
+import { DoneCircle } from '../../config/StaticImagesExport'
+
 const LegalTemplate = ({ page, router }) => {
   const { t } = useTranslation('common')
   const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])

@@ -4,13 +4,14 @@ import { Image } from 'react-datocms'
  * Card référence projet
  * @param config (données sous la forme d'un tableau d'objet)
  */
-const CardReference = ({ config = [] }) => {
+const CardReference = ({ config = [], locale }) => {
+  const path = locale === 'en' ? '/en/references' : '/references'
   return config.map((item, index) => {
     return (
       <div key={index} className='mb-6'>
         <a
           className='card shadow-light-lg mb-7 mb-md-0 m-md-2 custom-card-link h-100 cards-reference'
-          href={`/references/` + item?.slug}
+          href={`${path}/` + item?.slug}
         >
           <div className='card-zoom'>
             <Image

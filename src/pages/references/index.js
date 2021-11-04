@@ -11,7 +11,7 @@ import PaginationComponent from '../../components/pagination'
 import SlidItemPartner from '../../components/slide-item-partner'
 import Helmet from '../../components/layout/helmet-seo'
 
-export const References = ({ references, regies }) => {
+export const References = ({ references, regies, locale }) => {
   const router = useRouter()
   const { t } = useTranslation('references')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
@@ -38,7 +38,7 @@ export const References = ({ references, regies }) => {
       <Section>
         <Title title={t('realisations.title')} subtitle={t('realisations.subtitle')} />
         <div className='row row-cols-md-3 mt-6'>
-          <CardReference config={refPaginated} />
+          <CardReference config={refPaginated} locale={locale} />
         </div>
         <div className='text-center'>
           <PaginationComponent data={references} current={activePage} onChange={setActivePage} />
@@ -67,6 +67,6 @@ export async function getStaticProps({ preview, locale }) {
   const references = (await getAllReferences(preview, locale)) || []
   const regies = (await getAllRegies(preview, locale)) || []
   return {
-    props: { references, regies }
+    props: { references, regies, locale }
   }
 }
