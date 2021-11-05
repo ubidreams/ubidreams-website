@@ -38,7 +38,7 @@ const siteUrlWithLocale = (locale) => {
 /* 
     ajout de nouvelles balises méta aux Metatags déjà généré par DATOCMS
 */
-const defineMetatagsSEO = (seoMetaTags, router, allSlugLocales, categorie = '') => {
+const defineMetatagsSEO = (seoMetaTags, router, allSlugLocales, categorie = '', image = null) => {
   /* Déclaration des URLs alternatives en fonction des langues */
   const defineAlternateUrl = map(allSlugLocales, (slugByLocale) => {
     return {
@@ -65,6 +65,23 @@ const defineMetatagsSEO = (seoMetaTags, router, allSlugLocales, categorie = '') 
   })
 
   finalMetatags = finalMetatags.concat(defineAlternateUrl)
+  if (image) {
+    console.log(image)
+    finalMetatags = finalMetatags.map((item) => {
+      return {
+        ...item,
+        attributes: {
+          ...item.attributes,
+          name: 'image',
+          content: item.attributes
+            ? item.attributes.property === 'og:image'
+              ? image
+              : item.attributes.content
+            : item.attributes
+        }
+      }
+    })
+  }
   return finalMetatags
 }
 

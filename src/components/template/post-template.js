@@ -143,13 +143,12 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
   const { _seoMetaTags, _allSlugLocales } = post
 
   const defineMetatags = useCallback(() => {
-    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales))
-  }, [_allSlugLocales, _seoMetaTags, router])
+    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', imageCover.src))
+  }, [_allSlugLocales, _seoMetaTags, imageCover.src, router])
 
   useEffect(() => {
     defineMetatags()
   }, [defineMetatags])
-
   return (
     <>
       <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
