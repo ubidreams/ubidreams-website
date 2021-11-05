@@ -11,13 +11,11 @@ import PostTemplate from '../../components/template/post-template'
 const Post = ({ post = {}, lastPosts }) => {
   const router = useRouter()
   const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
-  const { _seoMetaTags = [], _allSlugLocales = [] } = post
+  const { _seoMetaTags = [], _allSlugLocales = [], heroCover = {} } = post
 
   const defineMetatags = useCallback(() => {
-    setFinalMetatagsSEO(
-      defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', post.heroCover.responsiveImage.src)
-    )
-  }, [_allSlugLocales, _seoMetaTags, post.heroCover.responsiveImage.src, router])
+    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', heroCover.responsiveImage.src))
+  }, [_allSlugLocales, _seoMetaTags, heroCover.responsiveImage.src, router])
 
   useEffect(() => {
     defineMetatags()
