@@ -8,7 +8,7 @@ import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 
 import PostTemplate from '../../components/template/post-template'
 
-const Post = ({ post, lastPosts }) => {
+const Post = ({ post = {}, lastPosts }) => {
   const router = useRouter()
   const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
   const { _seoMetaTags = [], _allSlugLocales = [] } = post
