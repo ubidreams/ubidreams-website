@@ -1,5 +1,3 @@
-import { useCallback, useEffect, useState } from 'react'
-
 import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -9,19 +7,10 @@ import PostTemplate from '../../components/template/post-template'
 
 const Post = ({ post = {}, lastPosts }) => {
   const router = useRouter()
-  const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
+  if (router.isFallback) return null
   const { _seoMetaTags = [], _allSlugLocales = [], heroCover = { responsiveImage: {} } } = post
 
-  const defineMetatags = useCallback(() => {
-    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', heroCover.responsiveImage.src))
-  }, [_allSlugLocales, _seoMetaTags, heroCover.responsiveImage.src, router])
-
-  useEffect(() => {
-    defineMetatags()
-  }, [defineMetatags])
-
-  if (router.isFallback) return null
-
+  const finalMetatagsSEO = defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', heroCover.responsiveImage.src)
   return (
     <>
       <Head>
