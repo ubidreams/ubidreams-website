@@ -11,7 +11,7 @@ import PostTemplate from '../../components/template/post-template'
 const Post = ({ post, lastPosts }) => {
   const router = useRouter()
   const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
-  const { _seoMetaTags, _allSlugLocales } = post
+  const { _seoMetaTags = [], _allSlugLocales = [] } = post
 
   const defineMetatags = useCallback(() => {
     setFinalMetatagsSEO(

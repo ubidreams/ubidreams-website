@@ -66,7 +66,6 @@ const defineMetatagsSEO = (seoMetaTags, router, allSlugLocales, categorie = '', 
 
   finalMetatags = finalMetatags.concat(defineAlternateUrl)
   if (image) {
-    console.log(image)
     finalMetatags = finalMetatags.map((item) => {
       return {
         ...item,
