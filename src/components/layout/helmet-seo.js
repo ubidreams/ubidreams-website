@@ -18,13 +18,13 @@ export default function Helmet({ children, metatags = {}, router, className = ''
     <>
       <Head>
         <title>{`${title} | Ubidreams`}</title>
-        <meta name='description' content={description} />
+        <meta property='description' content={description} />
         <meta property='og:type' content='website' />
         <meta property='og:site_name' content='Ubidreams' />
         {!error && <meta property='og:url' content={URL_UBIDREAMS + pathname} />}
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
-        <meta name='og:image' content={Img[img_key].src}></meta>
+        <meta property='og:image' content={Img[img_key].src}></meta>
 
         {!error && (
           <>
@@ -41,12 +41,12 @@ export default function Helmet({ children, metatags = {}, router, className = ''
         {error && <meta name='robots' content='noindex' />}
 
         {/* TWITTER CARD */}
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:creator' content='@ubidreams' />
-        <meta name='twitter:site' content='@ubidreams' />
+        <meta property='twitter:card' content='summary_large_image' />
+        <meta property='twitter:creator' content='@ubidreams' />
+        <meta property='twitter:site' content='@ubidreams' />
         <meta property='twitter:title' content={title} />
         <meta property='twitter:description' content={description} />
-        <meta name='twitter:image' content={Img[img_key].src}></meta>
+        <meta property='twitter:image' content={Img[img_key].src}></meta>
 
         <meta property='article:publisher' content='https://www.facebook.com/ubidreams/' />
       </Head>

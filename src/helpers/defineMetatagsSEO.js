@@ -72,11 +72,6 @@ const defineMetatagsSEO = (seoMetaTags, router, allSlugLocales, categorie = '', 
         ...item,
         attributes: {
           ...item.attributes,
-          name: item.attributes
-            ? item.attributes.property === 'og:image'
-              ? 'image'
-              : item.attributes.content
-            : item.attributes,
           content: item.attributes
             ? item.attributes.property === 'og:image'
               ? image
