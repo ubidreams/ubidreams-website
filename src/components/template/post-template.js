@@ -1,5 +1,5 @@
-import { useCallback, useContext, useEffect, useState } from 'react'
-import { renderRule, StructuredText, renderMetaTags, Image } from 'react-datocms'
+import { useContext } from 'react'
+import { renderRule, StructuredText, Image } from 'react-datocms'
 import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
 import ReactHtmlParser from 'react-html-parser'
 import { Parallax } from 'react-parallax'
@@ -9,9 +9,7 @@ import { includes, isEmpty } from 'lodash'
 
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
-import Head from 'next/head'
 
-import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 import { CookiesContext } from '../../helpers/cookiesContext'
 
 import Section from '../section'
@@ -128,7 +126,6 @@ const renderSocialButtons = (item, router, post, cookies, t) => {
 const PostTemplate = ({ post, locale, lastPosts, router }) => {
   const cookies = useContext(CookiesContext)
   const { t } = useTranslation('blog')
-  const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
   const dateFormatted = new Intl.DateTimeFormat(locale, { month: 'short', day: 'numeric', year: 'numeric' }).format(
     new Date(post.date)
   )
@@ -140,18 +137,8 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
 
   const imageCover = { src: post.heroCover.responsiveImage.src, alt: post.heroCover.responsiveImage.alt }
 
-  const { _seoMetaTags, _allSlugLocales } = post
-
-  const defineMetatags = useCallback(() => {
-    setFinalMetatagsSEO(defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', imageCover.src))
-  }, [_allSlugLocales, _seoMetaTags, imageCover.src, router])
-
-  useEffect(() => {
-    defineMetatags()
-  }, [defineMetatags])
   return (
     <>
-      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
       <main>
         <Parallax
           bgImage={imageCover.src}

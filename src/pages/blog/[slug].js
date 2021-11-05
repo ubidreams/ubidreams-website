@@ -1,14 +1,36 @@
+import { useCallback, useEffect, useState } from 'react'
+import { renderMetaTags } from 'react-datocms'
+
 import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
+import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 
 import PostTemplate from '../../components/template/post-template'
 
 const Post = ({ post, lastPosts }) => {
   const router = useRouter()
+  const [finalMetatagsSEO, setFinalMetatagsSEO] = useState([])
+  const { _seoMetaTags, _allSlugLocales } = post
+
+  const defineMetatags = useCallback(() => {
+    setFinalMetatagsSEO(
+      defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', post.heroCover.responsiveImage.src)
+    )
+  }, [_allSlugLocales, _seoMetaTags, post.heroCover.responsiveImage.src, router])
+
+  useEffect(() => {
+    defineMetatags()
+  }, [defineMetatags])
 
   if (router.isFallback) return null
 
-  return <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} router={router} />
+  return (
+    <>
+      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
+      <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} router={router} />
+    </>
+  )
 }
 export default Post
 
