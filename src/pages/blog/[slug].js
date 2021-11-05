@@ -4,7 +4,6 @@ import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
-import { renderMetaTags } from 'react-datocms'
 
 import PostTemplate from '../../components/template/post-template'
 
@@ -25,7 +24,11 @@ const Post = ({ post = {}, lastPosts }) => {
 
   return (
     <>
-      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
+      <Head>
+        {finalMetatagsSEO.map(({ tag: Tag, attributes }, index) => {
+          return <Tag key={index} {...attributes} />
+        })}
+      </Head>
       <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} router={router} />
     </>
   )
