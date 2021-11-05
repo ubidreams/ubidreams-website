@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import { renderMetaTags } from 'react-datocms'
 
 import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
@@ -25,7 +24,15 @@ const Post = ({ post = {}, lastPosts }) => {
 
   return (
     <>
-      <Head>{renderMetaTags(finalMetatagsSEO)}</Head>
+      <Head>
+        <meta
+          property='og:image'
+          content='https://www.datocms-assets.com/45470/1635844721-mobility-business-banner.png'
+        />
+        {finalMetatagsSEO.map(({ tag, ...rest }, index) => {
+          return <tag key={index} {...rest} />
+        })}
+      </Head>
       <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} router={router} />
     </>
   )
