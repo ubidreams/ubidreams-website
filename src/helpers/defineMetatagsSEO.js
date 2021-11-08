@@ -63,21 +63,20 @@ const DefineMetatagsSEO = ({
   finalMetatags = finalMetatags.concat(defineAlternateUrl)
 
   //Dans le cas ou une image est mise en header, alors je l'utilise dans la balise og:image
-  if (image) {
-    finalMetatags = finalMetatags.map((item) => {
-      return {
-        ...item,
-        attributes: {
-          ...item.attributes,
-          content: item.attributes
-            ? item.attributes.property === 'og:image'
-              ? image
-              : item.attributes.content
-            : item.attributes
-        }
+
+  finalMetatags = finalMetatags.map((item) => {
+    return {
+      ...item,
+      attributes: {
+        ...item.attributes,
+        content: item.attributes
+          ? item.attributes.property === 'og:image'
+            ? image
+            : item.attributes.content
+          : item.attributes
       }
-    })
-  }
+    }
+  })
 
   //On ajoute la balise link de l'url canonique.
   finalMetatags = [
@@ -89,6 +88,14 @@ const DefineMetatagsSEO = ({
       },
       content: null,
       tag: 'link'
+    },
+    {
+      attributes: {
+        property: 'og:url',
+        content: siteUrlWithLocale(router.locale) + replaceParams(router, categorie, router.query.slug)
+      },
+      content: null,
+      tag: 'meta'
     }
   ]
 

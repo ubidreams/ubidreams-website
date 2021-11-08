@@ -24,7 +24,7 @@ export default function Helmet({ children, metatags = {}, router, className = ''
         {!error && <meta property='og:url' content={URL_UBIDREAMS + pathname} />}
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
-        <meta property='og:image' content={Img[img_key].src}></meta>
+        <meta property='og:image' content={Img[img_key].src} />
 
         {!error && (
           <>
@@ -46,7 +46,7 @@ export default function Helmet({ children, metatags = {}, router, className = ''
         <meta property='twitter:site' content='@ubidreams' />
         <meta property='twitter:title' content={title} />
         <meta property='twitter:description' content={description} />
-        <meta property='twitter:image' content={Img[img_key].src}></meta>
+        <meta property='twitter:image' content={Img[img_key].src} />
 
         <meta property='article:publisher' content='https://www.facebook.com/ubidreams/' />
       </Head>
