@@ -2,13 +2,24 @@ import { getAllPageSlugs, getOnePageBySlug, getLastRefByTech } from '../../../li
 import { useRouter } from 'next/router'
 
 import PageTemplate from '../../../components/template/page-template'
+import DefineMetatagsSEO from '../../../helpers/defineMetatagsSEO'
 
 const Page = ({ page, lastRef }) => {
   const router = useRouter()
 
   if (router.isFallback) return null
 
-  return <PageTemplate page={page} lastRef={lastRef} router={router} />
+  return (
+    <>
+      <DefineMetatagsSEO
+        seo={page}
+        router={router}
+        categorie={page.categorie}
+        image={page.image && page.image.responsiveImage.src}
+      />
+      <PageTemplate page={page} lastRef={lastRef} router={router} />
+    </>
+  )
 }
 export default Page
 

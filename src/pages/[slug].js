@@ -1,15 +1,21 @@
 import { useRouter } from 'next/router'
 import { getAllLegalPages, getLegalPageBySlug } from '../lib/api'
 
+import DefineMetatagsSEO from '../helpers/defineMetatagsSEO'
+
 import LegalTemplate from '../components/template/legal-template'
 
 /* PAGE [SLUG] pour les pages obligatoires type : mentions légales etc. */
 const Page = ({ page }) => {
   const router = useRouter()
-
   if (router.isFallback) return null
 
-  return <LegalTemplate page={page} locale={router.locale} router={router} />
+  return (
+    <>
+      <DefineMetatagsSEO seo={page} router={router} />
+      <LegalTemplate page={page} locale={router.locale} router={router} />
+    </>
+  )
 }
 export default Page
 

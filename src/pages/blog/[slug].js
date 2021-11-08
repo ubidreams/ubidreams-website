@@ -1,23 +1,16 @@
 import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
-import defineMetatagsSEO from '../../helpers/defineMetatagsSEO'
+import DefineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 
 import PostTemplate from '../../components/template/post-template'
 
 const Post = ({ post = {}, lastPosts }) => {
   const router = useRouter()
   if (router.isFallback) return null
-  const { _seoMetaTags = [], _allSlugLocales = [], heroCover = { responsiveImage: {} } } = post
 
-  const finalMetatagsSEO = defineMetatagsSEO(_seoMetaTags, router, _allSlugLocales, '', heroCover.responsiveImage.src)
   return (
     <>
-      <Head>
-        {finalMetatagsSEO.map(({ tag: Tag, attributes }, index) => {
-          return <Tag key={index} {...attributes} />
-        })}
-      </Head>
+      <DefineMetatagsSEO seo={post} router={router} image={post.heroCover.responsiveImage.src} />
       <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} router={router} />
     </>
   )

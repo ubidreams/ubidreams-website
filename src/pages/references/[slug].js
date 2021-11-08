@@ -1,14 +1,20 @@
 import { getAllReferencesSlugs, getOneReferencesBySlug, getLastReferences } from '../../lib/api'
 import { useRouter } from 'next/router'
 
+import DefineMetatagsSEO from '../../helpers/defineMetatagsSEO'
+
 import ReferenceTemplate from '../../components/template/reference-template'
 
 const Project = ({ project, lastProject }) => {
   const router = useRouter()
-
   if (router.isFallback) return null
 
-  return <ReferenceTemplate project={project} locale={router.locale} lastProject={lastProject} router={router} />
+  return (
+    <>
+      <DefineMetatagsSEO seo={project} router={router} image={project.coverImage.responsiveImage.src} />
+      <ReferenceTemplate project={project} locale={router.locale} lastProject={lastProject} router={router} />
+    </>
+  )
 }
 export default Project
 
