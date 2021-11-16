@@ -1,6 +1,5 @@
-import Head from 'next/head'
 import useTranslation from 'next-translate/useTranslation'
-
+import Head from 'next/head'
 import { Img } from '../../config/StaticImagesExport'
 
 const URL_UBIDREAMS = process.env.NEXT_PUBLIC_URL_GLOBAL
@@ -18,7 +17,7 @@ export default function Helmet({ children, metatags = {}, router, className = ''
     <>
       <Head>
         <title>{`${title} | Ubidreams`}</title>
-        <meta property='description' content={description} />
+        <meta name='description' content={description} />
         <meta property='og:type' content='website' />
         <meta property='og:site_name' content='Ubidreams' />
         {!error && <meta property='og:url' content={URL_UBIDREAMS + pathname} />}

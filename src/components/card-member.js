@@ -31,7 +31,6 @@ const CardMember = ({ config = [] }) => {
                 <path d='M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z' fill='currentColor' />
               </svg>
             </div>
-
             <h6 className='text-uppercase mb-1 text-muted'>{item.subtitle}</h6>
 
             <h4 className='mb-0'>{item.title}</h4>

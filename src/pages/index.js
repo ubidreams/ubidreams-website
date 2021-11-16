@@ -1,19 +1,17 @@
-import { getAllTestimonialsForHome, getLastReferences, getPagesFavorites } from '../lib/api'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
-
-import { Recherche, IdeesRightCropped } from '../config/StaticImagesExport'
-
+import Card from '../components/card'
+import CardReference from '../components/card-reference'
+import ContactSection from '../components/contact-section'
 import FeatureContainer from '../components/feature-container'
+import Helmet from '../components/layout/helmet-seo'
 import PageTitle from '../components/page-title'
 import Section from '../components/section'
-import TextContainer from '../components/text-container'
-import ContactSection from '../components/contact-section'
 import SliderComponent from '../components/slider'
-import CardReference from '../components/card-reference'
 import SliderItem from '../components/slider-item'
-import Card from '../components/card'
-import Helmet from '../components/layout/helmet-seo'
+import TextContainer from '../components/text-container'
+import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
+import { getAllTestimonialsForHome, getLastReferences, getPagesFavorites } from '../lib/api'
 
 export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
   const { t } = useTranslation('home')
@@ -62,7 +60,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
       <Section bgClass='bg-gray-200'>
         <TextContainer namespace={{ name: 'home', section: 'testimony' }} alignText='center' />
         <SliderComponent className='shadow-light-lg' option={{ slidesToShow: 1, adaptiveHeight: true, fade: true }}>
-          {allTestimonials.temoignages.map((item, index) => (
+          {allTestimonials.temoignages?.map((item, index) => (
             <SliderItem key={index} data={item} />
           ))}
         </SliderComponent>

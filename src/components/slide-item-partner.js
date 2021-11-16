@@ -17,7 +17,7 @@ const SlidItemPartner = ({ config }) => {
       </div>
       <div className='card-body'>
         {url ? (
-          <a href={url} target='_blank' rel='noreferrer'>
+          <a href={url} target='_blank' rel='noopener noreferrer'>
             <h5 className='text-uppercase mb-1 text-dark-grey'>{nom}</h5>
           </a>
         ) : (

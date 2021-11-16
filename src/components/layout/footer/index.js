@@ -1,6 +1,7 @@
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from 'next/script'
 import { useContext, useEffect, useState } from 'react'
 import { Img, Ubidreams } from '../../../config/StaticImagesExport.js'
 import { CookiesContext } from '../../../helpers/cookiesContext'
@@ -53,7 +54,12 @@ const Footer = () => {
                   return (
                     <li key={index} className='list-inline-item list-social-item me-4 position-relative'>
                       {cookies[socialMedia.cookieDesignation] ? (
-                        <a href={socialMedia.path} className='text-decoration-none' target='_blank' rel='noreferrer'>
+                        <a
+                          href={socialMedia.path}
+                          className='text-decoration-none'
+                          target='_blank'
+                          rel='noopener noreferrer'
+                        >
                           <Image src={Img[socialMedia.img.key]} alt={socialMedia.img.alt} width={25} height={25} />
                         </a>
                       ) : (
@@ -76,13 +82,13 @@ const Footer = () => {
 
               {/* <!-- List --> */}
               <div className='text-muted mb-6 mb-md-8 mb-lg-0' style={{ whiteSpace: 'pre-line' }}>
-                {coordonnees.telephone}
+                {coordonnees?.telephone}
                 <br />
-                {coordonnees.email}
+                {coordonnees?.email}
                 <br />
-                <div>{coordonnees.adresse + ','}</div>
-                <div>{coordonnees.ville + ','}</div>
-                <div>{coordonnees.pays}</div>
+                <div>{coordonnees?.adresse + ','}</div>
+                <div>{coordonnees?.ville + ','}</div>
+                <div>{coordonnees?.pays}</div>
               </div>
             </div>
             {/* link mentions */}
@@ -100,7 +106,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <script async type='text/javascript' src='../../js/axeptio.js' />
+        <Script src='../../js/axeptio.js' strategy='beforeInteractive' />
       </footer>
     </div>
   )

@@ -1,18 +1,14 @@
-import { renderRule, StructuredText, Image } from 'react-datocms'
-import { isSpan, isHeading, isBlockquote, isListItem } from 'datocms-structured-text-utils'
-import ReactHtmlParser from 'react-html-parser'
-import { Parallax } from 'react-parallax'
-
+import { isBlockquote, isHeading, isListItem, isSpan } from 'datocms-structured-text-utils'
 import { includes, isEmpty } from 'lodash'
-
-import { DoneCircle } from '../../config/StaticImagesExport'
-
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
-
-import Section from '../section'
-import { LinkBeautify } from '../link-beautify'
+import { Image, renderRule, StructuredText } from 'react-datocms'
+import ReactHtmlParser from 'react-html-parser'
+import { Parallax } from 'react-parallax'
+import { DoneCircle } from '../../config/StaticImagesExport'
 import CardReference from '../card-reference'
+import { LinkBeautify } from '../link-beautify'
+import Section from '../section'
 
 const renderPage = (type, project) => {
   switch (type) {

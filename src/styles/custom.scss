@@ -4,7 +4,8 @@ $dark-grey: #6b7c93;
 $black-grey: #384c74;
 $grey: #e6ecf8;
 $grey-blue: #9fc5d7;
-$blue: #2d90ca;
+$blue: #277cae;
+$soft-blue: #1b577a;
 $green: #59bdb1;
 $dark-green: #3a9185;
 $orange: #deb68c;
@@ -20,7 +21,7 @@ $theme-colors: (
   'dark-grey': $dark-grey,
   'grey': $grey,
   'grey-blue': $grey-blue,
-  'blue': $blue,
+  'blue': #277cae,
   'green': $green,
   'dark-green': $dark-green,
   'orange': $orange
@@ -166,6 +167,7 @@ p {
 .slick-prev-custom,
 .slick-next-custom {
   font-size: 0;
+	font-display: swap;
   line-height: 0;
   position: absolute;
   top: 50%;
@@ -343,7 +345,9 @@ p {
 .nav button:focus {
   outline: none;
 }
-
+.soft-blue {
+	color: $soft-blue;
+}
 //Pagination
 .rc-pagination-prev,
 .rc-pagination-next {

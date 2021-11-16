@@ -1,19 +1,17 @@
-import { renderRule, StructuredText, Image } from 'react-datocms'
-import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
-import ReactHtmlParser from 'react-html-parser'
+import { isBlockquote, isHeading, isSpan } from 'datocms-structured-text-utils'
 import { includes, isEmpty } from 'lodash'
 import ImageNext from 'next/image'
-
+import { Image, renderRule, StructuredText } from 'react-datocms'
+import ReactHtmlParser from 'react-html-parser'
 import { Download } from '../../config/StaticImagesExport'
-
 import Breadcrumb from '../breadcrumb'
-import Section from '../section'
-import { LinkBeautify } from '../link-beautify'
-import CardReference from '../card-reference'
-import TextContainer from '../text-container'
-import ContactSection from '../contact-section'
-import CardExpert from '../card-expert'
 import Card from '../card'
+import CardExpert from '../card-expert'
+import CardReference from '../card-reference'
+import ContactSection from '../contact-section'
+import { LinkBeautify } from '../link-beautify'
+import Section from '../section'
+import TextContainer from '../text-container'
 
 const renderPage = (type, page) => {
   switch (type) {
@@ -100,7 +98,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
                       return (
                         <a
                           target='_blank'
-                          rel='noreferrer'
+                          rel='noopener noreferrer'
                           href={url}
                           className='d-block d-md-inline-block text-center border border-gray-300 p-2 rounded me-md-2 mb-2'
                         >
