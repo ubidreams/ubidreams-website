@@ -127,7 +127,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
                 renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
-                      <node.type key={key} className='text-green'>
+                      <node.type key={key} className='text-black'>
                         {node.value}
                       </node.type>
                     )
@@ -155,7 +155,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
                   return (
                     <div key={key} className='border-top border-bottom border-green my-7 py-7'>
                       <node.type className='blockquote'>
-                        <div className='h2 mb-0 text-center text-green'>{children}</div>
+                        <div className='h2 mb-0 text-center text-black'>{children}</div>
                       </node.type>
                     </div>
                   )

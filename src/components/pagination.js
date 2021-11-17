@@ -4,7 +4,7 @@ export const PaginationComponent = ({ data = [], current = 1, onChange }) => {
   const itemRender = (current, type, element) => {
     if (type === 'page') {
       return (
-        <a className='text-green' href={`#${current}`}>
+        <a className='text-black' href={`#${current}`}>
           {current}
         </a>
       )

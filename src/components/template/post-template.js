@@ -1,24 +1,19 @@
+import { isBlockquote, isHeading, isSpan } from 'datocms-structured-text-utils'
+import { includes, isEmpty } from 'lodash'
+import useTranslation from 'next-translate/useTranslation'
+import ImageNext from 'next/image'
 import { useContext } from 'react'
-import { renderRule, StructuredText, Image } from 'react-datocms'
-import { isSpan, isHeading, isBlockquote } from 'datocms-structured-text-utils'
+import { Image, renderRule, StructuredText } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { Parallax } from 'react-parallax'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share'
-
-import { includes, isEmpty } from 'lodash'
-
-import useTranslation from 'next-translate/useTranslation'
-import ImageNext from 'next/image'
-
-import { CookiesContext } from '../../helpers/cookiesContext'
-
-import Section from '../section'
-import { LinkBeautify } from '../link-beautify'
-import ContactSection from '../contact-section'
-import CardArticle from '../card-article'
-import Video from '../video'
-
 import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
+import { CookiesContext } from '../../helpers/cookiesContext'
+import CardArticle from '../card-article'
+import ContactSection from '../contact-section'
+import { LinkBeautify } from '../link-beautify'
+import Section from '../section'
+import Video from '../video'
 
 const URL = process.env.NEXT_PUBLIC_URL_GLOBAL
 const iconsSocialMedia = [
@@ -200,7 +195,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                 renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
-                      <node.type key={key} className='text-green'>
+                      <node.type key={key} className='text-black'>
                         {node.value}
                       </node.type>
                     )
@@ -228,7 +223,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                   return (
                     <div key={key} className='border-top border-bottom border-green my-7 py-7'>
                       <node.type className='blockquote'>
-                        <div className='h2 mb-0 text-center text-green'>{children}</div>
+                        <div className='h2 mb-0 text-center text-black'>{children}</div>
                       </node.type>
                     </div>
                   )

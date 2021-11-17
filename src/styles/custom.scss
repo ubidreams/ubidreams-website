@@ -2,6 +2,7 @@
 $light-grey: #f1f4f8;
 $dark-grey: #6b7c93;
 $black-grey: #384c74;
+$black: #465877;
 $grey: #e6ecf8;
 $grey-blue: #495b63;
 $blue: #277cae;
@@ -19,6 +20,7 @@ $v1: 1;
 $theme-colors: (
   'light-grey': $light-grey,
   'dark-grey': $dark-grey,
+	'black': $black,
   'grey': $grey,
   'grey-blue': $grey-blue,
   'blue': $blue,
@@ -45,7 +47,7 @@ $opacity: (
 
   //`.text-*`
   .text-#{$color} {
-		font-weight: 600;
+		font-weight: bold;
     color: $value;
   }
 
@@ -157,7 +159,7 @@ p {
 }
 
 .text-muted {
-  color: #465877 !important;
+  color: $black !important;
 }
 
 .custom-card-link:hover {

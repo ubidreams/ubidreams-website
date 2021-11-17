@@ -132,7 +132,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
                 renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
-                      <node.type key={key} className='text-green'>
+                      <node.type key={key} className='text-black'>
                         {node.value}
                       </node.type>
                     )
@@ -160,7 +160,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
                   return (
                     <div key={key} className='border-top border-bottom border-green my-5 py-4'>
                       <node.type className='blockquote'>
-                        <div className='h3 mb-0 text-center text-green'>{children}</div>
+                        <div className='h3 mb-0 text-center text-black'>{children}</div>
                       </node.type>
                     </div>
                   )

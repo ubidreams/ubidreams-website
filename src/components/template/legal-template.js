@@ -1,16 +1,11 @@
-import useTranslation from 'next-translate/useTranslation'
-
-import ImageNext from 'next/image'
-
-import { renderRule, Image, StructuredText } from 'react-datocms'
-import { isSpan, isHeading, isListItem } from 'datocms-structured-text-utils'
-
+import { isHeading, isListItem, isSpan } from 'datocms-structured-text-utils'
 import { includes } from 'lodash'
-
+import useTranslation from 'next-translate/useTranslation'
+import ImageNext from 'next/image'
+import { Image, renderRule, StructuredText } from 'react-datocms'
+import { DoneCircle } from '../../config/StaticImagesExport'
 import Section from '../section'
 import Title from '../title'
-
-import { DoneCircle } from '../../config/StaticImagesExport'
 
 const LegalTemplate = ({ page, router }) => {
   const { t } = useTranslation('common')
@@ -74,7 +69,7 @@ const LegalTemplate = ({ page, router }) => {
                   renderRule(isSpan, ({ node, key }) => {
                     if (node.marks && includes(node.marks, 'highlight')) {
                       return (
-                        <node.type key={key} className='text-green'>
+                        <node.type key={key} className='text-black'>
                           {node.value}
                         </node.type>
                       )

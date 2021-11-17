@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
+import Link from 'next/link'
 
 /**
  * Zone de texte pour les technos, solutions, méthodes, option : titre, sous titre, description
@@ -26,7 +26,7 @@ const TextTechno = ({ config }) => {
           {splitColor(content, '%color%').map((word, index) => {
             if ((index + 1) % 2 == 0) {
               return (
-                <span key={index} className='text-green'>
+                <span key={index} className='text-black'>
                   {word}
                 </span>
               )

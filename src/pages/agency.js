@@ -116,7 +116,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
                 {splitColor(t('localisation.subtitle'), '%color%').map((word, index) => {
                   if ((index + 1) % 2 == 0) {
                     return (
-                      <span key={index} className='text-green'>
+                      <span key={index} className='text-black'>
                         {word}
                       </span>
                     )
