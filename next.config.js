@@ -29,10 +29,6 @@ const securityHeaders = [
 	{
 		key: 'Referrer-Policy',
 		value: 'origin-when-cross-origin'
-	},
-	{
-		key: 'Content-Security-Policy',
-		value: "default-src 'unsafe-inline': script-src-elem: 'self'"
 	}
 ]
 module.exports = {
