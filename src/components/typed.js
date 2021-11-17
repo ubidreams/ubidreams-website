@@ -26,6 +26,6 @@ const TypedReactHook = ({ word }) => {
     }
   }, [word])
 
-  return <span className='text-blue fw-bold' style={{ whiteSpace: 'pre' }} ref={el} />
+  return <span className='text-blue' style={{ whiteSpace: 'pre' }} ref={el} />
 }
 export default TypedReactHook

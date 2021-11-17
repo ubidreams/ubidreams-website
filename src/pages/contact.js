@@ -116,7 +116,7 @@ export const Contact = ({ coordonnees, cnilMention }) => {
       <Section bgClass='border-gray-300 border-bottom' id='info'>
         <div className='text-center'>
           <a href='#contact-form' className='btn btn-white btn-rounded-circle shadow mt-n11 mt-md-n14'>
-            <i className='fe fe-arrow-down'></i>
+            <i className='fe fe-arrow-down' />
           </a>
         </div>
         <div className='row row-cols-1 row-cols-md-3'>

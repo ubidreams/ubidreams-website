@@ -3,10 +3,10 @@ $light-grey: #f1f4f8;
 $dark-grey: #6b7c93;
 $black-grey: #384c74;
 $grey: #e6ecf8;
-$grey-blue: #9fc5d7;
+$grey-blue: #495b63;
 $blue: #277cae;
 $soft-blue: #1b577a;
-$green: #59bdb1;
+$green: #2e615b;
 $dark-green: #3a9185;
 $orange: #deb68c;
 
@@ -21,7 +21,7 @@ $theme-colors: (
   'dark-grey': $dark-grey,
   'grey': $grey,
   'grey-blue': $grey-blue,
-  'blue': #277cae,
+  'blue': $blue,
   'green': $green,
   'dark-green': $dark-green,
   'orange': $orange
@@ -45,6 +45,7 @@ $opacity: (
 
   //`.text-*`
   .text-#{$color} {
+		font-weight: 600;
     color: $value;
   }
 
@@ -467,6 +468,7 @@ p {
 }
 .breadcrumb-item.active a,
 .breadcrumb-item.active span {
+	font-weight: 600;
   color: $grey-blue;
 }
 
