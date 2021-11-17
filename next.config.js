@@ -32,7 +32,7 @@ const securityHeaders = [
 	},
 	{
 		key: 'Content-Security-Policy',
-		value: "default-src 'unsafe-inline'"
+		value: "default-src 'unsafe-inline': script-src-elem: 'self'"
 	}
 ]
 module.exports = {
