@@ -32,7 +32,7 @@ const securityHeaders = [
 	},
 	{
 		key: 'Content-Security-Policy',
-		value: "default-src 'self'; img-src https://*: script-src: https://graphql.datocms.com/"
+		value: "default-src 'unsafe-inline'"
 	}
 ]
 module.exports = {
