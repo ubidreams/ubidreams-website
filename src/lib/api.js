@@ -433,6 +433,11 @@ export async function getBlog(preview, locale) {
               ...responsiveImageFragment
             }
           }
+          thumbnail {
+            responsiveImage {
+              ...responsiveImageFragment
+            }
+          }
           tags {
             name
             slug

@@ -13,9 +13,7 @@ export const CardArticle = ({ config = {}, locale }) => {
           <div className='card-img-top'>
             <Image
               alt=''
-              data={{
-                ...post.heroCover.responsiveImage
-              }}
+              data={post.thumbnail ? { ...post.thumbnail.responsiveImage } : { ...post.heroCover.responsiveImage }}
               className='card-img-top bg-grey-blue'
               style={{ height: '200px' }}
             />

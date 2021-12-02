@@ -37,7 +37,9 @@ export const LinkBeautify = ({ record, meta = null, children }) => {
       }}
       as={newAs}
     >
-      <a {...meta}>{children}</a>
+      <a {...meta} rel='noopener noreferrer'>
+        {children}
+      </a>
     </Link>
   )
 }

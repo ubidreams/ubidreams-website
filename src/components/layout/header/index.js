@@ -54,16 +54,15 @@ const Header = () => {
           </Link>
 
           {/* button toggler */}
-          <button
-            className='navbar-toggler'
+
+          <span
+            className='navbar-toggler navbar-toggler-icon'
             type='button'
             data-bs-toggle='collapse'
             data-bs-target='#navbarCollapse'
             aria-controls='navbarCollapse'
             aria-expanded='false'
-          >
-            <span className='navbar-toggler-icon' />
-          </button>
+          />
 
           {/* Menu principal */}
           <div className={`collapse navbar-collapse ${routeChange ? 'toggle-off' : 'toggle-on'}`} id='navbarCollapse'>
