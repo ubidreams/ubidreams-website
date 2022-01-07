@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
-import { getAllLegalPages, getLegalPageBySlug } from '../lib/api'
+import { getAllLegalPages, getLegalPageBySlug } from '../lib/request/legal.js'
 
 import DefineMetatagsSEO from '../helpers/defineMetatagsSEO'
 import { LangContext } from '../helpers/langContext'

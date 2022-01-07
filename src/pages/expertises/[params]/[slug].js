@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
-import { getAllPageSlugs, getOnePageBySlug, getLastRefByTech } from '../../../lib/api'
+import { getAllPageSlugs, getOnePageBySlug } from '../../../lib/request/expertise.js'
+import { getLastRefByTech } from '../../../lib/request/reference.js'
 
 import PageTemplate from '../../../components/template/page-template'
 

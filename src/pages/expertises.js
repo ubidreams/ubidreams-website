@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
-import { getSolutions } from '../lib/api'
+import { getSolutions } from '../lib/request/expertise.js'
 import { useRouter } from 'next/router'
 
 import StepContainer from '../components/step-container'

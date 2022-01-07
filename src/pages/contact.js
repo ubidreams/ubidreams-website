@@ -5,7 +5,7 @@ import React, { useContext, useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import ReactHtmlParser from 'react-html-parser'
 //https://github.com/dozoisch/react-google-recaptcha/issues/218
-//issue cookie : SameSite, n'empêche pas le focntionnement du captcha
+//issue cookie : SameSite, n'empêche pas le fonctionnement du captcha
 import Swal from 'sweetalert2'
 import ContactMeta from '../components/contact-meta'
 import Helmet from '../components/layout/helmet-seo'
@@ -13,7 +13,7 @@ import Section from '../components/section'
 import Title from '../components/title'
 import { ContactHeader } from '../config/StaticImagesExport'
 import { CookiesContext } from '../helpers/cookiesContext'
-import { getCnilMentionForm, getCoordonnees } from '../lib/api'
+import { getCnilMentionForm, getCoordonnees } from '../lib/request/contact.js'
 
 const CAPTCHA_API = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { getAllReferencesSlugs, getOneReferencesBySlug, getLastReferences } from '../../lib/api'
+import { getAllReferencesSlugs, getOneReferencesBySlug, getLastReferences } from '../../lib/request/reference.js'
 import { useRouter } from 'next/router'
 
 // Helpers & Context

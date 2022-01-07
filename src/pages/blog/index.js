@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect } from 'react'
-import { getBlog } from '../../lib/api'
+import { getBlog } from '../../lib/request/blog.js'
 import useTranslation from 'next-translate/useTranslation'
 import { forEach, filter, includes, uniqWith, isEqual } from 'lodash'
 import { useRouter } from 'next/router'

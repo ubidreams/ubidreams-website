@@ -10,7 +10,7 @@ import SlidItemPartner from '../components/slide-item-partner'
 import SliderComponent from '../components/slider'
 import Title from '../components/title'
 import { AccueilCropped, ConseilCropped, UbidreamsFront } from '../config/StaticImagesExport'
-import { getGalleryImg, getMembership, getTeamMembers } from '../lib/api'
+import { getGalleryImg, getMembership, getTeamMembers } from '../lib/request/agence.js'
 
 export const Agency = ({ allMembers, galleryImg, allMembership }) => {
   const router = useRouter()

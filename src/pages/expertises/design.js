@@ -1,4 +1,4 @@
-import { getExpertisesByField } from '../../lib/api'
+import { getExpertisesByField } from '../../lib/request/expertise.js'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 

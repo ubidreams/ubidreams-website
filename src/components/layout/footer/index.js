@@ -5,7 +5,8 @@ import Script from 'next/script'
 import { useContext, useEffect, useState } from 'react'
 import { Img, Ubidreams } from '../../../config/StaticImagesExport.js'
 import { CookiesContext } from '../../../helpers/cookiesContext'
-import { getAllLegalPages, getCoordonnees } from '../../../lib/api.js'
+import { getAllLegalPages } from '../../../lib/request/legal.js'
+import { getCoordonnees } from '../../../lib/request/contact.js'
 
 const Footer = () => {
   const cookies = useContext(CookiesContext)

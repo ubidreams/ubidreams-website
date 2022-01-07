@@ -11,7 +11,8 @@ import SliderComponent from '../components/slider'
 import SliderItem from '../components/slider-item'
 import TextContainer from '../components/text-container'
 import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
-import { getAllTestimonialsForHome, getLastReferences, getPagesFavorites } from '../lib/api'
+import { getAllTestimonialsForHome, getPagesFavorites } from '../lib/request/home.js'
+import { getLastReferences } from '../lib/request/reference.js'
 
 export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
   const { t } = useTranslation('home')

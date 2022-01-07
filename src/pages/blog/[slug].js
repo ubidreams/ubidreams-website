@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/api'
+import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/request/blog.js'
 import { useRouter } from 'next/router'
 import DefineMetatagsSEO from '../../helpers/defineMetatagsSEO'
 import { LangContext } from '../../helpers/langContext'
