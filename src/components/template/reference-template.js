@@ -5,7 +5,10 @@ import ImageNext from 'next/image'
 import { Image, renderRule, StructuredText } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { Parallax } from 'react-parallax'
+
 import { DoneCircle } from '../../config/StaticImagesExport'
+
+//Component
 import CardReference from '../card-reference'
 import { LinkBeautify } from '../link-beautify'
 import Section from '../section'
@@ -200,7 +203,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
             </div>
           </div>
           <div className='row row-cols-md-3 mt-6'>
-            <CardReference config={lastProject} />
+            <CardReference config={lastProject} locale={locale} />
           </div>
         </Section>
       </main>

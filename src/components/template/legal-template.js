@@ -7,10 +7,10 @@ import { DoneCircle } from '../../config/StaticImagesExport'
 import Section from '../section'
 import Title from '../title'
 
-const LegalTemplate = ({ page, router }) => {
+const LegalTemplate = ({ page, locale }) => {
   const { t } = useTranslation('common')
 
-  const dateFormatted = new Intl.DateTimeFormat(router.locale, {
+  const dateFormatted = new Intl.DateTimeFormat(locale, {
     month: 'numeric',
     day: 'numeric',
     year: 'numeric'

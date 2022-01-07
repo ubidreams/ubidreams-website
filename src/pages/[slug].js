@@ -1,19 +1,25 @@
+import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import { getAllLegalPages, getLegalPageBySlug } from '../lib/api'
 
 import DefineMetatagsSEO from '../helpers/defineMetatagsSEO'
+import { LangContext } from '../helpers/langContext'
 
 import LegalTemplate from '../components/template/legal-template'
 
 /* PAGE [SLUG] pour les pages obligatoires type : mentions légales etc. */
 const Page = ({ page }) => {
+  const { handleSpecialPath, activeLang } = useContext(LangContext)
   const router = useRouter()
+
   if (router.isFallback) return null
+
+  handleSpecialPath(page._allSlugLocales)
 
   return (
     <>
       <DefineMetatagsSEO seo={page} router={router} />
-      <LegalTemplate page={page} locale={router.locale} router={router} />
+      <LegalTemplate page={page} locale={activeLang} />
     </>
   )
 }

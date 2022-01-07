@@ -8,14 +8,17 @@ import i18nConfig from '../../i18n'
 import Layout from '../components/layout/layout'
 
 import { CookiesProvider } from '../helpers/cookiesContext'
+import { LangProvider } from '../helpers/langContext'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <CookiesProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </CookiesProvider>
+    <LangProvider>
+      <CookiesProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </CookiesProvider>
+    </LangProvider>
   )
 }
 

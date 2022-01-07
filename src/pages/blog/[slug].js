@@ -1,17 +1,23 @@
+import { useContext } from 'react'
 import { getAllPostsSlugs, getOnePostBySlug, getLastPosts } from '../../lib/api'
 import { useRouter } from 'next/router'
 import DefineMetatagsSEO from '../../helpers/defineMetatagsSEO'
+import { LangContext } from '../../helpers/langContext'
 
 import PostTemplate from '../../components/template/post-template'
 
 const Post = ({ post = {}, lastPosts }) => {
+  const { handleSpecialPath, activeLang } = useContext(LangContext)
   const router = useRouter()
+
   if (router.isFallback) return null
+
+  handleSpecialPath(post._allSlugLocales)
 
   return (
     <>
       <DefineMetatagsSEO seo={post} router={router} image={post.heroCover.responsiveImage.src} />
-      <PostTemplate post={post} locale={router.locale} lastPosts={lastPosts} router={router} />
+      <PostTemplate post={post} locale={activeLang} lastPosts={lastPosts} router={router} />
     </>
   )
 }

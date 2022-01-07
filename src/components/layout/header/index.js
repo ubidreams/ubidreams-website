@@ -7,7 +7,8 @@ import routes from './routes'
 
 import { Ubidreams } from '../../../config/StaticImagesExport.js'
 import { useRouter } from 'next/dist/client/router'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { LangContext } from '../../../helpers/langContext'
 
 const MenuLink = ({ type, href, name }) => {
   return (
@@ -23,7 +24,7 @@ const Header = () => {
   const { t } = useTranslation('common')
   const [routeChange, setRouteChange] = useState(false)
   const router = useRouter()
-
+  const { langComponent } = useContext(LangContext)
   useEffect(() => {
     const handleRouteChange = () => {
       setRouteChange(true)
@@ -119,6 +120,8 @@ const Header = () => {
                 )
               })}
             </ul>
+            {/* Button language */}
+            {langComponent}
           </div>
         </div>
       </nav>

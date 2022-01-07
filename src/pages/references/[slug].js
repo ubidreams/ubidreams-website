@@ -1,18 +1,25 @@
+import { useContext } from 'react'
 import { getAllReferencesSlugs, getOneReferencesBySlug, getLastReferences } from '../../lib/api'
 import { useRouter } from 'next/router'
 
+// Helpers & Context
 import DefineMetatagsSEO from '../../helpers/defineMetatagsSEO'
+import { LangContext } from '../../helpers/langContext'
 
 import ReferenceTemplate from '../../components/template/reference-template'
 
 const Project = ({ project, lastProject }) => {
+  const { handleSpecialPath, activeLang } = useContext(LangContext)
   const router = useRouter()
+
   if (router.isFallback) return null
+
+  handleSpecialPath(project._allSlugLocales)
 
   return (
     <>
       <DefineMetatagsSEO seo={project} router={router} image={project.coverImage.responsiveImage.src} />
-      <ReferenceTemplate project={project} locale={router.locale} lastProject={lastProject} router={router} />
+      <ReferenceTemplate project={project} locale={activeLang} lastProject={lastProject} router={router} />
     </>
   )
 }

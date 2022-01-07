@@ -1,13 +1,20 @@
+import { useContext } from 'react'
 import { getAllPageSlugs, getOnePageBySlug, getLastRefByTech } from '../../../lib/api'
 import { useRouter } from 'next/router'
 
 import PageTemplate from '../../../components/template/page-template'
+
+//Helper & Context
 import DefineMetatagsSEO from '../../../helpers/defineMetatagsSEO'
+import { LangContext } from '../../../helpers/langContext'
 
 const Page = ({ page, lastRef }) => {
+  const { handleSpecialPath } = useContext(LangContext)
   const router = useRouter()
 
   if (router.isFallback) return null
+
+  handleSpecialPath(page._allSlugLocales)
 
   return (
     <>

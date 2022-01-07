@@ -47,7 +47,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
       <Section>
         <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
         <div className='row'>
-          <Card config={pagesFavorites} router={router} large={1} reverse showShadows />
+          <Card config={pagesFavorites} large={1} reverse showShadows />
         </div>
       </Section>
 

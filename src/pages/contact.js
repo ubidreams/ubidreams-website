@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { useRouter } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import React, { useContext, useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import ReactHtmlParser from 'react-html-parser'
