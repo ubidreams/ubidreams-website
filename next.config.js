@@ -66,6 +66,10 @@ module.exports = {
             value: 'true'
           },
           {
+            key: 'SameSite',
+            value: 'Secure'
+          },
+          {
             key: 'Access-Control-Allow-Origin',
             value: '*'
           },
