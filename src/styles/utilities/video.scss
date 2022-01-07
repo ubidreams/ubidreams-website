@@ -1,0 +1,22 @@
+/* VIDEO */
+.video iframe {
+    width: 100%;
+    min-height: 33em;
+  }
+  .display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33em;
+    background-color: $dark-grey;
+    text-align: center;
+  
+    & p {
+      color: white;
+      font-size: 25px;
+    }
+  }
+  .hide-video > iframe {
+    display: none;
+  }

@@ -1,0 +1,20 @@
+/* Social item article */
+.list-social-item .popover {
+    display: none;
+}
+
+.list-social-item:hover .popover, .list-social-item:focus .popover {
+display: block;
+position: absolute;
+top: 35px;
+left: -900%;
+padding: 1em;
+width: 18em;
+
+text-align: center;
+
+&.pop-footer{
+    top: -9em;
+    left: -1em;
+}
+}

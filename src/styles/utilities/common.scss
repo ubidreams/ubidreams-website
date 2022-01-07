@@ -1,0 +1,131 @@
+/* 
+*       SOMMAIRE
+*           - GLOBAL RULES
+*           - BUTTON LANGUAGE     
+*           - LINK
+*           - TITLE
+*           - TEXT
+*           - BACKGROUND BETWEEN
+*           - PAGE TITLE
+*
+ */
+
+
+/* GLOBAL RULES */
+html {
+    overflow-y: auto !important;
+  }
+  
+/* BUTTON LANGUAGE */
+#switch-language {
+  display : flex;
+
+  .btn-language {
+    padding: 0.5rem 0.5rem;
+    color: $blue;
+
+    &.active {
+      background-color: $grey;
+    }
+  }
+
+  .dropdown-menu {
+    min-width: auto;
+    text-align: right;
+    box-shadow: 0 1.5rem 4rem rgb(22 28 45 / 20%);
+
+    .dropdown-item {
+      font-size: 1.1rem;
+    }
+  }
+
+  #switch-mobile {
+    display: none;
+  }
+}
+  
+@media (max-width: 991.98px) {
+  
+  #switch-language {
+    padding: 1.5rem;
+    #switch-mobile {
+      display: block;
+    }
+    .dropdown {
+      display: none;
+    }
+  }
+}
+  
+/* LINK */
+a {
+  color: $blue;
+
+  &:hover {
+    color: $blue !important;
+    text-decoration: underline !important;
+  }
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: $blue !important;
+}
+  
+.custom-card-link:hover {
+  text-decoration: none !important;
+}
+
+/* TITLE */
+h1,
+h2 {
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+}
+
+/* TEXT */
+  
+p {
+  color: $black-grey;
+}
+
+.text-muted {
+  color: $black !important;
+}
+
+
+
+/* BACKGROUND BETWEEN */
+@media (max-width: 1500px) {
+  .bg-between {
+    background-image: none !important;
+  }
+
+  .adaptive-padding {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+.adaptive-padding {
+  padding-left: 7.25rem;
+  padding-right: 7.25rem;
+}
+
+/* PAGE_TITLE */
+.expertise-img > div {
+  max-width: 97% !important;
+}
+
+.hero {
+  min-height: 80vh;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+  }
+}

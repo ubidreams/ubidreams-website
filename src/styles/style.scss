@@ -1,0 +1,27 @@
+/* UTILITIES */
+@import './utilities/theme.scss';
+@import './custom_boostrap.scss';
+@import './utilities/common.scss';
+/* 
+*       SOMMAIRE COMMON *
+*           - GLOBAL RULES
+*           - BUTTON LANGUAGE     
+*           - LINK
+*           - TITLE
+*           - TEXT
+*           - BACKGROUND BETWEEN
+*           - PAGE TITLE
+*
+ */
+@import './utilities/slider.scss';
+@import './utilities/video.scss';
+
+
+/* STYLE ORDER BY PAGE OR CATEGORIE */
+@import './pages/agence.scss';
+@import './pages/reference.scss';
+@import './pages/blog.scss';
+@import './pages/contact.scss';
+@import './pages/expertises.scss';
+@import './pages/page.scss';
+

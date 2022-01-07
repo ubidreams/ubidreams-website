@@ -1,0 +1,61 @@
+/* PAGE AGENCE */
+.members .card-img-top {
+    height: 22em;
+  
+    & > picture img {
+      object-fit: cover;
+    }
+  }
+  
+  .card-blur {
+    box-sizing: border-box;
+    overflow: hidden !important;
+    border-radius: inherit;
+  }
+  
+  .citation {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.5);
+  
+    & code {
+      color: $black-grey;
+    }
+  }
+  
+  .card:hover .card-blur {
+    position: relative;
+  
+    & > .card-img-top {
+      transition: all 0.3s ease;
+      filter: blur(7px);
+    }
+  
+    & > .card-img-overlay {
+      transition: all 1s ease;
+      opacity: 1;
+    }
+  }
+  
+  /* MAP SECTION */
+  .mapContainer {
+    height: 400px;
+  }
+  
+  .ratio:before {
+    padding-top: 0;
+  }
+  
+  //Galerie image
+  .grid {
+    position: relative;
+    height: auto !important;
+  }
+  
+  .grid-item {
+    position: relative !important;
+  }
+  
+  .object-cover > img,
+  .object-cover picture img {
+    object-fit: cover;
+  }

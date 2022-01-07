@@ -1,0 +1,87 @@
+
+//PAGE REFERENCES
+/* Card Reference */
+.card-zoom div {
+    height: 100%;
+  }
+  
+  .card:hover > .card-zoom > div > [class*='card-img'] {
+    transform: scale(1.1);
+  }
+  .card-zoom > div > [class*='card-img'] {
+    transition: all 0.3s ease;
+    transform-origin: center center;
+  }
+  
+  .cards-reference .card-img-top {
+    max-height: 22em;
+  
+    & > picture img {
+      object-fit: cover;
+    }
+  }
+  
+  /* list référence */
+  .list-item-reference {
+    margin-bottom: 1em;
+  
+    & p {
+      margin-bottom: 0;
+    }
+  
+    & div {
+      width: 34px;
+      align-self: center;
+    }
+  }
+  //taille de l'image définie à 200px et img configurée sur contain
+  .img-regies {
+    height: 200px;
+  }
+  
+  .object-contain > img,
+  .object-contain picture img {
+    object-fit: contain;
+  }
+  /* PAGE BLOG */
+  .badge.active:hover {
+    color: #fff !important;
+  }
+  
+  .search-bar button:focus,
+  .nav button:focus {
+    outline: none;
+  }
+  .soft-blue {
+      color: $soft-blue;
+  }
+  //Pagination
+  .rc-pagination-prev,
+  .rc-pagination-next {
+    display: none;
+  }
+  
+  .rc-pagination-item {
+    min-height: 1em;
+    font-family: inherit;
+    font-size: 1.3em;
+    border: none;
+  
+    & a {
+      color: $green;
+    }
+  }
+  
+  .rc-pagination-item a:hover,
+  .rc-pagination-item a:focus,
+  .rc-pagination-item a:active {
+    text-decoration: none !important;
+    color: $dark-green !important;
+  }
+  
+  .rc-pagination-item-active {
+    background-color: mix(#000, $light-grey, 5%);
+    text-decoration: none;
+    color: $dark-green !important;
+    border-color: $green;
+  }

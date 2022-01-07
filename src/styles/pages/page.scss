@@ -1,0 +1,8 @@
+/* STYLE PAGE TEMPLATE */
+.img-page {
+    max-height: 22em;
+  
+    & > picture img {
+      object-fit: contain;
+    }
+  }

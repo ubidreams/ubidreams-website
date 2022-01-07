@@ -1,0 +1,22 @@
+/* PAGE CONTACT */
+.contact {
+    margin: 1.5em auto;
+  
+    h2 {
+      color: $light-grey !important;
+    }
+  }
+  .form-label.required:after {
+    content: '*';
+    margin-left: 5px;
+  }
+  
+  .contact-help {
+    margin : 0.5rem 0 0 0.5rem;
+    font-size: 0.9em;
+  }
+  
+  #captcha {
+    display: inline-block;
+    margin: 1em auto;
+  }

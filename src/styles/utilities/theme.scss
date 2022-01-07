@@ -1,0 +1,127 @@
+/* UBIDREAMS COLORS */
+$light-grey: #f1f4f8;
+$dark-grey: #4d596a;
+$black-grey: #384c74;
+$black: #465877;
+$grey: #e6ecf8;
+$grey-blue: #495b63;
+$blue: #277cae;
+$soft-blue: #1b577a;
+$green: #2e615b;
+$dark-green: #3a9185;
+$orange: #deb68c;
+
+/* OPACITY VALUES */
+$v25: 0.25;
+$v50: 0.5;
+$v75: 0.75;
+$v1: 1;
+
+$theme-colors: (
+  'light-grey': $light-grey,
+  'dark-grey': $dark-grey,
+	'black': $black,
+  'grey': $grey,
+  'grey-blue': $grey-blue,
+  'blue': $blue,
+  'green': $green,
+  'dark-green': $dark-green,
+  'orange': $orange
+);
+
+$axes: ('top', 'bottom', 'left', 'right');
+
+$opacity: (
+  '25': $v25,
+  '50': $v50,
+  '75': $v75,
+  '100': $v1
+);
+
+// Generate color utilities
+@each $color, $value in $theme-colors {
+  //`.bg-*`
+  .bg-#{$color} {
+    background-color: $value;
+  }
+
+  //`.text-*`
+  .text-#{$color} {
+		font-weight: bold;
+    color: $value;
+  }
+
+  /* BUTTON */
+  .btn-#{$color} {
+    color: #fff;
+    background-color: $value;
+    border-color: $value;
+  }
+
+  .btn-#{$color}:hover,
+  .btn-#{$color}:active,
+  .btn-#{$color}:focus,
+  .btn-#{$color}.active {
+    background: mix(#000, $value, 10%);
+    border-color: mix(#000, $value, 10%);
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+
+  /* SOFT BUTTON */
+  .soft-#{$color} {
+    color: $value;
+    background-color: $light-grey;
+    border-color: $value;
+  }
+
+  .soft-#{$color}:hover,
+  .soft-#{$color}:active,
+  .soft-#{$color}:focus,
+  .soft-#{$color}.active {
+    background-color: mix(#000, $light-grey, 5%);
+    color: $value !important;
+    text-decoration: none !important;
+  }
+
+  /* OUTLINE BUTTON */
+  .btn-outline-#{$color} {
+    border-color: #d9e2ef;
+    color: $value;
+  }
+
+  .btn-outline-#{$color}:hover,
+  .btn-outline-#{$color}:active,
+  .btn-outline-#{$color}:focus,
+  .btn-outline-#{$color}.active {
+    background-color: $value;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  /* SOFT BADGE */
+  .badge.bg-#{$color}-soft.active {
+    background-color: $value;
+    color: #fff;
+  }
+
+  .badge.bg-#{$color}-soft {
+    background-color: rgba(80, 102, 144, 0.1);
+    color: #506690;
+  }
+
+  /* BG-COLOR-OPACITY */
+  @each $var, $intensity in $opacity {
+    .bg-#{$color}-#{$var} {
+      background-color: $value;
+      opacity: $intensity;
+    }
+  }
+
+  /* BORDER */
+  @each $axe in $axes {
+    .border-#{$axe}.border-#{$color} {
+      border-color: $value !important;
+    }
+  }
+}

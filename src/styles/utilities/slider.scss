@@ -1,0 +1,35 @@
+//Custom next/prev button for slider
+.slick-prev-custom,
+.slick-next-custom {
+  font-size: 0;
+	font-display: swap;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  z-index: 10;
+}
+
+.slick-prev-custom {
+  left: -25px;
+}
+
+.slick-next-custom {
+  right: -25px;
+}
+
+/* Slider items min height */
+.minHeight {
+  min-height: 20em;
+}
