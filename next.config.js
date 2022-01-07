@@ -9,30 +9,30 @@ module.exports = withSass({
 	here https://github.com/vercel/next-plugins/tree/master/packages/next-sass*/
   cssModules: true
 })
-const securityHeaders = [
-  {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on'
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block'
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'SAMEORIGIN'
-  },
-  {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff'
-  },
-  {
-    key: 'Referrer-Policy',
-    value: 'origin-when-cross-origin'
-  }
-]
+
+const csp = `
+  default-src static.axept.io/sdk-slim.js;
+  script-src 'self' 'unsafe-eval' static.axept.io/sdk-slim.js 
+  https://www.recaptcha.net
+  https://recaptcha.net
+  https://www.gstatic.com/recaptcha/
+  https://www.gstatic.cn/recaptcha/
+  https://www.google.com/recaptcha/;
+  style-src 'self' 'unsafe-inline' fonts.googleapis.com;
+  frame-src
+  *.recaptcha.net
+  recaptcha.net
+  https://www.google.com/recaptcha/
+  https://recaptcha.google.com;
+  img-src * blob: data:;
+  media-src 'none';
+  connect-src *;
+  font-src 'self' fonts.gstatic.com;
+`
+
 module.exports = {
   swcMinify: true,
+  poweredByHeader: false,
   productionBrowserSourceMaps: true,
   i18n: {
     locales: ['en', 'fr'],
@@ -41,7 +41,7 @@ module.exports = {
   images: {
     domains: ['www.datocms-assets.com']
   },
-  reactStrictMode: false,
+  reactStrictMode: true,
   /* Add Your Scss File Folder Path Here */
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
@@ -49,12 +49,84 @@ module.exports = {
   async redirects() {
     return allRedirection
   },
+  // https://nextjs.org/docs/api-reference/next.config.js/headers
+  // https://github.com/leerob/leerob.io/blob/9adc510cbfb3da88c3b0ad15632eb876ca91b607/next.config.js#L51-L88
   async headers() {
     return [
       {
-        // Apply these headers to all routes in your application.
         source: '/(.*)',
-        headers: securityHeaders
+        headers: [
+          // https://vercel.com/support/articles/how-to-enable-cors#enabling-cors-in-a-next.js-app
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          {
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true'
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*'
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT'
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: `X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version`
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=1, stale-while-revalidate=59'
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+          {
+            key: 'Content-Security-Policy',
+            value: csp.replace(/\n/g, '')
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
+          // Opt-out of Google FLoC: https://amifloced.org/
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin'
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload'
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+
+          // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          }
+        ]
       }
     ]
   }
