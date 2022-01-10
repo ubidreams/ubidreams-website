@@ -63,18 +63,32 @@
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubidreams-au-salon-techinnov-2018"/>
     </url>
     <url>
-        <loc>https://www.ubidreams.fr/blog/comment-s-y-retrouver-dans-le-paysage-des-applications-mobiles</loc>        
-        <priority>0.5</priority>
-        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/how-do-you-navigate-the-mobile-application-landscape"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/comment-s-y-retrouver-dans-le-paysage-des-applications-mobiles"/>
-    </url>
-    <url>
         <loc>https://www.ubidreams.fr/blog/ubisea-bouee-connectee</loc>        
         <priority>0.5</priority>
         <lastmod>2021-10-25T08:16:57.761Z</lastmod>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubisea-connected-buoy"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubisea-bouee-connectee"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/ubidreams-au-salon-mobility-for-business</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-11-02T09:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubidreams-at-mobility-for-business"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubidreams-au-salon-mobility-for-business"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/webinar-votre-site-internet-est-il-conforme-au-rgpd</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-11-02T09:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/webinar-is-your-website-rgpd-compliant"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/webinar-votre-site-internet-est-il-conforme-au-rgpd"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/blog/ubisea-la-prochaine-etape</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-11-02T09:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubisea-the-next-step"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubisea-la-prochaine-etape"/>
     </url>
 
 
@@ -139,17 +153,31 @@
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubidreams-au-salon-techinnov-2018"/>
     </url>
     <url>
-        <loc>https://www.ubidreams.fr/en/blog/how-do-you-navigate-the-mobile-application-landscape</loc> 
-        <priority>0.5</priority>
-        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/how-do-you-navigate-the-mobile-application-landscape"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/comment-s-y-retrouver-dans-le-paysage-des-applications-mobiles"/>
-    </url>
-    <url>
         <loc>https://www.ubidreams.fr/en/blog/ubisea-connected-buoy</loc>
         <priority>0.5</priority>
         <lastmod>2021-10-25T08:16:57.761Z</lastmod>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubisea-connected-buoy"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubisea-bouee-connectee"/>
+    </url>
+        <url>
+        <loc>https://www.ubidreams.fr/en/blog/ubidreams-at-mobility-for-business</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-11-02T09:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubidreams-at-mobility-for-business"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubidreams-au-salon-mobility-for-business"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/webinar-is-your-website-rgpd-compliant</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-11-02T09:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/webinar-is-your-website-rgpd-compliant"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/webinar-votre-site-internet-est-il-conforme-au-rgpd"/>
+    </url>
+    <url>
+        <loc>https://www.ubidreams.fr/en/blog/ubisea-the-next-step</loc>        
+        <priority>0.5</priority>
+        <lastmod>2021-11-02T09:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/blog/ubisea-the-next-step"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/blog/ubisea-la-prochaine-etape"/>
     </url>
 </urlset>
