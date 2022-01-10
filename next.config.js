@@ -10,26 +10,6 @@ module.exports = withSass({
   cssModules: true
 })
 
-const csp = `
-  default-src static.axept.io/sdk-slim.js;
-  script-src 'self' 'unsafe-eval' static.axept.io/sdk-slim.js 
-  https://www.recaptcha.net
-  https://recaptcha.net
-  https://www.gstatic.com/recaptcha/
-  https://www.gstatic.cn/recaptcha/
-  https://www.google.com/recaptcha/;
-  style-src 'self' 'unsafe-inline' fonts.googleapis.com;
-  frame-src
-  *.recaptcha.net
-  recaptcha.net
-  https://www.google.com/recaptcha/
-  https://recaptcha.google.com;
-  img-src * blob: data:;
-  media-src 'none';
-  connect-src *;
-  font-src 'self' fonts.gstatic.com;
-`
-
 module.exports = {
   swcMinify: true,
   poweredByHeader: false,
@@ -86,12 +66,6 @@ module.exports = {
           {
             key: 'Cache-Control',
             value: 'public, s-maxage=1, stale-while-revalidate=59'
-          },
-
-          // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-          {
-            key: 'Content-Security-Policy',
-            value: csp.replace(/\n/g, '')
           },
 
           // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
