@@ -24,6 +24,7 @@ export default function Helmet({ children, metatags = {}, router, className = ''
         <meta property='og:title' content={title} />
         <meta property='og:description' content={description} />
         <meta property='og:image' content={Img[img_key].src} />
+        <meta name='google-site-verification' content='zjnd_Llaw9E8xFtU-k-uMZ6W41MpDF3kdz28xVmkGC0' />
 
         {!error && (
           <>
