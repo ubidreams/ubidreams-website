@@ -186,11 +186,6 @@ export async function getOnePageBySlug(preview, locale, slug) {
             partenaire {
               content {
                 value
-                links {
-                  slug
-                  categorie
-                  id
-                }
               }
               image {
                 responsiveImage {
