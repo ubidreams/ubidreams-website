@@ -89,9 +89,7 @@ export async function getPartenairesByField(preview, locale, field) {
             domaine
             content {
               value
-              links {
-                id
-              }
+              links
             }
             image {
               responsiveImage {
@@ -186,6 +184,7 @@ export async function getOnePageBySlug(preview, locale, slug) {
             partenaire {
               content {
                 value
+                links
               }
               image {
                 responsiveImage {
