@@ -1,5 +1,5 @@
 import { isBlockquote, isHeading, isSpan } from 'datocms-structured-text-utils'
-import { includes, isEmpty } from 'lodash'
+import { includes, isEmpty, has } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
 import { useContext } from 'react'
@@ -171,6 +171,12 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
             <StructuredText
               data={post.content}
               renderLinkToRecord={({ record, children, transformedMeta }) => {
+                if (!has(record, 'categorie')) {
+                  record = {
+                    categorie: 'blog',
+                    ...record
+                  }
+                }
                 return (
                   <LinkBeautify record={record} meta={transformedMeta}>
                     {children}

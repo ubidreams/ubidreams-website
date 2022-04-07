@@ -22,6 +22,10 @@ export const LinkBeautify = ({ record, meta = null, children }) => {
       pathname = '/references/[params]'
       newAs = `/references/${record.slug}`
       break
+    case 'blog':
+      pathname = '/blog/[slug]'
+      newAs = `/blog/${record.slug}`
+      break
     default:
       pathname = '/'
       newAs = `/`
