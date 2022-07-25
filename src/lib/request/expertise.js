@@ -1,53 +1,8 @@
 import { fetchAPI } from '../api'
-import { isNull } from 'lodash'
 
-import {
-  responsiveImageFragment,
-  svgFragment,
-  expertFragment,
-  miniaturePageFragment,
-  tagSeoFragment
-} from '../fragment.js'
+import { responsiveImageFragment, svgFragment, expertFragment, tagSeoFragment } from '../fragment.js'
 
 /* PAGE EXPERTISE */
-export async function getSolutions(preview, locale) {
-  const data = await fetchAPI(
-    `
-        {
-          allPages(filter: {categorie: {matches: {pattern: "solution"}}}, locale: ${locale}) {
-            _seoMetaTags {
-              ...TagFragment
-            }
-            miniaturePage {
-              ...MiniaturePageFieldFragment
-            }
-            image {
-              responsiveImage {
-                ...responsiveImageFragment
-              }
-            }
-            alternativeImage {
-              responsiveImage {
-                ...responsiveImageFragment
-              }
-            }
-          }
-        }
-        ${miniaturePageFragment}
-        ${responsiveImageFragment}
-        ${tagSeoFragment}
-      `,
-    { preview }
-  )
-
-  return data?.allPages.map((miniature) => {
-    const image = isNull(miniature.alternativeImage) ? miniature.image : miniature.alternativeImage
-    return {
-      image,
-      content: miniature.miniaturePage
-    }
-  })
-}
 export async function getExpertisesByField(preview, locale, field) {
   const data = await fetchAPI(
     `

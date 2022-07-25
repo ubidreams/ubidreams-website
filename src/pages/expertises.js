@@ -1,5 +1,4 @@
 import useTranslation from 'next-translate/useTranslation'
-import { getSolutions } from '../lib/request/expertise.js'
 import { useRouter } from 'next/router'
 
 import StepContainer from '../components/step-container'
@@ -8,10 +7,9 @@ import Section from '../components/section'
 import TextContainer from '../components/text-container'
 import SectionCardSimple from '../components/section-card-simple'
 import ContactSection from '../components/contact-section'
-import Card from '../components/card'
 import Helmet from '../components/layout/helmet-seo'
 
-export const Expertises = ({ solutions }) => {
+export const Expertises = () => {
   const router = useRouter()
   const { t } = useTranslation('expertises')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
@@ -52,19 +50,6 @@ export const Expertises = ({ solutions }) => {
         </div>
       </Section>
 
-      {/* Présentation des solutions */}
-      <Section bgClass='bg-gray-200'>
-        <TextContainer namespace={{ name: 'expertises', section: 'solution.introduction' }} alignText='center' />
-        <div className='row'>
-          <Card config={solutions} router={router} large={3} />
-        </div>
-        <TextContainer
-          namespace={{ name: 'expertises', section: 'solution.conclusion' }}
-          className='mt-2'
-          alignText='center'
-        />
-      </Section>
-
       {/* Card de contact */}
       <Section>
         <ContactSection />
@@ -74,10 +59,3 @@ export const Expertises = ({ solutions }) => {
 }
 
 export default Expertises
-
-export async function getStaticProps({ preview = false, locale }) {
-  const solutions = (await getSolutions(preview, locale)) || []
-  return {
-    props: { solutions }
-  }
-}

@@ -73,7 +73,9 @@ const PageTemplate = ({ page, lastRef, router }) => {
   return (
     <>
       <main>
-        <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
+        {page.categorie !== 'solution' && (
+          <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
+        )}
         <Section>
           <div className='text-center mb-8'>
             <h1 className='display-2 fw-bold'>{page.title}</h1>
