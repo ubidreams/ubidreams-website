@@ -36,6 +36,23 @@
         }
       }
     },
+    "solution": {
+      "name": "Solutions",
+      "items": {
+        "ubishield": {
+          "name": "UbiShield",
+          "path": "/solutions/ubishield"
+        },
+        "ubitrack": {
+          "name": "UbiTrack",
+          "path": "/solutions/ubitrack"
+        },
+        "ubipoi": {
+          "name": "UbiPOI",
+          "path": "/solutions/ubipoi"
+        }
+      }
+    },
     "agency": {
       "name": "L'agence",
       "path": "/agency"

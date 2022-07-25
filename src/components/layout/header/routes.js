@@ -23,6 +23,20 @@ const routes = [
     ]
   },
   {
+    key: 'solution',
+    items: [
+      {
+        key: 'ubishield'
+      },
+      {
+        key: 'ubitrack'
+      },
+      {
+        key: 'ubipoi'
+      }
+    ]
+  },
+  {
     key: 'agency'
   },
   {

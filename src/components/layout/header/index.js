@@ -87,14 +87,14 @@ const Header = () => {
                       <span
                         style={{ cursor: 'pointer' }}
                         className='nav-link dropdown-toggle d-flex align-items-center'
-                        id='expertises'
+                        id={route?.key}
                         data-bs-toggle='dropdown'
                         aria-expanded='false'
                       >
                         {t(`header.${route?.key}.name`)}
                         <span className='ps-2 fe fe-chevron-down'></span>
                       </span>
-                      <ul className='dropdown-menu' aria-labelledby='expertises'>
+                      <ul className='dropdown-menu' aria-labelledby={route?.key}>
                         {subMenu.map((subLink, index) => {
                           return (
                             <li key={index}>
