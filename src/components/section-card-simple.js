@@ -1,8 +1,19 @@
+// External Librairies
 import ImageStatic from 'next/image'
 
+// Helpers & Config
 import { Img } from '../config/StaticImagesExport'
+
+// Components
 import TextTechno from './text-techno'
 
+/**
+ * SECTION CARD SIMPLE : card classique avec image, texte et bouton
+ * @param data objet de données
+ * @param reverse booléen permet de savoir le sens d'affichage
+ * @param showShadows booléen afin de savoir si on affiche des shadows autour de la card
+ * @param textJustify string à concaténer dans une class pour définir le format du texte
+ */
 const SectionCardSimple = ({ data = {}, reverse, showShadows = false, textJustify = '' }) => {
   return (
     <div
@@ -19,6 +30,7 @@ const SectionCardSimple = ({ data = {}, reverse, showShadows = false, textJustif
           className={`w-100 h-100 w-md-75 d-flex flex-column p-5 text-left 
           ${textJustify}`}
         >
+          {/* Utilisation d'un composant d'affichage de texte + button*/}
           <TextTechno config={data} alignText='left' />
         </div>
       </div>

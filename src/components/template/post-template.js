@@ -1,3 +1,4 @@
+// External Librairies
 import { isBlockquote, isHeading, isSpan } from 'datocms-structured-text-utils'
 import { includes, isEmpty, has } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
@@ -7,8 +8,12 @@ import { Image, renderRule, StructuredText } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { Parallax } from 'react-parallax'
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share'
+
+// Helpers & Config
 import { Facebook, Linkedin, Twitter } from '../../config/StaticImagesExport.js'
 import { CookiesContext } from '../../helpers/cookiesContext'
+
+// Components
 import CardArticle from '../card-article'
 import ContactSection from '../contact-section'
 import { LinkBeautify } from '../link-beautify'
@@ -16,12 +21,14 @@ import Section from '../section'
 import Video from '../video'
 
 const URL = process.env.NEXT_PUBLIC_URL_GLOBAL
+// Récupération des icons des réseaux sociaux
 const iconsSocialMedia = [
   { icon: Facebook, alt: 'Facebook' },
   { icon: Twitter, alt: 'Twitter' },
   { icon: Linkedin, alt: 'Linkedin' }
 ]
 
+// Rendu des sections de la page conditionné à leur existence côté DATOCMS
 const renderPage = (type, post) => {
   switch (type) {
     case 'title':
@@ -31,6 +38,7 @@ const renderPage = (type, post) => {
     case 'author':
       return <h6 className='text-uppercase mb-0'>{post.author.name}</h6>
     case 'etiquettes':
+      // Liste des étiquettes (mots clés) sous forme de tag
       return (
         <div className='mb-4'>
           {post.etiquettes.map((etiquette, index) => {
@@ -43,6 +51,7 @@ const renderPage = (type, post) => {
         </div>
       )
     case 'image':
+      // Composant image de datocms compatible avec le format de données média de DATOCMS
       return (
         <div>
           <Image data={post.image.responsiveImage} alt='' className='img-page' lazyLoad={false} />
@@ -53,10 +62,12 @@ const renderPage = (type, post) => {
   }
 }
 
+// Rendu de la popover d'information en cas de bouton non cliquable pour les réseaux sociaux
 const renderPopover = (t) => {
   return <div className='popover bg-gray-200'>{t('common:cookie.noAccept')}</div>
 }
 
+// Rendu des boutons de partage des réseaux sociaux (librairie react-share) Les props pour chaque réseau ne sont pas les mêmes donc nous devons gérer tous les cas avec un switch
 const renderSocialButtons = (item, router, post, cookies, t) => {
   const styleProps = {
     width: 25,
@@ -65,12 +76,14 @@ const renderSocialButtons = (item, router, post, cookies, t) => {
   }
   switch (item.alt) {
     case 'Facebook':
+      // Ajout des hashtags en nous basant sur les étiquettes
       let hastag = ''
       post.etiquettes.forEach((etiquette) => {
         hastag = hastag.concat('#', etiquette.slug, ' ')
       })
       return (
         <>
+          {/* Gestion de la popover si les cookies n'ont pas été accepté */}
           {!cookies.facebook_pixel && renderPopover(t)}
           <FacebookShareButton
             url={URL + router.asPath}
@@ -85,6 +98,7 @@ const renderSocialButtons = (item, router, post, cookies, t) => {
     case 'Linkedin':
       return (
         <>
+          {/* Gestion de la popover si les cookies n'ont pas été accepté */}
           {!cookies.linkedin && renderPopover(t)}
           <LinkedinShareButton
             url={URL + router.asPath}
@@ -98,6 +112,7 @@ const renderSocialButtons = (item, router, post, cookies, t) => {
         </>
       )
     case 'Twitter':
+      // Affichage des hastags en se basant sur les étiquettes
       let hastags = []
       post.etiquettes.forEach((etiquette) => {
         hastags.push(etiquette.slug)
@@ -105,6 +120,7 @@ const renderSocialButtons = (item, router, post, cookies, t) => {
 
       return (
         <>
+          {/* Gestion de la popover si les cookies n'ont pas été accepté */}
           {!cookies.twitter && renderPopover(t)}
           <TwitterShareButton
             url={URL + router.asPath}
@@ -118,9 +134,17 @@ const renderSocialButtons = (item, router, post, cookies, t) => {
       )
   }
 }
+
+/*
+  TEMPLATE DE PAGE TYPE : article de blog
+  ARBORESCENCE : accessible depuis le blog (/BASE_URL/blog/slug-article)
+*/
 const PostTemplate = ({ post, locale, lastPosts, router }) => {
+  // Initialisation de l'état du composant
   const cookies = useContext(CookiesContext)
   const { t } = useTranslation('blog')
+
+  // Formatage des dates en fonction de la locale.
   const dateFormatted = new Intl.DateTimeFormat(locale, { month: 'short', day: 'numeric', year: 'numeric' }).format(
     new Date(post.date)
   )
@@ -130,11 +154,13 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
     year: 'numeric'
   }).format(new Date(post.updatedAt))
 
+  // Construction d'un objet image pour la page de couverture
   const imageCover = { src: post.heroCover.responsiveImage.src, alt: post.heroCover.responsiveImage.alt }
 
   return (
     <>
       <main>
+        {/* Composant parallax avec l'image de couverture définie ci-dessus */}
         <Parallax
           bgImage={imageCover.src}
           bgImageAlt={imageCover.alt}
@@ -143,17 +169,22 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
           bgImageStyle={{ top: '-30%' }}
         ></Parallax>
         <Section>
+          {/* Rendu des titres de l'entete*/}
           <div className='text-center mb-8'>
             {renderPage('title', post)}
             {post.subtitle && renderPage('subtitle', post)}
           </div>
+
           <div className='row align-items-center py-5 border-top border-bottom'>
+            {/* DATE ET AUTEUR */}
             <div className='col ms-md-n5'>
               {renderPage('author', post)}
               <time className='fs-sm text-muted' dateTime={dateFormatted}>
                 {t('post.date') + ' ' + dateFormatted}
               </time>
             </div>
+
+            {/* PARTAGE SUR LES RESEAUX SOCIAUX */}
             <div className='col-auto d-flex align-items-center'>
               <span className='h6 text-uppercase text-muted d-none d-md-inline me-4'>{t('post.share')}:</span>
               <ul className='d-inline list-unstyled list-inline list-social m-0'>
@@ -166,11 +197,14 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                 })}
               </ul>
             </div>
+
           </div>
           <div className='my-6'>
+            {/* RENDU DU CONTENU */}
             <StructuredText
               data={post.content}
               renderLinkToRecord={({ record, children, transformedMeta }) => {
+                // Rendu custom des liens vers les autres pages (contraintes de réécriture des urls avec les "catégories") CF. LinkBeautify
                 if (!has(record, 'categorie')) {
                   record = {
                     categorie: 'blog',
@@ -184,10 +218,12 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                 )
               }}
               renderBlock={({ record }) => {
+                // Rendu custom de plusieurs blocks issus de DATOCMS
                 switch (record._modelApiKey) {
                   case 'image':
                     return <Image data={record.image.responsiveImage} alt='' className='img-page' />
                   case 'video':
+                    // affichage d'une vidéo youtube si les cookies sont acceptés.
                     return (
                       <Video
                         config={record.videoUrl}
@@ -198,6 +234,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                 }
               }}
               customRules={[
+                // Rendu custom de texte en gras
                 renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
@@ -217,6 +254,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
 
                   return <node.type key={key}>{node.value}</node.type>
                 }),
+                // Rendu custom des titres
                 renderRule(isHeading, ({ node, children, key }) => {
                   const HeadingTag = `h${node.level}`
                   return (
@@ -225,6 +263,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                     </HeadingTag>
                   )
                 }),
+                // Rendu custom des citations
                 renderRule(isBlockquote, ({ node, children, key }) => {
                   return (
                     <div key={key} className='border-top border-bottom border-green my-7 py-7'>
@@ -237,6 +276,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
               ]}
             />
           </div>
+          {/* Affichage des etiquettes */}
           <div className='text-center border-top border-gray-300 pt-6'>
             {!isEmpty(post.etiquettes) && renderPage('etiquettes', post)}
             <time className='fs-sm text-muted' dateTime={updatedDateFormatted}>
@@ -244,6 +284,8 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
             </time>
           </div>
         </Section>
+
+        {/* Forme issue du template */}
         <div className='position-relative'>
           <div className='shape shape-bottom shape-fluid-x text-light'>
             <svg viewBox='0 0 2880 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -251,6 +293,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
             </svg>
           </div>
         </div>
+        {/* Affichage de la section avec les derniers articles si existants */}
         {lastPosts.length != 0 && (
           <>
             <Section bgClass='bg-light'>
@@ -274,6 +317,7 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
             </div>
           </>
         )}
+        {/* Affichage du bloc de redirection vers la page contact */}
         <Section bgClass='bg-light'>
           <ContactSection />
         </Section>

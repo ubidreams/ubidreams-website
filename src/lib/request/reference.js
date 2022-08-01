@@ -1,6 +1,15 @@
 import { fetchAPI } from '../api.js'
 import { responsiveImageFragment, referenceFragment, tagSeoFragment } from '../fragment.js'
 
+/** REFERENCES : références projets
+ * @param preview booléen afin d'indiquer si nous sommes en preview ou nom
+ * @param locale locale active du site
+ * @param slug string
+ * */
+
+/**
+ * requête de récupération des 3 dernières références projets
+ */
 export async function getLastReferences(preview, locale) {
   const data = await fetchAPI(
     `
@@ -17,6 +26,9 @@ export async function getLastReferences(preview, locale) {
   return data?.allReferences
 }
 
+/**
+ * requête de récupération de toutes les pages de références projets
+ */
 export async function getAllReferences(preview, locale) {
   const data = await fetchAPI(
     `
@@ -33,6 +45,9 @@ export async function getAllReferences(preview, locale) {
   return data?.allReferences
 }
 
+/**
+ * requête de récupération de toutes les régies
+ */
 export async function getAllRegies(preview, locale) {
   const data = await fetchAPI(
     `
@@ -56,6 +71,9 @@ export async function getAllRegies(preview, locale) {
   return data?.allRegies
 }
 
+/**
+ * requête de récupération de tous les slugs des pages de références
+ */
 export async function getAllReferencesSlugs(locale) {
   const data = await fetchAPI(
     `
@@ -69,6 +87,9 @@ export async function getAllReferencesSlugs(locale) {
   return data?.allReferences
 }
 
+/**
+ * requête de récupération d'une page de référence projet en fonction du slug
+ */
 export async function getOneReferencesBySlug(preview, locale, slug) {
   const data = await fetchAPI(
     `
@@ -142,6 +163,9 @@ export async function getOneReferencesBySlug(preview, locale, slug) {
   return data?.reference
 }
 
+/**
+ * requête de récupération des 3 dernières références projet en fonction d'une etiquette (technologies)
+ */
 export async function getLastRefByTech(id_etiquette, locale) {
   const data = await fetchAPI(
     `

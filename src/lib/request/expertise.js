@@ -2,7 +2,16 @@ import { fetchAPI } from '../api'
 
 import { responsiveImageFragment, svgFragment, expertFragment, tagSeoFragment } from '../fragment.js'
 
-/* PAGE EXPERTISE */
+/** PAGE EXPERTISE
+ * @param preview booléen afin d'indiquer si nous sommes en preview ou nom
+ * @param locale locale active du site
+ * @param field catégorie (development, design, iot, consulting)
+ * @param slug string
+ * */
+
+/**
+ * requête de récupération des expertises par catégorie (design, iot, development, consulting)
+ */
 export async function getExpertisesByField(preview, locale, field) {
   const data = await fetchAPI(
     `
@@ -36,6 +45,9 @@ export async function getExpertisesByField(preview, locale, field) {
   return data?.allExpertises
 }
 
+/**
+ * requête de récupération des partenaires par catégorie (design, iot, development, consulting)
+ */
 export async function getPartenairesByField(preview, locale, field) {
   const data = await fetchAPI(
     `
@@ -61,6 +73,9 @@ export async function getPartenairesByField(preview, locale, field) {
   return data?.allPartenaires
 }
 
+/**
+ * requête de récupération d'une page en fonction du slug
+ */
 export async function getOnePageBySlug(preview, locale, slug) {
   const data = await fetchAPI(
     `
@@ -165,6 +180,9 @@ export async function getOnePageBySlug(preview, locale, slug) {
   return data?.page
 }
 
+/**
+ * requête de récupération de tous les slugs des pages
+ */
 export async function getAllPageSlugs(categorie, locale) {
   const data = await fetchAPI(
     `

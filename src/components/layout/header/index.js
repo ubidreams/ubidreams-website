@@ -1,15 +1,17 @@
+//External Librairies
 import Link from 'next/link'
 import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation'
 import { map, isEmpty } from 'lodash'
-
-import routes from './routes'
-
-import { Ubidreams } from '../../../config/StaticImagesExport.js'
 import { useRouter } from 'next/dist/client/router'
 import { useContext, useEffect, useState } from 'react'
+
+// Helpers & Config
+import routes from './routes'
+import { Ubidreams } from '../../../config/StaticImagesExport.js'
 import { LangContext } from '../../../helpers/langContext'
 
+// Rendu d'un lien
 const MenuLink = ({ type, href, name }) => {
   return (
     <li className={type}>
@@ -21,11 +23,14 @@ const MenuLink = ({ type, href, name }) => {
 }
 
 const Header = () => {
-  const { t } = useTranslation('common')
-  const [routeChange, setRouteChange] = useState(false)
+  // Initialisation de l'état du composant
   const router = useRouter()
   const { langComponent } = useContext(LangContext)
+  const { t } = useTranslation('common')
+  const [routeChange, setRouteChange] = useState(false)
+
   useEffect(() => {
+    // Gestion de l'état de la navigation
     const handleRouteChange = () => {
       setRouteChange(true)
     }
@@ -43,6 +48,7 @@ const Header = () => {
       router.events.off('routeChangeComplete', handleRouteChangeComplete)
     }
   }, [router.events])
+
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-light bg-white fixed-top'>
@@ -78,10 +84,12 @@ const Header = () => {
             >
               <i className='fe fe-x' />
             </button>
+            {/* Liens du menu principal */}
             <ul className='navbar-nav mx-auto'>
               {map(routes, (route) => {
                 const subMenu = route?.items
                 if (!isEmpty(subMenu)) {
+                  // Situation : onglet avec sous menu
                   return (
                     <li key={route?.key} className='nav-item dropdown'>
                       <span
@@ -110,6 +118,7 @@ const Header = () => {
                     </li>
                   )
                 }
+                // Menu simple
                 return (
                   <MenuLink
                     key={route?.key}

@@ -1,3 +1,4 @@
+// External Librairies
 import { isBlockquote, isHeading, isListItem, isSpan } from 'datocms-structured-text-utils'
 import { includes, isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
@@ -6,6 +7,7 @@ import { Image, renderRule, StructuredText } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 import { Parallax } from 'react-parallax'
 
+// Helpers & Config
 import { DoneCircle } from '../../config/StaticImagesExport'
 
 //Component
@@ -13,6 +15,7 @@ import CardReference from '../card-reference'
 import { LinkBeautify } from '../link-beautify'
 import Section from '../section'
 
+// Rendu des sections de la page conditionné à leur existence côté DATOCMS
 const renderPage = (type, project) => {
   switch (type) {
     case 'title':
@@ -24,6 +27,7 @@ const renderPage = (type, project) => {
     case 'author':
       return <h6 className='text-uppercase mb-0'>{project.author.name}</h6>
     case 'etiquettes':
+      // Liste des étiquettes (mots clés) sous forme de tag
       return (
         <div className='mb-4'>
           {project.etiquettes.map((etiquette, index) => {
@@ -36,6 +40,7 @@ const renderPage = (type, project) => {
         </div>
       )
     case 'image':
+      // Composant image de datocms compatible avec le format de données média de DATOCMS
       return (
         <div>
           <Image data={project.image.responsiveImage} alt='' className='img-page' lazyLoad={false} />
@@ -46,20 +51,28 @@ const renderPage = (type, project) => {
   }
 }
 
+/*
+  TEMPLATE DE PAGE TYPE : référence de projet
+  ARBORESCENCE : accessible depuis les références (/BASE_URL/references/slug-references)
+*/
 const ReferenceTemplate = ({ project, locale, lastProject }) => {
+  // Initialisation de l'état du composant
   const { t } = useTranslation('references')
 
+  // Formatage des dates en fonction de la locale.
   const updatedDateFormatted = new Intl.DateTimeFormat(locale, {
     month: 'short',
     day: 'numeric',
     year: 'numeric'
   }).format(new Date(project.updatedAt))
 
+  // Construction d'un objet image pour la page de couverture
   const imageCover = { src: project.coverImage.responsiveImage.src, alt: project.coverImage.responsiveImage.alt }
 
   return (
     <>
       <main>
+        {/* Composant parallax avec l'image de couverture définie ci-dessus */}
         <Parallax
           bgImage={imageCover.src}
           bgImageAlt={imageCover.alt}
@@ -68,6 +81,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
           bgImageStyle={{ top: '-20%' }}
         ></Parallax>
         <Section>
+          {/* Rendu des titres de l'entête */}
           <div className='text-center mb-8'>
             {renderPage('title', project)}
             {project.subtitle && renderPage('subtitle', project)}
@@ -75,9 +89,11 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
             <hr />
           </div>
           <div className='my-6'>
+            {/* CONTENU PAGE */}
             <StructuredText
               data={project.content}
               renderLinkToRecord={({ record, children, transformedMeta }) => {
+                // Rendu custom des liens vers les autres pages (contraintes de réécriture des urls avec les "catégories") CF. LinkBeautify
                 return (
                   <LinkBeautify record={record} meta={transformedMeta}>
                     {children}
@@ -85,6 +101,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
                 )
               }}
               renderBlock={({ record }) => {
+                // Rendu custom de plusieurs blocks issus de DATOCMS
                 switch (record._modelApiKey) {
                   case 'image':
                     return (
@@ -94,6 +111,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
                       </div>
                     )
                   case 'reference_galerie':
+                    // Affichage des images en grid.
                     return (
                       <div className='row py-4'>
                         <div className='col-6 p-3'>
@@ -127,6 +145,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
                 }
               }}
               customRules={[
+                // Rendu custom de texte en gras
                 renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
@@ -146,6 +165,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
 
                   return <node.type key={key}>{node.value}</node.type>
                 }),
+                // Rendu custom des titres
                 renderRule(isHeading, ({ node, children, key }) => {
                   const HeadingTag = `h${node.level}`
                   return (
@@ -154,6 +174,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
                     </HeadingTag>
                   )
                 }),
+                // Rendu custom des citations
                 renderRule(isBlockquote, ({ node, children, key }) => {
                   return (
                     <div key={key} className='border-top border-bottom border-green my-7 py-7'>
@@ -163,6 +184,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
                     </div>
                   )
                 }),
+                // Rendu d'une liste custom avec une icon devant le <li>.
                 renderRule(isListItem, ({ children, key }) => {
                   return (
                     <div key={key} className='d-flex list-item-reference'>
@@ -176,6 +198,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
               ]}
             />
           </div>
+          {/* DATE */}
           <div className='text-center border-top border-gray-300 pt-6'>
             {!isEmpty(project.etiquettes) && renderPage('etiquettes', project)}
             <time className='fs-sm text-muted' dateTime={updatedDateFormatted}>
@@ -183,6 +206,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
             </time>
           </div>
         </Section>
+        {/* FORME ISSUE DU THEME */}
         <div className='position-relative'>
           <div className='shape shape-bottom shape-fluid-x text-light'>
             <svg viewBox='0 0 2880 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -190,6 +214,7 @@ const ReferenceTemplate = ({ project, locale, lastProject }) => {
             </svg>
           </div>
         </div>
+        {/* DERNIERE REFERENCE DU PROJET */}
         <Section bgClass='bg-light'>
           <div className='row align-items-center mb-5'>
             <div className='col'>

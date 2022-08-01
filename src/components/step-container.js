@@ -1,12 +1,14 @@
+// External Librairies
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 
 /**
- * zone de texte associée à une image et un bouton (optionnel)
- * config (données sous la forme d'un tableau d'objet (title, description, image, aos-delay))
- * displayDirection (position des blocs > image au dessus ou à gauche)
+ * STEP CONTAINER : affichage d'un stepper de présentation avec numérotation des étapes
+ * @param namespace string désignant le namespace pour les clés de traduction
+ * @param displayDirection orientation du stepper (column/row)
  */
 const StepContainer = ({ namespace = '', displayDirection }) => {
+  // Initialisation du composant
   const { t } = useTranslation(namespace)
   const features = t('stepContainer', {}, { returnObjects: true })
 
@@ -22,6 +24,7 @@ const StepContainer = ({ namespace = '', displayDirection }) => {
           margin: '0.5em'
         }}
       >
+        {/* Numéro du step */}
         <div className='mb-3 d-flex gx-0 align-items-center'>
           <div>
             <div className='btn btn-sm btn-rounded-circle bg-dark-grey text-white fs-4 disabled opacity-1'>
@@ -41,11 +44,13 @@ const StepContainer = ({ namespace = '', displayDirection }) => {
             maxWidth: '30rem'
           }}
         >
+          {/* Titre et contenu du step */}
           <h3>{item.title}</h3>
           <p className='mb-6 mb-md-0' style={{ textAlign: 'left' }}>
             {item.description}
           </p>
         </div>
+        {/* bouton en cas de besoin */}
         {item.buttonDetails && (
           <Link href={item.showButton.path}>
             <a className='btn btn-primary-soft'>{item.showButton.name}</a>

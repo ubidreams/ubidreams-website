@@ -1,15 +1,26 @@
+// External Librairies
 import { isHeading, isListItem, isSpan } from 'datocms-structured-text-utils'
 import { includes } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
 import { Image, renderRule, StructuredText } from 'react-datocms'
+
+// Helpers & Config
 import { DoneCircle } from '../../config/StaticImagesExport'
+
+// Components
 import Section from '../section'
 import Title from '../title'
 
+/*
+  TEMPLATE DE PAGE TYPE : mentions légales, politique de confidentialité.
+  ARBORESCENCE : accessible depuis la base du site (/BASE_URL/politique-de-confidentialite)
+*/
 const LegalTemplate = ({ page, locale }) => {
+  // Initialisation de l'état du composant
   const { t } = useTranslation('common')
 
+  // Formatage de la date de mise à jour en fonction de la locale.
   const dateFormatted = new Intl.DateTimeFormat(locale, {
     month: 'numeric',
     day: 'numeric',
@@ -53,6 +64,7 @@ const LegalTemplate = ({ page, locale }) => {
               <StructuredText
                 data={page.content}
                 renderBlock={({ record }) => {
+                  // Rendu custom de certain block DATOCMS
                   switch (record._modelApiKey) {
                     case 'image':
                       return (
@@ -66,6 +78,7 @@ const LegalTemplate = ({ page, locale }) => {
                   }
                 }}
                 customRules={[
+                  // Rendu custom des spans en gras.
                   renderRule(isSpan, ({ node, key }) => {
                     if (node.marks && includes(node.marks, 'highlight')) {
                       return (
@@ -85,6 +98,7 @@ const LegalTemplate = ({ page, locale }) => {
 
                     return <node.type key={key}>{node.value}</node.type>
                   }),
+                  // Rendu custom des titres
                   renderRule(isHeading, ({ node, children, key }) => {
                     const HeadingTag = `h${node.level}`
                     return (
@@ -93,6 +107,7 @@ const LegalTemplate = ({ page, locale }) => {
                       </HeadingTag>
                     )
                   }),
+                  // Rendu custom des listes avec un icon check devant
                   renderRule(isListItem, ({ children, key }) => {
                     return (
                       <div key={key} className='d-flex list-item-reference'>

@@ -1,7 +1,11 @@
+// External Librairies
 import Head from 'next/head'
+
+// Components
 import Footer from './footer'
 import Header from './header'
 
+// Layout par défaut du site : intégration du header et du footer
 export default function Layout({ children }) {
   return (
     <>

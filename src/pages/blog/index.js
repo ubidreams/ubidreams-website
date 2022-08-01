@@ -1,21 +1,32 @@
+// External Librairies
 import { useCallback, useState, useEffect } from 'react'
-import { getBlog } from '../../lib/request/blog.js'
 import useTranslation from 'next-translate/useTranslation'
 import { forEach, filter, includes, uniqWith, isEqual } from 'lodash'
 import { useRouter } from 'next/router'
-
 import Link from 'next/link'
 
+// Data
+import { getBlog } from '../../lib/request/blog.js'
+
+// Components
 import Section from '../../components/section'
 import Title from '../../components/title'
 import CardArticle from '../../components/card-article'
 import PaginationComponent from '../../components/pagination'
 import Helmet from '../../components/layout/helmet-seo'
 
+/**
+ * PAGE blog (liste avec pagination)
+ * @param posts résultats de la requête : getBlog
+ * @param tags résultats de la requête : getBlog
+ * @param locale locale active
+ */
 export const Blog = ({ posts, tags, locale }) => {
+  // Initialisation de la page
   const router = useRouter()
   const { t } = useTranslation('blog')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
+  // Instanciation de l'état de la page
   const [activeTag, setActiveTag] = useState(null)
   const [visiblePosts, setVisiblePosts] = useState(posts)
   const [searchValue, setSearchValue] = useState('')
@@ -24,7 +35,7 @@ export const Blog = ({ posts, tags, locale }) => {
 
   /* Gestion event : clique sur un tag afin de filtrer la recherche
     param : tag sélectionné
-    action : vide la searchbar, filtre les posts et retourne ceux affiliés au tag, réinitialise la page active à 1
+    handleTagClicked : vide la searchbar, filtre les posts et retourne ceux affiliés au tag, réinitialise la page active à 1
   */
   const handleTagClicked = useCallback(
     (activeTag) => {
@@ -74,14 +85,24 @@ export const Blog = ({ posts, tags, locale }) => {
     setVisiblePosts(posts)
   }, [posts])
 
+  // Gestion locale de la pagination
   useEffect(() => {
     const postsByPage = () => {
+      // Je groupe dans un tableau des tableaux de 6 articles à afficher
       let array = []
       visiblePosts.forEach((el, i) => {
         if (i % 6 === 0) {
           array.push(visiblePosts.slice(i, i + 6))
         }
       })
+      /**
+       * [
+       *    (page 1 - index 0) [{}, {}, {}, {}, {}, {}],
+       *    (page 2 - index 1) [{}, {}, {}, {}, {}, {}],
+       *    (page 3 - index 2) [{}, {}, {}, {}, {}, {}]
+       * ]
+       */
+      // Si le tableau est plein, alors je sélectionne dans mon tableau les articles correspondants à la page active
       array.length != 0 ? setPostsPaginated(array[activePage - 1]) : setPostsPaginated([])
     }
     postsByPage()
@@ -95,6 +116,7 @@ export const Blog = ({ posts, tags, locale }) => {
         <div className='my-8'>
           <div>
             <form className='mb-4 search-bar'>
+              {/* Searchbar*/}
               <div className='rounded input-group input-group-lg border border-gray-300'>
                 {searchValue.length === 0 && (
                   <div className='input-group-text border-0 pe-1'>
@@ -122,6 +144,7 @@ export const Blog = ({ posts, tags, locale }) => {
               </div>
             </form>
           </div>
+          {/* Tags permettant de filtrer la recherche */}
           <nav className='nav justify-content-center'>
             {tags.map((tag, index) => {
               return (
@@ -135,6 +158,7 @@ export const Blog = ({ posts, tags, locale }) => {
                 </Link>
               )
             })}
+            {/* Le tag actif prend une apparence différente et nous pouvons supprimer le filtre */}
             {activeTag && (
               <button className='border-0 pe-1 bg-white me-2 mb-1' onClick={cleanSearch}>
                 <span className='h6 text-uppercase'>
@@ -144,6 +168,7 @@ export const Blog = ({ posts, tags, locale }) => {
             )}
           </nav>
         </div>
+        {/* A partir du tableau des articles filtrés j'affiche la liste */}
         <div className='row row-cols-md-3 mt-6'>
           {visiblePosts.length === 0 ? (
             <p className='w-100 text-center text-muted'>{t('blog.noResult')}</p>
@@ -151,6 +176,7 @@ export const Blog = ({ posts, tags, locale }) => {
             <CardArticle config={postsPaginated} locale={locale} />
           )}
         </div>
+        {/* Pagination */}
         <div className='text-center'>
           <PaginationComponent data={visiblePosts} current={activePage} onChange={setActivePage} />
         </div>
@@ -161,10 +187,16 @@ export const Blog = ({ posts, tags, locale }) => {
 
 export default Blog
 
+/**
+ * Fonction asynchrone Next JS => Next.js will pre-render this page at build time using the props returned by getStaticProps.
+ * @param preview booléen qui permet de gérer la preview (nous gérons cela au niveau du déploiement donc nous laissons à false)
+ * @param locale locale active du site
+ */
 export async function getStaticProps({ preview, locale }) {
   const blog = (await getBlog(preview, locale)) || []
   const posts = blog.allPosts
 
+  // Je récupère les tags à partir de la requête
   const taglist = () => {
     let tag = posts.map((post) => {
       return post.tags
@@ -174,6 +206,7 @@ export async function getStaticProps({ preview, locale }) {
 
   const tags = taglist()
 
+  // Nous renvoyons les données sous forme de props à la page
   return {
     props: { posts, tags, locale }
   }

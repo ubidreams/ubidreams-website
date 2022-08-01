@@ -1,15 +1,24 @@
+// External Librairies
 import Image from 'next/image'
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
-
-import Section from '../components/section'
-import { Recherche } from '../config/StaticImagesExport'
-import Helmet from '../components/layout/helmet-seo'
 import { useRouter } from 'next/router'
 
+// Helpers & Config
+import { Recherche } from '../config/StaticImagesExport'
+
+// Components
+import Helmet from '../components/layout/helmet-seo'
+import Section from '../components/section'
+
+/**
+ * Page d'erreur par défaut
+ */
 export default function Custom404() {
+  // Initialisation de la page
   const { t } = useTranslation('common')
   const router = useRouter()
+
   return (
     <Helmet router={router} error>
       <Section bgClass='section-border border-primary'>

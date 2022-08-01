@@ -1,6 +1,8 @@
+// External Librairies
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 
+// Components
 import StepContainer from '../components/step-container'
 import PageTitle from '../components/page-title'
 import Section from '../components/section'
@@ -9,10 +11,15 @@ import SectionCardSimple from '../components/section-card-simple'
 import ContactSection from '../components/contact-section'
 import Helmet from '../components/layout/helmet-seo'
 
+/**
+ * Page de présentation de toutes les expertises
+ */
 export const Expertises = () => {
+  // Initialisation de la page
   const router = useRouter()
   const { t } = useTranslation('expertises')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
+
   return (
     <Helmet metatags={metatags} router={router}>
       <div className='shape shape-fluid-x shape-blur-2 text-light-grey d-none d-md-block'>
@@ -34,13 +41,13 @@ export const Expertises = () => {
           data-aos='fade-up'
         />
 
-        {/* Présentation de notre méthodologie */}
+        {/* Présentation de notre méthodologie via un steper */}
         <div className='d-md-flex d-lg-flex'>
           <StepContainer namespace='expertises' displayDirection='column' />
         </div>
       </Section>
 
-      {/* Section domaines d'expertise */}
+      {/* Section domaines d'expertises (4 blocs pour les 4 expertises statiques) */}
       <Section>
         <TextContainer namespace={{ name: 'expertises', section: 'featureContainer' }} alignText='center' />
         <div className='row'>

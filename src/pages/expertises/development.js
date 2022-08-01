@@ -1,7 +1,11 @@
-import { getExpertisesByField } from '../../lib/request/expertise.js'
+// External Librairies
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 
+// Data
+import { getExpertisesByField } from '../../lib/request/expertise.js'
+
+// Components
 import PageTitle from '../../components/page-title'
 import Section from '../../components/section'
 import TextContainer from '../../components/text-container'
@@ -11,13 +15,19 @@ import SectionCardSimple from '../../components/section-card-simple'
 import Breadcrumb from '../../components/breadcrumb'
 import Helmet from '../../components/layout/helmet-seo'
 
+/**
+ * PAGE DEVELOPMENT
+ * @param expertises résultats de la requête : getExpertisesByField
+ */
 export const Developpement = ({ expertises = [] }) => {
+  // Initialisation de la page
   const router = useRouter()
   const { t } = useTranslation('development')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
 
   return (
     <Helmet metatags={metatags} router={router}>
+      {/* Entête : image + titre */}
       <Breadcrumb router={router} />
       <PageTitle
         namespace='development'
@@ -26,7 +36,7 @@ export const Developpement = ({ expertises = [] }) => {
         classImg='w-100 px-4 px-md-0'
       />
       <Section>
-        {/* Introduction à nos technologies */}
+        {/* Introduction à nos technologies : 1 bloc pour chaque spécialité du développement */}
         <TextContainer
           namespace={{ name: 'development', section: 'expertises' }}
           alignText='center'
@@ -36,7 +46,7 @@ export const Developpement = ({ expertises = [] }) => {
           <CardExpertise config={expertises} />
         </div>
       </Section>
-      {/* Nos gestions de projet */}
+      {/* Nos gestions de projet (statique) */}
       <Section bgClass='bg-gray-300'>
         <h2 className='text-center'>{t('projets.title')}</h2>
         <div className='row'>
@@ -55,8 +65,14 @@ export const Developpement = ({ expertises = [] }) => {
 
 export default Developpement
 
+/**
+ * Fonction asynchrone Next JS => Next.js will pre-render this page at build time using the props returned by getStaticProps.
+ * @param preview booléen qui permet de gérer la preview (nous gérons cela au niveau du déploiement donc nous laissons à false)
+ * @param locale locale active du site
+ */
 export async function getStaticProps({ preview = false, locale }) {
   const expertises = (await getExpertisesByField(preview, locale, 'development')) || []
+  // Nous renvoyons les données sous forme de props à la page
   return {
     props: { expertises }
   }

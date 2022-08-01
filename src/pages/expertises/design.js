@@ -1,7 +1,11 @@
-import { getExpertisesByField } from '../../lib/request/expertise.js'
+// External Librairies
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 
+// Data
+import { getExpertisesByField } from '../../lib/request/expertise.js'
+
+// Components
 import PageTitle from '../../components/page-title'
 import Section from '../../components/section'
 import TextContainer from '../../components/text-container'
@@ -11,13 +15,19 @@ import Breadcrumb from '../../components/breadcrumb'
 import StepContainer from '../../components/step-container'
 import Helmet from '../../components/layout/helmet-seo'
 
+/**
+ * PAGE DESIGN
+ * @param expertises résultats de la requête : getExpertisesByField
+ */
 export const Design = ({ expertises = [] }) => {
+  // Initialisation de la page
   const router = useRouter()
   const { t } = useTranslation('design')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
 
   return (
     <Helmet metatags={metatags} router={router}>
+      {/* Entête : image + titre */}
       <Breadcrumb router={router} />
       <PageTitle
         namespace='design'
@@ -33,7 +43,7 @@ export const Design = ({ expertises = [] }) => {
         </div>
       </Section>
 
-      {/* Présentation de notre expertise/nos outils */}
+      {/* Présentation de notre expertise/nos outils : 1 bloc pour chaque méthode en design  */}
       <Section>
         <TextContainer namespace={{ name: 'design', section: 'expertises' }} alignText='center' data-aos='fade-up' />
         <div className='row row-cols-1 row-cols-md-2'>
@@ -50,8 +60,14 @@ export const Design = ({ expertises = [] }) => {
 
 export default Design
 
+/**
+ * Fonction asynchrone Next JS => Next.js will pre-render this page at build time using the props returned by getStaticProps.
+ * @param preview booléen qui permet de gérer la preview (nous gérons cela au niveau du déploiement donc nous laissons à false)
+ * @param locale locale active du site
+ */
 export async function getStaticProps({ preview = false, locale }) {
   const expertises = (await getExpertisesByField(preview, locale, 'design')) || []
+  // Nous renvoyons les données sous forme de props à la page
   return {
     props: { expertises }
   }

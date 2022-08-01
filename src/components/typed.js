@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 
+/**
+ * TYPED : Librairie d'animation pour donner une impression d'écriture clavier en live
+ * @param word le mot à animer
+ */
 const TypedReactHook = ({ word }) => {
   // Create reference to store the DOM element containing the animation
   const el = useRef(null)

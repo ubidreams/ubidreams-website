@@ -1,6 +1,12 @@
 import { fetchAPI } from '../api'
 
-/* CONTACT */
+/** CONTACT
+ * @param locale locale active du site
+ * */
+
+/**
+ * requête de récupération des coordonnées de l'entreprise
+ */
 export async function getCoordonnees(locale) {
   const data = await fetchAPI(
     `
@@ -19,6 +25,9 @@ export async function getCoordonnees(locale) {
   return data?.contact
 }
 
+/**
+ * requête de récupération des mention de la CNIL pour le formulaire de contact
+ */
 export async function getCnilMentionForm(locale) {
   const data = await fetchAPI(
     `

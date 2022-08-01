@@ -1,21 +1,26 @@
+// External Librairies
 import useTranslation from 'next-translate/useTranslation'
 import ReactHtmlParser from 'react-html-parser'
 
 //check for more informations: https://github.com/vinissimus/next-translate/issues/429
+// Permet de gérer les conséquences d'un bug de la lib.
 const checkIfTraductionExists = (t, config, section, field) => {
   return config && config[field] ? config[field] : t(section + `.${field}`, {}, { fallback: '' })
 }
 
 /**
- * Zone de texte générale, option : titre, sous titre, description
+ * TEXT CONTAINER : Zone de texte générale, option : titre, sous titre, description
  * @param config (données sous la forme d'un objet (title, subtitle, description))
  * @param alignText: propriété basée sur l'alignement du texte
- * @param customStyle appliqué sur la div globale
+ * @param namespace string désignant le namespace pour les clés de traduction
+ * @param className classname appliqué sur la div globale
  */
 const TextContainer = ({ namespace = null, config = null, alignText, className = '' }) => {
+  // Initialisation du composant
   const { t } = useTranslation(namespace && namespace.name)
   const section = namespace && namespace.section
 
+  // Vérification des données grâce à une méthode, cette méthode permet de gérer un bug lié à la lib de traduction
   const data = {
     title: checkIfTraductionExists(t, config, section, 'title'),
     subtitle: checkIfTraductionExists(t, config, section, 'subtitle'),

@@ -1,10 +1,17 @@
+// Template du mail
 import { htmlBody } from './mail-html'
 
 //https://nodemailer.com/usage/
 //https://vercel.com/support/articles/serverless-functions-and-smtp
+/**
+ * Handler est la fonction par défaut du fichier, elle est exécutée en priorité en cas d'appel sur ce fichier.
+ * Ce fichier gère la configuration du mailer et l'envoi du mail.
+ */
 export default async function handler(req, res) {
+  // import de la librairie nodemailer
   let nodemailer = require('nodemailer')
 
+  // configuration des champs du mail
   const mailData = {
     from: process.env.MAIL_SMTP_SENDER,
     to: process.env.MAIL_SMTP_RECIPIENT,
@@ -32,7 +39,7 @@ export default async function handler(req, res) {
     )
     const captchaValidation = await response.json()
 
-    //Si le captcha est validé alors je lance le processus d'envoie de mail via nodemailer
+    //Si le captcha est validé alors je lance le processus d'envoi de mail via nodemailer
     if (captchaValidation.success) {
       const transporter = nodemailer.createTransport({
         port: 587,

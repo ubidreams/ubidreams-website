@@ -1,9 +1,14 @@
+// External Librairies
 import { isBlockquote, isHeading, isSpan } from 'datocms-structured-text-utils'
 import { includes, isEmpty } from 'lodash'
 import ImageNext from 'next/image'
 import { Image, renderRule, StructuredText } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
+
+// Helpers & Config
 import { Download } from '../../config/StaticImagesExport'
+
+// Components
 import Breadcrumb from '../breadcrumb'
 import Card from '../card'
 import CardExpert from '../card-expert'
@@ -13,17 +18,20 @@ import { LinkBeautify } from '../link-beautify'
 import Section from '../section'
 import TextContainer from '../text-container'
 
+// Rendu des sections de la page conditionné à leur existence côté DATOCMS
 const renderPage = (type, page) => {
   switch (type) {
     case 'subtitle':
       return <h2 className='lead fs-lg text-muted'>{ReactHtmlParser(page.subtitle)}</h2>
     case 'image':
+      // Composant image de datocms compatible avec le format de données média de DATOCMS
       return (
         <div>
           <Image data={page.image.responsiveImage} alt='' className='img-page' lazyLoad={false} />
         </div>
       )
     case 'expertInterne':
+      // Affichage d'une section de présentation des profils internes correspondant à l'expertise
       return (
         <Section>
           <TextContainer namespace={{ name: 'expertises', section: 'internalExperts' }} alignText='center' />
@@ -33,6 +41,7 @@ const renderPage = (type, page) => {
         </Section>
       )
     case 'expertPartenaire':
+      // Affichage d'une section de présentation des profils externes partenaires d'Ubidreams et correspondant à l'expertise
       return (
         <Section>
           <TextContainer namespace={{ name: 'expertises', section: 'externalExperts' }} alignText='center' />
@@ -42,6 +51,7 @@ const renderPage = (type, page) => {
         </Section>
       )
     case 'partenaire':
+      // Affichage d'une section de présentation des entreprises externes partenaires d'Ubidreams et correspondant à l'expertise
       return (
         <Section bgClass='bg-gray-300'>
           <TextContainer namespace={{ name: 'expertises', section: 'partners' }} alignText='center' />
@@ -51,12 +61,14 @@ const renderPage = (type, page) => {
         </Section>
       )
     case 'afficherContact':
+      // Affichage d'un bloc de redirection vers la page de contact
       return (
         <Section>
           <ContactSection mailObject={page.objetMail} />
         </Section>
       )
     case 'lastRef':
+      // Affichage d'une section de présentation des références en lien avec l'expertise
       return (
         <Section>
           <TextContainer namespace={{ name: 'expertises', section: 'referencesLinked' }} alignText='center' />
@@ -69,23 +81,33 @@ const renderPage = (type, page) => {
       null
   }
 }
+
+/*
+  TEMPLATE DE PAGE TYPE : expertise en développement, Design (React JS, React Native, API), solutions (ubishield, ubitrack)...
+  ARBORESCENCE : accessible depuis les expertises (/BASE_URL/expertises/react-js) OU les solutions (/BASE_URL/solutions/ubishield)
+*/
 const PageTemplate = ({ page, lastRef, router }) => {
   return (
     <>
       <main>
+        {/* Rendu du breadcrumb pour les pages d'expertises */}
         {page.categorie !== 'solution' && (
           <Breadcrumb router={router} lastLink={{ href: router.asPath, name: page.title }} />
         )}
         <Section>
+          {/* TITRE */}
           <div className='text-center mb-8'>
             <h1 className='display-2 fw-bold'>{page.title}</h1>
             {renderPage('subtitle', page)}
           </div>
+          {/* IMAGE D'ENTETE */}
           {page.image && renderPage('image', page)}
           <div className='my-6'>
+            {/* CONTENU DE LA PAGE */}
             <StructuredText
               data={page.content}
               renderLinkToRecord={({ record, children, transformedMeta }) => {
+                // Rendu custom des liens vers les autres pages (contraintes de réécriture des urls avec les "catégories") CF. LinkBeautify
                 return (
                   <LinkBeautify record={record} meta={transformedMeta}>
                     {children}
@@ -93,8 +115,10 @@ const PageTemplate = ({ page, lastRef, router }) => {
                 )
               }}
               renderBlock={({ record }) => {
+                // Rendu custom de plusieurs blocks issus de DATOCMS
                 switch (record._modelApiKey) {
                   case 'image':
+                    // Rendu d'une image en fonction de son format (pdf, png, jpg)
                     const { title, format, url } = record.image
                     if (format === 'pdf') {
                       return (
@@ -111,10 +135,13 @@ const PageTemplate = ({ page, lastRef, router }) => {
                     }
                     return <Image data={record.image.responsiveImage} alt='' />
                   case 'focus_point':
+                    // Rendu d'une liste sous le format de bloc rectangulaire prenant la largeur de la page. Mise en avant d'informations limitées
                     return <div className='focus_point'>{ReactHtmlParser(record.liste)}</div>
                   case 'liste_custom':
+                    // Rendu d'une liste avec une icon check devant chaque li
                     return <div className='liste_custom'>{ReactHtmlParser(record.liste)}</div>
                   case 'text_and_image':
+                    // Rendu d'une section de page avec une image et un texte associé sur fond gris
                     return (
                       <div className='d-flex row bg-light-grey px-4 py-6 my-4'>
                         {record.image && (
@@ -131,6 +158,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
                 }
               }}
               customRules={[
+                // Rendu custom de texte en gras
                 renderRule(isSpan, ({ node, key }) => {
                   if (node.marks && includes(node.marks, 'highlight')) {
                     return (
@@ -150,6 +178,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
 
                   return <node.type key={key}>{node.value}</node.type>
                 }),
+                // Rendu custom des titres
                 renderRule(isHeading, ({ node, children, key }) => {
                   const HeadingTag = `h${node.level}`
                   return (
@@ -158,6 +187,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
                     </HeadingTag>
                   )
                 }),
+                // Rendu custom des citations
                 renderRule(isBlockquote, ({ node, children, key }) => {
                   return (
                     <div key={key} className='border-top border-bottom border-green my-5 py-4'>
@@ -171,6 +201,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
             />
           </div>
         </Section>
+        {/* Fin de page avec affichage de composant en fonction de l'existence sur DATOCMS*/}
         {!isEmpty(page.expertInterne) && renderPage('expertInterne', page)}
         {!isEmpty(page.expertPartenaires) && renderPage('expertPartenaire', page)}
         {!isEmpty(page.partenaire) && renderPage('partenaire', page)}

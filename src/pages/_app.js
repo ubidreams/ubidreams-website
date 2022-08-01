@@ -1,15 +1,25 @@
+// Style
 import '../../public/css/theme.bundle.css'
 import '../../public/css/libs.bundle.css'
 import 'rc-pagination/assets/index.css'
 import '../styles/style.scss'
 
+// External Librairies
 import appWithI18n from 'next-translate/appWithI18n'
-import i18nConfig from '../../i18n'
-import Layout from '../components/layout/layout'
 
+// Helpers & Config
+import i18nConfig from '../../i18n'
 import { CookiesProvider } from '../helpers/cookiesContext'
 import { LangProvider } from '../helpers/langContext'
 
+// Components
+import Layout from '../components/layout/layout'
+
+/**
+ * Page principale du site (ACCUEIL)
+ * @param Component container de l'application
+ * @param pageProps props à passer dans le container de l'application
+ */
 function MyApp({ Component, pageProps }) {
   return (
     <LangProvider>

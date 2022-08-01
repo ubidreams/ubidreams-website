@@ -1,14 +1,29 @@
+// External Librairires
 import { isHeading, isParagraph, isSpan } from 'datocms-structured-text-utils'
 import { includes, isNull } from 'lodash'
 import { Image, renderRule, StructuredText } from 'react-datocms'
+
+// Components
 import { LinkBeautify } from './link-beautify'
 
+/**
+  CARD : card globale
+  Permet d'afficher un ensemble de données sous le format de carte avec un texte et une image
+    @param config objet contenant les données à afficher dans le composant
+    @param reverse booléen afin de déterminer l'affichage des cards (texte à droite ou à gauche de l'image)
+    @param showShadows booléen pour indiquer l'ajout de shadow autour de la card
+    @param textJustify string avec un mot clé (center, left, right) pour justifier le texte
+    @param large number détermine la card (via l'index) qui sera la plus large
+*/
 const Card = ({ config = {}, reverse = false, showShadows = false, textJustify = '', large = 1 }) => {
   return config.map((contentCard, index) => {
+    // J'extrais les données nécessaires
     const { image, content } = contentCard
-    //Si le reverse est passé en props (true) alors le reverse par défault est inversé
+    //Si le reverse est passé en props (true) alors le reverse par défaut est inversé
     const conditionReverse = !reverse ? index % 2 == 1 : index / 2 == 1
 
+    // Si le content n'est pas null alors j'affiche le rendu
+    // Les différentes valeurs booléennes récupérées permettent de conditionner le rendu du composant
     if (!isNull(content)) {
       return (
         <div
@@ -22,6 +37,7 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
               conditionReverse ? 'flex-md-row-reverse' : ''
             }`}
           >
+            {/* Affichage de l'image */}
             <div className='w-md-50 start-3 p-4 text-center position-relative' style={{ maxWidth: '12em' }}>
               <Image data={image.responsiveImage} alt='' />
             </div>
@@ -30,9 +46,11 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
             ${textJustify}`}
             >
               <div>
+                {/* RENDU CONTENU */}
                 <StructuredText
                   data={content}
                   renderLinkToRecord={({ record, children, transformedMeta }) => {
+                    // Rendu custom des liens vers les autres pages (contraintes de réécriture des urls avec les "catégories") CF. LinkBeautify
                     return (
                       <LinkBeautify record={record} meta={transformedMeta}>
                         {children}
@@ -40,6 +58,7 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
                     )
                   }}
                   customRules={[
+                    // Rendu custom de texte en gras
                     renderRule(isSpan, ({ node, key }) => {
                       if (node.marks && includes(node.marks, 'highlight')) {
                         return (
@@ -59,6 +78,7 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
 
                       return <node.type key={key}>{node.value}</node.type>
                     }),
+                    // Rendu custom de titre
                     renderRule(isHeading, ({ node, children, key }) => {
                       const HeadingTag = `h${node.level}`
                       return (
@@ -67,6 +87,7 @@ const Card = ({ config = {}, reverse = false, showShadows = false, textJustify =
                         </HeadingTag>
                       )
                     }),
+                    // Rendu custom de paragraphe de texte
                     renderRule(isParagraph, ({ children, key }) => {
                       return (
                         <p key={key} className='text-muted'>

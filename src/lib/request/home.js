@@ -3,7 +3,14 @@ import { isNull } from 'lodash'
 
 import { responsiveImageFragment, miniaturePageFragment } from '../fragment.js'
 
-/* PAGE HOME */
+/** PAGE HOME
+ * @param preview booléen afin d'indiquer si nous sommes en preview ou nom
+ * @param locale locale active du site
+ * */
+
+/**
+ * requête de récupération des témoignages pour la page d'accueil
+ */
 export async function getAllTestimonialsForHome(preview, locale) {
   const data = await fetchAPI(
     `
@@ -28,6 +35,9 @@ export async function getAllTestimonialsForHome(preview, locale) {
   return data?.home
 }
 
+/**
+ * requête de récupération des pages favorites à afficher en page d'accueil
+ */
 export async function getPagesFavorites(preview, locale) {
   const data = await fetchAPI(
     `

@@ -1,7 +1,14 @@
 import { fetchAPI } from '../api.js'
 import { responsiveImageFragment, tagSeoFragment } from '../fragment.js'
 
-/* PAGE BLOG */
+/** PAGE BLOG
+ *  @param preview booléen afin d'indiquer si nous sommes en preview ou nom
+ *  @param locale locale active du site
+ */
+
+/**
+ * requête de récupération de tous les articles du blog
+ */
 export async function getBlog(preview, locale) {
   const data = await fetchAPI(
     `
@@ -39,6 +46,9 @@ export async function getBlog(preview, locale) {
   return data
 }
 
+/**
+ * requête de récupération des 3 articles les plus récents
+ */
 export async function getLastPosts(preview, locale, tag, current_post) {
   const data = await fetchAPI(
     `
@@ -65,6 +75,9 @@ export async function getLastPosts(preview, locale, tag, current_post) {
   return data?.allPosts
 }
 
+/**
+ * requête de récupération de tous les slugs des articles
+ */
 export async function getAllPostsSlugs(locale) {
   const data = await fetchAPI(
     `
@@ -78,6 +91,9 @@ export async function getAllPostsSlugs(locale) {
   return data?.allPosts
 }
 
+/**
+ * requête de récupération d'un article en fonction de son slug
+ */
 export async function getOnePostBySlug(preview, locale, slug) {
   const data = await fetchAPI(
     `

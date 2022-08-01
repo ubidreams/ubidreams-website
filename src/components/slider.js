@@ -1,11 +1,23 @@
+// External Librairies
 import Slider from 'react-slick'
+
+// Styles
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 
+/**
+ * SLIDER COMPONENT : Composant slider global auquel nous passons les enfants
+ * @param children Composants enfants du slider
+ * @param className string pour les class de style du slider
+ * @param showArrow objet permettant d'afficher ou non les flèches latérales d'un slider selon la taille de l'écran
+ * @param option options du slider
+ */
 const SliderComponent = ({ children, className, showArrow = { show: true, break1000: false }, option = {} }) => {
+  // Initialisation des options du composant
   let optionArrow = {}
   let optionResponsive = {}
 
+  // Si les flèches sont nécessaires alors je surcharge leur apparence avec des composants customs
   if (showArrow.show) {
     optionArrow = {
       nextArrow: <SampleNextArrow />,
@@ -13,6 +25,7 @@ const SliderComponent = ({ children, className, showArrow = { show: true, break1
     }
   }
 
+  // J'adapte les options de mon slider en fonction du breakpoint de responsive définit
   if (showArrow.break1000) {
     optionResponsive = {
       breakpoint: 1024,
@@ -25,6 +38,7 @@ const SliderComponent = ({ children, className, showArrow = { show: true, break1
     }
   }
 
+  // Synthèse des paramètres du slider
   const settings = {
     ...option,
     ...optionArrow,
@@ -52,6 +66,7 @@ const SliderComponent = ({ children, className, showArrow = { show: true, break1
 
 export default SliderComponent
 
+// FLECHE SLIDE PRECEDENTE
 const SamplePrevArrow = (props) => {
   const { display = '', onClick } = props
   return (
@@ -61,6 +76,7 @@ const SamplePrevArrow = (props) => {
   )
 }
 
+// FLECHE SLIDE SUIVANTE
 const SampleNextArrow = (props) => {
   const { display = '', onClick } = props
   return (

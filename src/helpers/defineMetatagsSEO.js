@@ -1,14 +1,19 @@
 const SITE_URL = process.env.NEXT_PUBLIC_URL_GLOBAL
 
+// External Librairies
 import { includes, map } from 'lodash'
 import Head from 'next/head'
 
-/* 
-    Autocomplétion du pathname en fonction de la page affichée (catégorie/params, slug)
-*/
+/**
+ * Autocomplétion du pathname en fonction de la page affichée (catégorie/params, slug)
+ * @param router objet contenant les informations de navigation, issu du next/router
+ * @param categorie string avec la catégorie de la page
+ * @param slug string, slug de la page
+ */
 const replaceParams = (router, categorie, slug) => {
   let pathname = router.pathname
 
+  // En fonction de la construction attendue de mon pathname (router) j'affecte les données
   if (includes(pathname, '/[params]/[slug]')) {
     pathname = pathname.replace('[params]', categorie)
     pathname = pathname.replace('[slug]', slug)
@@ -23,9 +28,10 @@ const replaceParams = (router, categorie, slug) => {
   return pathname
 }
 
-/* 
-    Test de la locale afin d'ajouter /en ou pas à l'url de base
-*/
+/**
+ * Test de la locale afin d'ajouter /en ou pas à l'url de base
+ * @param locale locale actuelle de l'app
+ */
 const siteUrlWithLocale = (locale) => {
   let url = SITE_URL
 
@@ -36,15 +42,20 @@ const siteUrlWithLocale = (locale) => {
   return url
 }
 
-/* 
-    ajout de nouvelles balises méta aux Metatags déjà généré par DATOCMS
-*/
+/**
+ * ajout de nouvelles balises méta aux Metatags déjà généré par DATOCMS
+ * @param seo objet contenant les propriétés SEO issues de DATOCMS
+ * @param image image pour surcharger les balises og
+ * @param router objet contenant les informations de navigation, issu du next/router
+ * @param categorie string avec la catégorie de la page
+ */
 const DefineMetatagsSEO = ({
   seo,
   image = 'https://ubidreams.fr/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fpublic%2Fimg%2Flogos%2Fcropped-logo.267f958344f2047dc9307ebc1389a9af.png&w=256&q=75',
   router,
   categorie = ''
 }) => {
+  // Initialisation du composant
   const { _allSlugLocales = [], _seoMetaTags = [] } = seo
   let finalMetatags = _seoMetaTags
 
@@ -99,6 +110,7 @@ const DefineMetatagsSEO = ({
     }
   ]
 
+  // On ajoute nos modifications dans la balise Head de next
   return (
     <Head>
       {finalMetatags.map(({ tag: Tag, attributes, content }, index) => {

@@ -1,14 +1,25 @@
+// External Librairies
 import { Image } from 'react-datocms'
 import ReactHtmlParser from 'react-html-parser'
 
+/**
+  CARD ARTICLE : card de miniature d'un article
+  Permet d'afficher un ensemble de données sous le format de carte avec une image, titre, extrait, auteur ...
+    @param config objet contenant les données à afficher dans le composant
+    @param locale string indiquant la locale active sur l'application
+*/
 export const CardArticle = ({ config = {}, locale }) => {
+  // réécriture du path en ajoutant blog + la locale
   const path = locale === 'en' ? '/en/blog' : '/blog'
+
   return config.map((post, index) => {
+    // Formatage des dates en fonction de la locale.
     const dateFormatted = new Intl.DateTimeFormat(locale, { month: 'short', day: 'numeric' }).format(
       new Date(post.date)
     )
     return (
       <div key={index} className='mb-6'>
+        {/* la card complète est un lien vers l'article */}
         <a className='card shadow-light-lg lift lift-lg h-100 custom-card-link' href={`${path}/${post.slug}`}>
           <div className='card-img-top'>
             <Image
@@ -18,6 +29,7 @@ export const CardArticle = ({ config = {}, locale }) => {
               style={{ height: '200px' }}
             />
             <div className='position-relative'>
+              {/* FORME ISSUE DU TEMPLATE*/}
               <div className='shape shape-bottom shape-fluid-x text-white'>
                 <svg viewBox='0 0 2880 480' fill='none' xmlns='http://www.w3.org/2000/svg'>
                   <path
@@ -30,7 +42,7 @@ export const CardArticle = ({ config = {}, locale }) => {
               </div>
             </div>
           </div>
-
+          {/* contenu textuel de la card avec le titre et le sous titre */}
           <div className='card-body' href='#!'>
             <h3>{post.title}</h3>
 

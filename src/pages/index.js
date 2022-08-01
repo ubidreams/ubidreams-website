@@ -1,5 +1,15 @@
+// External Librairies
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
+
+// Helpers & Config
+import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
+
+// Data
+import { getAllTestimonialsForHome, getPagesFavorites } from '../lib/request/home.js'
+import { getLastReferences } from '../lib/request/reference.js'
+
+// Component
 import Card from '../components/card'
 import CardReference from '../components/card-reference'
 import ContactSection from '../components/contact-section'
@@ -10,14 +20,19 @@ import Section from '../components/section'
 import SliderComponent from '../components/slider'
 import SliderItem from '../components/slider-item'
 import TextContainer from '../components/text-container'
-import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
-import { getAllTestimonialsForHome, getPagesFavorites } from '../lib/request/home.js'
-import { getLastReferences } from '../lib/request/reference.js'
 
+/**
+ * Page principale du site (ACCUEIL)
+ * @param allTestimonials résultats de la requête : getAllTestimonialsForHome
+ * @param lastReferences résultats de la requête : getLastReferences
+ * @param pagesFavorites résultats de la requête : getPagesFavorites
+ */
 export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
+  // Initialisation de la page
   const { t } = useTranslation('home')
   const router = useRouter()
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
+
   return (
     <Helmet metatags={metatags} router={router}>
       {/* Entête > titre + illustration à droite */}
@@ -30,7 +45,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
         </div>
       </Section>
 
-      {/* Présentation de l'entreprise */}
+      {/* Présentation de l'entreprise avec un background image */}
       <Section
         bgClass='bg-gray-200 bg-between'
         customStyle={{
@@ -44,7 +59,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
         />
       </Section>
 
-      {/* Triple blocs de technologies */}
+      {/* Présentation des technologies / pages favorites */}
       <Section>
         <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
         <div className='row'>
@@ -80,11 +95,17 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
 
 export default Home
 
+/**
+ * Fonction asynchrone Next JS => Next.js will pre-render this page at build time using the props returned by getStaticProps.
+ * @param preview booléen qui permet de gérer la preview (nous gérons cela au niveau du déploiement donc nous laissons à false)
+ * @param locale locale active du site
+ */
 export async function getStaticProps({ preview = false, locale }) {
   const pagesFavorites = (await getPagesFavorites(preview, locale)) || []
   const allTestimonials = (await getAllTestimonialsForHome(preview, locale)) || []
   const lastReferences = (await getLastReferences(preview, locale)) || []
 
+  // Nous renvoyons les données sous forme de props à la page
   return {
     props: { allTestimonials, lastReferences, pagesFavorites }
   }

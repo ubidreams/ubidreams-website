@@ -1,4 +1,8 @@
 /* FRAGMENTS */
+
+/**
+ * fragment de requête pour récupérer les images
+ */
 export const responsiveImageFragment = `
   fragment responsiveImageFragment on ResponsiveImage {
     srcSet
@@ -15,6 +19,9 @@ export const responsiveImageFragment = `
   }
 `
 
+/**
+ * fragment de requête pour récupérer média de type svg
+ */
 export const svgFragment = `
   fragment svgFieldFragment on FileField {
     alt
@@ -27,6 +34,9 @@ export const svgFragment = `
   }
 `
 
+/**
+ * fragment de requête pour récupérer les données d'un collaborateur
+ */
 export const expertFragment = `
   fragment MembreRecordFragment on MembreRecord {
     title
@@ -40,6 +50,9 @@ export const expertFragment = `
   }
 `
 
+/**
+ * fragment de requête pour récupérer des données de type miniature de référence
+ */
 export const referenceFragment = `
   fragment ReferenceRecordFragment on ReferenceRecord {
     id
@@ -54,6 +67,9 @@ export const referenceFragment = `
   }
 `
 
+/**
+ * fragment de requête pour récupérer des données de type miniature de page
+ */
 export const miniaturePageFragment = `
   fragment MiniaturePageFieldFragment on PageModelMiniaturePageField {
     value
@@ -65,6 +81,9 @@ export const miniaturePageFragment = `
   }
 `
 
+/**
+ * fragment de requête pour récupérer les tags SEO
+ */
 export const tagSeoFragment = `
   fragment TagFragment on Tag {
     attributes

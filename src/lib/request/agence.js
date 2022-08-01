@@ -1,7 +1,16 @@
+// Data
 import { fetchAPI } from '../api'
 import { responsiveImageFragment } from '../fragment.js'
 
-/* PAGE AGENCE  */
+/**
+ *  PAGE AGENCE
+ *  @param preview booléen afin d'indiquer si nous sommes en preview ou nom
+ *  @param locale locale active du site
+ */
+
+/**
+ * requête de récupération de tous les collaborateurs
+ */
 export async function getTeamMembers(preview, locale) {
   const data = await fetchAPI(
     `
@@ -28,6 +37,9 @@ export async function getTeamMembers(preview, locale) {
   return data?.agence
 }
 
+/**
+ * requête de récupération de toutes les images de la gallery pour la page agence
+ */
 export async function getGalleryImg(preview, locale) {
   const data = await fetchAPI(
     `
@@ -48,6 +60,9 @@ export async function getGalleryImg(preview, locale) {
   return data?.agence
 }
 
+/**
+ * requête de récupération de toutes les structures auquel Ubidreams adhère (Association..)
+ */
 export async function getMembership(preview, locale) {
   const data = await fetchAPI(
     `

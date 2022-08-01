@@ -1,4 +1,4 @@
-/* INDEX */
+/* INDEX DES ILLUSTRATIONS STATIQUES DU SITE*/
 /* Illustrations */
 import Bezier from '../../public/img/icons/Bezier-curve.svg'
 import Brush from '../../public/img/icons/Brush.svg'
@@ -50,59 +50,59 @@ import ContactHeader from '../../public/img/photos/contact.webp'
 import UbidreamsFront from '../../public/img/photos/Ubidreams-large.webp'
 
 export {
-	Recherche,
-	IdeesRightCropped,
-	ConseilCropped,
-	AccueilCropped,
-	Contact,
-	ContactHeader,
-	UbidreamsFront,
-	Ubidreams,
-	Download,
-	DoneCircle,
-	Facebook,
-	Linkedin,
-	Twitter
+  Recherche,
+  IdeesRightCropped,
+  ConseilCropped,
+  AccueilCropped,
+  Contact,
+  ContactHeader,
+  UbidreamsFront,
+  Ubidreams,
+  Download,
+  DoneCircle,
+  Facebook,
+  Linkedin,
+  Twitter
 }
 
 export const Img = {
-	/* illustration */
-	home: Accueil,
-	search: Recherche,
-	ideas: Idees,
-	ideasCrop: IdeesRightCropped,
-	multiplateforme: Multiplatforme,
-	iot: Iot,
-	iotLG: Iot_lg,
-	design: Design,
-	expertises: Expertises,
-	conseil: Conseil,
-	regie: Regie,
-	projet: Projet,
-	/* logo */
-	logo: Ubidreams,
-	fb: Facebook,
-	lkd: Linkedin,
-	twt: Twitter,
-	POI: POI,
-	track: track,
-	PTW: PTW,
-	nove: Nove,
-	hellermann: Hellermann,
-	concept: GigaConcept,
-	/* icon */
-	code: Code,
-	smile: Smile,
-	router: Router,
-	waiting: Waiting,
-	bezier: Bezier,
-	brush: Brush,
-	bulb: Bulb,
-	code2: Code2,
-	like: Like,
-	pantone: Pantone,
-	pen: Pen,
-	target: Target,
-	thunder: Thunder,
-	timer: Timer
+  /* illustration */
+  home: Accueil,
+  search: Recherche,
+  ideas: Idees,
+  ideasCrop: IdeesRightCropped,
+  multiplateforme: Multiplatforme,
+  iot: Iot,
+  iotLG: Iot_lg,
+  design: Design,
+  expertises: Expertises,
+  conseil: Conseil,
+  regie: Regie,
+  projet: Projet,
+  /* logo */
+  logo: Ubidreams,
+  fb: Facebook,
+  lkd: Linkedin,
+  twt: Twitter,
+  POI: POI,
+  track: track,
+  PTW: PTW,
+  nove: Nove,
+  hellermann: Hellermann,
+  concept: GigaConcept,
+  /* icon */
+  code: Code,
+  smile: Smile,
+  router: Router,
+  waiting: Waiting,
+  bezier: Bezier,
+  brush: Brush,
+  bulb: Bulb,
+  code2: Code2,
+  like: Like,
+  pantone: Pantone,
+  pen: Pen,
+  target: Target,
+  thunder: Thunder,
+  timer: Timer
 }

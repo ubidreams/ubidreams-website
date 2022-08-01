@@ -1,3 +1,4 @@
+// Arborescence des liens du menu
 const routes = [
   {
     key: 'home'

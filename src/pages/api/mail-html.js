@@ -1,3 +1,6 @@
+/**
+ * Template HTML de l'email de contact. Les données passées en props sont celles issues du formulaires
+ */
 export const htmlBody = (name, email, message, object, company) => {
   return `
     <!doctype html>

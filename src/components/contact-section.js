@@ -1,13 +1,23 @@
+// External Librairies
 import Image from 'next/image'
-import { Contact } from '../config/StaticImagesExport'
 import useTranslation from 'next-translate/useTranslation'
 import Link from 'next/link'
 import { isEmpty } from 'lodash'
 
+// Helpers & Config
+import { Contact } from '../config/StaticImagesExport'
+
+/**
+ CONTACT SECTION : composant permettant la redirection directe vers la page contact
+ Permet d'afficher une image sur la gauche (rogner par une forme), avec un petit texte et un bouton pour rejoindre la page contact
+ @param mailObject string phrase contenant l'intitulé de l'objet du mail en fonction de la page sur laquelle nous sommes
+ */
 const ContactSection = ({ mailObject = '' }) => {
+  // Initialisation du composant
   const { t } = useTranslation('common')
   const query = isEmpty(mailObject) ? {} : { object: mailObject }
 
+  // Construction de l'objet contenant les données (intitulé des champs)
   const config = {
     img: {
       ...Contact,
@@ -21,6 +31,7 @@ const ContactSection = ({ mailObject = '' }) => {
     <div className='card card-row shadow-light-lg mb-6' id='contact'>
       <div className='d-md-flex gx-0'>
         <>
+          {/* Image et forme du template */}
           <div className='w-md-50'>
             <div className='card-img-start w-100 h-100 bg-cover' style={{ backgroundImage: `url(${config.img.src})` }}>
               <Image src={config.img} alt={config.img.alt} className='img-fluid d-md-none invisible' />
@@ -33,6 +44,7 @@ const ContactSection = ({ mailObject = '' }) => {
           </div>
         </>
         <div className='w-md-50 w-100 position-md-static'>
+          {/* Affichage du texte et du bouton */}
           <div className='card-body'>
             <blockquote className='blockquote text-center mb-0'>
               <p className='mb-5 mb-md-7' style={{ whiteSpace: 'pre-line' }}>

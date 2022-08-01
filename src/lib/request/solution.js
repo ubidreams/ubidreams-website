@@ -1,6 +1,15 @@
 import { fetchAPI } from '../api'
 import { expertFragment, responsiveImageFragment, tagSeoFragment } from '../fragment'
 
+/** SOLUTIONS
+ * @param preview booléen afin d'indiquer si nous sommes en preview ou nom
+ * @param locale locale active du site
+ * @param slug string
+ * */
+
+/**
+ * requête de récupération d'une solution par slug
+ */
 export async function getOneSolutionBySlug(preview, locale, slug) {
   const data = await fetchAPI(
     `
@@ -105,6 +114,9 @@ export async function getOneSolutionBySlug(preview, locale, slug) {
   return data?.solution
 }
 
+/**
+ * requête de récupération de tous les slugs des solutions
+ */
 export async function getAllSolutionsSlugs(locale) {
   const data = await fetchAPI(
     `

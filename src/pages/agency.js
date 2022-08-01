@@ -1,7 +1,10 @@
+// External Librairies
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
 import { useRouter } from 'next/router'
 import { Image } from 'react-datocms'
+
+// Components
 import CardMember from '../components/card-member'
 import FeatureContainer from '../components/feature-container'
 import Helmet from '../components/layout/helmet-seo'
@@ -9,14 +12,26 @@ import Section from '../components/section'
 import SlidItemPartner from '../components/slide-item-partner'
 import SliderComponent from '../components/slider'
 import Title from '../components/title'
+
+// Helpers & Config
 import { AccueilCropped, ConseilCropped, UbidreamsFront } from '../config/StaticImagesExport'
+
+// Data
 import { getGalleryImg, getMembership, getTeamMembers } from '../lib/request/agence.js'
 
+/**
+ * Page de présentation de l'agence et des collaborateurs
+ * @param allMembers résultats de la requête : getTeamMembers
+ * @param galleryImg résultats de la requête : getGalleryImg
+ * @param allMembership résultats de la requête : getMembership
+ */
 export const Agency = ({ allMembers, galleryImg, allMembership }) => {
+  // Initialisation de la page
   const router = useRouter()
   const { t } = useTranslation('agency')
   const metatags = { ...t('seo', {}, { returnObjects: true }) }
 
+  // Fonction qui retourne un tableau avec les mots d'une chaine de caractère
   function splitColor(string, character) {
     return string.split(character)
   }
@@ -113,6 +128,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
           <div className='col-12 col-md-6 py-5 py-md-11 px-6 px-md-12 align-self-center'>
             <h3 className='fw-bold'>
               <strong>
+                {/* Isoler les mots à mettre en couleur */}
                 {splitColor(t('localisation.subtitle'), '%color%').map((word, index) => {
                   if ((index + 1) % 2 == 0) {
                     return (
@@ -137,6 +153,7 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
           <p className='lead text-muted'>{t('adhesion.subtitle')}</p>
         </div>
       </Section>
+      {/* Slider des associations partenaires d'Ubidreams */}
       <SliderComponent
         className='center mt-14 mt-md-12'
         showArrow={{ show: false, break1000: true }}
@@ -152,10 +169,17 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
 
 export default Agency
 
+/**
+ * Fonction asynchrone Next JS => Next.js will pre-render this page at build time using the props returned by getStaticProps.
+ * @param preview booléen qui permet de gérer la preview (nous gérons cela au niveau du déploiement donc nous laissons à false)
+ * @param locale locale active du site
+ */
 export async function getStaticProps({ preview = false, locale }) {
   const allMembers = (await getTeamMembers(preview, locale)) || []
   const galleryImg = (await getGalleryImg(preview, locale)) || []
   const allMembership = (await getMembership(preview, locale)) || []
+
+  // Nous renvoyons les données sous forme de props à la page
   return {
     props: { allMembers, galleryImg, allMembership }
   }

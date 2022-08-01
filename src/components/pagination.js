@@ -1,6 +1,14 @@
+// External Librairies
 import Pagination from 'rc-pagination'
 
+/**
+ * PAGINATION : Composant de pagination pour le blog et les références
+ * @param data tableau de toute la listes d'items (articles, références)
+ * @param current number indiquant la page actuelle
+ * @param onChange fonction trigger quand une autre page est cliquée
+ */
 export const PaginationComponent = ({ data = [], current = 1, onChange }) => {
+  // Rendu d'un lien de page, je surcharge l'item actif et sinon je renvoie l'élément par défaut
   const itemRender = (current, type, element) => {
     if (type === 'page') {
       return (
@@ -12,6 +20,7 @@ export const PaginationComponent = ({ data = [], current = 1, onChange }) => {
     return element
   }
 
+  // Le composant Pagination est issu d'une lib externe
   return (
     <Pagination
       total={data.length}

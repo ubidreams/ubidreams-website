@@ -1,24 +1,36 @@
+//External Librairies
 import useTranslation from 'next-translate/useTranslation'
 import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useContext, useEffect, useState } from 'react'
+
+// Helpers & config
 import { Img, Ubidreams } from '../../../config/StaticImagesExport.js'
 import { CookiesContext } from '../../../helpers/cookiesContext'
+
+// API
 import { getAllLegalPages } from '../../../lib/request/legal.js'
 import { getCoordonnees } from '../../../lib/request/contact.js'
 
 const Footer = () => {
+  // Chargement du context d'application des cookies
   const cookies = useContext(CookiesContext)
+
+  // Initialisation de l'état du composant
   const { t, lang } = useTranslation('common')
   const [legalPages, setLegalPages] = useState([])
   const [coordonnees, setCoordonnees] = useState({})
 
   useEffect(() => {
+    // Chargement des pages pour les liens de bas de page (mentions légales, politique de confidentialité).
     getAllLegalPages(lang).then((data) => setLegalPages(data))
+
+    // Chargement des données du footer (coordonnées).
     getCoordonnees(lang).then((data) => setCoordonnees(data))
   }, [lang])
 
+  // Rendu d'un lien
   const MenuLink = ({ href, name }) => {
     return (
       <li className='mb-3'>
@@ -43,17 +55,18 @@ const Footer = () => {
           <div className='row'>
             {/* Logo + reseaux sociaux */}
             <div className='col-12 col-md-4 col-lg-4'>
-              {/* <!-- Brand --> */}
+              {/* <!-- LOGO de la marque --> */}
               <Image src={Ubidreams} alt='Logo Ubidreams' width={150} height={43} />
 
               {/* <!-- Text --> */}
               <p className='mb-2'>{t('footer.slogan')}</p>
 
-              {/* <!-- Social --> */}
+              {/* <!-- LIEN RESEAUX SOCIAUX --> */}
               <ul className='list-unstyled list-inline list-social mb-6 mb-md-0'>
                 {t('footer.social', {}, { returnObjects: true }).map((socialMedia, index) => {
                   return (
                     <li key={index} className='list-inline-item list-social-item me-4 position-relative'>
+                      {/* si les cookies n'ont pas été accepté = pas de lien et opacité des logos*/}
                       {cookies[socialMedia.cookieDesignation] ? (
                         <a
                           href={socialMedia.path}
@@ -81,7 +94,7 @@ const Footer = () => {
               {/* <!-- Heading --> */}
               <h6 className='fw-bold text-uppercase'>{t('footer.location.title')}</h6>
 
-              {/* <!-- List --> */}
+              {/* <!-- List des données --> */}
               <div className='text-muted mb-6 mb-md-8 mb-lg-0' style={{ whiteSpace: 'pre-line' }}>
                 {coordonnees?.telephone}
                 <br />
@@ -97,7 +110,7 @@ const Footer = () => {
               {/* <!-- Heading --> */}
               <h6 className='fw-bold text-uppercase'>{t('footer.legal.title')}</h6>
 
-              {/* <!-- List --> */}
+              {/* <!-- Lien vers les pages de mentions légales, politique de confidentialité... --> */}
               <ul className='list-unstyled text-muted mb-0'>
                 {legalPages &&
                   legalPages.map((link, index) => {
@@ -107,6 +120,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        {/* Chargement des scripts de cookie axeptio */}
         <Script src='../../js/axeptio.js' strategy='beforeInteractive' />
       </footer>
     </div>
