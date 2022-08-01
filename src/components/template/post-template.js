@@ -197,7 +197,6 @@ const PostTemplate = ({ post, locale, lastPosts, router }) => {
                 })}
               </ul>
             </div>
-
           </div>
           <div className='my-6'>
             {/* RENDU DU CONTENU */}
