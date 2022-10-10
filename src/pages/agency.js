@@ -2,7 +2,6 @@
 import useTranslation from 'next-translate/useTranslation'
 import ImageNext from 'next/image'
 import { useRouter } from 'next/router'
-import { Image } from 'react-datocms'
 
 // Components
 import CardMember from '../components/card-member'
@@ -12,20 +11,23 @@ import Section from '../components/section'
 import SlidItemPartner from '../components/slide-item-partner'
 import SliderComponent from '../components/slider'
 import Title from '../components/title'
+import TextContainer from '../components/text-container'
 
 // Helpers & Config
 import { AccueilCropped, ConseilCropped, UbidreamsFront } from '../config/StaticImagesExport'
+import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
+
 
 // Data
-import { getGalleryImg, getMembership, getTeamMembers } from '../lib/request/agence.js'
+import { getMembership, getTeamMembers } from '../lib/request/agence.js'
+
 
 /**
  * Page de présentation de l'agence et des collaborateurs
  * @param allMembers résultats de la requête : getTeamMembers
- * @param galleryImg résultats de la requête : getGalleryImg
  * @param allMembership résultats de la requête : getMembership
  */
-export const Agency = ({ allMembers, galleryImg, allMembership }) => {
+export const Agency = ({ allMembers, allMembership }) => {
   // Initialisation de la page
   const router = useRouter()
   const { t } = useTranslation('agency')
@@ -49,29 +51,6 @@ export const Agency = ({ allMembers, galleryImg, allMembership }) => {
       >
         <div className='d-flex vh-md-50 justify-content-center align-items-center'>
           <Title title={t('hero.title')} subtitle={t('hero.subtitle')} />
-        </div>
-      </Section>
-
-      {/* Gallerie photo */}
-      <Section>
-        <div className='row grid'>
-          {galleryImg.gallerie.map((img, index) => {
-            return (
-              <div key={index} className='col-12 col-md-4 mb-2 px-md-1 grid-item'>
-                <Image
-                  alt=''
-                  data={{
-                    ...img.responsiveImage
-                  }}
-                  className='card-img object-cover h-100'
-                />
-              </div>
-            )
-          })}
-        </div>
-        <div className='mt-4'>
-          <p className='h2 text-uppercase'>{t('introduction.title')}</p>
-          <p className='text-muted'>{t('introduction.subtitle')}</p>
         </div>
       </Section>
 
@@ -176,11 +155,10 @@ export default Agency
  */
 export async function getStaticProps({ preview = false, locale }) {
   const allMembers = (await getTeamMembers(preview, locale)) || []
-  const galleryImg = (await getGalleryImg(preview, locale)) || []
   const allMembership = (await getMembership(preview, locale)) || []
 
   // Nous renvoyons les données sous forme de props à la page
   return {
-    props: { allMembers, galleryImg, allMembership }
+    props: { allMembers, allMembership }
   }
 }

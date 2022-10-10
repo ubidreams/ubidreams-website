@@ -37,28 +37,6 @@ export async function getTeamMembers(preview, locale) {
   return data?.agence
 }
 
-/**
- * requête de récupération de toutes les images de la gallery pour la page agence
- */
-export async function getGalleryImg(preview, locale) {
-  const data = await fetchAPI(
-    `
-        {
-          agence(locale: ${locale}){
-            gallerie {
-              responsiveImage {
-                ...responsiveImageFragment
-              }
-            }
-          }
-        }
-    
-        ${responsiveImageFragment}
-      `,
-    { preview }
-  )
-  return data?.agence
-}
 
 /**
  * requête de récupération de toutes les structures auquel Ubidreams adhère (Association..)

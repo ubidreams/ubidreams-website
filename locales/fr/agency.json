@@ -12,6 +12,11 @@
         "title": "Nos valeurs",
         "subtitle": "Considération et évolution, amélioration continue, satisfaction client, innovation, écoresponsabilité et bien d'autres valeurs font parties de l'ADN de notre entreprise."
     },
+    "presentation": {
+        "title": "Une agence basée à La Rochelle",
+        "subtitle": "Ensemble inventons le numérique",
+        "content": "Entreprise de Services Numériques (ESN) à votre service pour la création de solutions mobiles et de logiciels sur mesure, Ubidreams vous accompagne dans chaque étape de votre transformation numérique. \n\n Nous nous appuyons sur nos savoir-faire en application web et mobile et en création d’objets connectés pour vous apporter conseils et expertises techniques dans les domaines transverses de la création d’applications et logiciels métiers."
+    },
     "valeurs": [
         {
             "title": "Partagées par tous",

@@ -10,7 +10,7 @@
             "alt": "Developpement d'application web et mobile"
         },
         "title": "Création d'applications mobiles et d'objets connectés",
-        "description": "Ubidreams vous accompagne dans la réalisation de vos projets",
+        "description": "Ubidreams vous accompagne dans la réalisation de vos projets et dans la régularisation de vos activités dans les domaines du RGPD et de la Cybersécurité.",
         "buttonDetails": [
             {
                 "name": "Notre Expertise",
@@ -18,8 +18,8 @@
                 "class": "btn-blue"
             },
             {
-                "name": "L'agence",
-                "path": "/agency",
+                "name": "Consultez nos solutions !",
+                "path": "/#solutions",
                 "class": "soft-blue"
             }
         ]

@@ -4,9 +4,10 @@ import { useRouter } from 'next/router'
 
 // Helpers & Config
 import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
+import { Image } from 'react-datocms'
 
 // Data
-import { getAllTestimonialsForHome, getPagesFavorites } from '../lib/request/home.js'
+import { getAllTestimonialsForHome, getPagesFavorites, getGalleryImg } from '../lib/request/home.js'
 import { getLastReferences } from '../lib/request/reference.js'
 
 // Component
@@ -26,8 +27,9 @@ import TextContainer from '../components/text-container'
  * @param allTestimonials résultats de la requête : getAllTestimonialsForHome
  * @param lastReferences résultats de la requête : getLastReferences
  * @param pagesFavorites résultats de la requête : getPagesFavorites
+ * @param galleryImg résultats de la requête : getGalleryImg
  */
-export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
+export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryImg }) => {
   // Initialisation de la page
   const { t } = useTranslation('home')
   const router = useRouter()
@@ -45,7 +47,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
         </div>
       </Section>
 
-      {/* Présentation de l'entreprise avec un background image */}
+      {/* Présentation de l'entreprise avec un background image 
       <Section
         bgClass='bg-gray-200 bg-between'
         customStyle={{
@@ -57,10 +59,29 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites }) => {
           alignText='center'
           className='adaptive-padding'
         />
+      </Section>*/}
+
+      {/* Gallerie photo */}
+      <Section>
+        <div className='row grid'>
+          {galleryImg.gallerie.map((img, index) => {
+            return (
+              <div key={index} className='col-12 col-md-4 mb-2 px-md-1 grid-item'>
+                <Image
+                  alt=''
+                  data={{
+                    ...img.responsiveImage
+                  }}
+                  className='card-img object-cover h-100'
+                />
+              </div>
+            )
+          })}
+        </div>
       </Section>
 
       {/* Présentation des technologies / pages favorites */}
-      <Section>
+      <Section id='solutions'>
         <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
         <div className='row'>
           <Card config={pagesFavorites} large={1} reverse showShadows />
@@ -103,10 +124,11 @@ export default Home
 export async function getStaticProps({ preview = false, locale }) {
   const pagesFavorites = (await getPagesFavorites(preview, locale)) || []
   const allTestimonials = (await getAllTestimonialsForHome(preview, locale)) || []
+  const galleryImg = (await getGalleryImg(preview, locale)) || []
   const lastReferences = (await getLastReferences(preview, locale)) || []
 
   // Nous renvoyons les données sous forme de props à la page
   return {
-    props: { allTestimonials, lastReferences, pagesFavorites }
+    props: { allTestimonials, galleryImg, lastReferences, pagesFavorites }
   }
 }
