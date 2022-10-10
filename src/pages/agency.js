@@ -11,16 +11,12 @@ import Section from '../components/section'
 import SlidItemPartner from '../components/slide-item-partner'
 import SliderComponent from '../components/slider'
 import Title from '../components/title'
-import TextContainer from '../components/text-container'
 
 // Helpers & Config
 import { AccueilCropped, ConseilCropped, UbidreamsFront } from '../config/StaticImagesExport'
-import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
-
 
 // Data
 import { getMembership, getTeamMembers } from '../lib/request/agence.js'
-
 
 /**
  * Page de présentation de l'agence et des collaborateurs

@@ -3,7 +3,6 @@ import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 
 // Helpers & Config
-import { IdeesRightCropped, Recherche } from '../config/StaticImagesExport'
 import { Image } from 'react-datocms'
 
 // Data

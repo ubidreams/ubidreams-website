@@ -12,7 +12,6 @@ import { responsiveImageFragment, miniaturePageFragment } from '../fragment.js'
  * requête de récupération des témoignages pour la page d'accueil
  */
 export async function getAllTestimonialsForHome(preview, locale) {
-
   const data = await fetchAPI(
     `
         {
@@ -39,7 +38,7 @@ export async function getAllTestimonialsForHome(preview, locale) {
 /**
  * requête de récupération de toutes les images de la gallery pour la page agence
  */
- export async function getGalleryImg(preview, locale) {
+export async function getGalleryImg(preview, locale) {
   const data = await fetchAPI(
     `
         {
@@ -63,7 +62,6 @@ export async function getAllTestimonialsForHome(preview, locale) {
  * requête de récupération des pages favorites à afficher en page d'accueil
  */
 export async function getPagesFavorites(preview, locale) {
-
   const data = await fetchAPI(
     `
         {

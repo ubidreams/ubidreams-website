@@ -37,7 +37,6 @@ export async function getTeamMembers(preview, locale) {
   return data?.agence
 }
 
-
 /**
  * requête de récupération de toutes les structures auquel Ubidreams adhère (Association..)
  */
