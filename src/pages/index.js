@@ -46,20 +46,6 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryI
         </div>
       </Section>
 
-      {/* Présentation de l'entreprise avec un background image 
-      <Section
-        bgClass='bg-gray-200 bg-between'
-        customStyle={{
-          backgroundImage: `url(${Recherche.src}), url(${IdeesRightCropped.src})`
-        }}
-      >
-        <TextContainer
-          namespace={{ name: 'home', section: 'introduction' }}
-          alignText='center'
-          className='adaptive-padding'
-        />
-      </Section>*/}
-
       {/* Gallerie photo */}
       <Section>
         <div className='row grid'>

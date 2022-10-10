@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 
 // Components
 import CardMember from '../components/card-member'
-import FeatureContainer from '../components/feature-container'
 import Helmet from '../components/layout/helmet-seo'
 import Section from '../components/section'
 import SlidItemPartner from '../components/slide-item-partner'
@@ -50,7 +49,20 @@ export const Agency = ({ allMembers, allMembership }) => {
         </div>
       </Section>
 
-      {/* Slider valeurs */}
+      {/* Présentation de l'entreprise avec un background image
+      <Section
+        bgClass='bg-gray-200 bg-between'
+        customStyle={{
+        }}
+      >
+        <TextContainer
+          namespace={{ name: 'agency', section: 'presentation' }}
+          alignText='center'
+          className='adaptive-padding'
+        />
+      </Section> */}
+
+      {/* Slider valeurs 
       <Section bgClass='bg-gray-200' display=''>
         <SliderComponent
           buttonSpace='250'
@@ -73,7 +85,7 @@ export const Agency = ({ allMembers, allMembership }) => {
             </section>
           ))}
         </SliderComponent>
-      </Section>
+      </Section>*/}
 
       {/* Présentation de l'équipe */}
       <Section>
