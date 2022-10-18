@@ -114,6 +114,6 @@ export async function getStaticProps({ preview = false, locale }) {
 
   // Nous renvoyons les données sous forme de props à la page
   return {
-    props: { allTestimonials, galleryImg, solutions, lastReferences, pagesFavorites }
+    props: { allTestimonials, galleryImg, lastReferences, pagesFavorites }
   }
 }
