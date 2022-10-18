@@ -18,8 +18,8 @@
                 "class": "btn-blue"
             },
             {
-                "name": "Agency",
-                "path": "/agency",
+                "name": "See our solutions!",
+                "path": "/#solutions",
                 "class": "soft-blue"
             }
         ]
