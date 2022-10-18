@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { Image } from 'react-datocms'
 
 // Data
-import { getAllTestimonialsForHome, getPagesFavorites, getGalleryImg, getSolutions } from '../lib/request/home.js'
+import { getAllTestimonialsForHome, getPagesFavorites, getGalleryImg } from '../lib/request/home.js'
 import { getLastReferences } from '../lib/request/reference.js'
 
 // Component
@@ -28,7 +28,7 @@ import TextContainer from '../components/text-container'
  * @param pagesFavorites résultats de la requête : getPagesFavorites
  * @param galleryImg résultats de la requête : getGalleryImg
  */
-export const Home = ({ allTestimonials, solutions, lastReferences, pagesFavorites, galleryImg }) => {
+export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryImg }) => {
   // Initialisation de la page
   const { t } = useTranslation('home')
   const router = useRouter()
@@ -38,14 +38,6 @@ export const Home = ({ allTestimonials, solutions, lastReferences, pagesFavorite
     <Helmet metatags={metatags} router={router}>
       {/* Entête > titre + illustration à droite */}
       <PageTitle namespace='home' displayImage='reverse' classText='text-left' showButton />
-
-      {/* Présentation des technologies / pages favorites */}
-      <Section id='test'>
-        <TextContainer namespace={{ name: 'home'}} alignText='center' />
-        <div className='row'>
-          <Card config={solutions} large={1} reverse showShadows />
-        </div>
-      </Section>
 
       {/* Présentation de 3 expertises (développement, IOT, Conseil) */}
       <Section>
@@ -116,7 +108,6 @@ export default Home
  */
 export async function getStaticProps({ preview = false, locale }) {
   const pagesFavorites = (await getPagesFavorites(preview, locale)) || []
-  const solutions = (await getSolutions(preview, locale)) || []
   const allTestimonials = (await getAllTestimonialsForHome(preview, locale)) || []
   const galleryImg = (await getGalleryImg(preview, locale)) || []
   const lastReferences = (await getLastReferences(preview, locale)) || []

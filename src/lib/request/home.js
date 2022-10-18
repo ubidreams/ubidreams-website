@@ -61,47 +61,6 @@ export async function getGalleryImg(preview, locale) {
 /**
  * requête de récupération des pages favorites à afficher en page d'accueil
  */
- export async function getSolutions(preview, locale) {
-  const data = await fetchAPI(
-    `
-        {
-          home(locale: ${locale}) {
-            solutions {
-              miniaturePage {
-                ...MiniaturePageFieldFragment
-              }
-              image {
-                responsiveImage {
-                  ...responsiveImageFragment
-                }
-              }
-              alternativeImage {
-                responsiveImage {
-                  ...responsiveImageFragment
-                }
-              }
-            }
-          }
-        }  
-        ${miniaturePageFragment}
-        ${responsiveImageFragment}
-      `,
-    { preview }
-  )
-
-  return data?.home.solutions.map((miniature) => {
-    //S'il n'y a pas d'image de miniature alors l'image par défaut de la page est prise
-    const image = isNull(miniature.alternativeImage) ? miniature.image : miniature.alternativeImage
-    return {
-      image,
-      content: miniature.miniaturePage
-    }
-  })
-}
-
-/**
- * requête de récupération des pages favorites à afficher en page d'accueil
- */
 export async function getPagesFavorites(preview, locale) {
   const data = await fetchAPI(
     `
