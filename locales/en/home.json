@@ -1,6 +1,6 @@
 {
     "seo": {
-        "title": "Creation of mobile applications and connected objects",
+        "title": "Mobile App development and IOT Prototyping",
         "description": "Ubidreams is a digital agency based in La Rochelle. We are specialized in mobile application development, ux design and the creation of connected objects.", 
         "img_key":"home"
     },
@@ -9,8 +9,8 @@
             "key": "home",
             "alt": "Web and Mobile Development"
         },
-        "title": "Creation of mobile applications and connected objects",
-        "description": "Ubidreams supports you in carrying out your projects and offers you dedicated software for your GDPR, cybersecurity and IP telephony activities.",
+        "title": "Mobile App development and IOT Prototyping",
+        "description": "Ubidreams supports you in carrying out your tailor-made development projects and also offers you a range of dedicated software for your CYBERSECURITY, GDPR, and IP telephony activities.",
         "buttonDetails": [
             {
                 "name": "Our Expertise",
@@ -18,7 +18,7 @@
                 "class": "btn-blue"
             },
             {
-                "name": "See our solutions!",
+                "name": "See our partner software offers",
                 "path": "/#solutions",
                 "class": "soft-blue"
             }
@@ -62,7 +62,8 @@
         }
     ],
     "technology" : {
-        "title": "Our partner solutions"
+        "title": "Our partner software",
+        "subtitle": "UBIDREAMS CERTIFIED Distributor and Integrator of solutions"
       },
     "testimony": {
         "title": "Our customers trust us",
