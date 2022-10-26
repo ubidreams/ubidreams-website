@@ -12,7 +12,7 @@ import { LinkBeautify } from './link-beautify'
 */
 export const CardConsulting = ({ config = [] }) => {
   // définition des couleurs utilisable pour les cards
-  const colors = ['blue', 'green', 'dark-grey', 'orange', 'grey-blue', 'grey', 'dark-green']
+  const colors = ['dark-grey', 'green', 'blue', 'orange', 'grey-blue', 'grey', 'dark-green']
 
   return config.map((item, index) => {
     return (
