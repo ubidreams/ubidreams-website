@@ -110,7 +110,8 @@
       "alt": "Photo of a working group"
     },
     "content": "A question, a project ? \nWe help you define your project.",
-    "button": "Contact-us"
+    "button": "Contact-us",
+    "buttonDemo": "Request a demo"
   },
   "error": {
     "404": {

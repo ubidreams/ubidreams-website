@@ -110,7 +110,8 @@
       "alt": "Photo d'un groupe de discussion"
     },
     "content": "Une question, un projet ? \n Nous vous aidons à définir votre projet.",
-    "button": "Contactez-nous"
+    "button": "Contactez-nous",
+    "buttonDemo" : "Demander une démo"
   },
   "error": {
     "404": {
