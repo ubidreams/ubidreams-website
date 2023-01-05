@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
     });`
         }}
       />
-            <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=UA-24567240-2' />
+      <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=UA-24567240-2' />
       <Script
         id='google-analytics'
         strategy='afterInteractive'
