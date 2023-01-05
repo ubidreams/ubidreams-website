@@ -24,7 +24,7 @@ import Layout from '../components/layout/layout'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=UA-24567240-1' />
+      <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=G-YWR6WV0Y3F' />
       <Script
         id='google-analytics'
         strategy='afterInteractive'
@@ -33,7 +33,21 @@ function MyApp({ Component, pageProps }) {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+    gtag('config', 'G-YWR6WV0Y3F', {
+    page_path: window.location.pathname,
+    });`
+        }}
+      />
+            <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=UA-24567240-2' />
+      <Script
+        id='google-analytics'
+        strategy='afterInteractive'
+        dangerouslySetInnerHTML={{
+          __html: `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-24567240-2', {
     page_path: window.location.pathname,
     });`
         }}
