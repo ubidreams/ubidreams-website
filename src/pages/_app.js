@@ -24,7 +24,7 @@ import Layout from '../components/layout/layout'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Script strategy='afterInteractive' src="https://www.googletagmanager.com/gtag/js?id=UA-24567240-1" />
+      <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=UA-24567240-1' />
       <Script
         id='google-analytics'
         strategy='afterInteractive'
