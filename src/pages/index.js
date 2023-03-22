@@ -20,6 +20,7 @@ import Section from '../components/section'
 import SliderComponent from '../components/slider'
 import SliderItem from '../components/slider-item'
 import TextContainer from '../components/text-container'
+import Video from '../components/video.js'
 
 /**
  * Page principale du site (ACCUEIL)
@@ -67,7 +68,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryI
 
       {/* Video */}
       <Section bgClass='bg-gray-200'>
-        <iframe width='420' height='315' src='https://www.youtube.com/watch?v=W0RN_TSLCj0'></iframe>
+        <Video />
       </Section>
 
       {/* Présentation des technologies / pages favorites */}
