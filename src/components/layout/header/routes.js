@@ -34,6 +34,9 @@ const routes = [
       },
       {
         key: 'ubipoi'
+      },
+      {
+        key: 'solutions-metiers-sur-mesure'
       }
     ]
   },

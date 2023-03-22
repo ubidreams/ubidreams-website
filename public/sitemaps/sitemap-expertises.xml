@@ -237,6 +237,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/solutions/ubitrack"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/solutions/ubitrack"/>
     </url>
+        <url>
+        <loc>https://www.ubidreams.fr/solutions/solutions-metiers-sur-mesure</loc>
+        <priority>0.7</priority>
+        <lastmod>2021-10-25T08:16:57.761Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.ubidreams.fr/en/solutions/solutions-metiers-sur-mesure"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.ubidreams.fr/solutions/solutions-metiers-sur-mesure"/>
+    </url>
 
 
     <!-- EN ************************************-->
