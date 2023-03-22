@@ -3,7 +3,6 @@ import '../../public/css/theme.bundle.css'
 import '../../public/css/libs.bundle.css'
 import 'rc-pagination/assets/index.css'
 import '../styles/style.scss'
-import Script from 'next/script'
 
 // External Librairies
 import appWithI18n from 'next-translate/appWithI18n'
@@ -23,45 +22,16 @@ import Layout from '../components/layout/layout'
  */
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=G-YWR6WV0Y3F' />
-      <Script
-        id='google-analytics'
-        strategy='afterInteractive'
-        dangerouslySetInnerHTML={{
-          __html: `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-YWR6WV0Y3F', {
-    page_path: window.location.pathname,
-    });`
-        }}
-      />
-      <Script strategy='afterInteractive' src='https://www.googletagmanager.com/gtag/js?id=UA-24567240-2' />
-      <Script
-        id='google-analytics'
-        strategy='afterInteractive'
-        dangerouslySetInnerHTML={{
-          __html: `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-24567240-2', {
-    page_path: window.location.pathname,
-    });`
-        }}
-      />
-      <LangProvider>
-        <CookiesProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </CookiesProvider>
-      </LangProvider>
-    </>
+    <LangProvider>
+      <CookiesProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </CookiesProvider>
+    </LangProvider>
   )
 }
+
 export default appWithI18n(MyApp, {
   ...i18nConfig
 })
