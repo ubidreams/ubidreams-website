@@ -50,6 +50,10 @@
         "ubipoi": {
           "name": "UbiPOI",
           "path": "/solutions/ubipoi"
+        },
+        "solutions-metiers-sur-mesure": {
+          "name": "Solutions Métiers",
+          "path": "/solutions/solutions-metiers-sur-mesure"
         }
       }
     },
@@ -111,7 +115,7 @@
     },
     "content": "Une question, un projet ? \n Nous vous aidons à définir votre projet.",
     "button": "Contactez-nous",
-    "buttonDemo" : "Demander une démo"
+    "buttonDemo": "Demander une démo"
   },
   "error": {
     "404": {
@@ -125,12 +129,12 @@
     "help": "Une question ?",
     "call": "Appelez-nous",
     "email": "Envoyez-nous un mail"
-  }, 
+  },
   "cookie": {
-    "noAccept" : "Vous n'avez pas accepté les cookies pour activer ce service. Vous pouvez changer vos choix de cookies en cliquant en bas à gauche",
-    "noAcceptYoutube" : "Une vidéo est disponible sur cet article, pour la visionner acceptez les cookies. Vous pouvez changer vos choix de cookies en cliquant sur le bouton en bas à gauche.",
+    "noAccept": "Vous n'avez pas accepté les cookies pour activer ce service. Vous pouvez changer vos choix de cookies en cliquant en bas à gauche",
+    "noAcceptYoutube": "Une vidéo est disponible sur cet article, pour la visionner acceptez les cookies. Vous pouvez changer vos choix de cookies en cliquant sur le bouton en bas à gauche.",
     "noAcceptCaptcha": "Vous n'avez pas accepté les cookies permettant l'envoi du formulaire de contact en toute sécurité. Pour activer ce service vous pouvez changer vos choix de cookies en cliquant sur le bouton en bas à gauche, ensuite acceptez le cookie : Google Recaptcha."
-  }, 
+  },
   "locale": {
     "en": "Anglais",
     "fr": "Français"
