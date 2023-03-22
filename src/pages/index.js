@@ -65,6 +65,11 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryI
         </div>
       </Section>
 
+      {/* Video */}
+      <Section bgClass='bg-gray-200'>
+        <TextContainer namespace={{ name: 'home', section: 'video' }} alignText='center' />
+      </Section>
+
       {/* Présentation des technologies / pages favorites */}
       <Section id='solutions'>
         <TextContainer namespace={{ name: 'home', section: 'technology' }} alignText='center' />
