@@ -67,7 +67,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryI
 
       {/* Video */}
       <Section bgClass='bg-gray-200'>
-        <iframe width='420' height='315' src='https://www.youtube.com/watch?v=W0RN_TSLCj0'></iframe>
+      <TextContainer namespace={{ name: 'home', section: 'video' }} alignText='center' />
       </Section>
 
       {/* Présentation des technologies / pages favorites */}
