@@ -1,12 +1,25 @@
 /* STYLE PAGE TEMPLATE */
 .img-page {
-    max-height: 22em;
-  
-    & > picture img {
-      object-fit: contain;
-    }
-  }
+  max-height: 22em;
 
-  html{
-    scroll-behavior: smooth;
+  & > picture img {
+    object-fit: contain;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.videoUbi {
+  width: 850px;
+  height: 483px;
+}
+
+@media screen and (max-width: 800px) {
+  .videoUbi {
+    width: inherit;
+    height: 350px;
+    margin: auto;
+  }
+}

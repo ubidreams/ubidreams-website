@@ -68,8 +68,7 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryI
       {/* video */}
       <Section bgClass='bg-gray-200' style={{ textAlign: '-webkit-center' }}>
         <iframe
-          width='860'
-          height='483'
+          className='videoUbi'
           src='https://www.youtube.com/embed/W0RN_TSLCj0'
           title='YouTube video player'
           frameBorder='0'
