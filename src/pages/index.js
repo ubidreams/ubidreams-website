@@ -20,7 +20,6 @@ import Section from '../components/section'
 import SliderComponent from '../components/slider'
 import SliderItem from '../components/slider-item'
 import TextContainer from '../components/text-container'
-import Video from '../components/video.js'
 
 /**
  * Page principale du site (ACCUEIL)
@@ -66,9 +65,17 @@ export const Home = ({ allTestimonials, lastReferences, pagesFavorites, galleryI
         </div>
       </Section>
 
-      {/* Video */}
-      <Section bgClass='bg-gray-200'>
-        <Video />
+      {/* video */}
+      <Section bgClass='bg-gray-200' style={{ textAlign: '-webkit-center' }}>
+        <iframe
+          width='860'
+          height='483'
+          src='https://www.youtube.com/embed/W0RN_TSLCj0'
+          title='YouTube video player'
+          frameBorder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          allowFullScreen
+        ></iframe>{' '}
       </Section>
 
       {/* Présentation des technologies / pages favorites */}
