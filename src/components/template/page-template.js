@@ -101,7 +101,20 @@ const PageTemplate = ({ page, lastRef, router }) => {
             {renderPage('subtitle', page)}
           </div>
           {/* IMAGE D'ENTETE */}
+
           {page.image && renderPage('image', page)}
+          {page.title === 'Assurez votre cybersécurité avec la solution Sylink' && (
+            <Section style={{ textAlign: '-webkit-center' }}>
+              <iframe
+                className='videoUbi'
+                src='https://www.youtube.com/embed/DSKAPIYyeuY'
+                title='YouTube video player'
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                allowFullScreen
+              ></iframe>
+            </Section>
+          )}
           <div className='my-6'>
             {/* CONTENU DE LA PAGE */}
             <StructuredText
