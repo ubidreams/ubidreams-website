@@ -101,6 +101,7 @@ const PageTemplate = ({ page, lastRef, router }) => {
             {renderPage('subtitle', page)}
           </div>
           {/* IMAGE D'ENTETE */}
+
           {page.image && renderPage('image', page)}
           <div className='my-6'>
             {/* CONTENU DE LA PAGE */}
@@ -133,7 +134,20 @@ const PageTemplate = ({ page, lastRef, router }) => {
                         </a>
                       )
                     }
-                    return <Image data={record.image.responsiveImage} alt='' />
+                    return page.title === 'Assurez votre cybersécurité avec la solution Sylink' ? (
+                      <Section style={{ textAlign: '-webkit-center' }}>
+                        <iframe
+                          className='videoUbi'
+                          src='https://www.youtube.com/embed/DSKAPIYyeuY'
+                          title='YouTube video player'
+                          frameBorder='0'
+                          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                          allowFullScreen
+                        ></iframe>
+                      </Section>
+                    ) : (
+                      <Image data={record.image.responsiveImage} alt='' />
+                    )
                   case 'focus_point':
                     // Rendu d'une liste sous le format de bloc rectangulaire prenant la largeur de la page. Mise en avant d'informations limitées
                     return <div className='focus_point'>{ReactHtmlParser(record.liste)}</div>
